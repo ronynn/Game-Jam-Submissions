@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Abate: Hide Behind The Curtains</title>
+    <style>
+      a.disabled {
+        color: #999;
+      }
+      a.disabled.chosen {
+        color: #000;
+      }
+      h3 {
+        font-family: monospace;
+      }
+      a.disabled:hover {
+        cursor: not-allowed;
+      }
+      a {
+        border-radius: 2%;
+        border-color:;
+        background-color:lightyellow;
+        border:;
+        color: saddlebrown;
+        text-align: center;
+        text-decoration:none;
+        font-weight:bold;
+        font-size: ;
+        font-variant:;
+        padding: 2px;
+        width: 20px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 2px;
+      }
+      body {
+        font-family: Sans-serif;
+        padding:5%;
+        -webkit-font-smoothing:antialiased;
+        text-rendering:optimizeLegibility;
+        
+      }
+      h1, h2 {
+        Font-family: sans-serif;
+        Color: saddlebrown;
+        Border-bottom: 2px solid saddlebrown;
+        Padding: 1ex 0;
+        }
+      .first {
+        font-size:42px;
+        color: saddlebrown;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id='source' style='display:none'>
+
+
+# [Abate: Hide Behind The Curtains](/the-void)
+
+<span class=first>S</span>tranded through a realm of darkness, you wake up among your peers working towards your first project in assisting the welcome ceremony play. Yet unforeseen circumstances in each one of your attempts bring you back to the beginning, can you find the culprit trapping you in this eternal cycle?
+
+Made for the Spring Thing 2022.
+
+## The Void
+
+You are floating in an empty space, darkness surrounds you. You hear nothing. You feel nothing on your skin, it's neither cold nor warm, even the rustling of your clothes on your body has subsided.
+
+> Intense fear grabs your heart as you start questioning your surroundings. You have no memories of who you are and what brought you here. As you move your arms and legs against the nothingless, a bright light shines before your eyes.
+
+[Open your eyes](/gate)
+
+
+## [Gate]("At the Gates")
+
+You open your eyes and see the worried but calm eyes of Vyusian, the top student in your class, and your best friend. Hesitant yet determined, Vyusian looks towards your bag and says "there's only so far you can go avoiding breakfast everyday", moving his eyes towards you he offers his hand ...
+
+"Can you get up?"
+
+[Take his hand to get up](/gate2#took-hand)<br/>
+
+["Can You?"](/gate2#made-pun)
+ 
+## [gate2]("At the Gates")
+You get up and pat on your clothes to remove the dust. Vyusian grabs your bag and hands it to you.
+[You face Vyusian but before you can say anything he stops you. | Vyusian stares at you and says "I'm glad you are okay but it's really not a time to make puns."](?took-hand)
+
+He then brings out a water bottle from his bag and hands it to you.
+"I'm taking you to the nurse's office, after that we eat something first"
+
+> As you walk towards the nurse's office, you get some time to yoursel to reflect upon Vyusian and your friendship. It was a cold and dark night when you had first met. You had just lost your way home from the department store while distracted thinking about potato chips. As you kept walking through your fear, your eyes met with Vyusian's and you decided you must ask for some directions.
+
+> "Quite a distance you seem to have missed" were the first words spoken to you by Vyusian. Meeting him in your school only gave you more oppurtunites to hang out whenever you could and be the best of friends.
+
+
+
+
+
+
+
+
+
+[go](/the-void)
+
+## go 
+
+test
+
+**The End**
+
+
+    </textarea>
+    <div id='game' />
+    <script src='ficdown.min.js'></script>
+    <script>
+      var player = new Ficdown({
+        id: 'game',
+        source: document.getElementById('source').value,
+        scroll: false,
+        html: true,
+        endMarkdown: true,
+      });
+      player.play();
+    </script>
+  </body>
+</html>
