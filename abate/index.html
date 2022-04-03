@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Abate: Hide behind the Curtains</title>
+<style>
+	html {
+		Font-family: serif;
+		Font-size: 13pt;
+		Color: ;
+		--Background-color: tan;
+	}
+	
+	h1, h2 {
+                --Font-family: sans-serif;
+                Color: brown;
+                --Border-bottom: 2px solid saddlebrown;
+               line-height: 1.3em;
+                Padding: 2px;
+        }
+	
+	body {
+		--Width: 70ex;
+		Max-width: 80%;
+		Padding: 3ex;
+		Margin: 1ex auto;
+		Line-height: 1.2em;
+		Text-align: Center;
+		Background-color:white;
+		--Box-shadow: 0.5ex 0.5ex 0.5ex saddlebrown;
+	}
+	pre code { Font-size: 0.85em; Overflow: auto; }
+
+	a:visited { Color: purple; }
+	-a:hover, a:active { Color: cyan; }
+	
+	#transcript { Min-height: 25em; }
+	#transcript hr { --Border: 1px solid saddlebrown; }
+	
+	footer {
+                Border-top: 2px solid saddlebrown;
+                Font-variant: small-caps;
+                Text-align: right;
+                Padding: 1ex 0;
+	}
+	footer #status { Float: left; }
+	
+    a {
+	border-radius:;
+	border-color:;
+	background-color:lightyellow;
+	border:;
+	color: saddlebrown;
+	text-align:;
+	text-decoration:none;
+	font-weight:bold;
+	font-size: ;
+	font-variant:;
+	padding:;
+	width:;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin:;
+	}
+	.first {
+	      font-size:42px;
+	      color: saddlebrown;
+	      }
+	#transcript div {
+		animation: fadeIn ease 1s;
+	}
+	@keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+	
+</style>
+<meta name="viewport" content="width=device-width">
+<meta name="creator" content="Rohan">
+<meta name="description" content="An interactive fiction about investigating your death while stranded in the time loop, a short story with an interview mechanism and an expanding world.">
+
+
+<div role="log" id="transcript">Please enable Javascript to play.</div>
+
+<footer role="status">
+ <span id="status"></span>
+ <!--Moves:&nbsp;<span id="moves">0</span>-->
+</footer>
+
+<div style="Display: none;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="start" title="Beginning"> 
+
+ <span class=first>S</span>tranded through a realm of darkness, you wake up among your peers working towards your first project in assisting the welcome ceremony play. Yet unforeseen circumstances in each one of your attempts bring you back to the beginning, can you find the culprit trapping you in this eternal cycle? <br/>
+<br/>
+<h1>Abate<br/> Hide Behind the Curtains</h2>
+<br/>
+  <h2>A text adventure<br/></h2>
+Made for Spring Thing 2022<br/>
+ <br/>
+<h2><a rel="clear" href="#the-void">Begin</a><br/>
+<a href=#about>About</a></h2>
+#do died_from_paperwork = false;
+</div>
+
+<div id="about" title="About">
+
+An interactive fiction about investigating your death while stranded in the time loop, a short story with an interview mechanism and an expanding world.<br/>
+<br/>
+What more things can you do once everything that you could think of has already failed, do you repeat as you are told, follow the rules of the world and abate, or make your own rules and take control. What surprises await you then?
+<br/>
+<br/>
+The project started as a means to check out the library ficdown.js and it's capability of making storybooks, however renaming location names wasn't solving the situation with the bugs it had present. The latest version of the major browsers crash with nothing on the console.<br/>
+Days before the spring thing starts, here I am porting the entire system to Ramus which again is not letting more than one variable in a single div element. Not to mention my code editor crashing since the html file got bigger than 20kb. And without syntax highlighting it's hard to find out open div elements. <br/>
+However I am hopeful that a bit of changes here and there will fix everything. The game will be fully ported in the next two days. <br/>
+
+</div>
+
+<div id="the-void" title="The Void">
+
+You are floating in an empty space, darkness surrounds you. You hear nothing. You feel nothing on your skin, it's neither cold nor warm, even the rustling of your clothes on your body has subsided. <br/>
+
+Intense fear grabs your heart as you start questioning your surroundings. You have no memories of who you are and what brought you here. As you move your arms and legs against the nothingless, a bright light shines before your eyes. <br/>
+<br/>
+
+#test died_from_paperwork
+#iftrue <p>You are not as scared as you were the last time you were here, still the restlessness is unbearable. The papers in front of you are no longer here, all you can remember is a bright flash. All you have is this moment, and there is nothing in it. <br/>
+
+
+<a rel="clear" href="#gate">Open your eyes</a>
+
+</div>
+
+
+
+
+
+
+
+
+<div id="gate" title="At the Gates">
+
+You open your eyes and see the worried but calm eyes of Vyusian, the top student in your class, and your best friend.
+
+#test died_from_paperwork
+#iftrue <p>Hesitant yet determined, 
+Vyusian looks towards your bag and says "there's only so far you can go avoiding breakfast everyday", moving his eyes towards you he offers his hand ...
+
+"Can you get up?" <br/>
+<br/>
+<a href="#gate2">Take his hand to get up</a><br/>
+<br/>
+
+#iffalse <a href="#pun">"Can You?"</a> 
+</div>
+
+
+<div id="pun" title="At the Gates">
+
+#do made_pun = true;
+
+They don't call you the jokester of Shikyou High for nothing. Too many people are staring at you though, perhaps <a href="#gate2">get up</a>?
+</div>
+
+
+
+
+
+<div id="gate2" title="At the Gates">
+
+You get up and pat on your clothes to remove the dust. Vyusian grabs your bag and hands it to you. You face Vyusian but before you can say anything he stops you.<br/>
+
+#test made_pun
+#iftrue <p>"Vyusian stares at you and says "I'm glad you are okay but it's really not a time to make puns." <br/>
+
+He brings out a water bottle from his bag and hands it to you.
+"I'm taking you to the <a href="#gate3">nurse's office</a>, after that we eat something first"
+
+#do rejected_president = false;
+
+</div>
+
+
+<div id="gate3" title="At the Gates">
+
+#test died_from_paperwork
+
+#iftrue <p>You notice your palms are shaking, they look pale and cold and keep reminding you of the emptiness of the void. The whole ridiculousness of the situations scares you more than you find yourself capable of handling. You notice Vyusian being worried about your behaviour.
+
+#iffalse <p>As you walk towards the nurse's office, you get some time to yourself to reflect upon Vyusian and your friendship. It was a cold and dark night when you had first met. You had just lost your way home from the department store while distracted thinking about spices. As you kept walking through your fear, your eyes met with Vyusian's and you decided you must ask for some directions. "Quite a distance you seem to have missed" were the first words spoken to you by Vyusian. Meeting him in your school only gave you more oppurtunites to hang out whenever you could and be the become close. Luckily everytime you spaced out Vyusian somehow reached you and brought you back home. "Why do you even space out so often?" Vysian would always ask you with confusion, and you would make something up but one day you decided that he deserves the answer -- "spices" you shout, "I was thinking about the spices that adds the most value to boiled potatoes, I'm yet to find the one." "Onions" Vyusian assures, "boiled potatoes taste the best with onions". You felt a spark within your heart that could only be used to light up the dream that one day you may just find the one, and here it was, you rushed to your house, prepared the dish to your satisfaction and take a taste -- "this is indeed the one, my dream has been achieved."<br/>
+
+#do kick_ed = false;
+<a href="#door">The door to the nurse's office seems locked.</a> <br/>
+
+</div>
+
+<div id="door" title="At the Gates">
+
+#test kick_ed
+#iffalse <a href="#kicked">Kick it open</a> <br/>
+
+<a rel="clear" href="#front">Wait for someone to show up</a>
+
+</div>
+
+
+
+<div id="kicked" title="Nurse's Office Door">
+#do kick_ed = true;
+ 
+The door is doing it's job well. However inanimate objects must acknowledge your authority. <br/>
+
+A loud <a href="#front">"hey!"</a> reaches your ears.
+
+</div>
+
+
+
+
+<div id="front" title="Nurse's Office Door">
+
+The <a href='#front2'>student council president</a> appears from the stairs nearby.
+#test died_from_paperwork
+#iffalse <p>A strict figure, she is respected by everyone for her determined focus on her work and high grades. While you deeply respect her too, it has taken the shape of fear in your heart over the last 2 years. Her short temper might have been the reason for that. 
+
+</div>
+
+
+<div id="front2" title="Nurse's Office Door">
+
+#test kick_ed
+#iftrue <p> "What do you think you are doing?" The President shouts. You panic internally but Vyusian seems calm, "we were waiting for the nurse", "what part of it involves kicking the door" the president asks you assertively, you stand firm and spit out the first excuse that could come to your mind -- "I, having lost my balance and falling forward, decided to kick the door in an attempt to push my body back bringing the center of gravity to the equillibrium". The president visibly confused at your comment decided to give it a moment of thought and then brought forward a file with a brown cover. 
+
+"Vyusian, you are assigned to Entry 4 of the hall," the president states and starts walking towards the stairs while pointing a finger at you signalling to <a href='#front3'>follow</a> her. She seems to be walking towards the student council room.
+</div>
+
+<div id="front3" title="Nurse's Office Door">
+#test died_from_paperwork
+#iftrue <p>Vyusian asks you to meet him at the canteen, "I could come with you if you want" he suggests while you assure him not to worry about you. Then again you are hungry. The day in it's entirety is repeating right in front of you. Whatever you saw in your dreams when you were unconscious is happening all over again. As the shaking of your legs calm down you realise it is upon yourself to avoid redoing the same things you did in your dreams. <br/>
+
+<a href="#follow-president">Follow the Student President</a><br/>
+<a rel="clear" href="#canteen">Go to the Canteen with Vyusian</a>
+</div>
+
+
+<div id="follow-president" title="Corridors">
+The corridors look bright and cheery with decoration. The ribbons you attached last week near the windows have been removed.
+
+The president doesn't seem to be in a hurry. How far is the <a href="#president">student council room</a> anyway?
+</div>
+
+
+
+
+<div id="canteen" title="At the Canteen">
+#do rejected_president = true;
+A long line of customers seem to indicate that there is something special on the menu today, but then again this could be the result of late service too.
+
+#test died_from_paperwork
+
+#iffalse <p>Vyusian isn't planning on eating anything right now. Judging by the long line he warns you that the president might get furious knowing that you didn't follow her order. He suggests waiting on your behalf and grabbing something to eat. You realise that Vyusian's concern is legitimate, however you are really hungry and have already fallen unconscious once. Buying atleast a bag of potato chips shouldn't take too much time.<br/>
+
+#iffalse <a href="#line">Wait for the line to end then go to Entry 4 of the hall</a><br/> or <a href="#president">Go to the president</a> <br/>
+
+#iftrue <p>You can't waste your time here as whatever the reason for the bright lights was can only originate at the science lab. The only other possibility is that the lights were from the canteen which however can't be true given the distance of the student council room from the canteen and the lack of any superficial equipment here.<br/>
+
+#iftrue <a rel="clear" href="#sciencelab">Go to the science-lab</a>
+</div>
+
+
+
+
+<div id="line" title="Canteen">
+The neverending line at the canteen brings a sort of calmness in your heart. Perhaps you were an extrovert all along.
+#do left_vyusian = true;
+The half an hour wait was worth it for the bag of chips. 
+
+<a href="#entry">Time to go check out Vyusian's Gate Duty</a>
+</div>
+
+
+
+<div id="president" title="Student Council Room">
+
+#test rejected_president
+#iftrue <p>The student president greets you at the door with a stern face. "Did I not ask you to follow me?", the rhetorical nature of the question suggests that the situation demands an apology. Before you can prepare an appropriate grimace the president orders "see those papers on the table? that's your <a href='#president3'>job</a>."
+#iffalse <p>"The nurse's room is going to stay closed today, they are using the room and the other door for keeping the props for the play, I don't know what is going to happen if someone gets sick." You wait for her instructions but she leaves the room and walks out. You run after her to ask what your task will be for the festival and she points you towards the <a href='#president2'>table</a>.
+</div>
+
+
+<div id="president2" title="Student Council Room">
+As you walk towards the table you notice the president returning to the room, this time with a smile on her face. 
+#test kick_ed
+#iftrue <p>"Did you get upset that I shouted on you" the president asks you gracefully, "I don't think I should have done that" you answer. <br/>
+She picks up the file folder she was carrying and leaves.<br/>
+The <a href='#president3'>table</a> awaits your presence.
+
+</div>
+
+<div id="president3" title="Student Council Room">
+A large pile of papers are left on the table with a note. The note reads - "These are the attendees of the welcome ceremony, use the seating arrangement map of the main hall and assign everyone a chair." Some of these seem to already have been filled. The job will take you atleast a couple hours.<br/>
+
+#test died_from_paperwork
+
+#iffalse <a href="#dearth">Start working on the papers. </a>
+
+#iftrue <p>You can however ditch the work and explore around, while you have been excited to work for the welcome ceremony you can't really see yourself in the same situation again. It is very likely that whatever was the source of that light was from the sciencelab, things may not change if you don't do something about this.<br/>
+#iftrue <a rel="clear" href="#sciencelab">Go to the science hall</a> 
+</div>
+
+
+
+
+
+
+
+
+<div id="entry" title="Entry 4 to the Main Hall">
+
+#test died_from_paperwork
+#iftrue <p>As you enter the corridor, you feel a sudden burst of heat to your face followed by being pushed to the floor. The floor seemingly <a href='#the-void'>collapses</a>.
+#iffalse <p>The <a href='#entry2'>security</a> is a bit too strict for an event like this.
+</div>
+
+<div id="entry2" title="Entry 4 to the Main Hall">
+#test left_vyusian
+
+#iftrue <p>You weren't allowed to enter the hall through Entry 6 which was closer to the canteen and thus had to walk around the building to reach Entry 4. 
+
+#iffalse <p>Despite being in charge of a gate, Vyusian couldn't enter the hall from Entry 6 which was closer to the canteen. You follow him on his adventurous journey.
+
+Vyusian has quickly figured out all the particulars of his role. As many excuses you could make vyusian insists on you going to the president's <a href='#president'>office</a>.
+
+</div>
+
+
+
+
+<div id="sciencelab" title="Science Hall">
+
+You enter the science hall to see some familiar faces greet you. Everyone seems busy with some piece of machinary that might be useful for the entry ceremony and the play but all you can see is that they are doing nothing but fidgeting around with their tools. Asking a friend of yours you get no conclusive answer. At one corner of the hall a peculiar figure catches your attention, and his eyes catch yours. <br/>
+
+Two years ago when your blog "Spice for my potatoes" still had readers, username Murphy always left valuable research data on your posts. Every new spice you tried he'd try them too, but unlike you he wasn't just looking into finding the best spice you'd enjoy, he was looking for the-best-spice-ever, and for that he was looking forward to a scientifically sound result of the-best-spice-ever experiment. You still remember the annoyance his long comment wall would cause you but atleast it was better than spam or having no comments at all. Dropping the whole blog after finding onions drove the guy to quite some pressure, after sending you emails for half a year he decided to start a blog of his own with thorough explanations of his research. Despite it's massive success he still credits "Spice for my potatoes" as his inspiration. <br/>
+
+"Hey you, I'm talking to you." Murphy calls you. Despite the history you have never talked to Murphy in person, and having never seen you Murphy shouldn't be able to know who you are, just don't call him Murphy and you would be fine, a face to face version of his start-your-blog-again speech might be a bit too much to <a href="#sciencelab2">take</a>. 
+
+</div>
+
+<div id="sciencelab2" title="Science Hall">
+"Do you know much about using linux?" he asks, as you take a deep breath in he explains "they give me all these lights, they gave me all these projectors and speakers, and they ask me go connect it to the computers we have here at the school and get it done by today before the rehearsals, how am I supposed to do that, no one here knows anything about these, none of these gadgets have drivers for linux, am I supposed to write and compile the drivers myself here, I don't have the time, I don't even know how to do something like that, I'm not a systems programmer, what do they expect of me." Murphy stares at you but given the detailed rant you don't think he was actually asking for suggestions at the first place.
+
+"Who are you? I have never seen you here? Are you supposed to be here for something? Are you here to fix the lights?"
+
+Facing the barage of enquiries you realise that need to have a clear objective here. Knowing what you know if you don't figure out the reason for the lights you won't be able to stop it.
+
+"I don't think we have been introduced before, I'm ..." Murphy makes a shusshh noise before you can finish, "Names, jobs, blood groups, date of births, they belong in databases, secure databases, there is no need for me to know yours, I assume you are not here to fix the lights, whatever you are here for do not touch anything, do not do anything, if your existence in this sacred palace of mine distracts me from what's necessary I will not fix the lights and then the school can play their play under tubelights. If someone has send you here and if you are here looking for me tell them Spud is busy and chooses to remain busy as always."
+
+"Who's Spud?" you ask without thinking, "Who is Spud you ask ... I suppose you weren't here looking for me after all, this interaction has been nothing but a waste of time for me, perhaps not for you, Spud is the name that belongs to me and that is the name I am called with" asserts <a href="#sciencelab3">Spud</a>. 
+</div>
+
+
+
+
+<div id="sciencelab3" title="Science Hall">
+The awkward interaction felt to you as useless as it must have been to him, but attaching lights to a bunch of computers is not something that you think you saw in the dream, no amount of brightness can top that. As you spend time figuring out what could have gone wrong, hearing others call out Spud only increases your hunger for some potatoes if anything. And while you are at it you notice 2 shelves full of potatoes connected to each other covered under the mesh of its own wires. Before even your curiosity could strike Murphy appeared from behind the shelves.
+
+"Potatoes can produce electricity as it reacts to metals like zinc for upto 2 days you might know, and do not tell me you do not know as I do wish to know if you know", Murphy brings out a marker pen and starts drawing on a whiteboard - "what you see before your eyes is something one of a kind as I have built the first neural network out of potatoes, soon I will have something great to tell the world, the particular way they are connected is called a ..." you raise your hands as if to apologise "I can't possibly waste your time here I would before anything else apologise to you for wasting your time here so far and then take my leave if you don't mind'. As you wonder whether you are being rude Murphy answers "you have quite good observation skills, I am indeed distracted by your presence, it was however interesting talking to you, perhaps when I have some free time I can show you the neural network at work". You thank him once again for his generosity and make your way towards the door.
+
+The science lab has nothing in particular that can blow up to the proportions you were imagining. Perhaps the dream can just be left as a dream. The adventure here has left you very hungry. You are however very excited about telling Vyusian about finding Murphy in your own school. <br/>
+
+<a rel="clear" href="#entry">Go to Entry 4 of the main hall</a>
+</div>
+
+
+
+<div id="dearth" title="---">
+
+Your work gets interrupted as bright lights surround you, a sharp and intense sensation on your forehead leaves you unable to move. Yet you keep your eyes open.
+
+#test died_at_sciencelab
+#iftrue <p>Your effort at stopping the calamity has failed. The sciencelab was not the origin of the lights.<br/>
+
+
+#do died_from_paperwork = true;
+<a rel="clear" href="#the-void">Ascend</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- You shouldn't need to edit below this line. -->
+
+<script>
+var START = "start";
+var TRANS = "transcript";
+var transcript = null;
+
+var status_line = null;
+var moves_line = null;
+var score_line = null;
+
+var moves = 0;
+var score = {};
+var visited = {};
+
+window.addEventListener("load", function () {
+	"use strict";
+	
+	status_line = document.getElementById("status");
+	moves_line = document.getElementById("moves");
+	score_line = document.getElementById("score");
+	transcript = document.getElementById(TRANS);
+	var start = document.getElementById(START);
+	transcript.innerHTML = "";
+	advanceStory(start);
+});
+
+function advanceStory(fragment) {
+	var clone = fetchFragment(fragment);
+	if (status_line !== null && clone.title !== "") {
+		status_line.innerText = clone.title;
+		clone.removeAttribute("title");
+	}
+	transcript.appendChild(clone);
+	clone.scrollIntoView({behavior: "smooth"});
+}
+
+function fetchFragment(fragment) {
+	var clone = fragment.cloneNode(true);
+	setVisited(clone);
+	countScore(clone);
+	runScripts(clone);
+	setupLinks(clone.getElementsByTagName("a"));
+	clone.removeAttribute("id"); // No duplicates in document.
+	return clone;
+}
+
+function setVisited(fragment) {
+	if (fragment.classList === undefined) {
+		// Do nothing.
+	} else if (fragment.classList.add === undefined) {
+		// Do nothing.
+	} else if (visited[fragment.id]) {
+		fragment.classList.add("visited");
+	} else {
+		fragment.classList.add("unvisited");
+	}
+	visited[fragment.id] = true;
+}
+
+function countScore(fragment) {
+	if (fragment.dataset === undefined) {
+		return;
+	} else if (fragment.dataset.score === undefined) {
+		return;
+	} else {
+		score[fragment.id] = parseInt(fragment.dataset.score);
+		var total = 0;
+		for (var i in score)
+			total += score[i];
+		if (score_line !== null)
+			score_line.innerText = total;
+	}
+}
+
+function setupLinks(links) {
+	for (var i = 0; i < links.length; i++) {
+		if (links[i].rel !== "external") {
+			links[i].addEventListener("click", linkCallback);
+			links[i].addEventListener("keydown", linkCallback);
+		}
+	}
+}
+
+function clearLinks(links) {
+	for (var i = 0; i < links.length; i++) {
+		if (links[i].rel !== "external") {
+			clearOneLink(links[i]);
+			i--;
+		}
+	}
+}
+
+function clearOneLink(element) {
+	element.outerHTML = element.innerHTML;
+}
+
+function linkCallback(event) {
+	if (event.keyCode !== undefined)
+		if (event.keyCode !== 13 && event.keyCode !== 32)
+			return;
+	event.preventDefault();
+	var target_id = this.hash.slice(1);
+	var target = document.getElementById(target_id);
+	if (target === null) {
+		alert("Broken link!");
+		return;
+	}
+	if (this.rel === "clear") {
+		transcript.innerHTML = "";
+	} else if (this.rel === "continue") {
+		clearLinks(transcript.getElementsByTagName("a"));
+		transcript.appendChild(document.createElement("hr"));
+	} else if (this.rel === "reset") {
+		if (status_line !== null) status_line.innerHTML = "";
+		if (moves_line !== null) moves_line.innerHTML = "0";
+		if (score_line !== null) score_line.innerHTML = "0";
+		
+		transcript.innerHTML = "";
+		moves = 0;
+		score = {};
+		visited = {};
+	} else if (this.rel === "replace") {
+		var clone = fetchFragment(target);
+		while (clone.childNodes.length > 0)
+			this.parentNode.insertBefore(clone.firstChild, this);
+		this.parentNode.removeChild(this);
+		return;
+	} else {
+		clearOneLink(this);
+	}
+	moves++;
+	if (moves_line !== null)
+		moves_line.innerText = moves;
+	advanceStory(target);
+}
+
+// Micro-interpreter for a very simple template language.
+
+var commands = {};
+
+function runScripts(fragment) {
+	var lines = fragment.innerHTML.split("\n");
+	fragment.innerHTML = lines.map(substLine).join("\n");
+}
+
+function substLine(text) {
+	var text2 = text.replace(/^\s*#(\S+)(.*)$/, substCall);
+	return (text !== text2) ? text2 : substEval(text);
+}
+
+function substEval(text) {
+	try {
+		var subst = function (_, code) { return eval(code); };
+		return text.replace(/{{(.*?)}}/g, subst);
+	} catch (e) {
+		console.error("Error in expression: " + text);
+		console.error(e);
+		return "";
+	}
+}
+
+function substCall(line, name, args) {
+	if (name in commands) {
+		try {
+			return commands[name](args);
+		} catch (e) {
+			console.error("Error in command: " + line);
+			console.error(e);
+			return "";
+		}
+	} else {
+		return line;
+	}
+}
+
+var _test;
+
+commands.test = function (code) { _test = eval(code); return ""; };
+commands.iftrue = function (code) { return _test ? substEval(code) : ""; };
+commands.iffalse = function (code) { return _test ? "" : substEval(code); };
+
+commands["do"] = function (code) { eval(code); return ""; };
+commands["include"] = function (code) {	return include(eval(code)); };
+
+function include(id) {
+	var target = document.getElementById(id);
+	if (target !== null) {
+		return fetchFragment(target).outerHTML;
+	} else {
+		console.warn("Bad include: " + id);
+		return "";
+	}
+}
+
+commands.literal = function (code) { return (code); };
+
+// Utility functions for use by authors in their scripts.
+
+function inline(id) {
+	var target = document.getElementById(id);
+	if (target !== null) {
+		return fetchFragment(target).innerHTML;
+	} else {
+		console.warn("Bad inline: " + id);
+		return "";
+	}
+}
+
+function and(a, b) { return a && b; };
+function lt(a, b) { return a < b; };
+function lte(a, b) { return a <= b; };
+function gt(a, b) { return a > b; };
+function gte(a, b) { return a >= b; };
+</script>
