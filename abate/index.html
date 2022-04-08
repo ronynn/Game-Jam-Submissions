@@ -187,10 +187,10 @@ Vyusian looks towards your bag and says "there's only so far you can go avoiding
 
 "Can you get up?" <br/>
 <br/>
-<a href="#gate2">Take his hand to get up</a><br/>
+<a rel="continue" href="#gate2">Take his hand to get up</a><br/>
 <br/>
 
-#iffalse <a href="#pun">"Can You?"</a> 
+#iffalse <a rel="continue" href="#pun">"Can You?"</a> 
 </div>
 
 
@@ -236,9 +236,9 @@ He brings out a water bottle from his bag and hands it to you.
 <div id="door" title="At the Gates">
 
 #test kick_ed
-#iffalse <a href="#kicked">Kick it open</a> <br/>
+#iffalse <a rel="continue" href="#kicked">Kick it open</a> <br/>
 
-<a rel="clear" href="#front">Wait for someone to show up</a>
+<a rel="continue" href="#front">Wait for someone to show up</a>
 
 </div>
 
@@ -277,7 +277,7 @@ The <a href='#front2'>student council president</a> appears from the stairs near
 #test died_from_paperwork
 #iftrue <p>Vyusian asks you to meet him at the canteen, "I could come with you if you want" he suggests while you assure him not to worry about you. Then again you are hungry. The day in it's entirety is repeating right in front of you. Whatever you saw in your dreams when you were unconscious is happening all over again. As the shaking of your legs calm down you realise it is upon yourself to avoid redoing the same things you did in your dreams. <br/>
 
-<a href="#follow-president">Follow the Student President</a><br/>
+<a rel="continue" href="#follow-president">Follow the Student President</a><br/>
 <a rel="clear" href="#canteen">Go to the Canteen with Vyusian</a>
 </div>
 
@@ -299,7 +299,7 @@ A long line of customers seem to indicate that there is something special on the
 
 #iffalse <p>Vyusian isn't planning on eating anything right now. Judging by the long line he warns you that the president might get furious knowing that you didn't follow her order. He suggests waiting on your behalf and grabbing something to eat. You realise that Vyusian's concern is legitimate, however you are really hungry and have already fallen unconscious once. Buying atleast a bag of potato chips shouldn't take too much time.<br/>
 
-#iffalse <a href="#line">Wait for the line to end then go to Entry 4 of the hall</a><br/> or <a href="#president">Go to the president</a> <br/>
+#iffalse <a rel="continue" href="#line">Wait for the line to end then go to Entry 4 of the hall</a><br/> or <a rel="continue" href="#president">Go to the president</a> <br/>
 
 #iftrue <p>You can't waste your time here as whatever the reason for the bright lights was can only originate at the science lab. The only other possibility is that the lights were from the canteen which however can't be true given the distance of the student council room from the canteen and the lack of any superficial equipment here.<br/>
 
@@ -314,7 +314,7 @@ The neverending line at the canteen brings a sort of calmness in your heart. Per
 #do left_vyusian = true;
 The half an hour wait was worth it for the bag of chips. 
 
-<a href="#entry">Time to go check out Vyusian's Gate Duty</a>
+<a rel="continue" href="#entry">Time to go check out Vyusian's Gate Duty</a>
 </div>
 
 
