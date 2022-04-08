@@ -9,4 +9,4 @@ SPRING THING 2022<br/>
 Abate: Hide Behind the Curtains<br/>
 [Play here](https://r01nx.github.io/Game-Jam-Submissions/abate)<br/>
 A strand type game :) <br/>
-Made with the javascript library ficdown.js available under MIT License.
+Made in javascript using the ramus framework and sugarcube-2, compiled with tweego.
