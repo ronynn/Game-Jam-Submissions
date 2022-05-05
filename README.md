@@ -16,7 +16,7 @@ IFCOMP 2021
 <hr>
 
 - Intergalactic Chat Simulator
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Intergalactic-chat-simulator.html)
+- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Intergalactic-Chat-Simulator.html)
 - A drama
 
 <hr>
@@ -28,7 +28,7 @@ IFCOMP 2021
 <hr>
 
 - Nimble Brass
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/nimble-brass.html)
+- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Nimble-Brass.html)
 - A millionare simulator
 
 <hr>
