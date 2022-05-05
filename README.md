@@ -22,7 +22,7 @@ IFCOMP 2021
 <hr>
 
 - Dawn
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/dawn.html)
+- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Dawn.html)
 - A post-apocalyptic survival demo.
 
 <hr>
