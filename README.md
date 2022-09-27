@@ -3,7 +3,7 @@
 IFCOMP 2022
 - Lost in the Market
 - [Play here](https://ronynn.github.io/Game-Jam-Submissions/LATM)
-- Set in a fever dream when returning to your honetown after a failed music career.
+- Set in a fever dream when returning to your hometown after a failed music career.
 
 <hr>
 
@@ -16,7 +16,7 @@ SPRING THING 2022
 
 IFCOMP 2021
 - What Remains of Me
-- [Play here](https://ifcomp.org/play/2558/play_online), for touch screens [play here](https://r01nx.github.io/Game-Jam-Submissions/wrom/wrom-touch)
+- [Play here](https://ifcomp.org/play/2558/play_online), for touch screens [play here](https://ronynn.github.io/Game-Jam-Submissions/wrom/wrom-touch)
 - A neo-noir comedy that takes place in my old neighbourhood, a parser game blended into a retro GUI using TIC80.
 
 <hr>
