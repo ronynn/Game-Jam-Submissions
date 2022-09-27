@@ -1,0 +1,12 @@
+Lost at the Market is rather a simple game with very minimal puzzle elements. 
+While the choices are pretty straightforward a few interactive objects throughout the game are to be used to progress through the story.
+
+The game tries to make good use of GRUESCRIPT although in my opinion it only scratches the surface.
+I may not be that great at puzzle designs but participating in the IFCOMP keeps me more in touch with the happenings of the competition.
+I love to read the reviews and try my best to learn from the suggestions.
+Hopefully someday I will make a very nice game.
+
+At the beach, while the conversation holds its merits to the story, you have to break the sand castle to get to the next portion.
+At the room, to open the door go to the adjacent room, open the water tank, use the stick while on the roof to open the door.
+
+//I should have written this down while working on the game, but I suppose writing it while playtesting the game is even better.
