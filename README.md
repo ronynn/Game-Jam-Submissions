@@ -1,9 +1,15 @@
 #### Source Code to all of my game jam submissions. <br/>
 
+IFCOMP 2022
+- Lost in the Market
+- [Play here](https://ronynn.github.io/Game-Jam-Submissions/LATM)
+- Set in a fever dream when returning to your honetown after a failed music career.
+
+<hr>
 
 SPRING THING 2022
 - Abate: Hide Behind the Curtains
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/abate)
+- [Play here](https://ronynn.github.io/Game-Jam-Submissions/abate)
 - A strand type game :) made in javascript using the ramus framework and sugarcube-2, compiled with tweego.
 
 <hr>
@@ -16,19 +22,19 @@ IFCOMP 2021
 <hr>
 
 - Intergalactic Chat Simulator
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Intergalactic-Chat-Simulator.html)
+- [Play here](https://ronynn.github.io/Game-Jam-Submissions/Intergalactic-Chat-Simulator.html)
 - A drama
 
 <hr>
 
 - Dawn
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Dawn.html)
+- [Play here](https://ronynn.github.io/Game-Jam-Submissions/Dawn.html)
 - A post-apocalyptic survival demo.
 
 <hr>
 
 - Nimble Brass
-- [Play here](https://r01nx.github.io/Game-Jam-Submissions/Nimble-Brass.html)
+- [Play here](https://ronynn.github.io/Game-Jam-Submissions/Nimble-Brass.html)
 - A millionare simulator
 
 <hr>
