@@ -114,7 +114,7 @@ div#top_bar {
 	background-color: #ccccff;
 	color: #000033;
 	padding: 0px;
-	visibility: hidden;
+	visibility:none;
 }
 div#topbar_left {
 	padding: 0px;
@@ -195,7 +195,7 @@ div#conversation button {
 	}
 }
 
-
+/*
 @media (orientation: landscape){
 	// two-column layout 
 	
@@ -232,7 +232,7 @@ div#conversation button {
 	}	
 	
 } 
-
+*/
 
 /*
 button.examine {
@@ -463,7 +463,7 @@ Localisation = {
 		tell_about: "Tell about:",
 		say: "Say:",
 		its_dark: "It's dark.",
-		you_can_also_see: "{You} can also see:",
+		you_can_also_see: "{You} can see:",
 		you_can_also_see_scroller: "{You} can also see",
 		youre_holding: "{Youre} holding:",
 		youre_carrying: "{Youre} carrying:",
@@ -471,7 +471,7 @@ Localisation = {
 		taken: "Taken.",
 		you_cant_carry_any_more: "{You} can't carry any more.",
 		dropped: "Dropped.",
-		exits: "Exits:",
+		exits: "",
 		actions: "Actions:",
 		you_cant_see: "{You} can't see!",
 		its_too_dark_to_see_clearly: "It's too dark to see clearly.",
@@ -5624,20 +5624,20 @@ ConversationVerbs = [
 	
 			<div id="top_bar">
 				<div id="topbar_left">&nbsp;</div>
-				<div id="topbar_right">dark</div>
+				<div id="topbar_right">start</div>
 			</div>
 
 			<div id="scroller">
-				<div id="scroller_content"><p><span class="new_message">On my boatride back to my hometown after a failed music career, my insomnia seems to have finally ended, yet the world I have woken up to seems so different than the one I know of, and it talks to me in it's distinct voice known only to me.</span></p><p><span class="new_message">&nbsp;</span></p><p><span class="new_message"></span></p><div id="title"><span class="game_title">Lost at the Market</span><span class="game_author">By Jovial Ron</span></div><p></p><p><span class="new_message">For instructions, click: <button class="instructions" onclick="instructions();">instructions</button>
-</span></p><p><span class="new_message">A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet kept that thought aside. Still it is comforting to be here, but there's nothing to do.</span></p></div>
+				<div id="scroller_content"><p><span class="new_message">On my boatride back to my hometown after a failed music career, my insomnia seems to have finally ended, yet the world I have woken up to seems so different than the one I know of, and it talks to me in it's distinct voice known only to me.</span></p><p><span class="new_message">&nbsp;</span></p><p><span class="new_message">A demo is playable right now as the game can't be publicly available complete until IFCOMP starts</span></p><p><span class="new_message">Until then please get used to the controls</span></p><p><span class="new_message">&nbsp;</span></p><p><span class="new_message"></span></p><div id="title"><span class="game_title">Lost at the Market</span><span class="game_author">By Nynym</span></div><p></p><p><span class="new_message">For instructions, click: <button class="instructions" onclick="instructions();">instructions</button>
+</span></p><p><span class="new_message">Be prepared to take on your dream.</span></p></div>
 			</div>
 
 			<div id="conversation">
 			</div>
 
-			<div id="room_description_container" style="height: 249px;">
-				<div id="room_description" style=""><div class="im_in">A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet kept that thought aside. Still it is comforting to be here, but there's nothing to do.</div>
-<div class="exits"><button type="button" class="direction" onclick="go('north')">north</button> <button type="button" class="direction" onclick="go('wherevert')">wherevert</button></div>
+			<div id="room_description_container" style="height: 127px;">
+				<div id="room_description" style=""><div class="im_in">Be prepared to take on your dream.</div>
+<div class="exits"><button type="button" class="direction" onclick="go('Start')">Start</button> <button type="button" class="direction" onclick="go('About')">About</button> <button type="button" class="direction" onclick="go('Instructions')">Instructions</button></div>
 </div>
 			</div>
 
@@ -5646,8 +5646,9 @@ ConversationVerbs = [
 			</div>
 
 			<div id="savefix">
-				<div id="inventory_container" style="height: 4px;">
-					<div id="inventory"></div>
+				<div id="inventory_container" style="height: 29px;">
+					<div id="inventory">I'm carrying:
+<button type="button" onclick="hold('ticket')">ticket</button></div>
 				</div>
 			</div>
 			<div id="save_load_container">
@@ -5737,7 +5738,7 @@ ConversationVerbs = [
 	<textarea id="gsEdit" style="display: none;">
 game Lost at the Market
 id LATM
-author Jovial Ron
+author Nynym
 version 0.1
 examine on
 conversation on
@@ -5745,18 +5746,15 @@ wait off
 
 person 1
 
+
 say On my boatride back to my hometown after a failed music career, my insomnia seems to have finally ended, yet the world I have woken up to seems so different than the one I know of, and it talks to me in it's distinct voice known only to me.
+say
+say A demo is playable right now as the game can't be publicly available complete until IFCOMP starts
+say Until then please get used to the controls
 say
 
 status {$room}
-
-#remove Exits:
-#topbar display:none;
-# js sound effects, developer notes and commentary if you keep the browser console open while playing
-# css add pictures
-# css edits like detectiveland = hide splash to restart(), landscape mode
-#img.npc {width: 174px; height: 183px; float: right;} 
-#wedding-party and market level
+carry ticket
 
 
 
@@ -5794,22 +5792,92 @@ color page_background cadetblue #tan #lightpink
 
 
 
-
-
-
-
-
-
-room dark A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet kept that thought aside. Still it is comforting to be here, but there's nothing to do.
+room start Be prepared to take on your dream.
+dir Start dark
+dir About about
+dir Instructions inst
 tags start
+
+room inst
+dir Start dark
+dir About about
+prop desc Please refer to the text file in the link <a href=https://ronynn.github.io/Game-Jam-Submissions/LATM/walkthrough.txt>walkthrough.txt</a>
+
+
+room about 
+dir Start dark
+dir Instructions inst
+prop desc To learn more about the design choices and processes behind this interactive fiction piece please visit <a href="https://ronynn.github.io/Game-Jam-Submissions/LATM/walkthrough.txt"> walkthrough.txt </a>
+
+
+verb go About
+say Market: to engage in the commercial promotion, sale, or distribution of
+say
+say Market: the customers for a particular product or service
+say
+say Are we not all in a market full of our dreams and ambitions?
+
+
+room dark A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet you kept that thought aside. Still it is comforting to be here, but there's nothing to do.
 north light
-dir wherevert beach
+dir Who_am_I whoamI
+
+thing ticket
+tags portable
+desc A ticket to stardom perhaps, you have no idea what this is for!
+
+room whoamI Throughout the shade you find yourself in front of a mirror, yet you only see an image vaguely resembling you, ever transforming.
+dir reach_for_the_mirror mirror
+
+room mirror You see your own reflection in the mirror, but you look older.
+north light
+
+
+proc go reach_for_the_mirror
+say You stand closer to the mirror, the person infront of you seems sad, it stands back for a second as it fades away into the fog, all you can see now is your own reflection, but you seem to have aged.
+
 
 room light You are now in a big bright room, you see a beautiful white tree, a white tree within a white room, a beautiful white room that you will never encounter again in your dreams. But you are happy to have seen such a sight, and happy even if it was just a dream.
 north beach
-south dark
+dir the_dark_room dark
+dir the_mirror mirror
 
 room beach You are at the beach. You see an old gentleman sitting by the ocean.
+
+
+
+
+thing castle A sand castle
+desc Once in a while you see something like this and wonder what your dad would say, the point in building sand castles that are here waiting to be swept away by the ocean is the same dream that keeps the world moving, yet can anyone move the ocean?
+loc beach
+verbs break
+
+verb break castle
+prompt knock on {$this}
+say One swift kick to the castle and it turns back to sand. You don't feel happy about it.
+goto roof
+
+thing oldman Elderly Man
+desc An elderly gentleman staring into the endless ocean.
+loc beach
+tags alive male conversation
+prop start_conversation He pauses from staring at the ocean, and looks at you. "Perhaps I was the one at fault" he murmurs.
+prop end_conversation He sighs and continues his silent stare.
+
+
+setverb ask_oldman Beach
+verb ask_oldman Beach
+say "I think we are staring at the same thing", he answers.
+assign npc oldman
+
+setverb ask_oldman Ocean 
+verb ask_oldman Ocean
+say "It's serene" he answers, "perhaps to a disappointing extent."
+
+
+
+
+#-------------------------------
 
 room roof You just woke up at the roof of your apartment after a nice winter noon sleep. The door to the stairs is closed, you could open it with a stick.
 south tanks
@@ -5820,9 +5888,132 @@ north roof
 room stairs Seems a bit too long. Almost neverending, but you can only go up.
 up bathroom
 
+verb go up
+loc stairs
+say Perhaps a dream is nothing but a trap to one's goals, but those really your goals if you are not the ones to set them.
+hide rope
+hide stick
+
+room alley You can take the stairs from here
+north stairs 
+prop desc A narrow alleyway with a poster for a music concert. The star of the show seems a bit unclear to you.
+
+
+thing dish_antenna
+desc It seems pretty sturdy.
+loc roof
+
+thing rope
+desc A pretty sturdy rope, used for hanging clothes perhaps.
+loc tanks
+tags portable
+cverbs tie
+
+verb tie rope
+at roof
+say You tied the rope to the dish antenna, it seems safe to climb down to the alley below.
+put tied_rope roof
+
+verb tie rope
+!at roof
+say I tied this rope between two water tanks, it will surely be useful to someone trying to hang and dry their clothes here, not useful to me though.
+hide rope
+
+thing tied_rope
+desc This rope has been tied to the dish antenna and seems safe to be used
+verbs climb_down
+
+verb climb_down tied_rope
+at roof
+goto alley
+say Whoosh! There I go
+
+thing alley_rope
+loc alley
+verbs climb_back_up
+
+verb climb_back_up alley_rope
+goto roof
+say I don't know what I am doing to be honest, if this wasn't a dream I would look confused.
+
+
+thing watertank 
+desc This one might be the one sending water to your apartment. 
+loc tanks
+
+setverb open watertank
+verb open watertank
+say You see a bulb inside held by a stick, it keeps the water from overflowing.
+put stick tanks: You have taken the stick, you kind of need it right now.
+
+
+thing stick
+desc This stick was holding the bulb on the water tank
+tags portable takeable
+
+
+setverb poke stick
+verb poke stick
+!at roof
+say There's no place to poke the stick
+
+setverb poke stick
+verb poke stick
+at roof
+say The door to the stairs is now open
+goto stairs
+
+
+
+#---------------------------------
 
 room bathroom You seem to have locked yourself in this windowless bathroom
 
+thing toiletseat
+loc bathroom
+tags portable
+
+setverb take toiletseat
+verb take toiletseat
+!has toiletseat unbolted
+say It's bolted to the toilet.
+
+setverb unbolt toiletseat
+!has toiletseat unbolted
+held wrench
+
+verb unbolt toiletseat
+say It comes loose.
+tag toiletseat unbolted
+goto secondBathroom
+try notdream
+
+thing wrench
+tags portable
+loc bathroom
+
+thing hammerhoid_cream
+loc bathroom
+tags portable
+cverbs apply
+
+
+# DOESNT WORKS DOESNT WORKS
+#_________________________________
+
+verb apply hammerhoid_cream
+say You feel much relaxed.
+add hm 1
+run count
+
+proc count
+eq $hm 3
+say You ran out of hammeroid cream
+hide hammerhoid_cream
+
+
+
+#-----------------------------------
 room secondBathroom 
 prop desc It's the same bathroom but everything seems much more clearer, and it smells like butterscotch.
 north changingRoom
@@ -5842,10 +6033,64 @@ east changingRoom
 
 room stage
 south corridor
+east backstage
+prop desc People are waiting for the next performance, although no one seems excited watching you standing here.
+
+room backstage All the contestants are waiting here for their turns.
+west stage
+
+thing woman An organiser catches your attention, she is occasionally staring your way.
+loc backstage
+tags alive woman conversation
+prop start_conversation She looks at you curiously
+prop end_conversation She looks away
+
+setverb ask_woman Performance
+verb ask_woman Performance
+say Ya I do have a spare guitar, Ed told me the guy is wearing gloves of some kind
+
+setverb ask_woman A_Guitar
+verb ask_woman A_Guitar
+visible gloves
+say There you go, now go play it on the stage, the organiser brings you a spare guitar
+give guitar
+
+
+
+thing guitar
+tags portable
+cverbs Play
+
+verb Play guitar
+at stage
+goto question
+say You give your best performance, yet the crowd doesn't seems too attentive. From a corner you hear someone say "I thought they were a band".
+
+verb Play guitar
+at backstage
+say Some passerby give you an encouraging look, you notice others tuning their instruments
+
+
+#temp =============
+room question A white room with no sounds, and nothing else in sight, but if you squint ... you see something like a button
+
+thing button
+loc question
+verbs press tear_off
+
+verb press button
+carried ticket
+say No ticket decides what your future should be.
+!carried ticket
+say Dropping the ticket was the right decision, no ticket decides what your future should be.
+
+verb tear_off button
+die You wake up from your dream, you realise that the dream helped you clear your mind a bit. What you choose to do from here on out is your decision and yours only. Thank you for playing
 
 room exit Everything feels empty, yet there is a sense of calmness and serenity
 
 thing envelope
+desc It reads "A way out"
 tags portable
 loc exit
 cverbs open
@@ -5858,6 +6103,7 @@ die You find yourself at peace with your decision to leave your music career. Yo
 
 thing note 
 loc changingRoom
+tags portable
 cverbs open
 
 verb open note
@@ -5866,24 +6112,32 @@ say Your pianist won't be making it today, get your guitar and your drummer to t
 
 thing wardrobe
 loc changingRoom
-cverbs open close
+verbs open close
 
+setverb open wardrobe
 verb open wardrobe
-put overcoat
-put helmet
-put gloves
+put overcoat changingRoom
+put helmet changingRoom
+put gloves changingRoom
 
+setverb close wardrobe
 verb close wardrobe
 say Ouch! my fingers!
+!eq carried overcoat
+hide overcoat
+!eq carried helmet
+hide helmet
+!eq carried gloves
+hide gloves
 
-thing overcoat
-tags wearable
+thing overcoat Rappers and pop idols often popularise such fasion genres
+tags wearable portable
 
-thing gloves
-tags wearable
+thing gloves Fingerless gloves, you used them when playing the guitar
+tags wearable portable
 
-thing helmet
-tags wearable
+thing helmet DJ's use it as a gimmick
+tags wearable portable
 
 
 
@@ -5918,28 +6172,16 @@ say "Ain't seen ... what!"
 
 
 
-thing toiletseat
-loc bathroom
-tags portable
 
-setverb take toiletseat
-verb take toiletseat
-!has toiletseat unbolted
-say It's bolted to the toilet.
+#------------------------------
 
-setverb unbolt toiletseat
-!has toiletseat unbolted
-held wrench
+room Fruit-shop-front
 
-verb unbolt toiletseat
-say It comes loose.
-tag toiletseat unbolted
-goto secondBathroom
-try notdream
+room Fruit-shop
 
-thing wrench
-tags portable
-loc bathroom
+room Ramen-shop
+
+room Ramen-shop-Front
 
 
 
@@ -5956,60 +6198,9 @@ loc bathroom
 
 
 
-thing watertank 
-desc This one might be the one sending water to your apartment. 
-loc tanks
-
-setverb open watertank
-verb open watertank
-say You see a bulb inside held by a stick, it keeps the water from overflowing.
-give stick : You have taken the stick, you kind of need it right now.
-
-
-thing stick
-desc This stick was holding the bulb on the water tank
-
-setverb poke stick
-verb poke stick
-!at roof
-say There's no place to poke the stick
-
-setverb poke stick
-verb poke stick
-at roof
-say The door to the stairs is now open
-goto stairs
 
 
 
-
-
-thing castle A sand castle
-desc Once in a while you see something like this and wonder what your dad would say, the point in building sand castles that are here waiting to be swept away by the ocean is the same dream that keeps the world moving, yet can anyone move the ocean?
-loc beach
-verbs break
-
-verb break castle
-prompt knock on {$this}
-say One swift kick to the castle and it turns back to sand. You don't feel happy about it.
-goto roof
-
-thing oldman Elderly Man
-desc An elderly gentleman staring into the endless ocean.
-loc beach
-tags alive male conversation
-prop start_conversation He pauses from staring at the ocean, and looks at you. "Perhaps I was the one at fault" he murmurs.
-prop end_conversation He sighs and continues his silent stare.
-
-
-setverb ask_oldman Beach
-verb ask_oldman Beach
-say "I think we are staring at the same thing", he answers.
-assign npc oldman
-
-setverb ask_oldman Ocean 
-verb ask_oldman Ocean
-say "It's serene, to a disappointing extent."
 
 
 
