@@ -1,21 +1,54 @@
-Lost at the Market is rather a simple game with very minimal puzzle elements. 
+######################
+
+LOST AT THE MARKET
+by Nynym (it's a pseudonym ...)
+
+######################
+
+Lost at the Market is a rather simple game with very minimal puzzle elements. 
 While the choices are pretty straightforward a few interactive objects throughout the game are to be used to progress through the story.
 
+/--------------------
 Market: to engage in the commercial promotion, sale, or distribution of
 Market: the customers for a particular product or service
+/--------------------
 
+ABOUT
+-----
 The game tries to make good use of GRUESCRIPT although in my opinion it only scratches the surface.
-I may not be that great at puzzle designs but participating in the IFCOMP keeps me more in touch with the happenings of the competition.
-I love to read the reviews and try my best to learn from the suggestions.
-Hopefully someday I will make a very nice game.
+Rather than focussing on the puzzles, it rather makes you ponder upon what you could do in the place rather what you need to do to get to the next stage.
+It thus avoids being too descriptive on the main characters feelings.
+Sometimes words are hard to find, the thing we want to say never quite reach, but every piece is written with the hope that someday they will.
 
+While an "Author's Interpretation" portion is something I would like to avoid for this game as it might form a bias towards the players own way of looking at the journey, I personally wrote it as a representation of the dichotomy we often face in our lives.
+Our protagonist is someone who enjoys going with the flow, someone who likes to avoid overthinking life's hard decisions, yet the subconscious doesn't lets anyone be it's master.
+Symbolic representations such as the old man by the beach, the poster on the wall, taking off the toilet seat :) are thus open to interpretations.
+One can see the old man as an imagined future self, perhaps a boundary between the protagonist's sense of self and what forms the concept of others.
+
+
+I wanted to write an interactive story that plays around this idea and a few others.
+
+- How we see ourselves and how the world sees us is often different, but sometimes it's not and when we dream about people acting different to us, that's just our own overthinking effort.
+- While listening to a different genre of music is as easy as checking it out from the search tab, learning it and being good enough to be able to perform it are entirely different beasts.
+- The way we act and make decisions are often a result of the opinions we and those around us form, but going back to past decisions and wondering what could be different is something everyone probably does.
+
+I love to read the reviews and try my best to learn from the suggestions.
+
+WALKTHROUGH
+-----------
 At the beach, while the conversation holds its merits to the story, you have to break the sand castle to get to the next portion.
 At the roof, to open the door go to the adjacent room, open the water tank, use the stick while on the roof to open the door, although there are other ways.
 At the bathroom, use the wrench to unbolt the toilet and then you can take it and use the path. 
 At the stage you need your guitar to play, get your costume (gloves) and go to the backstage, or take the exit and read the envelope.
 
-I hope you wil have fun playing this piece of interactive fiction. 
+I hope you will have fun playing this piece of interactive fiction. 
 
 
-//The multimedia version seems less accessible so a redesign is in process and will be available through the About section in the game.
+TECHNICAL DETAILS
+-----------------
+Preferably use the latest version of your browser. Doesn't seems to be working on older versions earlier than 2021.
+It runs perfectly on chromium based browsers but hasn't been tested on too many devices.
+
+
+//An experimental multimedia version is available,but it seems less accessible so a redesign is in process and will be available through the About section in the game.
 //Same applies to the audio effects at the moment.

@@ -114,8 +114,7 @@ div#top_bar {
 	background-color: #ccccff;
 	color: #000033;
 	padding: 8px;
-  visibility: hidden;
-	
+	visibility: hidden;
 }
 div#topbar_left {
 	padding: 0px;
@@ -233,6 +232,7 @@ div#conversation button {
 	}	
 	
 } 
+
 
 /*
 button.examine {
@@ -471,7 +471,7 @@ Localisation = {
 		taken: "Taken.",
 		you_cant_carry_any_more: "{You} can't carry any more.",
 		dropped: "Dropped.",
-		exits: "",
+		exits: " ",
 		actions: "Actions:",
 		you_cant_see: "{You} can't see!",
 		its_too_dark_to_see_clearly: "It's too dark to see clearly.",
@@ -5753,14 +5753,18 @@ say
 status {$room}
 carry A_lyrics_sheet
 
-#remove Exits:
-#topbar display:none;
-# I can also see to I can see
+# remove Exits:
+# topbar display:none;
+# can also see to "can see"
+# add prop desc and write.desc
 
 # js sound effects, developer notes and commentary if you keep the browser console open while playing
 # css add pictures
 # css edits like detectiveland = hide splash to restart(), landscape mode
 #img.npc {width: 174px; height: 183px; float: right;} 
+
+#wedding-party and market level
+
 
 
 
@@ -5803,26 +5807,29 @@ dir About about
 dir Instructions inst
 tags start
 
-room inst
+room inst Instructions
 dir Start dark
 dir About about
 prop desc Please refer to the text file in the link <a href=https://ronynn.github.io/Game-Jam-Submissions/LATM/walkthrough.txt>walkthrough.txt</a>
 
 
-room about 
+room about About
 dir Start dark
 dir Instructions inst
 prop desc To learn more about the design choices and processes behind this interactive fiction piece please visit <a href="https://ronynn.github.io/Game-Jam-Submissions/LATM/walkthrough.txt"> walkthrough.txt </a>
 
 
 verb go About
-say Market: to engage in the commercial promotion, sale, or distribution of
+say ------------------------
+say <i>Market: to engage in the commercial promotion, sale, or distribution of
 say
-say Market: the customers for a particular product or service
+say Market: the customers for a particular product or service<i>
+say ------------------------
 say
 
 
-room dark A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet you kept that thought aside. Still it is comforting to be here, but there's nothing to do.
+room dark A dark room
+prop desc A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet you kept that thought aside. Still it is comforting to be here, but there's nothing to do.
 north light
 dir Who_am_I whoamI
 
@@ -5830,11 +5837,40 @@ dir Who_am_I whoamI
 thing A_lyrics_sheet
 tags portable
 desc A lyrics sheet but the lyrics seem unclear, perhaps you can read it later.
+cverbs Bring_it_Closer
 
-room whoamI Throughout the shade you find yourself in front of a mirror, yet you only see an image vaguely resembling you, ever transforming.
+verb Bring_it_Closer
+eq $vc 0
+say It makes no difference.
+
+verb Bring_it_Closer
+eq $vc 1
+say ------------------------------------
+say So much to say, so much to speak of,
+say So many words forming it's congestion.
+say Say what you want but I will pass through
+say To be or not to be that is the question.
+say ------------------------------------
+
+
+proc lyrics
+write A_lyrics_sheet.desc The lines are readable now.
+add vc 1
+
+
+
+
+
+
+
+
+
+room whoamI Who am I
+prop desc Throughout the shade you find yourself in front of a mirror, yet you only see an image vaguely resembling you, ever transforming.
 dir reach_for_the_mirror mirror
 
-room mirror You see your own reflection in the mirror, but you look older.
+room mirror A mirror
+prop desc You see your own reflection in the mirror, but you look older.
 north light
 
 
@@ -5842,23 +5878,25 @@ proc go reach_for_the_mirror
 say You stand closer to the mirror, the person infront of you seems sad, it stands back for a second as it fades away into the fog, all you can see now is your own reflection, but you seem to have aged.
 
 
-room light You are now in a big bright room, you see a beautiful white tree, a white tree within a white room, a beautiful white room that you will never encounter again in your dreams. But you are happy to have seen such a sight, and happy even if it was just a dream.
+room light A white room
+prop desc You are now in a big bright room, you see a beautiful white tree, a white tree within a white room, a beautiful white room that you will never encounter again in your dreams. But you are happy to have seen such a sight, and happy even if it was just a dream.
 north beach
 dir the_dark_room dark
 dir the_mirror mirror
 
-room beach You are at the beach. You see an old gentleman sitting by the ocean.
+room beach The beach
+prop desc You are at the beach. You see an old gentleman sitting by the ocean.
 
 
 
 
-thing castle A sand castle
+thing sand_castle 
 desc Once in a while you see something like this and wonder what your dad would say, the point in building sand castles that are here waiting to be swept away by the ocean is the same dream that keeps the world moving, yet can anyone move the ocean?
 loc beach
 verbs break
 
-verb break castle
-prompt knock on {$this}
+verb break
+prompt knock on castle
 say One swift kick to the castle and it turns back to sand. You don't feel happy about it.
 goto aske
 
@@ -5866,7 +5904,7 @@ thing oldman Elderly Man
 desc An elderly gentleman staring into the endless ocean.
 loc beach
 tags alive male conversation
-prop start_conversation He pauses from staring at the ocean, and looks at you. "Perhaps I was the one at fault" he murmurs.
+prop start_conversation He pauses from staring at the ocean, and looks at you. "Perhaps I was the one at fault" he murmurs. You keep staring hoping he would say something more but he didn't.
 prop end_conversation He sighs and continues his silent stare.
 
 
@@ -5882,13 +5920,16 @@ say "It's serene" he answers, "perhaps to a disappointing extent."
 
 
 
-room aske Why do we dream when we know we might never reach those aspirations?
+room aske A question to answer
+prop desc Why do we dream when we know we might never reach those aspirations?
 dir I_dont_know Wake_Up
 
-room Wake_Up If those dreams are never to be reached, then wake up!
+room Wake_Up To wake up or not to
+prop desc If those dreams are never to be reached, then wake up!
 
 
-thing An_Alarm_Clock An object, a symbol, make this dream end!
+thing An_Alarm_Clock Ringgggg....!!
+desc An object, a symbol, make this dream end!
 loc Wake_Up
 verbs Hit
 
@@ -5898,16 +5939,20 @@ goto roof
 
 #-------------------------------
 
-room roof You just woke up at the roof of your apartment after a nice winter noon sleep. The door to the stairs is closed, you could open it with a stick.
+room roof A roof with great sights of the surrounding buildings
+prop desc You just woke up at the roof of your apartment after a nice winter noon nap. "Oops, I did it again" you smirk under your facemask. The door to the stairs is closed, you could open it with a stick.
 south tanks
 
-room tanks This is where the water tanks of the apartment building are kept, one is right in front of you.
+room tanks The watertanks
+prop desc This is where the water tanks of the apartment building are kept, one is right in front of you. Others are a bit harder to get to.
 north roof
 
-room stairs Seems a bit too long. Almost neverending, but you can only go up. A poster for a music concert seems to be handpainted on the wall, what makes someone a star?
+room stairs The stairs
+prop desc Seems a bit too long. Almost neverending, but you can only go up. A poster for a music concert seems to be handpainted on the wall, what makes someone a star?
 up bathroom
 
-thing poster Handpainted, good amount of effort seems to have gone into it.
+thing poster A poster
+desc Handpainted, good amount of effort seems to have gone into it.
 loc stairs
 
 
@@ -5917,14 +5962,14 @@ say Perhaps a dream is nothing but a trap to one's goals, but those really your 
 hide rope
 hide stick
 
-room alley
+room alley A narrow alley.
 north stairs 
-prop desc A narrow alleyway with a poster for a music concert. The star of the show seems a bit unclear to you.
+prop desc A narrow alleyway with a poster for a music concert. The star of the show seems a bit unclear to you. You can take the stairs to the north.
 
 
 
 thing dish_antenna
-desc It seems pretty sturdy.
+desc It seems pretty sturdy. You can't send morse code to your friends with it, although you have never tried extra terrestrial communication.
 loc roof
 
 thing rope
@@ -5965,36 +6010,40 @@ say I don't know what I am doing to be honest, if this wasn't a dream I would lo
 thing watertank 
 desc This one might be the one sending water to your apartment. 
 loc tanks
+verbs open
 
-setverb open watertank
+
 verb open watertank
-say You see a bulb inside held by a stick, it keeps the water from overflowing.
-put stick tanks: You have taken the stick, you kind of need it right now.
+say You see a bulb inside held by a stick, it keeps the water from overflowing, you can take it out then open the tank again to put it back, you might need it right now.
+bring stick tanks
+
 
 
 thing stick
 desc This stick was holding the bulb on the water tank
 tags portable takeable
+cverbs poke
 
-
-setverb poke stick
 verb poke stick
 !at roof
 say There's no place to poke the stick
 
-setverb poke stick
 verb poke stick
 at roof
-say The door to the stairs is now open
+say The door to the stairs is now open, you are now at the stairs. But you can't see the roof.
+hide stick
+hide rope
 goto stairs
 
 
 
 #---------------------------------
 
-room bathroom You seem to have locked yourself in this windowless bathroom
+room bathroom A bathroom
+prop desc You seem to have locked yourself in this windowless bathroom
 
 thing toiletseat
+desc Seems recently clean, almost shining.
 loc bathroom
 tags portable
 
@@ -6010,20 +6059,24 @@ held wrench
 verb unbolt toiletseat
 say It comes loose.
 tag toiletseat unbolted
-put Hole
+put Hole bathroom: A hole appears on the bathroom floor.
 
-thing Hole You see a hole on he floor, it seems to be going somewhere
+thing Hole 
+desc You see a hole on the floor, it seems to be going somewhere
 verbs Go_Through
 
 verb Go_Through Hole
 goto secondBathroom
 try notdream
+hide wrench
 
 thing wrench
+desc A slightly rusted wrench, nothing out of ordinary about it.
 tags portable
 loc bathroom
 
 thing hammerhoid_cream
+desc Used for pain relief
 loc bathroom
 tags portable
 cverbs apply
@@ -6041,7 +6094,7 @@ hide hammerhoid_cream
 
 
 #-----------------------------------
-room secondBathroom 
+room secondBathroom In that bathroom again.
 prop desc It's the same bathroom but everything seems much more clearer, and it smells like butterscotch.
 north changingRoom
 
@@ -6049,16 +6102,18 @@ north changingRoom
 proc notdream
 say It doesn't feels that dreamlike anymore, this seems to be a memory of yours, your last bet at a music career, and your drummer is half asleep in the bathroom
 
-room changingRoom 
+room changingRoom A changing room
+prop desc You manager arranged a room for your band while the other performers are just waiting backstage.
 west corridor
 south secondBathroom
 
-room corridor
+room corridor A corridor
+prop desc A recently cleaned corridor with that lime smell.
 north stage
 south exit
 east changingRoom
 
-room stage
+room stage Main Stage
 south corridor
 east backstage
 prop desc People are waiting for the next performance, although no one seems excited watching you standing here.
@@ -6066,7 +6121,8 @@ prop desc People are waiting for the next performance, although no one seems exc
 room backstage All the contestants are waiting here for their turns.
 west stage
 
-thing woman An organiser catches your attention, she is occasionally staring your way.
+thing woman An organiser 
+desc An organiser catches your attention, she is occasionally staring your way.
 loc backstage
 tags alive woman conversation
 prop start_conversation She looks at you curiously
@@ -6074,14 +6130,15 @@ prop end_conversation She looks away
 
 setverb ask_woman Performance
 verb ask_woman Performance
-say Ya I do have a spare guitar, Ed told me the guy is wearing gloves of some kind
+say "Ya I do have a spare guitar, Ed told me the the guitarist is wearing gloves of some kind", you get a rough idea of what you need to do.
 
 setverb ask_woman A_Guitar
 verb ask_woman A_Guitar
 visible gloves
-say There you go, now go play it on the stage, the organiser brings you a spare guitar
+say "There you go, now go play it on the stage", the organiser brings you a spare guitar
 give guitar
-
+!visible gloves
+say "Send the guitarist if you know them"
 
 
 thing guitar
@@ -6091,7 +6148,7 @@ cverbs Play
 verb Play guitar
 at stage
 goto request
-say You give your best performance, a folk song you learned from your grandfather, everyone you ever sand this to felt cheered up, yet the crowd doesn't seems too attentive. From a corner you hear someone say "I thought they were a band".
+say You give your best performance, a folk song you learned from your grandfather, everyone you ever sang this to felt cheered up, yet the crowd doesn't seems too attentive. From a corner you hear someone say "I thought they were a band".
 
 verb Play guitar
 at backstage
@@ -6100,35 +6157,45 @@ say Some passerby give you an encouraging look, you notice others tuning their i
 room request Within the occasional booing noises you hear a few shouts of "sing something pop, "sing something we knows, oooooo", "Did anyone see my wallet?"
 verbs Sing_A_Pop_Song Refuse
 
-thing The_Manager She's showing you a thumbs up sign from the backstage.
+thing The_Manager 
+desc She's showing you a thumbs up sign from the backstage.
 loc request
 
 
 verb Sing_A_Pop_Song
 say You put your heart and soul into it as you see everyone's eyes glaze with passion
 goto question
+hide guitar
+hide gloves
 
 verb Refuse
 say Passion is something to be cherished, a dream without passion is just being derisive to it. You refuse to sing outside the genre you are passionate about.
 goto question
+hide guitar
+hide gloves
 
 
 #temp =============
 room question A white room with no sounds, and nothing else in sight, but wait ... if you squint ... you can see something like a microphone
 
-thing microphone An ordinary microphone, it's wires wave with he wind, almost as if it's calling you towards itself.
+thing microphone 
+desc An ordinary microphone, it's wires wave with the wind, almost as if it's calling you towards itself.
 loc question
 verbs Take_it_in_your_hands_and_sing_your_heart_out Stand_before_it_and_sing_your_heart_out
 
 verb Take_it_in_your_hands_and_sing_your_heart_out
 say You are finally awake!, perhaps the dream helped you clear your mind a bit, perhaps it didn't. What you choose to do from here on out is your decision and yours only. Thank you for playing.
+run lyrics
 goto End
 
 verb Stand_before_it_and_sing_your_heart_out
 say You wake up from your dream, perhaps it helped you clear your mind a bit, perhaps it didn't. What you choose to do from here on out is your decision and yours only. Thank you for playing.
+run lyrics
+hide note
+hide envelope
 goto End
 
-room End You have finally reached the end of this game. I hope you enjoyed it. You can restart the game and check out the choices you could have made differently. Or perhaps read nore about it in the about section.
+room End You have finally reached the end of this game. I hope you enjoyed it. You can restart the game and check out the choices you could have made differently. Or perhaps read more about it in the About section.
 
 room exit Everything feels empty, yet there is a sense of calmness and serenity
 
@@ -6140,7 +6207,7 @@ cverbs open
 
 
 verb open envelope
-die You find yourself at peace with your decision to leave your music career. You look forward to what other adventures life has in offer for you. GAME OVER
+die You find yourself at peace with your decision to leave your music career. You look forward to what other adventures life has in offer for you. The dream ends disappointingly in your attempt to find a quick exit. GAME OVER
 
 
 
@@ -6155,27 +6222,21 @@ say "Your pianist won't be making it today, get your guitar and your drummer to 
 
 
 thing wardrobe
+desc A wardrobe for costumes with a mirror surrounded my lights, the mirror is too dark.
 loc changingRoom
-verbs open close
+verbs open
 
-setverb open wardrobe
 verb open wardrobe
 put overcoat changingRoom
 put helmet changingRoom
 put gloves changingRoom
-add op 1
-
+say A bunch of costumes fall out.
 setverb close wardrobe
+write wardrobe.verbs close
+
 verb close wardrobe
-eq $op 1
-add $op -1
-say Ouch! my fingers!
-!eq carried overcoat
-hide overcoat
-!eq carried helmet
-hide helmet
-!eq carried gloves
-hide gloves
+say "Ouch! my fingers!" you shout as you fail to close the wardrobe.
+
 
 thing overcoat 
 prop desc Rappers and pop idols often popularise such fasion genres
