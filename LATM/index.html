@@ -34,7 +34,6 @@ span.game_title {
 	display: block;
 	text-decoration: underline;
 	text-transform: uppercase;
-	font-size: 1.1em;
 }
 
 span.game_author {
@@ -196,7 +195,7 @@ div#conversation button {
 	}
 }
 
-
+/*
 @media (orientation: landscape){
 	// two-column layout 
 	
@@ -233,7 +232,7 @@ div#conversation button {
 	}	
 	
 } 
-
+*/
 
 /*
 button.examine {
@@ -472,7 +471,7 @@ Localisation = {
 		taken: "Taken.",
 		you_cant_carry_any_more: "{You} can't carry any more.",
 		dropped: "Dropped.",
-		exits: "",
+		exits: "Exits:",
 		actions: "Actions:",
 		you_cant_see: "{You} can't see!",
 		its_too_dark_to_see_clearly: "It's too dark to see clearly.",
@@ -938,61 +937,6 @@ Gruescript.commands = {
 			}
 		}
 	},
-	create: { // create an object
-		args: ['value','+value'],
-		func: function(thingName, descWords) {
-			if(!legal_name(roomName)) {
-				return do_runtime_error("couldn't create thing: \""+thingName+"\" is not a valid name");
-			}
-			if(Game.things[thingName]) {
-				return do_runtime_warning("couldn't create thing \""+thingName+"\" as it already exists");
-			}
-			Game.things[thingName] = buildThing({lineN:0,name:thingName,code:['thing '+thingName+' '+descWords.join(' ')]});
-		}
-	},
-	destroy: { // destroy an object
-		args: ['thing'],
-		func: function(thing) {
-			hide(thing);
-			delete Game.things.thing;
-		}
-	},
-	createroom: { // create a room
-		args: ['value','+value'],
-		func: function(roomName, descWords) {
-			if(!legal_name(roomName)) {
-				return do_runtime_error("couldn't create room: \""+roomName+"\" is not a valid name");
-			}
-			if(Game.rooms[roomName]) {
-				return do_runtime_warning("couldn't create room \""+roomName+"\" as it already exists");
-			}
-			Game.rooms[roomName] = buildroom({lineN:0,name:roomName,code:['room '+roomName+' '+descWords.join(' ')]});
-			Game.rooms[roomName].directions = {};
-		}
-	},
-	destroyroom: { // destroy a room
-		args: ['room'],
-		func: function(room) {
-			if(Game.vars.room==room) {
-				return do_runtime_error("couldn't destroy room \""+room+"\" as it is the hero's location");
-			}
-			for(var thing in Game.things) {
-				if(location_of(thing)==room) {
-					hide(thing);
-				}
-			}
-			for(var i in Game.rooms) {
-				if(i!=room) {
-					for(var dir in Game.rooms[i].directions) {
-						if(Game.rooms[i].directions[dir] == room) {
-							delete Game.rooms[i].directions[dir];
-						}
-					}
-				}
-			}
-			delete Game.rooms[room];
-		}
-	},
 	log: {
 		args: ['+value'],
 		func: function(values) {
@@ -1280,12 +1224,6 @@ Gruescript.listers = {
 		args: ['+value'],
 		func: function(values) {
 			return values;
-		}
-	},
-	from: {
-		args: ['string'],
-		func: function(words) {
-			return words.match(/\S+/g) || []
 		}
 	},
 	numbers: {
@@ -1859,12 +1797,12 @@ function readIfChanged() {
 		readGruescript();
 	}
 }
-/*
+
 $(document).ready(function() {
 	if(IS_EXPORT) {
 		buildGame(true);
 	}
-}); */
+});
 
 function readGruescript() {
 	GRUESCRIPT_SRC = $('#gsEdit').val().replaceAll('\r\n','\n').replaceAll('\r','\n').split('\n');
@@ -3284,7 +3222,7 @@ function draw_noun(thing) {
 	if(Game.examine && !Game.things[thing].no_examine) {
 		return draw_button(img + desc, "do_verb('examine','" + thing + "')", true);
 	} else {
-		return img + expandBraces(desc);
+		return img + desc;
 	}
 }
 
@@ -5675,6 +5613,8 @@ ConversationVerbs = [
 	}
 ];
 
+
+
 		
 		</script>
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -5695,7 +5635,7 @@ ConversationVerbs = [
 			<div id="conversation">
 			</div>
 
-			<div id="room_description_container" style="height: 127px;">
+			<div id="room_description_container" style="height: 169px;">
 				<div id="room_description" style=""><div class="im_in">Be prepared to take on your dream.</div>
 <div class="exits"> <button type="button" class="direction" onclick="go('Start')">Start</button> <button type="button" class="direction" onclick="go('About')">About</button> <button type="button" class="direction" onclick="go('Instructions')">Instructions</button></div>
 </div>
