@@ -113,8 +113,9 @@ button.examine {
 div#top_bar {
 	background-color: #ccccff;
 	color: #000033;
-	padding: 0px;
-	visibility:none;
+	padding: 8px;
+  visibility: hidden;
+	
 }
 div#topbar_left {
 	padding: 0px;
@@ -195,7 +196,7 @@ div#conversation button {
 	}
 }
 
-/*
+
 @media (orientation: landscape){
 	// two-column layout 
 	
@@ -232,7 +233,6 @@ div#conversation button {
 	}	
 	
 } 
-*/
 
 /*
 button.examine {
@@ -464,7 +464,7 @@ Localisation = {
 		say: "Say:",
 		its_dark: "It's dark.",
 		you_can_also_see: "{You} can see:",
-		you_can_also_see_scroller: "{You} can also see",
+		you_can_also_see_scroller: "{You} can see",
 		youre_holding: "{Youre} holding:",
 		youre_carrying: "{Youre} carrying:",
 		youre_wearing: "{Youre} wearing:",
@@ -5628,8 +5628,8 @@ ConversationVerbs = [
 			</div>
 
 			<div id="scroller">
-				<div id="scroller_content"><p><span class="new_message">On my boatride back to my hometown after a failed music career, my insomnia seems to have finally ended, yet the world I have woken up to seems so different than the one I know of, and it talks to me in it's distinct voice known only to me.</span></p><p><span class="new_message">&nbsp;</span></p><p><span class="new_message">A demo is playable right now as the game can't be publicly available complete until IFCOMP starts</span></p><p><span class="new_message">Until then please get used to the controls</span></p><p><span class="new_message">&nbsp;</span></p><p><span class="new_message"></span></p><div id="title"><span class="game_title">Lost at the Market</span><span class="game_author">By Nynym</span></div><p></p><p><span class="new_message">For instructions, click: <button class="instructions" onclick="instructions();">instructions</button>
-</span></p><p><span class="new_message">Be prepared to take on your dream.</span></p></div>
+				<div id="scroller_content"><p><span class="new_message">On my boatride back to my hometown after a failed music career, my insomnia seems to have finally ended, yet the world I have woken up to seems so different than the one I know of, and it talks to me in it's distinct voice known only to me.</span></p><p><span class="new_message">&nbsp;</span></p><p><span class="new_message"></span></p><div id="title"><span class="game_title">Lost at the Market</span><span class="game_author">By Nynym</span></div><p></p><p><span class="new_message">For instructions, click: <button class="instructions" onclick="instructions();">instructions</button>
+</span></p></div>
 			</div>
 
 			<div id="conversation">
@@ -5637,7 +5637,7 @@ ConversationVerbs = [
 
 			<div id="room_description_container" style="height: 127px;">
 				<div id="room_description" style=""><div class="im_in">Be prepared to take on your dream.</div>
-<div class="exits"><button type="button" class="direction" onclick="go('Start')">Start</button> <button type="button" class="direction" onclick="go('About')">About</button> <button type="button" class="direction" onclick="go('Instructions')">Instructions</button></div>
+<div class="exits"> <button type="button" class="direction" onclick="go('Start')">Start</button> <button type="button" class="direction" onclick="go('About')">About</button> <button type="button" class="direction" onclick="go('Instructions')">Instructions</button></div>
 </div>
 			</div>
 
@@ -5646,9 +5646,9 @@ ConversationVerbs = [
 			</div>
 
 			<div id="savefix">
-				<div id="inventory_container" style="height: 29px;">
+				<div id="inventory_container" style="height: 50px;">
 					<div id="inventory">I'm carrying:
-<button type="button" onclick="hold('ticket')">ticket</button></div>
+<button type="button" onclick="hold('A_lyrics_sheet')">A lyrics sheet</button></div>
 				</div>
 			</div>
 			<div id="save_load_container">
@@ -5749,13 +5749,18 @@ person 1
 
 say On my boatride back to my hometown after a failed music career, my insomnia seems to have finally ended, yet the world I have woken up to seems so different than the one I know of, and it talks to me in it's distinct voice known only to me.
 say
-say A demo is playable right now as the game can't be publicly available complete until IFCOMP starts
-say Until then please get used to the controls
-say
 
 status {$room}
-carry ticket
+carry A_lyrics_sheet
 
+#remove Exits:
+#topbar display:none;
+# I can also see to I can see
+
+# js sound effects, developer notes and commentary if you keep the browser console open while playing
+# css add pictures
+# css edits like detectiveland = hide splash to restart(), landscape mode
+#img.npc {width: 174px; height: 183px; float: right;} 
 
 
 
@@ -5815,16 +5820,16 @@ say Market: to engage in the commercial promotion, sale, or distribution of
 say
 say Market: the customers for a particular product or service
 say
-say Are we not all in a market full of our dreams and ambitions?
 
 
 room dark A fog covered room, unseen yet familiar, in your heart you knew you will be waking up here, yet you kept that thought aside. Still it is comforting to be here, but there's nothing to do.
 north light
 dir Who_am_I whoamI
 
-thing ticket
+
+thing A_lyrics_sheet
 tags portable
-desc A ticket to stardom perhaps, you have no idea what this is for!
+desc A lyrics sheet but the lyrics seem unclear, perhaps you can read it later.
 
 room whoamI Throughout the shade you find yourself in front of a mirror, yet you only see an image vaguely resembling you, ever transforming.
 dir reach_for_the_mirror mirror
@@ -5855,7 +5860,7 @@ verbs break
 verb break castle
 prompt knock on {$this}
 say One swift kick to the castle and it turns back to sand. You don't feel happy about it.
-goto roof
+goto aske
 
 thing oldman Elderly Man
 desc An elderly gentleman staring into the endless ocean.
@@ -5877,6 +5882,20 @@ say "It's serene" he answers, "perhaps to a disappointing extent."
 
 
 
+room aske Why do we dream when we know we might never reach those aspirations?
+dir I_dont_know Wake_Up
+
+room Wake_Up If those dreams are never to be reached, then wake up!
+
+
+thing An_Alarm_Clock An object, a symbol, make this dream end!
+loc Wake_Up
+verbs Hit
+
+verb Hit An_Alarm_Clock
+goto roof
+
+
 #-------------------------------
 
 room roof You just woke up at the roof of your apartment after a nice winter noon sleep. The door to the stairs is closed, you could open it with a stick.
@@ -5885,8 +5904,12 @@ south tanks
 room tanks This is where the water tanks of the apartment building are kept, one is right in front of you.
 north roof
 
-room stairs Seems a bit too long. Almost neverending, but you can only go up.
+room stairs Seems a bit too long. Almost neverending, but you can only go up. A poster for a music concert seems to be handpainted on the wall, what makes someone a star?
 up bathroom
+
+thing poster Handpainted, good amount of effort seems to have gone into it.
+loc stairs
+
 
 verb go up
 loc stairs
@@ -5894,9 +5917,10 @@ say Perhaps a dream is nothing but a trap to one's goals, but those really your 
 hide rope
 hide stick
 
-room alley You can take the stairs from here
+room alley
 north stairs 
 prop desc A narrow alleyway with a poster for a music concert. The star of the show seems a bit unclear to you.
+
 
 
 thing dish_antenna
@@ -5913,9 +5937,10 @@ verb tie rope
 at roof
 say You tied the rope to the dish antenna, it seems safe to climb down to the alley below.
 put tied_rope roof
+hide rope
 
 verb tie rope
-!at roof
+at watertank
 say I tied this rope between two water tanks, it will surely be useful to someone trying to hang and dry their clothes here, not useful to me though.
 hide rope
 
@@ -5985,6 +6010,12 @@ held wrench
 verb unbolt toiletseat
 say It comes loose.
 tag toiletseat unbolted
+put Hole
+
+thing Hole You see a hole on he floor, it seems to be going somewhere
+verbs Go_Through
+
+verb Go_Through Hole
 goto secondBathroom
 try notdream
 
@@ -5996,10 +6027,6 @@ thing hammerhoid_cream
 loc bathroom
 tags portable
 cverbs apply
-
-
-# DOESNT WORKS DOESNT WORKS
-#_________________________________
 
 verb apply hammerhoid_cream
 say You feel much relaxed.
@@ -6063,34 +6090,50 @@ cverbs Play
 
 verb Play guitar
 at stage
-goto question
-say You give your best performance, yet the crowd doesn't seems too attentive. From a corner you hear someone say "I thought they were a band".
+goto request
+say You give your best performance, a folk song you learned from your grandfather, everyone you ever sand this to felt cheered up, yet the crowd doesn't seems too attentive. From a corner you hear someone say "I thought they were a band".
 
 verb Play guitar
 at backstage
 say Some passerby give you an encouraging look, you notice others tuning their instruments
 
+room request Within the occasional booing noises you hear a few shouts of "sing something pop, "sing something we knows, oooooo", "Did anyone see my wallet?"
+verbs Sing_A_Pop_Song Refuse
+
+thing The_Manager She's showing you a thumbs up sign from the backstage.
+loc request
+
+
+verb Sing_A_Pop_Song
+say You put your heart and soul into it as you see everyone's eyes glaze with passion
+goto question
+
+verb Refuse
+say Passion is something to be cherished, a dream without passion is just being derisive to it. You refuse to sing outside the genre you are passionate about.
+goto question
+
 
 #temp =============
-room question A white room with no sounds, and nothing else in sight, but if you squint ... you see something like a button
+room question A white room with no sounds, and nothing else in sight, but wait ... if you squint ... you can see something like a microphone
 
-thing button
+thing microphone An ordinary microphone, it's wires wave with he wind, almost as if it's calling you towards itself.
 loc question
-verbs press tear_off
+verbs Take_it_in_your_hands_and_sing_your_heart_out Stand_before_it_and_sing_your_heart_out
 
-verb press button
-carried ticket
-say No ticket decides what your future should be.
-!carried ticket
-say Dropping the ticket was the right decision, no ticket decides what your future should be.
+verb Take_it_in_your_hands_and_sing_your_heart_out
+say You are finally awake!, perhaps the dream helped you clear your mind a bit, perhaps it didn't. What you choose to do from here on out is your decision and yours only. Thank you for playing.
+goto End
 
-verb tear_off button
-die You wake up from your dream, you realise that the dream helped you clear your mind a bit. What you choose to do from here on out is your decision and yours only. Thank you for playing
+verb Stand_before_it_and_sing_your_heart_out
+say You wake up from your dream, perhaps it helped you clear your mind a bit, perhaps it didn't. What you choose to do from here on out is your decision and yours only. Thank you for playing.
+goto End
+
+room End You have finally reached the end of this game. I hope you enjoyed it. You can restart the game and check out the choices you could have made differently. Or perhaps read nore about it in the about section.
 
 room exit Everything feels empty, yet there is a sense of calmness and serenity
 
 thing envelope
-desc It reads "A way out"
+desc It reads "A way out", seems to be filled with a decision.
 tags portable
 loc exit
 cverbs open
@@ -6102,12 +6145,13 @@ die You find yourself at peace with your decision to leave your music career. Yo
 
 
 thing note 
+prop desc A note from your so called manager, at least he got you this audition, forming the band might have been his idea.
 loc changingRoom
 tags portable
 cverbs open
 
 verb open note
-say Your pianist won't be making it today, get your guitar and your drummer to the stage
+say "Your pianist won't be making it today, get your guitar and your drummer to the stage." - <i>With Love<i>
 
 
 thing wardrobe
@@ -6119,9 +6163,12 @@ verb open wardrobe
 put overcoat changingRoom
 put helmet changingRoom
 put gloves changingRoom
+add op 1
 
 setverb close wardrobe
 verb close wardrobe
+eq $op 1
+add $op -1
 say Ouch! my fingers!
 !eq carried overcoat
 hide overcoat
@@ -6130,13 +6177,16 @@ hide helmet
 !eq carried gloves
 hide gloves
 
-thing overcoat Rappers and pop idols often popularise such fasion genres
+thing overcoat 
+prop desc Rappers and pop idols often popularise such fasion genres
 tags wearable portable
 
-thing gloves Fingerless gloves, you used them when playing the guitar
+thing gloves 
+prop desc Fingerless gloves, you used them when playing the guitar
 tags wearable portable
 
-thing helmet DJ's use it as a gimmick
+thing helmet 
+prop desc DJ's use it as a gimmick
 tags wearable portable
 
 
@@ -6174,14 +6224,6 @@ say "Ain't seen ... what!"
 
 
 #------------------------------
-
-room Fruit-shop-front
-
-room Fruit-shop
-
-room Ramen-shop
-
-room Ramen-shop-Front
 
 
 

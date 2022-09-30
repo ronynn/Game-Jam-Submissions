@@ -3,7 +3,6 @@ While the choices are pretty straightforward a few interactive objects throughou
 
 Market: to engage in the commercial promotion, sale, or distribution of
 Market: the customers for a particular product or service
-Are we not all in a market full of our dreams and ambitions?
 
 The game tries to make good use of GRUESCRIPT although in my opinion it only scratches the surface.
 I may not be that great at puzzle designs but participating in the IFCOMP keeps me more in touch with the happenings of the competition.
@@ -11,12 +10,12 @@ I love to read the reviews and try my best to learn from the suggestions.
 Hopefully someday I will make a very nice game.
 
 At the beach, while the conversation holds its merits to the story, you have to break the sand castle to get to the next portion.
-At the roof, to open the door go to the adjacent room, open the water tank, use the stick while on the roof to open the door.
-At the bathroom, use the wrench to unbolt the toilet and then you can take it. 
+At the roof, to open the door go to the adjacent room, open the water tank, use the stick while on the roof to open the door, although there are other ways.
+At the bathroom, use the wrench to unbolt the toilet and then you can take it and use the path. 
 At the stage you need your guitar to play, get your costume (gloves) and go to the backstage, or take the exit and read the envelope.
 
 I hope you wil have fun playing this piece of interactive fiction. 
 
-//I should have written this down while working on the game, but I suppose writing it while playtesting the game is even better.
-//The bug that's making images to not show up doesn't seems too hard to fix.
+
+//The multimedia version seems less accessible so a redesign is in process and will be available through the About section in the game.
 //Same applies to the audio effects at the moment.
