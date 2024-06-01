@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+<html>
 <meta charset="utf-8">
 <title>Abate: Hide behind the Curtains</title>
+<meta name="viewport" content="width=device-width">
+<meta name="creator" content="Rohan">
+<meta name="description" content="An interactive fiction about investigating your death while stranded in the time loop, a short story with an interview mechanism and an expanding world.">
+
+<head>
 <style>
 	html {
 		Font-family: serif;
@@ -8,9 +14,9 @@
 	}
 	
 	h1, h2 {
-                Color: brown;
+               Color: brown;
                line-height: 1.3em;
-                Padding: 2px;
+               Padding: 2px;
         }
 	
 	body {
@@ -37,10 +43,6 @@
 	footer #status { Float: left; }
 	
     a {
-	border-radius:;
-	border-color:;
-	background-color:lightyellow;
-	border:;
 	color: saddlebrown;
 	text-align:;
 	text-decoration:none;
@@ -65,10 +67,82 @@
 		100% { opacity: 1; }
 	}
 	
-</style>
-<meta name="viewport" content="width=device-width">
-<meta name="creator" content="Rohan">
-<meta name="description" content="An interactive fiction about investigating your death while stranded in the time loop, a short story with an interview mechanism and an expanding world.">
+nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                backdrop-filter: blur(5px);
+                color: white;
+                display: flex;
+                justify-content: left;
+                font-family: "Poppins", sans-serif;
+                z-index: 1000; /* Ensure the nav is above other content */
+            }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                padding: 2px 2px 2px 2px; /* Adjust padding as needed */
+                text-decoration: none;
+                color: white;
+
+                margin: 0.5px;
+            }
+
+            nav a img {
+                width: 22px; /* Adjust image width as needed */
+                margin: 0.2px; /* Add spacing between image and text */
+                border-radius: 5px;
+            }
+
+            nav a:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+
+            nav a:nth-child(3) {
+                margin-left: auto;
+            }
+        </style>
+
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2749889536957447"
+            crossorigin="anonymous"></script>
+    </head>
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-MDG8SVY9GB"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-MDG8SVY9GB");
+    </script>
+
+    <body>
+        <nav>
+            <a href="https://ronynn.github.io"
+                ><img src="https://github.com/ronynn.png"
+            /></a>
+
+            <a href="https://ronynn.github.io/Game-Jam-Submissions/abate">Abate </a>
+
+            <a href="https://m.youtube.com/@ronynn89">Youtube</a>
+            <a href="https://ronynn.github.io/blog/">Blog</a>
+            <a href="https://ronynn.github.io/portfolio">Portfolio</a>
+        </nav>
+        <br />
+        <br />
+
+
+
+
 
 
 <div role="log" id="transcript">Please enable Javascript to play.</div>
@@ -97,7 +171,7 @@
 
  <span class=first>S</span>tranded through a realm of darkness, you wake up among your peers working towards your first project in assisting the welcome ceremony play. Yet unforeseen circumstances in each one of your attempts bring you back to the beginning, can you find the culprit trapping you in this eternal cycle? <br/>
 <br/>
-<h1>Abate<br/> Hide Behind the Curtains</h2>
+<h1>Abate<br/> Hide Behind the Curtains</h1>
 <br/>
   <h2>A text adventure<br/></h2>
 Made for Spring Thing 2022<br/>
@@ -654,3 +728,5 @@ function lte(a, b) { return a <= b; };
 function gt(a, b) { return a > b; };
 function gte(a, b) { return a >= b; };
 </script>
+</body>
+</html>
