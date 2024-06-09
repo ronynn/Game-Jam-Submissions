@@ -1,0 +1,87 @@
+ifcomp_what-remains-of-me_walkthrougth.txt
+
+What remains of me - By Jovial Ron
+
+*Bug Fixes 2021-11
+- Game states now change room descriptions based on player's actions
+
+
+~~~~~~~~~~~~
+Main Mission
+~~~~~~~~~~~~
+
+1. Take the fish from the fridge in the kitchen
+2. Use it on the dog who then stops paying attention to the ball she was playing with. Take the ball.
+3. Using the ball on your friends would lead it being taken by them, one of them will pay you some money for it.
+4. Go to the ticket counter, buy a ticket.
+5. Get on the train and travel the city for the rest of the day.
+
+~~~~~~~~~~~
+Side Quests
+~~~~~~~~~~~
+
+* Flat Earther - Using the atlas in your room on the flat earther would lead her to see the pictures in it and concluding that planets are in-fact circles and not spheres.
+
+* Giving the soap from your bathroom to the man showering on the street would lead him to feel joyful again
+
+* Using the love letter found in Lory's room on the frog would lead her to calm down making the people standing around the school thankful to you.
+
+~~~
+Map
+~~~
+              --------
+              -   5  -
+              -      -
+-----------------------------
+-   8  -   6  -   4  -   9  -
+-      -      -      -      -
+-----------------------------
+       -   7  -   3  -      |
+       -      -      -      |
+       ---------------      |
+              +   1  +      |
+              +      +      |
+              --------      |
+              +   2  +      |
+              +      +      |
+              --------      |
+                            |
+                            |
+                            |
+                            |
+              -----------------------------
+              +  14  +  10  +  12  +  13  +
+              +      +      +      +      +
+              -----------------------------
+              +  15  +  11  +
+              +      +      +
+              ---------------
+
+
+1 - Living room
+2 - Balcony
+3 - Kitchen
+4,6,9 - Corridor
+5 - Bathroom
+7 - Lory's room
+8 - Front door of my neighbour
+10 - The street where a man is taking a bath
+11 - School
+12 - A park bench
+13 - The park
+14 - The train station
+15 - The ticket counter
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~
+About the full version.
+~~~~~~~~~~~~~~~~~~~~~~~
+What remains of me is a personal game based around my old place of residence and the dreams I get of the place every once in a while. It is a lighthearted surreal comedy about a guy who is in search for an aim in life and wishes for life to bring it to him.
+
+Much of the game has been left out of the ifcomp submission for various reasons. A big one is that the game refers to several cultural features that don't often get portrayed in books or films. A good example for it comes from some of the initial reviews where players found the man bathing on the street odd. The game however does mentions the lack of water in the protagonist's bathroom and communal taps where present often get used for bathing purposes in most parts around the world. However I can understand the confusion of someone who has never seen such a sight. 
+
+Since ifcomp insists on thorough playtests of the game before submission, I couldn't ignore this confusion over cultural elements. On top of that the game's surreal elements only add to the problem. The protagonist's perception of humans in animal forms is immensely inspired by such elements seen in buddhist texts and folklore, which the player needs to be informed of considering ifcomp targets a global audience.
+
+The full version of the game involves more interaction with Lory, your relationship with Lory is a deciding factor whether you manage to take down or take over the group run by the woman on the park bench. While the game continously drags you towards taking the train, perhaps there's an invisible hand wanting you to not be here, perhaps taking the train might just reveal to you a lot more than contemplating about it might.  The lady at the ticket counter might know more about this. Your friendship with the frog might just be the key for you to find the aim in life you were looking for, but you might just find the path the bathing man suggests to be the one good for you. Your friends might just be trying to protect you from something more this world has to offer. And have you ever wondered what your spirit animal might be?
+

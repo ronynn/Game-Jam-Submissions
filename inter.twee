@@ -1,0 +1,573 @@
+:: StoryTitle
+Intergalactic Chat Simulator
+
+
+:: StoryData
+{
+	"ifid": "97F7797E-510E-4E3E-AC10-AA3EAC7B8DFB",
+	"format": "Harlowe",
+	"format-version": "1.2.4",
+	"start": "Untitled Passage",
+	"zoom": 1
+}
+
+
+:: Story Stylesheet [stylesheet]
+body, tw-story
+{
+  font-family: ;
+  font-size: 22px;
+  background-color: lightblue;
+  color: black;
+}
+
+
+:: Untitled Passage {"position":"42,15","size":"100,100"}
+INTERGALACTIC CHAT SIMULATOR
+An interactive text adventure
+By Literate (On Itch Io)
+
+You woke up pretty early today and feel quite fresh.
+You are sitting in an interview.
+
+
+"Before we start with anything, I need to ask you something, how do you feel today?"
+
+[[1. Been better->1]]
+[[2. Same as everyday->1]]
+[[3. Excited->1]]
+
+
+:: 1 {"position":"197,22","size":"100,100"}
+"Well you know it's more of a formality than anything. It's not like it matters to us anyway how you feel. Now answer the following question carefully - do you or do you not like the beverages we make with ..."
+
+You feel annoyed by the endless stream of questions. But you passed and got the job anyway.
+
+"But you can't join us from today, or this week for that matter, company policy is that ..."
+
+[[You leave the building]]
+
+
+:: You leave the building {"position":"343,24","size":"100,100"}
+You are now on the streets outside the building, littered with Christmas posters everywhere.
+
+You can now choose to go back to your [[apartment]] or [[call your friend Dan]] and tell him about getting the job. However the thing with Dan is that he hasn't yet paid back the 100 dollars he borrowed from you so telling him about the job might invite for more loans.
+
+But honestly, you can do whatever you want, you might as well go run [[naked on the streets]].
+
+
+:: apartment {"position":"268,174","size":"100,100"}
+After the hustling of the day you get back to your apartment to relax and decided to watch some TV.
+
+As you are about to start it up the phone rings, what do you do?
+
+[[Ignore]]
+[[Pick Up]]
+[[Pick Up and then don't answer]]
+
+
+:: call your friend Dan {"position":"418,174","size":"100,100"}
+"Cool dude. I know these interviews are no big deal for a nerd like you. Listen I'm meeting these guys from across the town, they challenged for a Foosball game. You in? Sure you are ... I'll call you with details"
+
+Feeling tired there's not much you feel like doing than getting back to your [[apartment]].
+
+
+:: Ignore {"position":"118,324","size":"100,100"}
+As you try to find a decent channel to watch, the phone keeps on ringing, feels more than usual number of rings. The phone rings again after sometime, seems like the caller isn't going to stop anytime soon.
+
+What do you do?
+
+[[Pick Up]]
+[[Pick Up and then don't answer]]
+
+
+:: Pick Up {"position":"268,324","size":"100,100"}
+"Can you hear me?" the familiar voice of your mother greets you.
+
+She doesn't reacts much when you tell her about your new job, instead she asks whether you got the 100 dollars back that you loaned to Dan.
+
+"Call him or go meet him and ask about the money. If he doesn't pays then ask him for 3.4% interest. Why did he needed that money anyway?" your mother asks ...
+
+[[I didn't ask->ask]]
+[[He forgot to mention->ask]]
+
+
+:: Pick Up and then don't answer {"position":"418,324","size":"100,100"}
+You never know how many times the phone is going to ring, the best way you decide is to pick it up and then keep it down. 
+
+But the ringing doesn't stops, you decided to pick it up and not talk hoping for the caller to get annoyed and leave it at that. But you hear loud shouting on the other side.
+
+[[Pick Up]]
+
+
+:: ask {"position":"268,474","size":"100,100"}
+"What kind of a response is that? It's your job to atleast ask someone why they are asking for money from you before just giving it away." shouts your mother on the phone.
+
+After a bit more exchange of pleasantries she suggests you to either [[Call Dan]] or go and show up at [[his house]].
+
+
+:: naked on the streets {"position":"518,38","size":"100,100"}
+Have you gone insane? No you don't do that. 
+
+You either leave for your [[apartment]] or [[call your friend Dan]].
+
+
+:: Call Dan {"position":"193,624","size":"100,100"}
+"Nice timing dude, you meet me at the deli, bring your car" Dan hangs up before you can say anything.
+
+Go meet him at the [[deli]]
+
+
+:: his house {"position":"343,624","size":"100,100"}
+You show up at his house to find it locked. Before even thinking about calling him, Dan calls you and says "you meet me at the deli, bring your car" Dan hangs up before you can say anything.
+
+
+Go meet him at the [[deli]]. You can however look inside his [[window]].
+
+
+:: deli {"position":"193,774","size":"100,100"}
+After searching around on your phone for the place that Dan didn't even tell you the name of, you finally arrive at the place 3.4 miles away from your place.
+
+You didn't expect the place to be so colourful, you find Dan sitting at a table near the door with a girl working on a laptop and a satellite-dish-looking thing on the floor.
+
+Dan smiles at you and introduces you to Ciara. "Tell her what you do" insists Dan. Before you could say something Ciara answers "I'm a blogger".
+
+You sit down beside Dan as he speaks up "That is exactly why I like you so much. I am not going to talk in circles, I like you and I am taking you out on dinner when you return".
+
+Visibly embarrassed Ciara replies with a smile.
+
+"I'll pack the dish into the car, you take your time, we'll be outside" Dan tells Ciara as he gets up grabbing your hand.
+
+As you two walk outside, what do you say?
+
+[[Absolutely No]]
+[[Where are we going?]]
+[[Act Confused]]
+
+
+:: window {"position":"343,774","size":"100,100"}
+You decide to peer through the window. The glass is a bit too unclear so you try and clean it up with your fingers but the whole glass piece falls on the other side and the shattering noise was loud enough. 
+
+You see an old lady in a distance, looking at you from her balcony. It almost looks like she is calling someone right now.
+
+Probably better if you leave now and go meet Dan at the [[deli]]. You can however go talk to the [[old lady]] and 'suggest' her not to tell anyone about anything she saw.
+
+
+:: old lady {"position":"484,772","size":"100,100"}
+You get closer to see that there are no old ladies around here, just clothes hanging on ropes to dry up.
+
+What were you going to tell her anyway?
+
+Go meet Dan at the [[deli]].
+
+
+:: Absolutely No {"position":"43,924","size":"100,100"}
+"Dude please help me out on this. Didn't you see how cool I looked over there, she had no chance to say no. Please dude" whispers Dan.
+
+"There's no way I am driving anywhere" you reply.
+
+"You know what I'll pay back your money too, just do this one favour, it's not like ask you for anything" begs Dan.
+
+Say "[[Where are we going?]]"
+[[Kick him]]
+
+
+:: Where are we going? {"position":"193,924","size":"100,100"}
+"WE are not going anywhere" answers Dan. "You are taking Ciara to this coordinate place she was talking about for some science project thing, I'm telling you dude help me out on this, and you get your money back that I owe you, now go sit inside and let me worry about the packing" Dan says.
+
+He somehow ties up the satellite dish on your car making you wonder whether it could be any more uglier.
+
+Dan hands you an envelope and asks you to give it to Ciara after your return. "Don't look inside" he warned, with a smile, it's supposed to be a gift".
+
+Ciara gets out of the deli, murmurs something to Dan, throws her laptop on the back-seat, and sits down beside you. 
+
+As you start driving she brings her phone out and shows you the location on the map, following which you keep [[driving]].
+
+
+:: Act Confused {"position":"343,924","size":"100,100"}
+As the two of you get out of the place, Dan doesn't bothers explaining anything to you and points you to go sit on the driver's seat. He somehow ties up the satellite dish on your car making you wonder whether it could be any more uglier.
+
+Dan hands you an envelope and asks you to give it to Ciara after your return. "Don't look inside" he warned, with a smile, "it's supposed to be a gift".
+
+Ciara gets out of the deli, murmurs something to Dan, throws her laptop on the back-seat, and sits down beside you. 
+
+As you start driving she brings her phone out and shows you the location on the map, following which you keep [[driving]].
+
+
+:: Kick him {"position":"43,1074","size":"100,100"}
+You decided to kick him on the knees but accidentally you hit the groins. Dan shouts and whimpers to the ground seemingly unconscious.
+
+His shrieks could be heard loudly enough. Ciara gets out to find Dan lying on the ground.
+
+[[Kick him again]]
+[[Apologise to Ciara and leave]]
+[[Help him out]]
+
+
+:: Kick him again {"position":"12,1221","size":"100,100"}
+You kick him again, Dan groans in pain. Ciara pushes you so hard that you fall on the mud.
+
+As Ciara tries to help him get up you can [[Apologise to Ciara and leave]] or [[Help him out]].
+
+
+:: Apologise to Ciara and leave {"position":"131,1211","size":"100,100"}
+You apologise to Ciara as she looks at you in surprise and disbelief. Your car engine takes a moment to start after which you leave to get back to your apartment.
+
+---------
+<H4>ENDING 1</H4> You can go back to the [[deli]].
+
+
+:: Help him out {"position":"260,1197","size":"100,100"}
+You help him out to get up. You bring a water-bottle from your car and sprinkle some on his fact. You try to get him to sit up as he groans in pain, you feel somewhat relieved.
+
+Ciara stares at you with angry eyes. It almost looks like she might hit you at any moment. The best thing for to do right now is probably to [[Apologise to Ciara and leave]].
+
+
+:: driving {"position":"343,1074","size":"100,100"}
+The journey now begins, with your hands on the steering wheels and your mind a thousand miles away you wonder why you are here...
+And Ciara's constant stare doesn't helps in any possible away.
+
+[[Ask why she is staring]]
+[[Start coughing until she talks first]]
+
+
+:: Ask why she is staring {"position":"376,1225","size":"100,100"}
+"Isn't this one of those driverless cars" Ciara asks you.
+
+You nod, clueless of why she might be asking that.
+
+"Why are you driving then?"
+
+[[I like driving]]
+[[I don't trust AI]]
+[[It'd have been awkward to just sit and do nothing]]
+
+
+:: Start coughing until she talks first {"position":"490,1154","size":"100,100"}
+You start coughing. After a minute or so you realise that this isn't helping. Your throat hurts now.
+
+[[Ask why she is staring]]
+
+
+:: I like driving {"position":"227,1375","size":"100,100"}
+"Then why did you buy this car" she asks.
+
+[["To save the environment"]]
+[["Mind your own business"]]
+[["Cant afford gas"->"Mind your own business"]]
+
+
+:: I don't trust AI {"position":"377,1375","size":"100,100"}
+"Then why did you buy this car" she asks.
+
+[["To save the environment"]]
+[["Mind your own business"]]
+[["Cant afford gas"->"Mind your own business"]]
+
+
+:: It'd have been awkward to just sit and do nothing {"position":"526,1375","size":"100,100"}
+"Why would that be awkward, we could talk" suggests Ciara, "My name is Ciara".
+
+[["We were just introduced"]]
+[[Tell her your name]]
+[["I don't care"->"Mind your own business"]]
+
+
+:: "We were just introduced" {"position":"518,1527","size":"100,100"}
+"Oh! Sorry I forgot. I don't think I got your name though"
+
+[[Tell her your name]]
+[["Mind your own business"]]
+
+
+:: Tell her your name {"position":"657,1525","size":"100,100"}
+(set: $name to (prompt: "Enter your name."))
+
+"Well it's nice to meet you $name, I'm sure we'll be the best of friends over the journey"
+
+[["You bet"->"Mind your own business"]] 
+[["I don't care"->"Mind your own business"]]
+
+
+:: "To save the environment" {"position":"306,1527","size":"100,100"}
+"It's a good choice I guess, I don't really care about cars. So ... you got any music?"
+
+[["Might add later"]]
+[["No"->"Mind your own business"]]
+
+
+:: "Mind your own business" {"position":"133,1531","size":"100,100"}
+Hours past as your car drove all by itself on this never ending empty road.
+
+You wished if there was more to talk about but there was nothing really you could think of saying. You think that for a certain extent you probably didn't wanted to talk either.
+
+Lost in your own thoughts, you notice Ciara is stopping the car.
+
+[[Ask her why she is stopping the car->radioshop1]]
+[[Look Away->radioshop1]]
+
+
+:: "Might add later" {"position":"392,1671","size":"100,100"}
+"Why don't we stop by the first store we find?"
+
+[[Sure->"Mind your own business"]] 
+[["I'll just buy it over the internet"->"Mind your own business"]]
+
+
+:: radioshop1 {"position":"137,1683","size":"100,100"}
+"I saw a music store. I'll buy some Rock. You wanna join?"
+
+[[Get out of the car with her]]
+[[Say No]]
+
+
+:: Get out of the car with her {"position":"140,1826","size":"100,100"}
+As you two get near the shop, a poster catches your attention. You remember having seen it outside your new office building too.
+
+You wait outside to read it as Ciara goes inside the shop.
+
+There is a Christmas Charity Drive going on, a few miles away on your track. Organisers are looking for volunteers. Are you interested?
+
+[[Yes]]
+[[I'll ask Ciara->Yes]] 
+[[No]]
+
+
+:: Say No {"position":"278,1823","size":"100,100"}
+You watch outside the window as Ciara enters the shop. As bored as you are right now, you could do anything to get over this driving project.
+
+Why are you here?
+[[I want my money back from Dan->run]]
+[[Just helping out->run]]
+
+
+:: run {"position":"409,1926","size":"100,100"}
+You notice Ciara getting out of the store. You realise for a second that if you were to drive off now, no one would know of anything. You can tell Dan that you left her wherever she was going and get your money back.
+
+It's not like this is the middle of nowhere. You see a few shops nearby.
+
+[[Start the engine and get moving]]
+[[No, stop thinking stuff->No]]
+
+
+:: Start the engine and get moving {"position":"413,2072","size":"100,100"}
+I guess this is what freedom smells like. You wonder why you don't get more good ideas like this one.
+
+You return and ask for Dan but everyone tells you that he has left town. 
+
+You never met Ciara again.
+
+----
+<h4> Ending 2 </h4>. GAME OVER.
+
+
+:: Yes {"position":"30,1975","size":"100,100"}
+You mention this to Ciara to which she looks quite excited. 
+You return to your car waiting for Ciara to finish her shopping.
+
+[[Return to Car->No]]
+
+
+:: No {"position":"276,1969","size":"100,100"}
+Ciara returns to the car with nothing. She says - "There's nothing I liked, guess we will just have to pass the time talking."
+
+"So what do you do?" she asks you.
+
+[[I build and review video games]]
+[[I work at a company]]
+
+
+:: I build and review video games {"position":"175,2125","size":"100,100"}
+"Tell me a game you made, who knows, I might have played one of them."
+
+[[Don't answer]]
+[[Tell her about the game you wrote]]
+
+
+:: I work at a company {"position":"303,2119","size":"100,100"}
+"Oh I could never work at a company" Ciara announces to your annoyance, "I just don't like that kind of work".
+
+"What's your Company's name?" she asks.
+
+[[Tell her your company's name]]
+[[Don't answer]]
+
+
+:: Don't answer {"position":"126,2269","size":"100,100"}
+As the car takes time further, you notice a big crowd on one of the snow covered fields.
+
+"That's the charity function" shouts Ciara and stops the car. "I thought the posters might be a joke, make it final, you in?"
+
+[[I don't like it when you stop the car again and again]]
+[[I'm in]]
+
+
+:: Tell her about the game you wrote {"position":"275,2275","size":"100,100"}
+(set: $game to (prompt: "Enter your game's name."))
+
+Looking excited Ciara wonders for a moment and replies "No, I don't think I have played that one, $game does sounds interesting".
+
+As you get along, you find her pleasant to talk to. 
+
+"You don't really talk much, do you?" Ciara asks you. I guess you should ask her something ...
+
+[[What's this science project thing?]]
+[[What is the meaning of life?]]
+
+
+:: Tell her your company's name {"position":"400,2275","size":"100,100"}
+(set: $company to (prompt: "Enter your company's name."))
+
+"I don't think I have hear about $company. Must be interesting."
+
+As you get along, you find her pleasant to talk to. 
+
+"You don't really talk much, do you?" Ciara asks you. I guess you should ask her something ...
+
+[[What's this science project thing?]]
+[[What is the meaning of life?]]
+
+
+:: What's this science project thing? {"position":"200,2425","size":"100,100"}
+"Well you won't understand, it's a bit complicated"
+
+"Then explain to me"
+
+"I'd rather discuss something else"
+
+[[Continue->Don't answer]]
+
+
+:: What is the meaning of life? {"position":"350,2425","size":"100,100"}
+"I don't think I can answer that" answers Ciara, "I guess doing good for others and spending time with your family .. " Ciara stops to murmur something to herself and doesn't talks anymore, you notice her teary eyes.
+
+[[Continue->Don't answer]]
+
+
+:: I don't like it when you stop the car again and again {"position":"50,2554","size":"100,100"}
+Ciara leaves the car. You realise that this is your second chance, if you were to drive off now, no one would know of anything. You can tell Dan that you left her wherever she was going and get your money back.
+
+It's not like this is the middle of nowhere. You see a few shops nearby.
+
+[[Start the engine and get moving]]
+[[Take a nap and wait for her]]
+
+
+:: I'm in {"position":"166,2575","size":"100,100"}
+The two of you spend the rest of the day involved in charity activity, it mostly involved drawing posters on the wall, and distributing clothing to the needy.
+
+A few hours later Ciara suggests to pack up and leave.
+
+[[Continue->Take a nap and wait for her]]
+
+
+:: Take a nap and wait for her {"position":"50,2704","size":"100,100"}
+The sun is almost down now, as you sit in the back fiddling with the light in the back-seat, you notice Ciara visibly being worried.
+
+[[Ask her why she looks worried]]
+[[Wait for her to talk->Ask her why she looks worried]]
+
+
+:: Ask her why she looks worried {"position":"66,2828","size":"100,100"}
+"My laptop isn't working. I knew they would mess it up, shouldn't have let anyone touch it"
+
+[[Perhaps you shouldn't throw it around]]
+[["Have you tried turning it off and on again?"->Perhaps you shouldn't throw it around]]
+
+
+:: Perhaps you shouldn't throw it around {"position":"72,2963","size":"100,100"}
+Ciara gives you an annoyed look and gets back to pressing buttons here and there.
+
+As the problem continues, your car beeps notifying that you have reached your destination. You take a peek outside to realise that it's the middle of nowhere, an empty patch beside the road.
+
+[[What's the science project?]]
+[[What is this place->What's the science project?]]
+
+
+:: What's the science project? {"position":"72,3113","size":"100,100"}
+Ciara gets out of the car, kicks your tyre and starts weeping. You step out and insist on her telling you what's going on.
+
+"It's a communication thing" with her sobbing she continues "I made a mistake okay ... left home when my grandma died, I wanted to send this picture of us to space and stay ... forever... and now it's broken."
+
+[[I'm annoyed by your idiocy]]
+[[Sweetly ask her not to cry]]
+
+
+:: I'm annoyed by your idiocy {"position":"47,3261","size":"100,100"}
+Ciara throws her laptop at you, it hits your shoulder that now hurts immensely.
+
+She gets back into the car, fiddles with the system and drives away as you try to get back up on your feet.
+
+You are now stranded in the middle of nowhere.
+
+---
+<h4> Ending 3</h4> GAMEOVER
+Strand Ending
+
+
+:: Sweetly ask her not to cry {"position":"171,3229","size":"100,100"}
+Your voice calms her down, she sits down over a rock staring at her laptop.
+
+You feel upset for her. But as you walk towards your car to bring her some water, she shouts something and jumps back into the car. 
+
+You try to look at what she's doing and find that she has opened up your car's computer and is now disconnecting wires from here and there.
+
+[[Have you gone mad?->I'm annoyed by your idiocy]] 
+[["We should probably keep the car working"]]
+
+
+:: "We should probably keep the car working" {"position":"171,3379","size":"100,100"}
+"I've done it now, I can connect your car to the dish and send the picture from it" she jumps on the roof and asks you to take the dish out.
+
+As the picture now travels to countless miles in space, Ciara now sits there relaxed.
+
+When she gets down, you notice her to be upset.
+
+[[Ask her why she looks upset]]
+[[Leave this place]]
+
+
+:: Ask her why she looks upset {"position":"96,3529","size":"100,100"}
+"I don't know what else to do now. I kept myself busy with the project, what do I do now?" laments Ciara staring down.
+
+With nothing to say you get back in the car, starting up the system now you notice that poster for the charity. You can now suggest her to [[get back to her family]] but that might make Dan upset as he won't get to take her out on dinner, or you can [[say nothing->Leave this place]]
+
+
+:: Leave this place {"position":"246,3529","size":"100,100"}
+The car takes you back to your town. On your way back Ciara doesn't talks much.
+
+When you are dropping her off, you hand her over the envelope that Dan asked you to give her. She opens it up looks at it and asks you what it is. You take it back to realise that it's a cheque that Dan wrote to you paying you back the 100 dollars he borrowed.
+
+You put it in your pocket, wondering whether it would even cash out or not. 
+
+As the car takes you back to your apartment, you wonder whether you could make different choices.
+---
+<h4> ENDING 4 </h4>
+GAME OVER
+
+
+:: get back to her family {"position":"96,3680","size":"100,100"}
+You realise that making such a suggestion might not be the best option considering you don't know each other that close yet.
+
+You make it very slight by asking her questions about where she lives.
+
+Sitting over the car and enjoying the sunset, she finally decides to meet her parents back home.
+
+Few hours later, you leave her to her door at her parents house. But then you suddenly remember to give her the envelope. You hand her over the envelope that Dan asked you to give her. She opens it up looks at it and asks you what it is. You take it back to realise that it's a cheque that Dan wrote to you paying you back the 100 dollars he borrowed.
+
+You put it in your pocket, wondering whether it would even cash out or not. 
+
+Turning the car around you can't help but wonder whether you should go meet your parent's for the holidays too. You don't have to start office till next week anyway.
+
+[[Meet parents]]
+[[Leave for Apartment->Meet parents]]
+
+
+:: Meet parents {"position":"96,3830","size":"100,100"}
+You reach your destination, with curiosity for the future in your eyes.
+---
+<h4> ENDING 5 </h4>
+GAME OVER
+REAL ENDING
+
+

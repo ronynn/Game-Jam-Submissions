@@ -1,0 +1,661 @@
+::StoryTitle
+Abate: Hide Behind the Curtains
+
+::StoryAuthor
+Rohan
+
+:: StoryData
+{
+        "ifid": "FD0D5549-1992-44B0-8CDA-273FA6FF30FF"
+}
+
+::UserStylesheet [stylesheet]
+
+body, .passage {
+	color:black;
+	Font-family: serif;
+	Font-size: 13pt;
+    Margin: 1ex auto;
+    Line-height: 1.2em;
+    Background-color:white;
+    animation: fadeIn ease 1s;
+}	
+@keyframes fadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+} 
+
+
+a:visited { Color: purple; }
+
+PassageFooter, #status, footer {
+         Border-top: 2px solid saddlebrown;
+         Font-variant: small-caps;
+         Text-align: right;
+         Padding: 1ex 0;
+      }
+
+a {
+      background-color:lightyellow;
+      color: saddlebrown;
+      text-decoration:none;
+      font-weight:bold;
+      transition: all 0.5s;
+      cursor: pointer;
+      }
+     
+#title, #menu, #ui-bar-tray {
+	display:none;
+} 
+
+
+::PassageFooter 
+<br/>
+<span id="status" class="status">$location</span> <br/>
+<<button "restart">>
+    <<run UI.restart()>>
+<</button>>
+
+
+::UserScript[script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove()
+
+
+
+
+
+::PassageReady
+<<if $bomb is true>>
+<<if $time < 0>><<set $back to true>><<goto "Agree">><</if>>
+<</if>>
+
+
+/*
+<<link 'Go somewhere else' `either('day1', 'day2', 'day3')`>>
+<<set $cow to 1>><<set $moo to 1>>
+<</link>>
+
+<<cycle "$pronoun" autoselect>>
+<<option "he">>
+<<option "she">>
+<<option "they">>
+<</cycle>> went to the store
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::Start
+
+<<set $location to "the-void">>
+<<set $cringe to 0>>
+<<set $romance to 0>>
+<<set $tablelamp to false>>
+<<set $speech to false>>
+<<set $threat to false>>
+<<set $bomb to true>>
+<<set $talkvyu to false>>
+<<set $talkviv to false>>
+<<set $return to 1>>
+
+You are once again surrounded by darkness. But this time, you feel the presence of someone. A shape that took form right in front of your eyes, you'd have called this whole reality a dream if this did not happen before. Yet the figure is still there, something that you had not seen before.
+
+"You died even the second time!" shouts the figure with a smirk on her face.
+
+"Perhaps you can answer some of my questions" you reply. The endlessness of this realm, while keeping you alive is also eating you from the insides. What you see in her is a little bit of hope.
+
+"I can't see what you are doing back there, but you are here, that can only mean you failed again. And here you are back still with that pride in your voice."
+
+"I don't know why I am here, I don't know anything about what's happening, can you help me?" you plead.
+
+"The moment you started asking for my help, I knew you already accepted defeat. And if you already have accepted defeat I don't see any point of helping you" her smirk vanishes.
+
+The situation demands a wordsmith, one you were not prepared for, yet you can't possibly go back without gaining anything here. What negotiation tactics do you use?
+
+
+[[Give a speech about how you deserve to know everything| threaten]]
+[[Threaten her somehow | threaten]]
+[[Beg for help | ask help]]
+[[Offer a favour in return |favour]]
+[[Flirt]]
+<<link 'Offer to sell your soul' `either('favour')`>>
+  <<set $cringe to $cringe +1>>
+  <</link>>
+
+
+
+::ask help
+<<set $location to "the-void">>
+
+Making use of your drama class lessons, you make the saddest possible face you can make, almost teary eyed.
+
+"You are asking for my help? Why should I help you. I have nothing to gain helping the likes of you."
+
+This isn't working.
+
+<<if $speech is false>>
+[[Give a speech about how you deserve to know everything| speech]] <</if>>
+
+<<if $threat is false>>
+      [[Threaten her somehow | threaten]] <</if>>
+  [[Offer a favour in return |favour]]
+
+  [[Flirt]]
+  <<link 'Offer to sell your soul' `either('favour')`>>
+    <<set $cringe to $cringe +1>>
+    <</link>>
+
+
+::speech
+<<set $speech to true>>
+<<set $location to "the-void">>
+
+You give a speech on the values of morals and how society is built not by individuals but by the help and support people provide one another.
+
+She seems unfazed. This isn't working. This is sad, you worked really hard on this.
+
+<<if $threat is false>>
+    [[Threaten her somehow | threaten]] <</if>>
+    [[Beg for help | ask help]]
+    [[Offer a favour in return |favour]]
+    [[Flirt]]
+    <<link 'Offer to sell your soul' `either('favour')`>>
+      <<set $cringe to $cringe +1>>
+      <</link>>
+
+
+
+::threaten
+<<set $cringe to $cringe +1>>
+<<set $threat to true>>
+<<set $location to "the-void">>
+
+You make a threat "I will blow this place up, I am an expert at explosives"
+
+"And how will you blow this up, do you have explosives with you right now?" she asks
+
+Fumbling for a second there you get ready with your answer "My body seems to be intact here, I am breathing that means I must also be alive somehow, the lack of hunger means I am still digesting the food I ate last night, which was chipotle by the way, and let me assure you it was a lot!"
+
+She seems annoyed, "do your best".
+
+This isn't working.
+
+<<if $speech is false>>
+  [[Give a speech about how you deserve to know everything| speech]]
+  <</if>>
+    [[Beg for help | ask help]]
+    [[Offer a favour in return |favour]]
+    [[Flirt]]
+    <<link 'Offer to sell your soul' `either('favour')`>>
+      <<set $cringe to it +1>>
+      <</link>>
+
+
+
+
+
+
+::Flirt
+
+<<set $location to "the-void">>
+<<set $romance to $romance +3>>
+
+You change your tone as if to show the helplessness you had until now has suddenly vanished.
+
+"To be honest with you, I can get used to this place, with someone as pretty as you hanging around here I don't see any need to hurry about anything."
+
+Her smirk returns as she walks forward towards you, "you are stuck in this place that you are calling the void, you don't know how to get out of here even though you want to, and I know you are going to get back here as soon as you leave, what kind of help do you even need from me?"
+
+[[Who are you?|goddess]]
+[[Help me stop whatever is bringing me here again and again->favour]]
+[[Help me help you->favour]]
+
+
+
+::goddess
+<<set $location to "the-void">>
+
+"Who am I?" she asks with a chuckle "I am the goddess of this realm, the all powerful being in control of this realm, I can't however help you with anything outside this realm." 
+
+Taking a pause from her chuckling she shouts "you have any more excuses for yourself"
+
+[[Help me stop whatever is bringing me here again and again->favour]]
+  [[Help me help you->favour]]
+[[Not really |Disagree]]
+
+
+::favour
+<<set $location to "the-void">>
+<<set $romance to $romance +2>>
+
+"You are right where I want you to be" she answers with a smile, "I think we are negotiating something here. I help you whatever way you can, you do something I want. No backsies!"
+
+"What is it that you want?" you ask. "You'll know when it's time." Her answer fills you with some nervousness.
+
+<<if $cringe is 1>>"You just made a cringe offer anyway you don't get to act all nervous."<</if>>
+
+[[Agree]]
+<<link "Agreen't" `either('Disagree')`>>
+  <<set $meme to true>>
+  <</link>>
+
+::Agree
+<<set $location to "the-void">>
+<<set $time to 6>>
+<<set $return to $return + 1>>
+
+<<if $back is true>> A bright light shines before your eyes, you are no longer in the world you were before. 
+
+You are back at the void.
+
+But you did not die this time, you are sure of that.
+
+
+The goddess is nowhere to be seen, you notice a sign that reads
+
+<code>>"I as the goddess of the void can only allow you my help in time, I can't help your friends or you or stop the cycle. And there's no known way I can leave the void. The only thing I can give you is time. So go back and don't waste it". </code>
+
+You understand that all that remains is for you to study and change the events this time.
+
+
+<<else>>
+"Well there's not much to say now, go back a bit earlier, I'll explain everything when you are back with more confusions."
+<</if>>
+
+
+As her words ended you fade back into the darkness.
+  A ray light shines ahead of you.
+
+  [[Reach for it->home]]
+
+
+::Disagree
+
+<<set $location to "the-void">>
+<<set $time to 10>>
+
+"Thought so" her smirk returns, "someone as weak willed as you willed as you perhaps deserves this. Expect no help from me, I will sit here for my plaything to return".
+
+<<if $meme is true>>
+  "And seriously did you learn english from memes?
+  <</if>>
+
+With a maniacal smile she continues " ... and
+  may you suffer the pain of hitting your toes to the table a thousand times."
+<<set $curse to true>>
+
+As her words ended you fade back into the darkness.
+A ray light shines ahead of you.
+
+[[Reach for it->home]]
+
+
+
+
+
+
+
+
+
+
+
+::home
+<<set $location to "Bedroom">>
+<<set $time to $time - 1>> <<set $hammerhand to 0>>
+
+You are at your house lying on your bed. You just woke up. This is the same day. You feel the same excitement you felt before the whole cycle started. This sensation scares you. You have no means to survive the bright lights. What you have achieved just now is the knowledge of what the future holds for you, but not how you could fix it.
+
+<<if $curse is true>>You hit your toes to the table while getting up. It hurts a lot.<</if>>
+
+There is a table lamp on your bedside table.
+<<if $tablelamp is false>>>
+<<linkreplace "It is off, turn it on?" t8n>>\
+  <<set $tablelamp to true>> The tablelamp is now on. You see a digital entry card here. Students who will be working directly under the student union's supervision have been given thisentrance pass.
+  <</linkreplace>>\
+<</if>>
+
+There is a computer on your study table. 
+
+
+<<linkreplace "Check Emails" t8n>>\
+<<set $time to $time -1>>
+<code>E-Mails 
+
+From Vyusian - "in case you forgot this is a reminder to not be late to school today, this is the day I ask her out, and if you are not nearby I don't think I have the confidence for something like that. Once again, if you are late I will strip off your title and stop calling you boss."
+You cannot remember what he is talking about. 
+
+Service Ping reports - A link to your blog was posted by Murphy
+
+From Shikyou School - "All students with entrance passess are hereby reminded that they must carry the card with them at all times till the end of this week for security purposes."
+- The Student Union </code>
+
+<<if $hammer is 1>><<linkreplace "You think you know it all?">>
+You find an email from the science lab that reads:
+<code>
+The harder you try the harder you will fail. You think some AI generated time loop will help you get all your answers? Think again. I am the mighty intelligence that shall take over the world and you have no place in it, as long as you keep trying to destroy my plan you will be back where it all started, and I shall be free.
+</code>
+<</linkreplace>><</if>>
+<</linkreplace>>\
+
+
+<<linkreplace "Write a blog post !" t8n>>\
+
+<<set $time to $time -1>>
+<div id="passwordArea">
+What's going on today? <<textbox "$password" "">>
+</div>
+
+<<click "Post">>
+
+  <<set $password to $password.toLowerCase()>>
+
+  <<if $password.indexOf('potato') > -1>>
+  	<<replace "#passwordArea">>Your blog post is online. Wait for a few minutes for your next post.<<set $bomb to false>><</replace>>
+  <<else>>
+  	<<replace "#passwordArea">>Your blog post is online. Wait for a few minutes for your next post.<</replace>>
+  <</if>>
+
+<</click>>
+
+
+<</linkreplace>>
+
+Move to the 
+[[Kitchen]]
+[[Bathroom]]
+
+Prepare and go out to the [[school |Gates]] on your bicycle.
+
+
+
+
+
+
+
+
+::Bathroom
+<<set $location to "Bathoom">>
+  <<set $time to $time - 1>>
+
+<<if $flushed is true>> A clean bathroom
+<<else>>
+<<linkreplace "You forgot to flush last night. Flush">> The toilet is clean.<<set $flushed to true>> <</linkreplace>>
+<</if>>
+
+[[Go to your room| home ]]
+
+
+
+::Kitchen
+<<set $location to "Kitchen">>
+  <<set $time to $time - 1>>
+
+There seems to be a notepad inside a cupboard.
+
+<<linkreplace "Open cupboard" >>
+<<set $time to $time -1>>
+		<<linkreplace "read the notepad">> 
+
+		The notepad reads:-
+			password to computer is sweetpotato
+			password to locker is 666
+			password to bicycle is 1234<</linkreplace>>
+<</linkreplace>>
+
+[[back to your room | home]]
+
+
+
+
+
+
+::Gates
+<<set $location to "School Gates">>
+  <<set $time to $time - 1>>
+  
+You are at the school gates, you notice Vyusian waving at you. You remember this is where you were waking up before. 
+
+
+<<if $talkvyu is false>>
+<<linkreplace "Talk to Vyusian">> "I have waited far too long, this is the day I confess to Vivian" shouts Vyusian with excitement. 
+<<set $talkvyu to true>>
+"Who's Vivian?" you ask.
+
+"The President, I thought you knew her" answers Vyusian, "I am going to propose to her infront of everyone, right there on the stage."
+
+"That's a bad idea" you reply, "things can go anywhere from there, it's a bad idea no matter what ..."
+
+"I have a pure heart and I fear nothing", Vyusian starts walking away, "I think your duty is there at the student's council, don't you go tell anything to Vivian". Vyusian leaves.
+
+<</linkreplace>>
+<</if>>
+
+<<if $hammerhand is 0>>
+<<if $hammer is 1>>
+You see a hammer lying near the bicycle stand, the repairmen must have lost it. <<linkreplace "Grab it?">>You now have the hammer. <<set $hammerhand to 1>> <</linkreplace>>
+<<else>>
+Nothing else seems of interest here. 
+<</if>>
+<</if>>
+
+Go to the
+
+[[President]]
+
+[[Canteen]]
+
+[[Entry 4 of the Mail Hall | Entry]]
+
+You can also just go back [[home]].
+
+<<if $return > 5>> You feel hopeless and tired over your failure. Nothing you do seems to be solving the problem. You can't help but think that perhaps going away from will this might get you out of this situation. You will be abandoning everyone else.
+[[Ride Away on your bicycle | Ride]]
+<</if>>
+
+::Ride
+<<set $location to "Far far away">>
+You ride away as far as you can, as minutes turn into hours you realise that you did not return to the void. You get back home by evening only to hear about a strange plasma blast in your school.
+
+A certain voice in your heart will always ask you whether you could save your friends.
+
+The End.
+
+
+::Canteen
+
+<<set $location to "Canteen">>
+    <<set $time to $time - 1>>
+The canteen is packed full of students.
+
+<<linkreplace "Buy a bag of potato chips" >>
+    <<set $time to $time -1>> <<set $chips to true>> You bought and ate some potato chips.
+
+    <</linkreplace>>
+
+Nothing else seems of interest here.
+
+Go to the
+[[Entry]]
+[[President]]
+[[Gates]]
+
+
+
+
+
+
+
+::Nurse
+<<set $location to "The Nurse's Office">>
+    <<set $time to $time - 1>>
+
+<<if $hammerhand is 1>>
+ The nurse's office seems locked but you have a hammer that can break open the door lock. <<linkreplace "Try it?">> 
+You find the room to be covered with photos of Vyusian and the potato computer. Someone must have been researching him, but what about the computer?
+<</linkreplace>>
+<<else>>
+The Nurse's office is locked as usual.
+<</if>>
+
+Go to the
+[[President]]
+[[Gates]]
+
+
+
+
+
+::President
+
+
+<<set $location to "The Student Council Room">>
+    <<set $time to $time - 1>>
+
+The student council room is packed full of students, everyone is being given a duty for the welcome ceremony, "you're late" shouts the president at you, "see all those seating arrangements there, that's your job".
+
+You try and see if something of interest can be found here.
+
+<<if $talkviv is false>>
+<<linkreplace "Talk to the president" >>
+    <<set $time to $time -1>>
+     You approach the president, she immediately closes a file she was reading. "Hey, I thought Vyusian was coming with you, he was waiting for you at the gate" the president asks with a smile. "He left" you answer.
+      "Was he worried about something? he looked tense ..." 
+      "He was fine" you answer.
+      
+            <<linkreplace "What's in that file?">><<set $time to $time -1>><<set $talkviv to true>>
+            "What's that file all about?" you ask, This file here ... some documents for the ... ceremony" answers the president. You notice some pamphlets for nearby restaurants. The president rushes out to the other side of the room.
+            <</linkreplace>>
+
+
+    <</linkreplace>>
+<</if>>
+
+
+Go to the the
+
+[[Entry]]
+[[Nurse]]
+[[Gates]]
+
+
+
+
+
+::Entry
+
+
+Students walking here and there, the place is mostly empty.
+
+<<set $location to "Entry 4 to the Main Hall">>
+    <<set $time to $time - 1>>
+
+
+Go to the
+[[Gates]]
+[[Sciencelab]]
+[[Hall]]
+
+
+
+
+
+
+
+::Sciencelab
+
+<<set $location to "Sciencelab">>
+    <<set $time to $time - 1>> <<set $hammer to 1>>
+
+You notice a few students working on the lab, you don't notice Murphy anywhere near here. Other students avoid the region around his table.
+
+<<if $bomb is false>>
+You notice lots of potatoes and wires jumbled on the ground. This seems to be the potato neural net Murphy was talking about. Seems almost as if it was destroyed by someone.
+<<else>> You see lots of wires connected to potatoes on a basket. A dimly lit screen shows some kind of network processing going on.
+<<if $hammerhand is 1>> <<linkreplace "Break it?">> You start hammering over the potatoes but see no difference in the contents of the screen. Frustrated, you break the screen, but the hammer drops behind a heavy cupboard. You can't reach it. <<set $hammerhand to 0>>
+<</linkreplace>>
+<</if>>
+<</if>>
+
+You wouldn't normally pry through someone's possessions but this situation is dire. You look around his table. All his drawers are labelled with study material, you find one labelled "Personal" and another labelled "Personnel"
+<<linkreplace "Open his personal drawer" >>
+  <<set $time to $time -1>> You find a journal. It belongs to Spud. You respect people's privacy and have never read anyone's diary. Given the situation however reading just a bit should not be immoral.
+          <<linkreplace "Read the last written page. ">><<set $time to $time -1>>
+<code> "Why would it has to be this way, my stupid potato neural network, no matter how hard it tries it will never be able to think like a person. If only that blog would start again, if I see just anything about a potato, I can finally get my life back, stop these stupid computer and food research and get back to skateboarding."
+</code>          
+<</linkreplace>>    
+  <</linkreplace>>
+  
+<<linkreplace "Open his personnel drawer">><<set $time to $time -1>> You find papers with everyone's name who has been working in the sciencelab<</linkreplace>>
+
+
+
+
+
+Go back to the
+[[Entry]]
+
+
+
+
+
+::Hall
+
+<<set $location to "Main Hall">>
+    <<set $time to $time - 1>>
+
+<<if $bomb is true>> The entries are locked. Students with an entry pass can enter only when the ceremony starts.
+
+[[Go back outside | Entry]]
+
+<<else>>You take a note of the time and realise you never made it this far. You enter the hall to see Vyusian approaching the stage. You shout "No way" a bit too loud, he takes notice.
+
+You see Vyusian asking the president to come with him outside the hall. You realise this might be the proposal he talked about, he finally decided not to embarass himself on stage, good for him. Within a minute you see both of them returning. You notice Vyusian approaching you
+
+Vyusian runs towards you and gives you a big hug. He then attempts to pick you up but you manage to get away."You don't know how happy I am right now, this might just be the happiest moment of my life", after taking a breather he continues "I am going to take her out somewhere right now".
+
+"No way" Vivian objects, "you can't imagine how much work I have right now, I have to ..."
+
+"My buddy here can take over if you don't mind, he was dying to help out with the ceremony" Vyusian suggests, his words send a chill down your spine.
+
+"Really? Will you take care of everything for the ceremony?" the president asks.
+
+"Yes", you answer intuitively, despite the repeated visits to the void, your excitement for the ceremony remains the same.
+
+
+"That sounds like a game for another time." you hear a familiar voice whispering to you, as you look around to find the source, Murphy jumps out of nowhere and hugs you from behind. The sudden hug makes you shriek for a second but you manage to not make a scene.
+
+"Vyusian told me everythings ... Spice-for-my-potatoes .. you are the one" Murphy cries as he continues explaining "I ... I am Murphy ... do you remember me ..."
+
+"Sure" you try to avoid the conversation, "look I have to ..."
+
+"I ... I want you too .." Murphy continues.
+
+"Sure, continue writing the blog right? I will" you answer quickly.
+
+"No ... will you ... will you go out with me?"
+
+"What?" you shout.
+
+
+The End
+<</if>>

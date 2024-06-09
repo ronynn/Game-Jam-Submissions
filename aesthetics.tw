@@ -1,0 +1,930 @@
+:: StoryTitle
+𝔸𝕖𝕤𝕥𝕙𝕖𝕥𝕚𝕔𝕤 𝕆𝕧𝕖𝕣 ℙ𝕝𝕠𝕥
+
+
+:: StoryCaption
+
+<div style=color:white;>
+<i>Never give up!(Unless you really have to.). </i>
+
+- You are wearing a $dress.
+- You are talking to $talking at the moment.
+<<if $book is 1>>
+- The book you read for interview preparation is "The way of the ronin".
+<<elseif $book is 2>>
+- The book you read for interview preparation is "How to win friends and influence people".
+<<elseif $book is 3>>
+- The book you read for interview preparation is "Business at the speed of thought".
+<<elseif $book is 4>>
+- The book you read for interview preparation is "Molecular Biology of the Gene".
+<</if>>
+</div>
+
+
+
+:: StoryData
+{
+        "ifid": "A3A3BC10-F5D4-4889-A9B5-A353F5853DCB"
+}
+
+
+:: UserStylesheet [stylesheet]
+/* notify.min.css, by chapel; for use with notify.js; v1.0.0 */
+#notify{position:fixed;display:block;width:16em;right:-20em;top:2em;padding:.5em;background-color:#fff;color:#000;-webkit-transition:right .3s;-moz-transition:right .3s;-o-transition:right .3s;transition:right .3s}#notify.open{right:0}
+/* end notify.min.css */
+/* CSS code for gradient background */
+body {
+   background-color: white;
+   font-size: 0.9em;
+   font-family: Arial, Verdana;
+   color: black;
+   animation: fadeIn ease 1s;
+  /*background-image: linear-gradient(to bottom right, #a01818, #592020);*/
+}
+
+@keyframes fadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+} 
+
+/* CSS code for neomorphism style for buttons 
+button, a {
+  background-color: #30a4c1;
+  border-radius: 1.7em;
+  font-size:1.4em;
+  color:white;
+} */
+
+h1, h2, h3 {
+  color: #30a4c1;
+}
+
+a:visited {
+  color:black;
+}
+
+a {
+  font-size: 1.5em;
+  font-weight:bold
+  transition: all 0.5s;
+  Font-variant: small-caps;
+}
+
+
+::Start
+
+<<set $dress = "torn tshirt and distressed jeans">>
+<<set $talking to "nobody">>
+
+
+
+<center><h1>Aesthetics Over Plot </h1></center>
+  
+
+> “In a world where interviews have not gotten you anywhere, you go on a quest to acquire a job through networking, but your potential bosses don't seem that typical and let's just say talking isn't your biggest skill.”
+<center> <h1>[[Begin]]
+[[About]] </h1> </center>
+
+
+::About
+
+<h1>About</h1>
+<<notify>>
+Achievement Unlocked!
+You read the About sections, great job.
+<</notify>>
+<h3>
+An experiment on talking your away around interviews. 
+</h3>
+
+After losing your job as a well paid biologist, you have been living rather ... let’s say frugally. With the oppurtunity of getting invited to one of your buccaneer friend’s party/banquet (really though?), you are determined to get the next job. But your potential bosses involve a omniscent mind reading cactus, a really cool donkey, and a wall. How would you win the job?
+
+> Check out the Author's other projects on <a href="https://github.com/ronynn">Github</a> or <a href="https://ronynn.github.io">Homepage</a>.
+
+You can unlock a secret fact behind the game's development if you choose the term "AbaChan" as your character's name.
+<center>[[Back to Main Page|Start]]</center>
+
+
+::Begin
+<center>
+<h2>Finding a direction</h2> </center>
+
+As a newly hired biologist, you had been living the dream, steady income, free lunch at work, the office car, what's not to like. Too bad you were fired about an year ago but none of your friends know that.
+
+But based on your online research, you now know that the best jobs are acquired through networking. Upset at your choice of studying biology over computer science, you smack your computer mouse to the table only to continue reading and find out that the website is talking about networking between people.
+
+After finishing the marketing lingo essay you realize that the weekend party you were invited to might just come in handy for a new job, ofcourse your experience as a biologist might not be that useful for each offer you get, but for that you just need to talk your way through to prove yourself worthy, or in interviewee lingo ...try to make them prove their worth to you. 
+
+<center>[[Main Mission]]</center>
+
+
+
+::Main Mission
+
+<h1>Chapter 1</h1>
+
+> Talk to people at the party and get job offers. 
+You have been unemployed for over a year, and your savings are running low. You have applied to hundreds of jobs, but none of them have called you back. You are desperate for a chance to prove yourself.
+
+You pack all your belongings and change in a pouch, hoping that this journey will be worth it. You don’t know what awaits you, but you are ready to face anything. Well, almost anything.
+
+[[Step1]]
+
+
+::Step1
+
+
+<h2>Step - 1: Dress to impress </h2>
+
+1.[[Long overcoat and a muffler->Step2][$dress to "long overcoat"]]: It's spring outside but you look like a professional. (You successfully convinced a homeless person to give you their clothes to achieve nirvana through good karma)
+
+2.[[Suit->Step2][$dress to "suit"]]: No doubts about it, you were born a professional and don't worry about overworking yourself or living till retirement (You bought it with your hard earned bonus money which you got by taking credit for your coworker's work when he was on leave)
+
+3.[[T-shirt and jeans->Step2][$dress to "tshirt"]]: You are a working professional and are here just to relax, overdressing might just raise eyes (your everyday wear, you managed to exchange your torn tshirt for a new one after tricking the shopkeeper to believe you bought it last month)
+
+4.[[Lab coat->Step2][$dress to "labcoat"]]: As a biologist, you are aware of all the germs that people keep spreading around and you are not taking any chances. (you already had it from when you stole it from your high school bully)
+
+5.[[Cardboard box->Step2][$dress to "cardboard-box"]]: Durable, reliable, cheap and affordable, certainly leaves an impression on everyone you meet. (You break apart your house that kept you warm after you ran out of rent money 2 months ago)
+
+
+
+
+
+
+::Step2
+<h2>Step - 2: Reading </h2>
+
+Your friend is a buccaneer and must therefore be friends with people with a business background more likely established in a port city. Based on your knowledge, you need to read up on as many things as possible that might be useful for your <s>meetings</s> chit-chats with the potential bosses. However reading on too many themes will just mess up your ideas so just pick one.
+
+1. [[Way of the ronin|step3][$book to 1]] : Might be useful to give off the impression that you spend your time honing your skills and are not in need of a master.
+
+2. [[How to gain friends and influence people by Dale Carnegie|step3][$book to 2]] : Talk about networking while networking to network the network
+
+3. [[Business at the speed of thought by Bill Gates|step3][$book to 3]]: Business business, business is to business what business.
+
+4. [[Molecular Biology of the Gene|step3][$book to 4]]: You are a biologist and only like your subject, of course you are not finding everything in the book to be brand new because you most definitely have studied this stuff in the past.
+
+
+
+
+::step3
+
+<h2>Step - 3: Breathing</h2>
+
+Just practice taking deep breaths and make sure not to get nervous when you are metting the <s>bosses</s> friends of your friend.
+
+[[Step 4|step4]]
+
+
+::step4
+<<set $talking to "the taxi-driver, yes you are">>
+<h2>Step - 4: Head first <s>Java</s> to the mission </h2>
+
+You raise your hand to call a taxi and as a taxi is about to stop you run away to the back alley after realizing you can't afford it. 
+
+1.[[Walk|step5][$w to 1]]
+2.[[Bus ride|step5][$w to 2]]
+
+
+::step5
+<h2> Step - 5: The iconic entry </h2>
+<<set $talking to "the guard">>
+<<if $w is 1>>
+ You decide to walk and exercise your body before the meeting, the scent of your sweat will only be helping you in marking territory
+<<else>>
+ You find a seat on the crowded bus and someone drops a packet of flour on your $dress, you rub it off but it leaves a shadow.
+<</if>>
+
+
+
+You step through the gate only to be stopped by a guard
+
+The guard stares at your $dress with a judgemental pose and you can see in his eyes ... that he is impressed!
+
+"Invitation sir?" the guard requests humbly.
+"Yes indeed" you answer, you were indeed invited.
+"Will you show me your invitation Sir?" the guard asks firmly, but with a British accent out of nowhere.
+
+You were not given an invitation by your friend, at this moment you can't seem to recall the name of your friend, or what the party is about in the first place. But your bestie seems to have arrived just at the right moment - " oh, ya you, what's your name again?" he requests ...
+
+
+Eager ears wait for you to say your name ... 
+<<textbox "$password" "">> <<button "Announce">> <<goto "step42">> <<set $password to $password.toLowerCase()>> <</button>>
+
+
+
+::step42
+<<set $talking to "the buccaneer friend">>
+  <<if $password.indexOf('abachan') > -1>>
+  	A loud noise echoes through the sky - "This game has been made as a birthday gift for AbaChan". You try to find the source of the noise but fail, it seems the guard doesn't hears distant noises well.
+  <<else>>
+  	The guard tries to hide a chuckle after hearing your name $password.
+  <</if>>
+
+"Ya dude, dudette, $password whatever .. really glad you could make it here, nice <u> $dress </u> by the way, why don't you go through the back entrance, you might even know some people there" commands your friend.
+
+Your world falls apart, the person you thought to be your best friend for giving you free vodka every week is asking you to go away.
+
+1.[[Stand and ask to be allowed to enter|stand]] 
+2.[[Walk away|walk]]
+
+::stand
+Well it's just that your $dress doesn't goes well with the rest of the aesthetics of the place, I really hope you don't mind be asking you to walk around.
+
+1.[[Guess it's time for Step 5 part 2|step52]]
+
+
+::walk
+
+"Where are you going?, I said the back entrance is that way." 
+
+You realize you weren't asked to get out but to walk towards a different entrance, you hesitantly but joyfully walk around the venue to the back entrance. Today is the day, bothing can go wrong.
+
+1.[[Guess it's time for Step 5, part 2|step52]]
+
+
+
+::step52
+
+<h2>Step - 5 : The iconic entry, part 2</h2>
+<<set $talking to "nobody">>
+A dilapidated gate, it smells terrible. You step on dog poop. You try to rub it away on the carpet nearby but you accidentally end up tearing your shoes.
+
+Nobody's going to look at your shoes, you stop worrying about it.
+
+You see a door leading to the main party. Time to make a proper entrance.
+
+You suddenly rethink about what you are here to do. Your existensialism kicks in. 
+
+But you pat your back to get back in the flow. You are ready for this.
+
+1.[[Optimistic Mode Activated|step53]]
+
+
+::step53
+<<set $talking to "a chicken eating guy">>
+<h2>Step - 5: The iconic entry, part 3, this time for sure </h2>
+
+You make your way through to the party, as lavish as a party can be. No wonder some of your neighbours were kept in this corner of the party, they are more focussed on the food than what they should be focussed on = "The grind!", you shout feeling how awkward it sounds when saying out loud.
+
+You are here more networking and you know for sure that you are getting a job today.
+
+"But I don't have a computer" some guy shouts at you while eating a chicken leg.
+
+You shout at the guy "Not computer networking, people networking that people do to get jobs", The guy stares at you and says something to himself then answers - "Well good luck with that"
+
+But in the meantime your eyes got a hold of the piece of chicken he was eating, "nothing wrong with some refreshments before an interview" you assure yourself.
+
+1.[[Eat some food|step54][$chicken to 1]]
+2.[[No, your diet requires intermittent fasting|step54]]
+
+
+::step54
+<<set $talking to "nobody">>
+
+<<if $chicken is 1>>
+<<notify>>
+Achievement Unlocked!
+Food is my first priority.
+<</notify>>
+After you finish the feast and manage to sneak a few chicken legs in your pockets, it's time for the <s>interview</s> chit-chat. 
+<</if>>
+
+Your acute senses enable you to find the targets you need to cover. One at a time.
+
+The trick to finding who is the most important person in a party is to observe who surrounds themselves with the most amount of people. It's simple math. "There could be nothing more simpler than that" you shout while doubting your grammar yet nobody takes a notice of you.
+
+Seems you have to go talk to people now. You social anxiety kicks in. What do you do?
+
+1.[[Leave, what else?|leave]]
+2.[[Activate Spider Sense|spider]]
+
+::leave
+
+<h2>GAME OVER </h2>
+
+You chose the road <s>not</s> taken mostly by anxious people and lost to your anxiety. "Stable life is better" you say to yourself.
+
+As for the game, you can restart from the sidebar or here.
+<<button "restart">>
+    <<run UI.restart()>>
+<</button>>
+
+"Or I could just hit the back button" you whisper to yourself, loudly.
+
+
+::spider
+
+You grab a spider from under a table and flick it upwards, the wind blows it towards your right, "that's where I have to go" you declare.
+
+"Spider Sense, we used to call it back in my hometown" you take pride in your accomplishment.
+
+You see a crowd centred around a large table, as you push through the ground you realize that the crowd is surrounding ... a <u>Really Cool Looking Donkey </u>!
+
+"What?" you whisper to yourself, but then you notice that the donkey is wearing glasses.
+
+Well, one should never judge others by appearances, but you decide that the donkey must be cool enough that it's wearing glasses. 
+
+He is surrounded by a group of admirers who are laughing. probably at it's every word, if it talks. You decide to approach it and join the conversation.
+
+1.[[Introduce yourself politely.|Polite]] 
+2.[[Make a witty comment about it's sunglasses.|Witty]] 
+3.[[Ask him if he knows anything about biology.|Biology]]
+
+
+
+
+
+::Polite 
+<<set $talking to "the donkey">>
+You clear your throat and say: “Excuse me, sir. I’m sorry to interrupt, but I couldn’t help noticing your presence. You seem to be a very influential person. May I ask your name and what you do?”
+
+<<if $witty is 1>>
+The donkey turns his head towards you and gives you a smug smile. For a moment you wonder if the donkey can actually talk or not or you'll have to pretend you tried to get everyone to laugh and run out of the crowd. <</if>>
+
+To your relief he starts speaking: “Well, well, well. Who do we have here? A new face in the crowd. And a very polite one, too. I like that. My name is Don Key, and I specialize in producing high-quality bananas for the global market. And you are?”
+
+You feel a surge of hope as you hear his name. Bananas are related to biology, right? Maybe you can use your expertise to impress him.
+
+1.[[Tell him your name and that you are a biologist.|Biologist]] 
+2.[[Tell him your name and that you are a fan of his work. Ofcourse you'll have to make up stuff as you go.|Praise]]
+
+
+
+
+
+
+
+::Witty 
+
+<<set $talking to "the donkey">>
+<<notify>>
+Achievement Unlocked!
+You insult a Donkey!
+<</notify>>
+<<set $witty to 1>>
+
+You walk up to the donkey and say: “Hey, nice sunglasses. Are they prescription or just for show?”
+
+The donkey looks at you with annoyance and says: “What did you say? Do you have a problem with my sunglasses? They are not for show, they are for protection. Protection from the sun, from the dust, and from the haters. Do you know who I am?”
+
+You realize you may have offended him with your comment, but you try to play it cool.
+
+1.[[Apologize and ask him who he is.|Polite]] 
+2.[[Say you don’t care who he is.|DontCare]] 
+
+
+
+
+
+
+
+
+::Biology 
+<<set $talking to "Mr Don Key">>
+
+You approach the donkey and say: “Hello there. I couldn’t help overhearing your conversation. You seem to know a lot about business, but do you know anything about biology?”
+
+The donkey raises an eyebrow and says: “Biology? What’s that? Some kind of science thing?”, the donkey appears to be holding back a smirk.
+
+You nod and say: “Yes, it’s the study of life and living organisms. It’s very fascinating and important for many fields, such as medicine, agriculture, ecology, and so on.”
+
+The donkey snorts and says: “Sounds boring. And irrelevant. What does biology have to do with bananas?”
+
+You feel offended by his ignorance and arrogance, but you try to steer the conversation.
+
+1.[[Tell that you are in reality a fan of his work.|Praise]]
+
+
+
+
+::Biologist 
+<<set $talking to "Mr Don Key">>
+<<notify>>
+Achievement Unlocked!
+Show Off.
+<</notify>>
+
+You tell him your name and that you are a biologist. You hope he will be impressed by your credentials and your knowledge.
+
+The donkey says: “A biologist, huh? That’s interesting. What kind of biology do you do?”
+
+You think for a moment and say: “Well, I used to work on a project that involved genetic engineering of plants. We were trying to create new varieties of crops that could resist pests and diseases, and increase yield and quality.” <<if $book is 4>>You took it out straight from the book you were reading yesterday<</if>>
+
+The donkey says: “Really? That sounds impressive. And did you succeed?”
+
+You hesitate and say: “Well, not exactly. There were some… complications. The plants became too aggressive and started to attack me. At night they'd shout my name. It was a disaster.” <<if $book is 2>>You realise you should have read the "How to win friends" book much before.<</if>>
+
+The donkey says: “Wow. That’s unfortunate. And what do you do now?”
+
+You feel embarrassed and say: “Well, nothing much. I’m… between jobs at the moment.” <<if $book is 1>>"Like a jobless Samurai" you shout at the top of your lungs, you read a big book yesterday and everyone should know that.<</if>>
+
+The donkey says: “I see. Well, that’s too bad. Maybe you should try something else. Something more… profitable.” <<if $book is 3>>The word "business" starts flying around your head, reading the book might have been useful, might have been, probably yes.<</if>>
+
+1.[[Ask him if he has any openings at his company. But be indirect in the form of praise.|Praise]] 
+2.[[Ask him for some advice on how to succeed in business.|Advice]] 
+
+
+
+
+
+
+
+
+
+::Praise 
+<<set $talking to "Mr Don Key">>
+
+You agree with him and praise his company. You say: “Yes, of course. Bananas are very much related to biology. And your company is amazing. I’ve heard so many good things about it. You must be very proud of your achievements.”
+
+The donkey smiles and says: “Thank you. That’s very kind of you to say. I am proud of my achievements. I’ve worked hard to get where I am today. It wasn’t easy, you know. But I never gave up on my dreams. And look at me now. I’m the king of the bananas.”
+
+You nod and say: “Wow. That’s very inspiring. You are an example for all of us.”
+
+The donkey says: “Thank you. You are too kind. You know, you seem like a nice person. And a smart one, too. You have potential, my friend. Potential to do great things.”
+
+You feel a surge of excitement and say: “Really? Do you think so?”
+
+The donkey says: “Yes, I do. In fact, I have a proposition for you. How would you like to work for me?”
+
+1.[[Accept his offer.|Accept]] 
+2.[[Decline his offer.|Decline]] 
+3.[[Ask him what kind of work he has in mind.|Work]]
+
+
+
+::Accept 
+<<notify>>
+Achievement Unlocked!
+My Boss is a Donkey!
+<</notify>>
+You accept his offer without hesitation. You say: “Yes, yes, yes! I would love to work for you! Thank you so much for this opportunity! You won’t regret it, I promise!”
+
+The donkey says: “Excellent. I’m glad to hear that. You are now part of the family.”
+
+You feel overjoyed and say: “Thank you, thank you, thank you! This is the best day of my life!”
+
+The donkey says: “Don’t mention it. It’s my pleasure. Come on, let me introduce you to the rest of the team.”
+
+
+You have successfully impressed Mr Don Key and got hired as his new employee.
+
+<h2>You win, the end.</h2>
+
+
+
+::Decline 
+You decline his offer politely. You say: “Thank you for your offer, but I’m afraid I have to decline. I appreciate your kindness, but I have other plans for my future.”
+
+Based on your book reading, you took the gamble of increasing your importance by not accepting the offer at once. Ofcourse, things can go to any direction now.
+
+The donkey says: “Oh, really? And what are those plans?”
+
+You say: “Well, I’m actually looking for something that would make a big impact on fruit production.” Even in you declining answer you are trying to impress him.
+
+The donkey says: “Wow. That sounds impressive. And also very familiar.”
+
+You say: “Oh, really? Why is that?”
+
+The donkey says: “Because that’s exactly what I do, didn't you hear anything I said?.”
+
+You say: “Oh, no!”
+
+The donkey says: “I don't know what kind of game you are playing but if you want to talk about the offer again I'm here.”
+
+You say: “I see.”
+
+The donkey says: “Well, it’s your choice. But I think you’re making a mistake. You could have a bright future with me.”
+
+You say: “Thank you, but no thank you.”
+
+The donkey says: “Suit yourself.”
+
+He turns away from you and resumes his conversation with his admirers.
+
+You have still impressed the donkey, probably and probably haven't yet missed your chance to get hired.
+
+1.[[Looking for the next boss|wall][$donk to 1]]
+
+
+
+
+::Work 
+You ask him what kind of work he has in mind. You say: “That sounds tempting, but what exactly would I be doing for you?”
+
+The donkey says: “Well, that depends on your skills and interests. But basically, anything that involves bananas.”
+
+You say: “Anything that involves bananas?”
+
+The donkey says: “Yes, anything that involves bananas. Growing them, harvesting them, transporting them, selling them, eating them, etc etc etc.”
+
+You say: “I see.”
+
+The donkey says: “So, what do you think? Are you interested?”
+
+1.[[Say yes.|Accept]] 
+2.[[Say no.|Decline]]
+
+
+
+
+
+
+
+
+
+::DontCare 
+You say you don’t care who he is. You say: “No, I don’t have a problem with your sunglasses. I just think they’re ridiculous. And I don’t care who you are. You’re just a donkey with a fancy suit and a bunch of followers. You’re nothing special.”
+
+The donkey says: “Oh, really? Is that so? Well, let me tell you something, my friend. We produce high-quality bananas for the global market. And I’m not just a CEO..." 
+
+You start to wonder whether he'll say "I'm also a donkey".
+
+He continues "I’m a visionary. A leader. A legend. I have more money, power, and fame than you can ever dream of. And you know what else? I’m cool. Very cool. Cooler than you’ll ever be.”
+
+You say: “Cooler than me? How do you figure that?”
+
+The donkey says: “Well, for starters, I have sunglasses. Sunglasses are cool. They make you look mysterious and confident. And they protect your eyes from the sun, the dust, and the haters. Do you have sunglasses?”
+
+You say: “No, I don’t.” You remember a pair of glasses you found in a park but it then later fell from your pockets and you stepped on them.
+
+The donkey says: “Exactly. You don’t have sunglasses. That makes you uncool, loser. And losers are irrelevant.”
+
+You say: “Wow. That’s quite a logic you have there.”
+
+The donkey says: “Thank you. I pride myself on my logic. It’s one of the reasons why I’m so successful.”
+
+You say: “I see.”
+
+The donkey says: “So, now that you know who I am and what I do, do you still not care?”
+
+1.[[Just walk away|Apologize][$dignity to 1]]
+2.[[Apologize][$dignity to 0]]
+
+
+::Apologize
+<<if $dignity is 0>>"Yes, know where you belong" the donkey shouts. You get escorted outside the party.
+
+<h1>The End, You lost</h1> <<button "restart">>
+    <<run UI.restart()>>
+<</button>>
+<<elseif $dignity is 1>>
+You realize whether or not you apologized, it doesn't matter anymore, you are not getting hired here. You walk away. It almost feels like two guards were running towards this table but you prefer not to look back.
+
+As you walk around the room, you notice a group of people surrounding a wall. Time to see the [[wall][$donk to 0]] for yourself.
+<</if>>
+
+
+
+
+
+
+
+
+::Advice 
+
+<<notify>>
+Achievement Unlocked!
+You take a donkey's advice.
+<</notify>>
+
+You ask him for some advice on how to succeed in business. You say: “You seem to be very successful and knowledgeable. Do you have any tips or tricks on how to make it in the business world?”
+
+The donkey says: “Tips or tricks? Hmm, let me think. Well, I guess there are a few things that helped me along the way. For example, always be confident. Confidence is key. If you don’t believe in yourself, no one else will. And if you don’t believe in your product, no one else will buy it. So always act like you know what you’re doing, even if you don’t. Like that time I sold a bunch of rotten bananas to a zoo by convincing them they were exotic delicacies from Africa. They never suspected a thing.”
+
+You say: “I see. That makes sense.” You try not to laugh at his absurd example.
+
+The donkey says: “Another thing is to be persistent. Persistence pays off. Don’t give up on your goals, no matter how hard they seem. Keep trying, keep learning, keep improving. Eventually, you’ll get there. And if you don’t, at least you’ll have fun along the way. Like that time I tried to break the world record for eating the most bananas in one sitting. I didn’t make it, but I had a blast.”
+
+You say: “I see. That’s very inspiring.” You try not to gag at his disgusting example.
+
+The donkey says: “And one more thing is to be cool. Coolness is crucial. Cool people attract other cool people. And cool people have more opportunities, more connections, more influence. And more bananas. So always be cool, my friend. And if you’re not cool, fake it till you make it. Like that time I wore sunglasses to a meeting with a potential investor. He was so impressed by my style and attitude that he gave me a million dollars on the spot.”
+
+You say: “I see. That’s very helpful.” You try not to roll your eyes at his ridiculous example.
+
+The donkey says: “You’re welcome. I’m glad to share my wisdom with you. You seem like a nice person. And a smart one, too. You have potential, my friend. Potential to do great things.”
+
+You feel a spark of hope and say: “Really? Do you think so?”
+
+The donkey says: “Yes, I do. In fact, I have a proposition for you. How would you like to work for me?”
+
+1.[[Accept his offer.|Accept]] 
+2.[[Decline his offer.|Decline]] 
+3.[[Ask him what kind of work he has in mind.|Work]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::wall
+<<set $talking to "an announcer">>
+
+<h1>Chapter 2</h1>
+
+Will $password get back to the donkey for a job offer, what mystery hides behind, on, or in the wall? and what was that omniscent cactus on the game description? what does omniscence mean? and what's going to happen to this buccaneer friend? 
+
+Find out on the next installment of "Aesthetics Over Plot".
+
+[[Here we go!|Chapter2]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::Chapter2
+<<set $talking to "a wall">>
+
+
+The crowd disperses as you make your way through. "The $dress is doing it's job just right" you say to yourself.
+
+They crowd seems to be very interested in something on the wall. You wonder if it is some kind of art or technology that could be a business opportunity. You decide to join the group and see what they are talking about.
+
+You squeeze your way through the crowd and approach the wall. You see nothing but a plain white wall with a few paintings on it. You are confused. "How could this be a business owner?, well time sure is changing fast"you say to yourself. You decide to act as if you know what you are doing and start talking to the wall.
+
+"Hello, Mr. Wall. I'm very impressed by your work. You have a very unique style and vision. I'm a biologist by profession and I have some ideas that could benefit your business. For example, have you considered ..."
+
+You go on and on, hoping that something will hear you and be impressed by your pitch, even if someone is standing at the other side of this wall, your voice was sufficiently loud enough. You don't notice that the people around you are staring at you with amusement and pity. They are not talking to the wall or someone behind it, they are talking to someone who is standing by the wall. Someone you know very well.
+
+Your ex-boyfriend.
+
+He is holding a glass of champagne with a smile on his face that says he is enjoying your embarrassment.
+
+He is the one you have to impress.
+
+1.[[Oh No]]
+
+:: Oh No
+You stop talking when you realize your mistake. With a surge of shock, anger, regret, envy, you don't know what to say or do. "Nice $dress", he says, "same, thanks" you answer while trying to think of cool replies.
+
+"Hello $password. Fancy seeing you here" he says in a sweet but sarcastic tone.
+
+"Hello ... I didn't know you were...this." You say in a lame attempt to sound casual while desperately trying to remember his name, "should have revised my journal instead of that book" you whisper in your breath.
+
+"Oh, this? This is nothing. Just a little hobby of mine. I started my own company after we broke up. You know, because I was bored and had nothing else to do" he says with a smirk.
+
+"What kind of company?" You ask, trying to hide your curiosity.
+
+"Oh, just a little biotech company that specializes in creating custom organisms for various purposes. Nothing too fancy" he says casually.
+
+"Wow. That's...amazing." You say sincerely.
+
+"Thank you. I'm glad you think so." he says with a smile that doesn't reach his eyes.
+
+You feel awkward and uncomfortable. You don't know how to continue this conversation. "Did they make the cactus everyone is talking about" you wonder.
+
+You have to make a choice.
+
+1.[[Apologize for breaking up with him.|Apologized]]
+2.[[Ask him for a job.|Ask]]
+
+
+:: Apologized
+<<notify>>
+Achievement Unlocked!
+Good at heart.
+<</notify>>
+
+You decide to apologize for breaking up with him. You genuinely hope that he will forgive you.
+
+"Umm ... Jack ..., I'm sorry for what I did to you. I was wrong to break up with you. I was too focused on my work and I didn't appreciate you enough." You say trying to sound sincere.
+
+He looks at you with surprise and then with indifference.
+
+"My name's not jack and is that all? Do you think I'll just forget how you dumped me over the phone? How you said I was holding you back from those trees you were working?" he says furiously.
+
+"No, no, of course not. It was not me, it was those damn trees I was doing genetic experiments on that would occassionally call people and say super specific things." you realise the ridiculousness of this approach, "I don't expect anything from you. I just wanted to tell you how I feel." You say desperately.
+
+"Well, guess what? I don't to see you here anymore, guards that this $dress wearing filth outside" he orders. "Whats wrong with the suit?" you ask, "Nothing, just not quite in rhythm with this place" he answers.
+
+You are escorted out. You stay jobless.
+
+<h1>GAME OVER</h1>
+
+
+
+
+:: Ask 
+You decide to ask him for a job. You hope that he will be impressed by your skills and knowledge and maybe give you a chance to work with him.
+
+“Umm... Sam..., I’m very interested in your company. I think I have the qualifications and experience to be a valuable asset to your team. Do you have any openings?” You ask politely but feel regretful but approaching this question straight.
+
+He looks at you with amusement and then with pity.
+
+“A job? A job? Is that what you want from me? Do you think I’ll just hire you? Do you think I’ll forget how you said I was boring and unambitious? How you said I had no future?” he says mockingly.
+
+“No, no, I didn't say anything like that, what I said was that my experiments are more interesting than talking to people, not just you but to people in general and that people, not just you but people have no future as trees will reign supreme in the future." you feel proud for coming up with an answer that makes sense to you but it brings no response from him.
+
+"I just wanted to show you my interest and enthusiasm. I think your company is doing amazing things and I want to be a part of it.” You say earnestly.
+
+"Well, you were quite great at your job but you are also insane, why are you wearing this $dress? Have you looked yourself in the mirror?" he asks you.
+
+
+1.[[Mirrors just show you what you want to see.|next]]
+2.[[I am happy with what I'm wearing.|next]]
+
+
+::next
+
+<<notify>>
+Achievement Unlocked!
+You have Self Respect!
+<</notify>>
+
+Jacob sighs for a second and answers "Look I know you work diligently, but the only position I have available is not for a biologist, but for a P.A. I know you are in a bad position right now financially. Why don't you go talk to someone else in the party? It's not odd to utilise parties for networking but don't be so obvious, it's not a networking party".
+
+Jacob's answer tells you he still cares for you. "I will do that, Jacob, thanks" you smile. "I'm not Jacob" he answers, "Oh stop it, classic Tom, always the same" you reply and walk away while Tom keeps staring at you confusingly.
+
+This conversation seemingly ended well but now you need to really consider talking to someone who would probably be your boss. 
+
+<<if $donk is 0>>
+You have ruined the oppurtunity of getting a job offer from the donkey,<<elseif $donk is 1>>You still have the chance to accept Mr Don Key's offer,<</if>> and the other possible job offer, which you will have to request really really hard for, is to become a P.A.
+
+The last boss is your only hope for a cool job offer.
+
+1.[[Let's Go|Cactus]]
+
+
+
+
+
+:: Cactus 
+You decide to leave your ex-boyfriend and look for someone else to impress. You scan the room and see a table with a potted cactus on it. You notice that everyone is avoiding the table and giving it a wide berth. You wonder why.
+
+You walk over to the table and examine the cactus. It looks like a normal cactus, except that it has a small name tag that says “Boss”. You are confused but already in the know. You decide that there must be some way to communicate with it, even if it involves telepathy as the rumours say.
+
+You lean closer to the cactus and try to establish a mental connection. You focus your thoughts and send them to the cactus.
+
+“Hello, Mr. Cactus. I’m very impressed by your work. You have a very unique style and vision. I’m a biologist by profession and I have some ideas that could benefit your business. For example, have you considered using photosynthesis to create renewable energy? Or using spines to create weapons and tools? I have the expertise and experience to help you with these projects.”
+
+You wait for a response, hoping that the cactus will hear you and be impressed by your pitch. You notice that the people around you are staring at you with amusement and pity. They think you are crazy for staring at a cactus with your fingers pointing to your head.
+
+Suddenly, you hear a voice in your head.
+
+“Hello $password. I’m glad you decided to talk to me. I’ve been watching you for a while and I find you very interesting. You have a lot of potential and creativity. I like your ideas and I want to hear more.”
+
+You are shocked and delighted. The cactus is talking to you! It is omniscient! It knows your name and your thoughts! You feel a surge of excitement and curiosity.
+
+“Wow! Thank you, Mr. Cactus. I’m honored by your words. How do you know my name? How do you know my thoughts? How do you talk to me?” You ask eagerly.
+
+“I know everything $password, I can read minds and communicate telepathically.” The cactus says proudly.
+
+“That’s…amazing.” You say sincerely.
+
+“Thank you. I’m glad you think so.” The cactus says with a smile that you can’t see but can feel.
+
+You feel a connection with the cactus. You feel like this is somewhere you'd love to work. You want to work with the cactus and learn from it.
+
+1.[[Ask the cactus for a job.|CactusJob]] 
+
+But you remember Tom's advice not to ask for a job straightly. You pressure your brain to think hard to come up with sonething to say, "what can be said to someone at a party?" you think hard, guests passing by feel scared of your stressed face.
+
+2.[[Flirt with the cactus.|CactusJob][$flirt to 1]]
+
+
+
+
+
+
+:: CactusJob 
+
+<<if $flirt is 1>><<notify>>
+Achievement Unlocked!
+You flirt with a plant!<</notify>>
+You decide to flirt with the cactus. You say "Did anyone ever tell you how prickly and cute you look ...", the familiar voice interrupts you, "let's not make your presence hear any awkward than it is" the cactus responds.<<else>>You decide to ask the cactus for a job. You hope that it will be impressed by your skills and knowledge and maybe give you a chance to work with it.<</if>>
+
+“Mr. Cactus, I’m very interested in your company. I think I have the qualifications and experience to be a valuable asset to your team. Do you have any openings for biologists?” You ask politely.
+
+The cactus responds in your head.
+
+“Yes $password. I do have an opening for a position."
+
+“Really? That’s…wonderful.” You say happily.
+
+“Yes, really. I think we have a lot in common. I think we can work well together and achieve great things. But you may not like the job itself.” The cactus says sincerely.
+
+“Thank you. I think we can work well together and achieve great things too.” You say earnestly, "but what exactly is the job? do you need someone to water you?"
+
+"Stop with your jokes, here's the thing, while I can read minds I can't read minds from a distance. Unless someone is thinking real hard with their fingers squeezing their forehead their messages dont get to me.", Mr. Cactus continues "I need you to be my ears".
+
+"Years?" you ask, "No ears as in Eyes and Ears, I need you to hear my employees conversations and report back to me." Mr Cactus answers.
+
+"Like a reporter?" you ask, "no, more like a spy" he replies.
+
+You don't like the nature of this job, and Mr. Cactus probably doesn't knows about this as you were not squeezing your forehead that hard while judging the morality behind this job.
+
+"Can I walk around and think about this for a moment." you ask Mr. Cactus, "As you please!" he answers.
+
+You look at the time and realise that the party is nearing it's end. What do you do?
+
+[[Think hard]]
+
+
+
+
+
+
+
+:: Think hard
+
+You have to make a final choice. You have three options for your future:
+
+1.[[Work with Mr. Cactus.|CactusEnd]] : Not as omniscent as the rumours claimed but you probably wouldn't have been offered a job in that case.
+2.[[Work with your ex-boyfriend.|ExEnd]] : Get paid for buying groceries, yeah, I guess.
+3.[[Work with Mr Don Key.|DonkeyEnd]] : Work as a biologist but you'll probably never be as cool as your boss.
+
+Time is running out, the party guests are already walking out and so are your bosses. Make a decision quickly as you won't be able to talk to any other boss you don't choose right now.
+
+
+
+:: CactusEnd 
+
+<<notify>>
+Achievement Unlocked!
+The name is $password, James $password.
+<</notify>>
+
+You decide to work with the cactus. You think that it is the best option for you. You like the cactus and you are fascinated by its abilities. You want to learn from it and help it with its projects.
+
+You tell the cactus your decision.
+
+“Mr. Cactus, I want to work with you. I think you are amazing and I want to be a part of your company.” You say sincerely.
+
+The cactus responds in your head, “Thank you $password. I’m glad you chose me. I think you are amazing too and I want you to be a part of my company.” The cactus says gratefully, “Then it’s settled $password. You are hired. Welcome to my company.”
+
+You feel happy and fulfilled. You have found your dream job and your dream boss.
+
+You buccaneer friend and the host of the party arrives, he tries to move away as you hug him, "you are the best buccaneer ever!" you shout, "I am a financier actually, I remember explaining it 2 times before" he jokes like the classic buccaneer he is.
+
+You hug the cactus. You feel a warm sensation in your chest. You realise it's blood.
+
+"Do I get medical insurance with this job?" you say with a smile, "No", Mr. Cactus answers.
+
+
+<h1>The End</h1>
+
+:: ExEnd 
+You decide to work with your ex-boyfriend. You think that it is the best option for you. You are impressed by his success. You also want to sincerely apologize to him.
+
+“Tom, I want to work with you. I think you are amazing and I want to be a part of your company.” You say sincerely.
+
+He looks at you with surprise and then with anger.
+
+“Work with me? Work with me? Is that what you want from me? You don't even remember my name yet!"
+
+"What made you think of that Richard?" you ask.
+
+He turns around and walks away from you.
+
+You feel a sharp pain in your back, It's Mr Cactus who is upset at you for ignoring him and attacked you with a prickle. You stare at him awkwardly as he leaves the venue.
+
+You go back to your alley and try to remember whether the cactus was walking by himself or not, but you can't. You cry.
+
+Atleast you could carry back some of the leftovers from the party. In a way, you still won.
+
+<h1>The End</h1>
+
+:: DonkeyEnd 
+<<notify>>
+Achievement Unlocked!
+My Boss is a Donkey!
+<</notify>>
+
+You decide to work with the donkey. You think that it is the best option for you. You like the donkey and you are intrigued by his business.
+
+You tell the donkey your decision.
+
+“Mr. Donkey, I want to work with you. I think you are cool and I want to be a part of your company.” You say cheerfully.
+
+The donkey responds in a loud voice, “Thank you $password. I’m glad you chose me. I think you are cool too and I want you to be a part of my company.”
+
+You buccaneer friend and the host of the party arrives, he tries to move away as you hug him, "you are the best buccaneer ever!" you shout, "I am a financier actually, I remember explaining it 2 times before" he jokes like the classic buccaneer he is.
+
+You feel a tingly sensation in your stomach. You feel excited and adventurous. You have found your dream job and your dream boss.
+
+You high-five him awkwardly and ask "Can I wear sunglasses at work too", Mr Don commands you with a smile "Never!".
+
+<h1>The End</h1>
+

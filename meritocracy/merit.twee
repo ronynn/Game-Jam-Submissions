@@ -1,0 +1,837 @@
+:: StoryTitle
+Meritocracy
+
+
+:: StoryData
+{
+"ifid": "E9C4764B-A6D6-49A2-A37A-156ADCEFD73A",
+"format": "SugarCube",
+"format-version": "2.21.0"
+}
+
+
+:: UserStylesheet [stylesheet]
+/* notify.min.css, by chapel; for use with notify.js; v1.0.0 */
+#notify{position:fixed;display:block;width:16em;right:-20em;top:2em;padding:.5em;background-color:#fff;color:#000;-webkit-transition:right .3s;-moz-transition:right .3s;-o-transition:right .3s;transition:right .3s}#notify.open{right:0}
+/* end notify.min.css */
+
+/* CSS code for gradient background, Verdana */
+body {
+font-size: 1.2em;
+font-family: Monospace;
+animation: fadeIn ease 1s;
+/*background-image: linear-gradient(to bottom right, #a01818, #592020);*/
+}
+
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+
+h1, h2, h3 {
+}
+
+a {
+font-size: 1.5em;
+font-weight:bold
+transition: all 0.5s;
+Font-variant: small-caps;
+}
+
+
+:: UserScript [script]
+// notify.min.js, for SugarCube 2, by Chapel
+// v1.1.1, 2022-07-21, 3bdbdfbe5ae47a46e4f4e52766d78701939ae9a6
+;!function(){var s=/\d+m?s$/;function e(s,e,t){"string"==typeof s&&("number"!=typeof e&&(e=!1),$(document).trigger({type:":notify",message:s,delay:e,class:t||""}))}$(document.body).append("<div id='notify'></div>"),$(document).on(":notify",(function(s){s.message&&"string"==typeof s.message&&(s.message.trim(),s.class?"string"==typeof s.class?s.class="open macro-notify "+s.class:Array.isArray(s.class)?s.class="open macro-notify "+s.class.join(" "):s.class="open macro-notify":s.class="open macro-notify",s.delay?("number"!=typeof s.delay&&(s.delay=Number(s.delay)),Number.isNaN(s.delay)&&(s.delay=2e3)):s.delay=2e3,$("#notify").empty().wiki(s.message).addClass(s.class),setTimeout((function(){$("#notify").removeClass()}),s.delay))})),Macro.add("notify",{tags:null,handler:function(){var t=this.payload[0].contents,a=!1,n=!1;if(this.args.length>0){var i=s.test(this.args[0]);"number"==typeof this.args[0]||i?(a=i?Util.fromCssTime(this.args[0]):this.args[0],n=this.args.length>1&&this.args.slice(1).flatten()):n=this.args.flatten().join(" ")}e(t,a,n)}}),setup.notify=e}();
+// end notify.min.js
+
+
+
+::StoryCaption
+
+A discussion oriented interactive fiction by <a href="https://ronynn.github.io">Ronynn</a>.
+
+<img src="meritocracy-poster.jpg">
+
+::Start
+
+<center><h1> Meritocracy </h1> </center>
+
+Meritocracy is primarily a choice based interactive fiction game where you select one among the given choices to put forward your arguement.
+
+You can enter the interactive fiction right away.
+[[Enter]]
+Or perhaps learn more about the ideas behind making the game in the [[About]] section.
+
+Be sure to check out the feelies, the game is conversational and often there are no right answers, but game progress shouldn't behindered by that until you reach near the end. You can always go back to previous passages using the back button on the right.
+
+<<preload "debate.jpg">>
+<<preload "halls.jpg">>
+<<preload "reflection.jpg">>
+<<preload "sleep.jpg">>
+
+
+
+
+:: About
+<<notify>>
+Achievement Unlocked!
+I'd like to know more.
+<</notify>>
+
+<center><h2> About </h2> </center>
+
+Most discussions or debates generally orient towards the loudmouthed people leaving others confused while going home with some sort of a win. But often we see well organised debates that dont fall for any of the typical fallacies and are heavily informative for the audience.
+
+Meritocracy is a game which attempts to put forward some interactions and attempts to find a solution for them through well formed arguements with the most moral and logical approach, while considering how society works in general.
+
+It discusses several questions that even I won't claim to know the answers to, but consider it as an attempt for an entertaining and informative read.
+
+<center><h3> About Me </h3></center>
+Check out the Author's other projects on <a href="https://github.com/ronynn">Github</a> or their <a href="https://ronynn.github.io">Homepage</a>. The homepage has a 3D globe animation that moves with the mouse, which I enjoy showing others.
+
+<center><h3> Playtesters </h3></center>
+Version 0.8 has  been tested by:-
+- ObstructedNostrils
+- GammaRayman
+
+Version 0.9.3 has been tested by:-
+- GammaRayman
+
+<center><h3> Achievements Unlocked </h3></center>
+The achievements are just meant to be humorous . As the game does not have too many choices, checkout how many you can unlock (well you can always simply look at the source).
+
+<center><h3> Frameworks and Libraries </h3></center>
+Made using tweego, sugarcube-2, notify add on, and nothing else. Source Code is available on github.
+
+[[Back|Start]]
+
+
+::Enter
+
+Whether its our gender, race, country of origin, or even the city that we live in, a lot contributes to our lives making all our experiences unique and different from one another. This makes our opinions and the way we approach solving problems very different.
+
+Perhaps you'd like to [[Customize]] your player character.
+
+::Customize
+
+But alas! the choices in this game are not representative of the different possible choices one could have towards the questions discussed here.
+
+I could only add a very few different ways someone could approach the problems stated sincerely. Unlike my previous games I have tried to avoid adding outlandish choices .
+
+The game is rather linear with a few set of choices at very few points that orients the discussion towards that choice.
+
+But based on playtester's request, uwu-lang oriented choices might be added later.
+
+But for the time being, perhaps you'd like to know [[who]] you're playing as.
+
+::who
+
+The player character's background has been prepared with heavy considerations to allow players to be able to somewhat see themselves in them.
+
+You play as an individual who has so far struggled to make a living juggling between jobs in an attempt keep their education going, as much as they can, in hope for a better future. Recently they have been able to schedule some time to go back to college only to find the atmosphere rather empty.
+
+This is where you get to start a discussion with your philosophy professor on various things that comes to mind, and see how this discussion goes.
+
+So, are you ready to [[begin]]?
+
+::begin
+
+As the raindrops pattered against the windowpane, you sat in your room, surrounded by piles of clothes and books. The prospect of leaving for college loomed over you like a dark cloud, threatening to dampen your spirits. But you, dear reader, were not one to be easily deterred. With a steely determination, you set about the task of packing your bags, carefully selecting each item as if it were a precious gem.
+
+As you folded your shirts and stuffed your socks into your shoes, you couldn't help but feel a sense of excitement mingled with apprehension. What adventures awaited you in this new chapter of your life? What challenges would you face? Only time would tell, but one thing was certain: you were ready to take on the world, come [[rain]] or shine.
+
+
+::rain
+
+As you made your way to the car, the rain began to pour down in sheets, drenching you to the bone. But you refused to let it dampen your spirits. You climbed into the driver's seat, turned on the engine, and set off towards your new life.
+
+You sang along to the radio, snacked on some chips, and marveled at the passing scenery. The rain continued to fall, but it only added to the sense of [[adventure]].
+
+::adventure
+
+As you arrived at the college, the rain had ceased, leaving the air crisp and fresh. The campus appeared deserted, as if the students had all fled in terror from some unseen foe. But you were not one to be easily deterred. With a sense of purpose, you made your way to your philosophy class, determined to begin your studies.
+
+The halls were silent, save for the sound of your footsteps echoing off the walls. You felt a sense of unease, as if you were the only living soul in a world of ghosts. But you pressed on, your heart beating with a fierce [[determination]].
+
+::determination
+
+Finally, you arrived at your classroom, and to your surprise, it was empty. The chairs were neatly arranged, the chalkboard pristine, but there was no sign of your fellow students or your professor. You felt a sense of disappointment, but you refused to let it dampen your spirits.
+With a sense of purpose, you took a seat at the front of the class, ready to begin your studies. You opened your notebook and began to write, your mind racing with thoughts and ideas. What mysteries lay hidden in the depths of philosophy? What secrets would you uncover? Only time would tell, but one thing was certain: you were ready to embark on a journey of the mind, come what [[may]].
+
+::may
+
+As you sat at the front of the empty classroom, lost in thought, the door creaked open and in walked your professor. He looked around the room, disappointment etched on his face, and let out a deep sigh.
+"Looks like it's just you and me today," he said, his voice tinged with sadness.
+
+You felt a pang of sympathy for the professor, who had clearly been looking forward to a lively discussion with his students. But you refused to let the situation get you down.
+
+As the professor began to set up his materials, he called out to a student who had been sitting at the back of the class.
+
+"Hey, you there! Come sit up front with us," he said, gesturing towards the empty chairs.
+
+The student looked surprised but complied, making his way to the front of the room. But as he sat down, you noticed a look of discomfort on his face.
+Without a word, you stood up and made your way to the third row, motioning for the other student to take your place at the front. The professor looked at you with surprise, but you simply smiled and took your seat.
+
+As the class began, you listened intently to the professor's words, eager to learn all you could. The rain may have kept your fellow students away, but it couldn't dampen your thirst for [[knowledge]].
+
+
+::knowledge
+
+The professor couldn't help but notice your unusual seating arrangement. He asked, "Excuse me, but why did you move to the third row?"
+
+You smiled wryly and replied, "I figured I'd give the front row to someone who needs it more than I do."
+
+The professor stared at you for a few moments and then looked away.
+
+You greet him with an enthusiastic smile, he points to you and says, "I have to say, I'm impressed with your enthusiasm. It's rare to see a student so engaged, especially one who hasn't been attending regularly."
+
+You shrugged and replied, "I guess I just really love philosophy."
+
+The professor nodded, a look of amusement on his face. "Well, that's nice, but I hate to break to you, this is classical mechanics, your philosophy class is in the next building [[over]]."
+
+::over
+
+You felt a wave of embarrassment wash over you, but you refused to let it get you down. With a smile and a nod, you made your way towards the correct building, determined to keep moving forward.
+
+As you walked through the rain, your clothes soaked through and your spirits dampened, you couldn't help but feel a sense of gloom. But you knew that giving up was not an option. You had worked hard to get yourself out of the house today, and you weren't about to let a little rain and embarrassment stop you.
+
+With a steely determination, you pushed forward, your mind racing with thoughts and ideas.
+
+You arrived at your philosophy class, a sense of excitement and anticipation filled your heart. You took a deep breath and stepped inside, ready to embrace whatever the future held. The rain may have dampened your clothes, but it couldn't dampen your spirit. You were ready to take on the world, come rain or [[shine]].
+
+::shine
+<center><img src="sleep.jpg" width=80% length=80%></center>
+
+As you entered the empty classroom, you noticed an old professor sleeping soundly at his desk. You couldn't help but feel a sense of amusement at the sight, but you knew you had to wake him up.
+
+You took a seat at the front bench, determined to come up with a clever way to rouse the sleeping professor. You thought about shouting, clapping, or even playing a loud noise, but none of those seemed quite right.
+
+[[Go up to him and whisper to wake him up|Whisper]]
+[[Ring a bell]]
+[[Nudge his shoulders]]
+
+
+::Whisper
+<<notify>>
+Achievement Unlocked!
+ASMR Enthusiast
+<</notify>>
+
+You walk up to your professor, lean around his shoulders and whisper "wake up sir!" His eyes open slowly as he starts looking around the room and sees you. He squints at you for a moment and then puts on his glasses.
+
+You walk back to your seat.
+
+[[Well]]
+
+::Nudge his shoulders
+<<notify>>
+Achievement Unlocked!
+If you can't wake them, scare them.
+<</notify>>
+
+You walk up to your professor and nudged his shoulders, a woke up to see you upclose and frantically moved for a moment seemingly in panic.
+
+He takes a moment to become calm, you back to your seat.
+
+[[Well]]
+
+::Ring a bell
+
+Finally, you had an idea. You reached into your bag and pulled out a small bell, the kind used by hotel receptionists. You rang it softly, and the sound echoed through the empty classroom.
+
+The professor stirred, his eyes fluttering open. He looked around, disoriented, and then spotted you sitting at the front of the class.
+
+[[Well]]
+
+::Well
+
+"Ah, hello there," he said, rubbing his eyes. "I must have dozed off. What time is it?"
+
+You smiled and replied, "It's time for class, professor."
+
+The professor chuckled and shook his head. "Well, I suppose I should get started then."
+
+As the class was about to begin, you couldn't help but feel a sense of satisfaction. The rain may have been falling outside, but inside the classroom, you were warm, dry, and full of ideas. You felt a sense of pride in yourself for taking this step, for pushing yourself out of your comfort zone and into the world of learning.
+
+But at the same time, you couldn't help but feel a sense of exhaustion. It had been a long time since you had been in a classroom, and the process of getting back into the swing of things was taking its toll.
+
+You had recently received a raise at your workplace, which allowed you to leave your side job and focus on your studies. But despite this newfound freedom, you still found it tiring to get back into the world of books and [[academia]].
+
+::academia
+
+You are finally here, in this splendid hall of learning, where the walls are adorned with portraits of illustrious scholars and thinkers, where the windows let in the golden rays of the sun, where the desks and chairs are made of polished wood, where the books and papers are neatly arranged on the shelves and tables. You are here, you feel, in this magnificent temple of knowledge, where the air is filled with the sound of lively discourse and debate, where the teachers are wise and eloquent, where the students are eager and curious, well you are the only one here at the moment.
+
+You have come to pursue your dreams and passions,  to expand your mind and horizons, to challenge yourself and grow. You are here, you rejoice, in this glorious classroom, where every day will be a new adventure, where every hour is a new discovery, where every minute is a new opportunity. You are here, you smile, in this happy classroom, where you have returned to studying after many years, and you love every [[moment]] of it.
+
+
+::moment
+
+As the professor looked over his notes, he seemed lost in thought. After a few moments, he looked up and said, "I have to admit, I'm surprised to see a student here today. You know how things are going these days."
+
+You furrowed your brow, unsure of what he meant. "I'm sorry, professor, I'm not sure I understand."
+
+The professor sighed and shook his head. "Never mind. The truth is, I'm not really prepared to take this class today. I don't know what to talk about here."
+
+You felt a sense of disappointment wash over you. You had been looking forward to this class, and now it seemed like it might not happen.
+
+But then, a thought occurred to you. "Professor, if you don't mind me saying, why don't we just have a discussion? We can talk about anything related to philosophy, and see where it takes us."
+
+The professor looked at you with surprise, but then helooked at you with a critical eye. "You know, I have to say, I'm not a big fan of discussions. Most people just talk based on their unfounded ideas and feelings."
+
+You felt a sense of disappointment at his words, but you also knew that the professor had a point. Emotions could cloud judgment, and unfounded ideas could lead to confusion and misunderstanding.
+
+The professor continued, "Now, don't get me wrong. I think feelings matter too in a discussion. But the quality of a discussion deteriorates if feelings are its basis. Emotions could be a powerful force in a discussion, but only if they were used in a constructive way. If people were too attached to their feelings, they could become defensive or closed-minded, and the discussion would [[suffer]]".
+
+::suffer
+
+The professor looked at you for a brief moment then gazed outside a window on the left, "I very recently had a discussion with a colleague. We disagreed on a particular point, and my colleague had become very emotional, insisting that he was right and I was wrong. The discussion had quickly devolved into an argument, and nothing had been accomplished."
+
+You quickly think of something to say to convince the professor to tell you how the discussion actually went.
+
+[["Perhaps the topic was rather a sensitive one"|sensitive]]
+[["Perhaps there were flaws in both sides of the arguements"|sensitive]]
+
+::sensitive
+
+Professor raised his eyebrows and looked back at you, "well there were no valid arguements on his part, consider this he came over in this very classroom, sat over that bench there and started just talking whatever he felt like!"
+
+From the professor's tone you noticed that he seems quite emotionally affected by the discussion as well, even if he tells you the story, his colleague's views represented here might not be particularly correct.
+
+Professor walked over to the bench his colleague had sat on and started reenacting the conversation like a [[play]].
+
+
+::play
+
+> Professor: So, you are saying that the death penalty is justified and that it is an effective deterrent for crime?
+
+> Colleague: Yes, that’s exactly what I’m saying. The death penalty is a fair and humane way of punishing the worst criminals and preventing them from harming others. I have done extensive research on the topic and I have found convincing evidence that the death penalty reduces crime rates and saves lives.
+
+> Professor: Well, I’m interested to hear about your research. How does it account for the conflicting studies that show no correlation or even a negative correlation between the death penalty and crime rates, such as the ones by Donohue and Wolfers or Radelet and Lacock?
+
+> Colleague: Those studies are all flawed and biased. They were conducted by anti-death penalty activists who manipulated the data and ignored the confounding factors. My personal research is more rigorous and comprehensive than theirs. It covers a longer period of time and a larger sample of countries and states. It controls for various variables such as income, education, culture, and law enforcement.
+
+> Professor: I see. And have you published your research in any peer-reviewed journals? Have you submitted it to any conferences or workshops? Have you received any feedback from other experts in the field?
+
+> Colleague: No, I haven’t. And I don’t need to. I know my research is correct and I don’t care what others think. They are all influenced by the liberal media and the political correctness. They would never accept my findings because they go against their ideology. You are one of them, aren’t you? You are just afraid of the truth and you want to silence me.
+
+> Professor: No, I’m not afraid of the truth. I’m just trying to understand your methodology and your sources. Science is not about personal opinions or emotions. It’s about objective facts and logical arguments. If you have a valid research, you should be able to present it clearly and convincingly to others, and to respond to their criticisms and questions.
+
+> Colleague: You don’t understand anything. You are just a naive idealist who can’t see the reality of the world. You are wrong and I am right. End of story.
+
+The professor now looking back at you asks you a question, "What do you think went wrong in this discussion?"
+
+[[The colleague was too emotional and defensive, and he refused to provide any support for his own claims.|colemo]]
+[[The professor was too passive and polite, and he failed to challenge the colleague’s assumptions or to expose his fallacies.|profpassive]]
+[[The professor acted too confrontationally.|profconfront]]
+
+
+
+::colemo
+
+You announce your answer, "The colleague was too emotional and defensive, and he refused to listen to your points or to provide any support for his own claims."
+
+Professor replies, "Thank you for your answer. Can you explain why you think that was the main problem in the discussion?"
+
+You get a sudden urge to scratch your head, you remember this to be a teenage habit of yours, you were scolded by your parents for developing this habit, and it has returned again, you accept defeat and scratch your head as a light bulb lights up over your head and you realise just how to answer his question, "Well, I think the colleague was not following the principles of critical thinking and scientific inquiry. He was basing his arguments on his personal feelings and beliefs, rather than on facts and evidence. He was also not open to alternative perspectives or constructive feedback. He was only interested in proving himself right and dismissing anyone who disagreed with him."
+
+You also realise that his colleague probably did not end the conversation saying "end of story" but for the moment you decide to go with the professors retelling of the conversation.
+
+Professor nods, "I agree with you that my colleague was exhibiting some signs of emotional reasoning and confirmation bias. He was letting his emotions cloud his judgment and he was selectively looking for information that supported his preconceived notions."
+
+You notice a light bulb suddenly turning on your professor's head as he gets up the bench he was [[sitting on|hominem]].
+
+
+::profpassive
+
+You get a sudden urge to scratch your head, you remember this to be a teenage habit of yours, you were scolded by your parents for developing this habit, and it has returned again, you accept defeat and scratch your head as a light bulb lights up over your head and you realise just how to answer his question," Hmm, I’m not sure. Maybe the professor could have been more assertive and persuasive, and tried to show the colleague the flaws in his logic and evidence. Maybe he could have used some rhetorical techniques or examples to make his points more compelling and convincing."
+
+Professor replies, "That’s ..." he takes a longer than usual pause and continues, "an interesting suggestion. However, do you think that would have been effective in changing the colleague’s mind or attitude? Do you think that is enough a more respectful and productive exchange of ideas?
+
+You answer, "Well, maybe not. I guess the colleague might have felt more attacked or threatened by the professor’s arguments, and he might have become more defensive or hostile. He might have seen the professor as an adversary rather than as a partner in learning. He might have resisted or rejected any evidence or reasoning that contradicted his own theory.
+
+Professor seemingly gets a eureka moment, "Exactly. That’s why I think the problem was that my colleague was too emotional and defensive, but perhaps I was also too passive and polite. I certainly did not use any strategies to reduce the emotional tension or to increase the cognitive engagement in the dialogue, however I was just having a conversation with a colleague and not preparing for a debate", professor gets up from the bench [[enthusiastically|hominem]].
+
+
+
+::profconfront
+<<notify>>
+Achievement Unlocked!
+Call out your professor confrontational.
+<</notify>>
+
+Professor shouts at you, "I was confrontational?", he immediately lowered his voice, "you saw me as confrontational in the story, I didnt go around making unfounded remarks."
+
+"You asked him whether he had published the paper, submitted it to a conferencev and got it peer reviewed all at once", you answer.
+
+"No I didnt, the conversation didn't go like that, I was telling you the gist of what happened, I don't think he had even written a paper about it, he probaby just read some social media post or some video on it and agreed with it." professor replied.
+
+Seemingly incorrect here you decide to take this conversation more towards how you perceive debates to go like, "I think for any debate, there's a need to establish common ground and mutual respect. What are some areas of agreement or shared interest? How can we acknowledge or appreciate the other person’s contributions or efforts while showing respect for their dignity and autonomy?"
+
+Professor, with a rather non enthusiastic tone replies to your comment, "I agree with you on that but no matter what you argue in favour of or against, you have to try to present your own perspective and evidence in a clear and credible way with some facts or examples that support your views or arguments, to be concise you have to explain them in a simple and logical way. I was not asking him to cite his sources on the spot, he should have given me something as a basis for his arguement. If anything my attempt at establishing a common ground was asking him his opinions on studies that conflicted with his own findings".
+
+You respond to his answer [[with silence|hominem]].
+
+
+
+::hominem
+
+He walks up to the board and writes Ad hominem fallacy, in letters so big they can be read from the last bench, unnecessaily big as you are the only on in class, sitting at the first bench.
+
+The professor excitedly looked at you and started his lecture, "ad hominen fallacy is ..." he took a pause to select his words, "is a fallacy because it tries to discredit the validity of an argument by attacking the character, motive, or other attribute of the person who made it, rather than addressing the substance of the argument itself."
+
+While you understood the basic meaning of what he meant to say, a look of confusion can be seen on your face as the terminology is new to you.
+
+He continues, "... an argument is a form of reasoning that aims to persuade someone of something by presenting evidence and logic, a logical fallacy on the other hand is an error in reasoning that makes an argument invalid or weak. There are many types of logical fallacies, but today we will focus on ad hominem as I think the arguement with my colleague is a good example of it."
+
+He stares outside the window, "Ad hominem fallacy occurs when someone rejects or criticizes another person’s argument by focusing on some irrelevant or personal aspect of the person who made the argument, instead of engaging with the actual content and quality of the argument. This is a fallacious way of arguing because it does not address the issue at hand, but rather tries to divert attention from it by appealing to [[emotions, prejudices, or biases|hominem2]]."
+
+::hominem2
+
+Suddenly he looks at you, in a gesture of making a question he continues the lecture, "Why do people use ad hominem fallacy? Some people may use ad hominem fallacy intentionally, as a deliberate strategy to manipulate others or to avoid dealing with a difficult or uncomfortable topic. Some people may use it unintentionally, as a result of ignorance, laziness, or frustration. Some people may use ad hominem fallacy emotionally, as a way of expressing their anger, resentment, or fear. Whatever the reason, ad hominem fallacy is not a valid or fair way of arguing. It prevents us from having rational and respectful discussions."
+
+"Can you tell me how my colleague was falling for this?" he is definitely asking you the question this time.
+
+"Coz he thought that the previous research on the topic was based around the researcher's own agendas, the thus they purposefully wrote resear h like that" you answered, unsure if it sounded right.
+
+"Not necessarily purposefully, but people can even subconsciously add their biases to their research, however I'd say you are completely correct in your answer", professor agrees.
+
+He writes a few more [[historical examples of the ad hominem fallacy|hominem3]] on the board.
+
+
+::hominem3
+
+He writes on the board " The French Revolution in 1789-1799", you consider writing it in your notebook then decide on listening to what he says first, he excitedly continues, "One of the most famous victims of the guillotine was Marie Antoinette, the queen of France. She was accused of being extravagant, wasteful, and indifferent to the suffering of the people. She was also blamed for saying “Let them eat cake” when she heard that the peasants had no bread to eat. However, these accusations were mostly based on rumors, propaganda, and personal hatred. They did not address her actual role or influence in the political situation. They were ad hominem attacks that aimed to justify her execution by portraying her as a wicked and heartless person."
+
+He then looks at you asks "can you suggest a more modern example of this fallacy?"
+[[Abraham Lincoln]]
+[[Brexit]]
+
+
+::Brexit
+
+You conjure up the courage to answer his question,"Some supporters of leaving the European Union used ad hominem arguments against those who wanted to remain, they labeled them as “remoaners”, implying that they were whining and complaining about the result. They also accused them of being unpatriotic, elitist, or ignorant of the benefits of leaving the EU. These were also ad hominem attacks because they did not engage with the actual issues or facts related to Brexit, but only tried to insult and dismiss the opponents."
+
+Professors once again started looking outside the window and murmured, "is that a correct example? it sounds like one but then again", he looks at you and asks, "why do you think it is a good example?"
+
+[[The attempt here is to discredit their opinions or values, without engaging with their evidence or logic.|brexit2]]
+
+[[These are fallacious ways of arguing because they do not address the issue at hand, but rather try to divert attention from it by appealing to emotions, prejudices, or biases.|brexit2]]
+
+
+::brexit2
+<<notify>>
+Achievement Unlocked!
+Professor didn't know this.
+<</notify>>
+
+"To be honest, I'm not quite well read on that matter, so I'll refrain from commenting on it", the professor said in a thoughtful manner, "however I think you do understand the concept ".
+
+An awkward silence prevails in class, professor keeps staring outside the window.
+
+A new thought pops up in your head so you decide to ask it, "but isn't it sometimes necessary to sometimes judge the sources of the arguements before the actual arguements?"
+
+Professor gives you a [[confused look]].
+
+
+::Abraham Lincoln
+
+You stutter in your answer by put more faith in what you remember, "When Abraham Lincoln was president of the United States, he was opposed by many people who wanted to preserve slavery and secede from the union. They attacked him personally by calling him names like “ape”, “baboon”, “gorilla”, and “black Republican”. They also mocked his appearance, his speech, his education, and his family. They did not engage with his arguments or policies about slavery, democracy, or national unity. They were ad hominem attacks that aimed to discredit him as a leader and a human being."
+
+Professor excitedly nods with you, "that's a correct example, I believe that you have a proper understanding of this concept now.", the professor for some reason looked ready to leave, despite class hours not reaching even close to it's end.
+
+While the terminology was new to you, you were aware of the concept from before, rather than pointing that out you put forward a new arguement, "but isn't it sometimes necessary to sometimes judge the sources of the arguements before the actual arguements?"
+
+Professor gives you a [[confused look]].
+
+
+
+
+::confused look
+
+"Yes, ofcourse, we do need to ...", professor interrupted before he started saying something else, " ... I even mentioned it to my colleague asking him whether he tried publishing his research in a reputed journal, a lot depends on the reputation of a source, so I'd say that's correct, but is that related to our topic at hand?" the professor asked.
+
+You felt confident in the arguement you were ready to present, but rather than blandly stating it, you decided to go for a dramatic vibe, only thing missing was some nice background music.
+
+> My dear sir, you must not be so easily swayed by the words of those who claim to know the truth. For truth is a rare and precious thing, and not everyone who speaks it is worthy of your trust. You see, there are some people who have a habit of lying, deceiving, and manipulating others for their own selfish ends. They use their eloquence, their charm, their wit, to persuade you of their opinions, but they do not care for the facts, the evidence, the logic. They only care for themselves, and their own agendas.
+
+> Now, I know what you are thinking. You are thinking that this is a fallacious way of reasoning. You are thinking that this is an ad hominem attack, a personal insult, a way of avoiding the real issue. You are thinking that one should judge an argument by its merits, not by its source. And you are right, professor, you are right. In most cases, this is indeed the proper way of thinking. But not in all cases.
+
+You take a moment to observe professor's reaction but he doesn't seems to be amused.
+
+> Not in the cases where the source has proven to be unreliable, untrustworthy, dishonest. Not in the cases where the source has a history of falsehoods, errors, contradictions. Not in the cases where the source has a motive to lie, to deceive, to manipulate. In such cases, my sir, it is not only permissible, but necessary, to judge the source of information by their character, by their reputation, by their past works. For how can you trust someone who has lied to you before? How can you believe someone who has deceived you before? How can you accept someone who has manipulated you before? How can you rely on someone who has a motive to lie to you again?
+
+You climb on top of a desk and continue.
+
+>It would be foolish, sir, it would be foolish. So do not be fooled by the fallacy of ad hominem. Do not let it blind you to the reality of human nature. Do not let it prevent you from using your common sense. Do not let it stop you from questioning the sources of information that you encounter. For sometimes, professor, sometimes ad hominem is not a fallacy at all. Sometimes it is a [[necessity]].
+
+::necessity
+
+
+The professor, still maintaining his unamused look claps two times and asks you to get off the bench and asks you to take a seat on the bench instead.
+
+He then walks up to the board and then right below the huge letters on the board saying "Ad hominem", he adds "vs source credibility". You take out your notebook realising this would be worth noting.
+
+"It is not necessarily an ad hominem to not trust news from untrustworthy news sites, depending on how one defines what is untrustworthy", the professor continues, "An ad hominem is a fallacy that attacks the source of an argument rather than the argument itself, and it is usually based on irrelevant or personal characteristics of the source. However, not all attacks on the source are fallacious, especially if they are relevant to the topic and based on objective criteria. For example, if one rejects a news article because it comes from a site that has a history of publishing false or misleading information, that is not an ad hominem, but a reasonable assessment of the source’s credibility. Source credibility is influenced by factors such as competence, character, and reputation, and it can affect how persuasive a message is. Therefore, it is not illogical to consider the credibility of a news site when evaluating its claims."
+
+"But what if someone outright rejects all claims of a source based on ideology?" you add to the [[conversation]].
+
+::conversation
+
+"If someone rejects a news article because it comes from a site that has a different political or ideological orientation, that is an ad hominem, because it does not address the content or quality of the article, but rather its perceived bias or motive. This is a fallacious way of reasoning, because it does not engage with the actual arguments or evidence presented by the article, but rather dismisses them based on a subjective or irrelevant criterion. This can lead to confirmation bias, where one only accepts information that confirms one’s existing beliefs and rejects information that challenges them", professor answers.
+
+You take a moment for yourself to understand it better and then gather together a doubt, "Sir, by this definition, your colleague was definitely falling for an ad hominem fallacy, but could it be that he did have promising facts supporting his ideas but could not express them properly due to his emotional attachment to the topic, that is he got too emotionally aggressive and could not put forward his thoughts together, perhaps he had some reasonable observations detecting bias in previous research that he studied."
+
+"I think you are calling out emotional approach to forming arguements as the true culprit here," the professor continued, "if we can learn to use our emotions in a constructive way, they can be a powerful tool in a discussion. They can help us connect with others, understand their perspectives, and find common ground, making any discussion for lively and engaging."
+
+"But," the professor emphasized, "the key is to use our emotions in a way that supports the discussion, rather than detracts from it. We need to be open-minded, willing to listen to others, and willing to change our minds if necessary."
+
+As the professor finished speaking, you couldn't help but feel a sense of admiration for him. He had a way of explaining complex ideas in a clear and thoughtful way, and yet you had the feeling that you have gathered more doubts compared to the amount of things you learned in class today.
+
+The professor takes his bag and puts in it the books lying on his table, he then leaves the classroom. You notice that around 7 minutes are left for the class to end.
+
+You have an hour break till the next class, the decide to have a [[tour of the campus]].
+
+
+::tour of the campus
+
+You are here, on this immense and splendid campus, where the edifices of science and art rise majestically above the verdant lawns and flower beds, where the pathways of knowledge and culture wind gracefully among the ancient trees and statues, where the fountains of wisdom and beauty sparkle in the sunlight. You are here, on this tranquil and harmonious campus, where the breeze caresses your face and fills your lungs with fresh air, where the birdsong delights your ears and lifts your spirits, where the azure sky soothes your eyes and calms your mind. You are here, on this noble and diverse campus, where you have come to seek the truth and the good, where you have come to explore the world and yourself, where you have come to learn and to live.
+
+You are walking around the campus, when it is empty. When there is no one else to disturb your solitude or to share your thoughts. When you can contemplate and reflect on everything that surrounds you and everything that awaits you.
+
+You are observing everything, the buildings, the gardens, the fountains. Observing them with curiosity and admiration. Observing them with reverence and gratitude. Observing them with wonder and awe. You are walking around the campus, thinking about everything. Thinking about what you are doing here. Thinking about why you are here. Thinking about how you came here. Thinking about what you will do here.
+
+You are here, because you want to be here. Because you chose to be here. Because you have a purpose. A purpose that is noble and lofty, that is worthy of your efforts and sacrifices, that is dear to your heart and soul. A purpose that is to study. To study not only for yourself, but for others. To study not only for today, but for tomorrow. To study not only for knowledge, but for wisdom. To study not only for pleasure, but for [[duty]].
+
+
+::duty
+<center><img src="halls.jpg" width=80% length=80%></center>
+But you are also here, because you have to be here. Because you were compelled to be here. Because you have a destiny. A destiny that is mysterious and inevitable, that is beyond your control and understanding, that is shaped by forces greater than yourself. A destiny that is to learn. To learn not only from books and teachers, but from life and experience. To learn not only from success and happiness, but from failure and sorrow. To learn not only from joy and love, but from pain and loss.
+
+You are here, on this campus, where you will study and learn, where you will grow and change, where you will meet and part, where you will love and suffer. You are here, on this campus, where you will face challenges and opportunities, where you will make choices and consequences, where you will find friends and enemies, where you will discover yourself and [[others]].
+
+::others
+
+You find a cortyard with a student giving a passionate speech while surrounded by 100 or more other students. Many of them seem as if they have been here since this morning. You take a few steps towards them to find out what this gathering is about.
+
+As you listen to the speaker and his prominent voice, you realise he has skills you can learn from, but missing out the beginning of his speech might make it difficult for you to understand it, " ... dear friends ... an issue that threatens to undermine the very foundations of our society and our humanity. An issue that is often disguised as a virtue, but is in fact a vice. An issue that is called by many names, but I shall call it by its true name: the tyranny of merit."
+
+You decide to put your entire focus to the speech.
+
+> What is this tyranny of merit, you may ask? It is the belief that one's worth and value as a human being are determined solely by one's achievements and abilities. It is the belief that one's success and happiness are the result of one's own efforts and talents, and that one's failure and misery are the result of one's own faults and shortcomings. It is the belief that one deserves everything one has, and that one owes nothing to anyone else. It is the belief that divides us into winners and losers, into haves and have-nots, into the deserving and the [[undeserving]].
+
+
+::undeserving
+
+> This tyranny of merit is not a new phenomenon, my friends. It has been with us for a long time, in various forms and degrees. But it has become more prevalent and more powerful in our modern times, thanks to the forces of globalization, technology, and competition. These forces have created a world where opportunities are scarce, where standards are high, where expectations are relentless. A world where we are constantly measured, judged, ranked, and rewarded. A world where we are told that we can be anything we want to be, if we only work hard enough, smart enough, fast enough. A world where we are made to feel that we are not good enough, not smart enough, not fast enough.
+
+> Meritocracy has corrupted our minds, our hearts, our souls. It has made us forget the true meaning and purpose of life. It has made us forget that we are not machines, but human beings. Human beings who have inherent dignity and worth, regardless of our achievements and abilities. Human beings who have emotions and passions, hopes and dreams, joys and sorrows. Human beings who have strengths and weaknesses, virtues and vices, gifts and flaws. Human beings who have needs and desires, rights and responsibilities, duties and obligations.
+
+> It has also poisoned our relationships, our communities, our society. It has made us lose sight of the common good, the public interest, the social justice. It has made us ignore the plight of the poor, the oppressed, the marginalized. It has made us indifferent to the suffering of others, the injustice of others, the dignity of others. It has made us selfish, greedy, [[arrogant]].
+
+::arrogant
+
+"I think you are being arrogant with your claims" a voice from the crowd watching the speech attracts everyone's notice.
+
+The first speaker makes a welcoming sign to the voice from the crowd, as the second speaker climbs up the makeshift stage, the first speaker hands her the mic. Her voice roars through the courtyard, "I have listened carefully to the speech of what the gentleman here had to say, and I must say that I disagree with his views. His views are based on a false and dangerous premise, that merit is a tyranny that oppresses and divides us. His views are based on a distorted and pessimistic view of human nature, that we are driven by selfishness and greed. His views are based on a misguided and utopian vision of society, that we can achieve equality and justice without effort and competition. His views are wrong, my friends, and I shall tell you why."
+
+You hear a few cheers from the crowd, and her opinions have certainly gathered your complete attention.
+
+> Merit is not a tyranny, it is a principle. A principle that rewards people for their achievements and abilities, not for their birth or luck. A principle that encourages people to strive for excellence and improvement, not for mediocrity and stagnation. A principle that fosters innovation and creativity, not conformity and complacency. A principle that respects the dignity and freedom of each individual, not the authority and conformity of the collective.
+
+> Merit is not a vice, my friends. It is a virtue. A virtue that inspires us to pursue our dreams and passions, not to settle for our circumstances and limitations. A virtue that motivates us to overcome our challenges and difficulties, not to succumb to our fears and doubts. A virtue that cultivates our talents and skills, not to waste them or abuse them. A virtue that enriches our lives and society, not to impoverish them or [[harm]] them.
+
+::harm
+
+>Merit is not a poison, my friends. It is a medicine. A medicine that heals the wounds of injustice and oppression, not to inflict them or worsen them. A medicine that cures the diseases of ignorance and apathy, not to spread them or ignore them. A medicine that restores the health of democracy and citizenship, not to undermine them or destroy them. A medicine that strengthens the bonds of community and solidarity, not to weaken them or break them.
+
+> Do not be deceived by the false rhetoric of the previous speaker. Do not be seduced by his empty promises of equality and justice without merit. Do not be misled by his flawed logic of human nature without competition. Do not be fooled by his naive idealism of society without effort.
+
+> Embrace merit as a principle, a virtue, a medicine. Embrace merit as a way of life, a way of thinking, a way of being. Embrace merit as a source of hope, a source of joy, a source of meaning.
+
+> My dear friends, merit is not a tyranny. Merit is a [[blessing]].
+
+::blessing
+
+As her speech ends, the few cheers she was getting turn into a rather significant applause, the first speaker now turns towards the second speaker and asks her, "How can you defend merit as a blessing, when it is clearly a curse? How can you ignore the suffering and injustice that it causes to millions of people who are not as fortunate or talented as you?", to which she replies, "How can you attack merit as a curse? How can you deny the benefits and opportunities that it provides to millions of people who are willing and able to work hard and achieve their goals?"
+
+<center><img src="debate.jpg" width=80% length=80%></center>
+
+You now see this entire place turning into a play in your imagination. You see a large and elegant theater, with red velvet curtains and golden ornaments. You see a stage, with two podiums and two microphones, where the two speakers are standing. You see a crowd of spectators, filling the seats and the balconies, watching and listening intently. You hear a soft and soothing orchestra music, playing in the background, creating a contrast with the heated and passionate debate about to begin. You feel the tension and the excitement in the air, as you witness the clash of ideas and values. You are here, in this imaginary theater, where you are about to witness a [[debate on meritocracy]].
+
+::debate on meritocracy
+
+<center> The gentleman </center>
+> You are living in a fantasy world, my friend. A world where everyone has equal access to education, health care, and resources. A world where everyone has equal chances to succeed, regardless of their background, gender, or race. A world where everyone is rewarded fairly, according to their merits.
+
+<center> The lady </center>
+> You are living in a bitter world, my friend. A world where everyone is envious of those who are more successful than them. A world where everyone blames others for their failures, instead of taking responsibility for their actions. A world where everyone demands handouts, instead of earning their rewards.
+
+<center> The gentleman </center>
+> You are blind to the reality of meritocracy, my friend. A reality where merit is not an objective measure, but a subjective judgment. A reality where merit is not a fair criterion, but a biased standard. A reality where merit is not a universal value, but a relative concept.
+
+<center> The lady </center>
+> You are blind to the potential of meritocracy, my friend. A potential where merit is not a fixed trait, but a dynamic skill. A potential where merit is not a limited resource, but an abundant opportunity. A potential where merit is not a divisive factor, but a unifying force.
+
+<center> The gentleman </center>
+> You are wrong about the effects of meritocracy, my friend. The effects are not positive and beneficial, but negative and harmful. The effects are not empowering and liberating, but oppressive and alienating. The effects are not inclusive and democratic, but exclusive and elitist.
+
+<center> The lady </center>
+> You are wrong about the alternatives to meritocracy, my friend. The alternatives are not better and fairer, but worse and unjust. The alternatives are not more humane and compassionate, but more cruel and indifferent. The alternatives are not more progressive and innovative, but more regressive and stagnant.
+
+<center> The gentleman </center>
+> You are mistaken about the nature of human beings, my friend. Human beings are not rational and self-interested, but emotional and social. Human beings are not independent and autonomous, but interdependent and connected. Human beings are not competitive and individualistic, but cooperative and communal.
+
+<center> The lady </center>
+> You are mistaken about the purpose of life, my friend. Life is not a struggle and a burden, but a challenge and a gift. Life is not a fate and a destiny, but a choice and a responsibility. Life is not a problem and a mystery, but a solution and an adventure.
+
+<center> The gentleman </center>
+> You are deluded by the ideology of meritocracy, my friend. An ideology that devalues human dignity and worth. An ideology that denies human diversity and complexity. An ideology that destroys human solidarity and empathy.
+
+<center> The lady </center>
+> You are deceived by the rhetoric of anti-meritocracy, my friend. A rhetoric that undermines human excellence and achievement. A rhetoric that discourages human aspiration and ambition. A rhetoric that erodes human freedom and agency.
+
+<center> The gentleman </center>
+> You are the enemy of equality and justice, my friend.
+
+<center> The lady </center>
+> You are the enemy of merit and excellence, [[my friend]].
+
+::my friend
+
+Your imagination abruptly ends to the realization that the debate did not actually proceed as per your daydream, the the speakers did not call each other an enemy of anything. You sigh at the lost opportunity to point out ad hominem fallacy in the debate.
+
+The discussion is now rather more faint than how it started, others from the audience are sharing their opinions too. Having a few conversations with others in the crowd reveals that meritocracy has recently been a popular debate on the campus, to the extent of many students considering leaving their educational fields to pursue fields they are more passionate about or are more directed towards helping others in society.
+
+You decide to walk around the campus until the end of the [[hour]].
+
+::hour
+
+On your way around the campus, you see a large and impressive library with a glass facade, with rows of books, computers, and study spaces inside. You wonder what kind of books they have, and how many hours you could spend there reading and learning.
+
+A green and spacious lawn surrounded by trees and flowers attracts your attention. You can see a few students sitting on the grass, chatting, playing, or relaxing. You feel a gentle breeze and a warm sun on your skin, it probably wont rain on your way home.
+
+You find a colorful cafeteria with a cozy atmosphere. You can smell the delicious aromas of different cuisines, you feel hungry and curious, and you want to try some of the dishes they have, but the hour is nearing its end and you'd rather have lunch later.
+
+A charming and historic art gallery with a neoclassical style and a stone facade gains your gaze as you make way for the class. You can see paintings, sculptures, and other artworks inside. You admire the beauty and creativity of the artists, and the diversity and richness of the cultures they represent. You are inspired by art, and you want to express yourself through it. Perhaps you need to take up some art papers as well.
+
+You feel excited and curious, and you want to explore more of it. You think this is a place where you can grow, learn, and have fun. Yet you have questions that you need to answer on your [[own]].
+
+::own
+
+You have reached your classroom, but as you expected no one else is here, the classes are supposed to begin in the next few minutes, and you have a few moments to ponder upon your thoughts.
+
+The debate on meritocracy is at the center point of your attention at the moment, you feel like it was:-
+[[odd]]
+[[interesting]]
+[[oddly interesting]].
+
+
+::odd
+
+You found the debate to be rather odd, yet you cannot help but wonder how  much enthusiasm it gathered from the crowd. You don't think the topic was even worth debating but it is certainly influencing the entire environment of the campus at the moment.
+
+
+Yet you see your surroundings move around, once again you find yourself in a play, but this time you are the one on the centre stage. You see yourself in the  audience, in a faint voice you hear yourself ask, "but really though, how do you feel about this idea?"
+
+[[It's ridiculous to say the least|ridiculous]]
+[[It's a valuable idea worth considering|valuable]]
+
+::interesting
+
+You found the debate to be quite interesting, specially given how much enthusiasm it gathered from the crowd. It brought to you new ideas and questions and you feel curious to read and learn more.
+
+Yet you see your surroundings move around, once again you find yourself in a play, but this time you are the one on the centre stage. You see yourself in the  audience, in a faint voice you hear yourself ask, "but really though, how do you feel about this idea?"
+
+[[It's ridiculous to say the least|ridiculous]]
+[[It's a valuable idea worth considering|valuable]]
+
+::oddly interesting
+<<notify>>
+Achievement Unlocked!
+Holistic Opinions.
+<</notify>>
+
+
+You found the debate to be oddly interesting, you did not consider a topic like this to be worth debating yet it brought to you new ideas and questions. You think about the enthusiasm it gathered from the crowd, and find it rather influential.
+
+Yet you see your surroundings move around, once again you find yourself in a play, but this time you are the one on the centre stage. You see yourself in the  audience, in a faint voice you hear yourself ask, "but really though, how do you feel about this idea?"
+
+[[It's ridiculous to say the least|ridiculous]]
+[[It's a valuable idea worth considering|valuable]]
+
+
+::ridiculous
+<center><img src="reflection.jpg" width=80% length=80%></center>
+
+> I have been working hard all my life, saving every penny I could, toiling day and night, hoping to get a chance to go to college and make something of myself. I have always believed that being judged by merit is the best system, that everyone should get what they deserve based on their abilities and efforts. I have always admired those who have risen from humble origins to achieve great things, and dreamed of following their footsteps.
+
+> But today, I have faced some questions. I have heard some people say that meritocracy is a curse for society. They say that it is unjust, and oppressive. They say that it creates inequality, exploitation, and corruption. They say that it fosters competition, envy, and resentment. They say that it erodes happiness, well-being, and values.
+
+> I do not agree with them. I think they are wrong and misguided. I think they are trying to justify their own failures, and mediocrity. I think they are trying to undermine the hard work, and excellence of others. They are trying to destroy the system that rewards merit, and achievement.
+
+> I think meritocracy is a boon and blessing for society. It is a a positive ideology. It is a fair and just system, that encourages people to strive for their best potential. It is a source of progress and innovation, that drives people to create new solutions and opportunities. It is a way of empowering individuals, that allows people to pursue their passions and interests.
+
+> I want to be part of this system. I want to compete with others for scarce resources and opportunities. I want to measure my worth by my achievements and failures, and accept that I did my best and got what I am [[worth]].
+
+
+::valuable
+<center><img src="reflection.jpg" width=80% length=80%></center>
+
+> I have been working hard all my life, saving every penny I could, toiling day and night, hoping to get a chance to go to college and make something of myself. I have always believed that meritocracy is the best system, that everyone should get what they deserve based on their abilities and efforts. I have always looked up to those who have risen from humble origins to achieve great things, and dreamed of following their footsteps.
+
+> But today, I have begun to doubt this idea. I know how much corruption and injustice is prevalent in this world. I have seen how the rich and powerful exploit the poor and weak, how they rig the system in their favor, how they use their influence to silence any opposition. I have seen how those who finally succeed look down on those who are less fortunate, how they blame them for their own miseries, how they justify their greed and cruelty.
+
+> It really also isn't hidden that meritocracy creates a culture of competition, envy, and resentment. How it divides people into winners and losers, how it fosters a sense of superiority and inferiority, how it erodes the bonds of solidarity and compassion. How it makes people obsessed with status and recognition, how it makes them neglect their own happiness and well-being, how it makes them sacrifice their values and principles.
+
+> Perhaps judging people by merit is not a fair and just system, but a tool of oppression and domination. It is not a source of progress and innovation, but a cause of stagnation and decay. It is not a way of empowering individuals, but a means of enslaving masses.
+
+> I do not want to be part of this system, I do not want to measure my worth by my achievements and failures. I do not want to compete with others for scarce resources and opportunities. I wish to make it so that everyone has enough resources that they require.
+
+> I want to live in a world where everyone is valued and respected, where everyone has equal rights and dignity, where everyone has access to basic needs and services, where everyone can pursue their passions and interests, where everyone can contribute to the common good and benefit from the collective wealth, where everyone can cooperate and collaborate with each other, where everyone can enjoy peace and harmony.
+
+> I know this may sound naive and unrealistic, but I believe it is possible. I believe there are alternatives to this and those who wish to utilise them . I believe there are people like me who share this vision and hope.
+
+> I want to join them. I want to be part of the change. I want to create a new [[world|worth]].
+
+::worth
+
+A loud bang at the door kicked you out of your daydream, momentarily you even forgot what you were thinking about. You saw your professor from the previous class entering the class. He was reading a heavy book while walking and accidentally hit his head on the door. He saw you sitting at the first bench and stopped for a second, then proceeded tk walk towards his seat while asking you, "how many philosophy classes did you take?", to which you answer, "yes".
+
+"Learning too many stuff in one day, isn't really the best way to learn you know, you need sleep to let the brain process the stuff you learn subconsciously", professor remarked.
+
+[[Say you haven't particularly learned anything new today|today]]
+[[I don't need sleep, I need answers.|answers]]
+
+
+::today
+<<notify>>
+Achievement Unlocked!
+Being honest.
+<</notify>>
+
+
+"Wut!", professor looked surprised as he put up a face like this emoji 😧, "I'd say our last class was pretty informative, I guess it was not."
+
+You boredly sit as the professor contemplated the last few words exchanged between the two of you.
+
+He then proceeds to give the most boring lecture you have probably ever attented in your entire life, and then left the class 20 minutes before the class would end.
+
+You go home after some lunch and wonder how to approach your studies from now on.
+
+<center> [[The End]] </center>
+<<set $lec to 0>>
+
+
+
+::answers
+
+Professor raised an eyebrow in response to your comment, "Do you have any questions regarding the subject of our previous class?".
+
+You told the professor about the speeches and then the debate you heard at the courtyard and how you now feel about the topic of meritocracy yourself.
+
+Professor smirked at you the entire time you were talking about the last hour, he then replied, "For the last couple months I have been asked about this a few times, and my first question to everyone is", he looked at you as he took a gentle pause, "How do I grade your papers if not on the basis of merit?"
+
+[[That's your first thought?|thought]]
+[[Does it even mattter?|matter]]
+[[That clears it up for me sir. Thank You|thanks]]
+
+
+::thought
+<<notify>>
+Achievement Unlocked!
+Classic response.
+<</notify>>
+
+
+"Ah, you are suggesting that I only thought of the grading example first as I am a teacher", professor smirked.
+
+"Are you going to say it's an ad hominem?", you ask.
+
+"It's not an ad hominem your comment was directly a response to my questions, setting that aside the idea against a meritocracy based system is faulty as there is no means to decide what is suited for whom", professor answers.
+
+You seemingly look confused so the professor clarifies, "While there are several aspects to this topic, on its most essential level, society needs highly functioning individuals for some specific tasks that others, for things perhaps people like me are not even capable of, for that some sort of a standardization in determining an individual's merit is necessary. I heard you entered the classical mechanics class today, that class can sometimes be so tough that I cant even understand the questions asked even though the professor there is a friend of mine."
+
+"Is he the colleague you had the arguement with?" you ask, "no he was not that colleague, and I don't think I can even call that an arguement", professor answered.
+
+"So what about those who dont fit within this standardized tests at all but have other capabilities that aren't easy to determine", you ask the professor.
+
+"That is what I think the conversation should really be about, not about whether meritocracy is even useful or not, but how we can make tests that brings out people's diverse capabiltiies", professor answered eagerly.
+
+"It is not representative of diversity at the top levels of jobs", you argue, to which the professor replies, "... and it probably never will be, for most analytical positions what matters is how objectively and critically an individual can handle a task, for anything that involves subjective judgement, diversity is a requirement, that is how humans adapt, it's a natural system, and it can be achieved by working on how we aporoach such tests. And for big businesses, it's more about the connections you make and luck, rather than merit, and it always has been that way."
+
+You nod your head to his answer, you find no counter-arguements but something doesnt feels right, you then announce your question, "What do you think about meritocracy's role in making people [[compete]] for resources?"
+
+
+
+
+::matter
+
+"It doesn't even matter how you grade papers as the entire system is flawed", you claim.
+
+Professor lets out a sign and starts speaking, "While there are several aspects to this topic, on its most essential level, society needs highly functioning individuals for some specific tasks that others, for things perhaps people like me are not even capable of, for that some sort of a standardization in determining an individual's merit is necessary. I heard you entered the classical mechanics class today, that class can sometimes be so tough that I cant even understand the questions asked even though the professor there is a friend of mine."
+
+"Is he the colleague you had the arguement with?" you ask, "no he was not that colleague, and I don't think I can even call that an arguement", professor answered.
+
+"So what about those who dont fit within this standardized tests at all but have other capabilities that aren't easy to determine", you ask the professor.
+
+"That is what I think the conversation should really be about, not about whether meritocracy is even useful or not, but how we can make tests that brings out people's diverse capabiltiies", professor answered eagerly.
+
+"It is not representative of diversity at the top levels of jobs", you argue, to which the professor replies, "... and it probably never will be, for most analytical positions what matters is how objectively and critically an individual can handle a task, for anything that involves subjective judgement, diversity is a requirement, that is how humans adapt, it's a natural system, and it can be achieved by working on how we aporoach such tests. And for big businesses, it's more about the connections you make and luck, rather than merit, and it always has been that way."
+
+You nod your head to his answer, you find no counter-arguements but something doesnt feels right, you then announce your question, "What do you think about meritocracy's role in making people [[compete]] for resources?"
+
+::thanks
+<<notify>>
+Achievement Unlocked!
+That was enough.
+<</notify>>
+
+
+You thank the professor for clearing the entire problem with a simple question. You feel amazed at his brilliance. The class continues on some topic that you later forget as you didn't take any notes.
+
+[[The End]]
+<<set $lec to 0>>
+
+
+::compete
+
+Professor gave you question a deep though and proceeded to answer, "We live in a world where resources are scarce and people have different needs and wants. How do we decide who gets what and how much? How do we balance the interests of individuals and groups, of present and future generations, of humans and other beings?".
+
+He then runs up to the board, erases the writings from the previous class and writes - The trolley problem. He then explains it, "The trolley problem is a series of thought experiments in ethics and psychology, involving stylized ethical dilemmas of whether to sacrifice one person to save a larger number. The basic scenario involves a runaway trolley barreling down the railway tracks. Ahead, on the tracks, there are five people tied up and unable to move. The trolley is headed straight for them. You are standing some distance off in the train yard, next to a lever. If you pull this lever, the trolley will switch to a different set of tracks. However, you notice that there is one person on the side track. You have two (and only two) options: Do nothing, in which case the trolley will kill the five people on the main track. Pull the lever, diverting the trolley onto the side track where it will kill one person. Which is the more ethical option? Or, more simply: What is the [[right thing]] to do?".
+
+
+::right thing
+
+Professor looks at you as if he expects you to have found the corelation by now, watching you fail to response, he continues, "This dilemma can be seen as a metaphor for the competition for limited resources in society. The trolley represents the forces of nature, technology, or history that create scarcity and conflict. The people on the tracks represent the different stakeholders who have claims to the resources. The lever represents the power and responsibility that we have as moral agents to make decisions that affect others. The question is: How do we use our power and responsibility in a fair and just way?".
+
+"One possible answer is meritocracy", he announces, "Meritocracy is a social system in which success and status in life depend primarily on individual talents, abilities, and effort. Meritocracy implies that positions and goods should be distributed solely in accordance with individual merit. Meritocracy can be seen as a way of resolving the trolley problem by applying a criterion of merit to decide who deserves to live or die, who deserves more or less resources. But meritocracy also raises some challenges. How do we define and measure merit? How do we account for the effects of luck, privilege, discrimination, or oppression on merit? How do we ensure that meritocracy does not create new forms of inequality, exploitation, or corruption? And most importantly, how do we evaluate meritocracy itself? Is it enough to judge it by its procedures or methods, or do we also have to judge it by its outcomes or consequences?".
+
+You realize that was what he meant to say in your previous conversation, things clear up more for you and you find new arguements in favour of your opinion.
+
+"These are some of the questions that these problems poses to us, and they are not easy to answer.", the professor scratches his chin, "They require us to think critically and creatively about what we value and why, what we aim for and how, what we accept and what we challenge. We need to engage in moral reasoning and dialogue with others who may have different perspectives, be aware of our own biases and limitations, as well as those of our [[social systems]]."
+
+::social systems
+
+Professor continues the rest of the class giving more examples of the trolley problems, with real events from history and imagined versions of the scenario. You take notes vigourously and find yourself enamoured by all the things you learned in class today.
+
+You own solution to the problems you faced towards makes you realize thst you simply need to learn more to be able to understand and find probable solutions to these social issues.
+
+You first day at college was very informative.
+
+[[The End]]
+<<set $lec to 1>>
+
+
+::The End
+<<if $lec is 0>> That was not the real ending, try again. <</if>>
+<<notify>>
+Achievement Unlocked!
+Should I try the other choices?
+<</notify>>
+
+
+Thank You for playing the game, feel free to reach out with your opinions or any bugs you caught on the github issues of the game or at the intfiction forum.
+
+I look forward to reading your reviews.

@@ -1,0 +1,145 @@
+:: StoryTitle
+Dawn
+
+
+:: StoryData
+{
+	"ifid": "E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F",
+	"format": "Harlowe",
+	"format-version": "1.2.4",
+	"start": "Untitled Passage",
+	"zoom": 1
+}
+
+
+:: Story Stylesheet [stylesheet]
+body, tw-story
+{
+  font-family: Monospace;
+  font-size: 22px;
+  background-color: maroon;
+  color: white;
+}
+
+
+:: Untitled Passage {"position":"582,235","size":"100,100"}
+A sweet smell surrounds you as you step in to spend your night shift in this trailer. Lilies were always your favourite. Too bad you don't often see a lot of them around here anymore.
+
+You are on duty. You have been sent to inspect this abandoned trailer park and the tech lying here. Your orders are to connect your detection kit to all the abandoned hardware one at a time, any information lying around will be automatically uploaded to the server for inspection by analysts.
+
+While the data is transferring, you are free to hang around. There are several computer [[gadgets]] here. A [[flower pot]] adores the wall on your left.
+
+
+:: gadgets {"position":"433,397","size":"100,100"}
+You take a gander at the gadgets. As happy as some of your colleagues might have been to be here, you don't understand much of the stuff lying around here. 
+
+Your train of thoughts take you to the time when you were deciding a career. Why did you choose the role of a technician?
+
+[[Your district was to be subsumed by another one, you needed a job]]
+[[You have always been fascinated by gadgets]]
+
+
+:: flower pot {"position":"583,397","size":"100,100"}
+You bring the flower pot closer to smell the lillies. The pot feels heavier than it should. 
+
+You look in to find a few more hard disks. You chuckle at their level of sneakiness.
+
+You should probably take a look at the [[gadgets]]
+
+
+:: outside {"position":"733,397","size":"100,100"}
+Bright lights surround the trailer with a rough and unclear voice shouting something on the loudspeakers, the continous roar forces you to walk out and ask what the matter is.
+
+You see the federal tactical team at the doorsteps asking you for your [[name]].
+
+
+:: Your district was to be subsumed by another one, you needed a job {"position":"358,547","size":"100,100"}
+You remember watching on TV when you were in your classroom, the Andromeda federation decided to eradicate several districts in your area and place tourist space ports instead. It did not bother you much but you were sympathetic towards the emotional response of your loved ones.
+
+With the adjointment of districts, resource sharing was definitely going to be a problem and getting a job looked impossible for someone like you, atleast that's what you thought. Why?
+
+[[I was of the Orion class, the most persecuted]]
+[[I did not have good grades->I was of the Orion class, the most persecuted]] 
+[[Good grades don't guarantee jobs->I was of the Orion class, the most persecuted]]
+
+
+:: You have always been fascinated by gadgets {"position":"508,547","size":"100,100"}
+Even though you were fascinated by this line of work, you knew that chances of gaining a position were narrowing down. The unstable political situations made it necessary for you to hurry up and acquire the job. But why were you so concerned about it?
+
+
+[[I was of the Orion class, the most persecuted]]
+[[I did not have good grades->I was of the Orion class, the most persecuted]] 
+[[Good grades don't guarantee jobs->I was of the Orion class, the most persecuted]]
+
+
+:: I was of the Orion class, the most persecuted {"position":"208,697","size":"100,100"}
+The safeguard that your district had provided was now on its verge of extinction and your achievements or lack therof were of no significance. 
+The inevitable crisis was spine chilling enough for your family to look for far away places to stay. But you wanted to stay close to town. Why?
+
+[[I have always lived here]]
+[[I was in love]]
+
+
+:: Epilogue {"position":"1100,743","size":"100,100"}
+You sit calmly as you wait for the authorities to learn of your actions. 
+
+Thanks for playing the game. End of prologue. //made for the jam//
+
+
+:: I have always lived here {"position":"133,847","size":"100,100"}
+You can't imagine a life away from here. The federation couldn't successfully evacuate the town and it was now filled with rebel activity who are planting trees on government property to make it illegal to build on it, a problem that the state couldn't eradicate that easily.
+
+With its effectual tactical team and patented technolgy, federation is finally succeeding and is now sending troops and technicians to clear up the places before they are demolished.
+
+How do you feel about the work?
+
+[[It's work]]
+[[I try not to feel just about anything->It's work]]
+
+
+:: I was in love {"position":"283,847","size":"100,100"}
+What was the name of your love interest?
+[[Her name was ... ->her]]
+[[His name was ...->her]]
+[[I am talking about ...->her]]
+
+
+:: It's work {"position":"58,997","size":"100,100"}
+Ah well it's not like you have total control over your life anyway, do you?
+
+You stand up for a second, curiously looking outside the window to see how the area looks like. 
+
+There's a bathroom in this trailer if you want to [[freshen up->outside]]. You can however go and take a look [[outside]] .
+
+
+:: her {"position":"338,997","size":"100,100"}
+(set: $love to (prompt: "Enter the name."))
+
+Your relationship with $love was complicated, but you weren't looking for some social significance, rather you were living in the moment. But times weren't so great for the two of you.
+
+What happened ? How did you feel about it?
+
+[[Don't want to talk about it ->It's work]] 
+[[I try not to feel just about anything ->It's work]] 
+[[I never figured it out ->It's work]]
+
+
+:: name {"position":"733,547","size":"100,100"}
+(set: $name to (prompt: "Enter your name."))
+Your accurate response should have solved the situation, but it didn't. They kept on shouting in gibberish often in sync. 
+
+To clarify things you show them your ID to which they calm down, but then suddently you hear something  //wheez// right past your left ear. 
+
+You realize that one of them just shot a gamma ray to scare you. Keeping your shaking fists under control you look at them to see that they are laughing at you.
+
+You get back inside the [[trailer]].
+
+
+:: trailer {"position":"734,697","size":"100,100"}
+As you calm your nerves down you notice that the word "Project $love" is written on one of the screens. 
+
+Digging down a bit you realise that it's a computer virus that is going to infect the federation servers through your kit and globaly reveal a forest burning plan that the federation is  promoting as a patented rebel remover.
+
+You can choose to [[stop it right now->Epilogue]] or [[let the disks do its thing->Epilogue]] until the sun rises and hopefully prevent the genocide. You will however be executed for betraying the state and thus will be sacrificing your life for the people if you choose the latter.
+
+

@@ -1,0 +1,970 @@
+:: StoryTitle
+The Sacrificial Trail
+
+
+:: StoryData
+{
+        "ifid": "B0906C52-C848-46F0-996E-D4D20FCC81C8",
+        "format": "SugarCube",
+        "format-version": "2.21.0",
+        "start": "Title",
+        "zoom": 1
+}
+
+
+:: Story Stylesheet [stylesheet]
+#story {
+  max-width: 60ch;
+  min-width: 32ch;
+
+  font-family: "Georgia", serif;
+  font-size: 120%;
+}
+
+.passage button {
+  background-color: red;
+  color: black;
+  border-color: #7f0000;
+}
+
+.passage a {
+  color: red;
+}
+
+
+:: StoryInit [nobr] {"position":"54,46","size":"100,100"}
+<<set $resources to {"coffee":    2,
+                     "gas":       25,
+                     "money":     220,
+                    }>>
+
+<<set $items to {"coffeeYieldMin":    21,
+                 "coffeeYieldMax":    32,
+         }>>
+
+<<set $pace to ["slow", "steady", "fast"]>>
+
+player
+<<set $player to {"health":        100,
+                  "sanity":        100,
+                  "fatigue":         0,
+                  "fatigueThreshold": 100,
+                  "pace":          "steady",
+                  }>>
+points
+<<set $points to 0>>
+
+consumption
+<<set $consumption to {"gasPerKm":        0.25,
+                       "fatiguePerMin":   1.26,
+                      }>>
+stats
+<<set $stats to {"stop":        0,
+                 "km":          0,
+                 "kmInitial":   random(200,250),
+                 "kmToGo":      0,
+                 "minutes":     0,
+                 "minToGo":     random(160,180),
+                 "sacrifices":  0,
+                 "unicornIncidents": 0,
+                                 "maxUnicornIncidents": random(3,5),
+                }>>
+<<set $stats.kmToGo to $stats.kmInitial>>
+<<set $stats.minToGo to Math.round($stats.kmInitial * 0.70)>>
+
+/* hand-over variables */
+<<set $last_button   to "n">>
+<<set $last_time     to 0>>
+<<set $returnPassage to "Intro">>
+
+<<set $ending to 0>>
+<<set $game to  {"incident": "",
+                 "gameover": false,
+                }>>
+
+<<makeRoads>>
+<<makeShops>>
+
+/%
+<<cacheaudio "music-a" "format:ogg;http://pixelprophecy.com/games/power-mt/music/music-a.ogg" "format:mp3;http://pixelprophecy.com/games/power-mt/music/music-a.mp3">>\
+<<cacheaudio "music-b" "format:ogg;http://pixelprophecy.com/games/power-mt/music/music-b.ogg" "format:mp3;http://pixelprophecy.com/games/power-mt/music/music-b.mp3">>\
+&/
+/%
+<<createaudiogroup ":score">>\
+<<track "music-a">>\
+<<track "music-b">>\
+<</createaudiogroup>>\
+<<createaudiogroup ":stings">>\
+<<track "sting-a">>\
+<<track "sting-b">>\
+<</createaudiogroup>>\
+%/
+
+
+:: Title {"position":"282,39","size":"100,100"}
+<<script>>UIBar.stow();<</script>>\
+<<masteraudio stop>>\
+[img[http://pixelprophecy.com/games/sacrificial-trail/images/title.png]]
+!The Sacrificial Trail
+Version 1.02 • a game by Pixel Prophecy • © 2018
+[[► Begin ◄|Start]]
+
+!!!!!Change log:
+* 1.02
+** fixed a few typos (thanks, ROAR!)
+** changed game over text when running out of time
+** slightly reduced fatigue buildup and increased base gas consumption
+* 1.01
+** fixed instance where unicorn would not appear
+** fixed instance where you would run out of roads
+** made interactable elements clearer (= red)
+* 1.00
+** initial release
+
+
+:: Start [story nobr] {"position":"286,188","size":"100,100"}
+Darkness. All-engulfing darkness.<br/>
+<br/>
+A person you've known for all of your life switches on the lights in the dingy garage. You see the family van, beat up and full of character.<br/>
+<br/>
+“It’s time,” the person next to you says. You know. You've known when  the evil creatures of the forest came closer and closer to the houses every night; when it wasn't safe anymore to travel without a gun. You've known since you've learned about your family's importance.<br/>
+<br/>
+Something pokes you on the side. It's a few bills of money.<br/>
+“Just take it already. It’s <<= $resources.money >> € we collected for you.”<br/>
+<br/>
+[[Put it in your pocket|Look at the person]]
+
+
+:: WidgetInventory [widget nobr] {"position":"47,698","size":"100,100"}
+<<widget inventory>>
+
+/* limit to 2 decimal places */
+<<set $resources.money to Math.round($resources.money * 100.0) / 100.0>>
+<<set $resources.gas   to Math.round($resources.gas * 100.0)   / 100.0>>
+
+/* round to integer */
+<<set $resources.coffee to Math.round($resources.coffee)>>
+
+<div class="inventory">
+  <b>You have:</b><br/>
+  <ul>
+    <li><<print $resources.money>> €</li>
+        <li><<print $resources.coffee>> coffee</li>
+        <li><<print $resources.gas>> gasoline</li>
+  </ul>
+</div>
+<</widget>>
+
+
+:: WidgetStatus [widget nobr] {"position":"49,822","size":"100,100"}
+<<widget status>>
+
+/* round to integer */
+<<set $player.fatigue to Math.round($player.fatigue)>>
+
+<div class="status">
+  <b>You feel:</b><br/>
+  <ul>
+        <li><<print$player.fatigue>> fatigue</li>
+        /*
+        <li><<print Math.trunc($player.sanity)>> sanity</li>
+        <li><<print Math.trunc($player.health)>> health</li>
+        */
+  </ul>
+</div>
+<</widget>>
+
+
+:: Stop [nobr stop] {"position":"1022,42","size":"100,100"}
+<h2>Rest</h2>
+<<set $stats.stop += 1>>
+You make rest at a stop along the way. So far, you've traveled <<print $stats.km>> km.<br/>
+
+<div>
+<<set $shop to $gameShops.pluck()>>
+There's a shop. A bright sign reading “<<= $shop.name>>" welcomes you.
+</div>
+
+<div class="prompt">
+Will you buy something?
+  <div>
+  <<button [[Yes|Progression]] "y">><<set $last_button to "y">><</button>>
+  <<button  [[No|Progression]] "n">><<set $last_button to "n">><</button>>
+  </div>
+</div>
+
+
+:: Map [nobr map] {"position":"615,46","size":"100,100"}
+<h2>Map</h2>
+You still have <<=$stats.kmToGo>> km to go and <<=Math.round($stats.minToGo)>> minutes left. Change your pace if necessary and choose the road you want to travel next.
+
+<div>
+Your current pace is <<=$player.pace>>.<br/>
+  <div style="color:red">
+  <label><<radiobutton "$player.pace" "slow">> Slow</label><br/>
+  <label><<radiobutton "$player.pace" "steady">> Steady</label><br/>
+  <label><<radiobutton "$player.pace" "fast">> Fast</label><br/>
+  </div>
+</div>
+
+<<set _roadA to $gameRoads.pluck()>>
+<<set _roadB to $gameRoads.pluck()>>
+<<set _roadC to $gameRoads.pluck()>>
+
+<<if _roadA.length gt $stats.kmToGo>>
+<<set _roadA.length to $stats.kmToGo>>
+<</if>>
+<<if _roadB.length gt $stats.kmToGo>>
+<<set _roadB.length to $stats.kmToGo>>
+<</if>>
+<<if _roadC.length gt $stats.kmToGo>>
+<<set _roadC.length to $stats.kmToGo>>
+<</if>>
+
+
+<table style="width:100%">
+  <tr>
+
+  <td style="width:33%">
+    <<set _r to _roadA>>
+    <b><<link [[Road A|Progression]]>> <<set $stage to _roadA>> <</link>></b><br>
+    Condition:   <<- _r.condition>><br/>
+    Inclination: <<- _r.inclination>><br/>
+    Length     : <<- _r.length>> km<br/>
+  </td>
+
+  <td style="width:33%">
+    <<set _r to _roadB>>
+    <b><<link [[Road B|Progression]]>> <<set $stage to _roadB>> <</link>></b><br>
+    Condition:   <<- _r.condition>><br/>
+    Inclination: <<- _r.inclination>><br/>
+    Length     : <<- _r.length>> km<br/>
+  </td>
+
+  <td style="width:33%">
+    <<set _r to _roadC>>
+    <b><<link [[Road C|Progression]]>> <<set $stage to _roadC>> <</link>></b><br>
+    Condition:   <<- _r.condition>><br/>
+    Inclination: <<- _r.inclination>><br/>
+    Length     : <<- _r.length>> km<br/>
+  </td>
+  </tr>
+</table>
+
+
+:: MakeRoads [widget nobr] {"position":"47,179","size":"100,100"}
+<<widget makeRoads>>
+
+  /* Attributes for roads */
+  <<set $roadAttribs to
+    {
+      "condition":   ["good", "fair", "bad", "terrible"],
+      "inclination": ["steep decline", "decline", "level", "incline", "steep incline"],
+     }
+  >>
+
+  <<set _noOfRoads to 50>>
+
+  /* setting the first object in the array manually so JS knows what object type to expect */
+  <<set $gameRoads to
+    [
+      {
+          "condition":   either($roadAttribs.condition),
+          "inclination": either($roadAttribs.inclination),
+          "length":      random(5, 50)
+      }
+    ]
+   >>
+
+  /* "for i to 1" <-- necessary because we set the first element manually */
+  <<for _i to 1; _i lt _noOfRoads; _i++ >>
+    <<set _thisRoad to
+      {
+        "condition":   either($roadAttribs.condition),
+        "inclination": either($roadAttribs.inclination),
+        "length":      random(5, 50),
+      }
+    >>
+
+    /* add to array*/
+    <<set $gameRoads.pushUnique(_thisRoad)>>
+  <</for>>
+
+<</widget>>
+
+
+:: Progression [nobr] {"position":"813,478","size":"100,100"}
+/* this strings together individual parts to create a playthrough */
+
+
+<<if $game.gameover eq true>>
+  <<goto "GameOver">>
+<</if>>
+
+
+<<switch previous()>>
+  <<case "Intro">>
+      <<goto "Map">>
+    <</if>>
+
+  <<case is "Prepare">>
+    <<goto "Map">>
+
+  <<case is "Map">>
+    /* "Map" should have written a "road" object to "$stage"
+        which "Stage" expects */
+    <<goto "Stage">>
+
+  <<case "Stage">>
+    <<goto "StageEnd">>
+
+  <<case "StageEnd">>
+
+        <<if $game.incident neq "">>
+                <<goto $game.incident>>
+    <</if>>
+
+    <<if $stats.kmToGo gt 0>>
+          <<goto "Stop">>
+    <<else>>
+      <<goto "Victory">>
+    <</if>>
+
+
+  <<case "Stop">>
+    <<set $game.incident to "">> /* clear incident */
+    <<set $returnPassage to "Intro">> /* clear return passage */
+    <<if $last_button eq "y">>
+      <<goto "Shop">>
+    <<else>>
+      <<goto "Prepare">>
+    <</if>>
+
+  <<case "Shop">>
+    <<goto "Prepare">>
+
+<</switch>>
+
+
+:: Stage [stage nobr] {"position":"752,44","size":"100,100"}
+<h2>Travel</h2>
+<div>
+        Your are going at a <b><<=$player.pace>></b> pace. The condition of the road is <b><<=$stage.condition>></b>,  its inclination is <b><<=$stage.inclination>></b>, and it’s <b><<=$stage.length>></b> km long.
+</div>
+
+/*
+<<inventory>>
+<<status>>
+*/
+
+<<set _gas_multi     to 1.0>>
+<<set _fatigue_multi to 1.0>>
+<<set _speed_multi   to 1.0>>
+/* speed multi defines SLOWNESS, so the bigger the multi, the slower the speed! */
+
+
+/* evaluate road conditions */
+<<switch $stage.condition>>
+  <<case "good">>
+    <<set _gas_multi     *= 0.8>>
+    <<set _fatigue_multi *= 0.9>>
+    <<set _speed_multi   *= 0.75>>
+
+  <<case "fair">>
+    <<set _gas_multi     *= 1.0>>
+    <<set _fatigue_multi *= 1.0>>
+    <<set _speed_multi   *= 1.0>>
+
+  <<case "bad">>
+    <<set _gas_multi     *= 1.15>>
+    <<set _fatigue_multi *= 1.2>>
+    <<set _speed_multi   *= 1.75>>
+
+  <<case "terrible">>
+    <<set _gas_multi     *= 1.8>>
+    <<set _fatigue_multi *= 1.7>>
+    <<set _speed_multi   *= 2.5>>
+<</switch>>
+
+
+/* evaluate road inclination */
+<<switch $stage.inclination>>
+  <<case "steep decline">>
+    <<set _gas_multi     *= 0.5>>
+    <<set _fatigue_multi *= 0.9>>
+    <<set _speed_multi   *= 0.8>>
+
+  <<case "decline">>
+    <<set _gas_multi     *= 0.85>>
+    <<set _fatigue_multi *= 1.00>>
+    <<set _speed_multi   *= 0.90>>
+
+  <<case "level">>
+    <<set _gas_multi     *= 1.0>>
+    <<set _fatigue_multi *= 1.0>>
+    <<set _speed_multi   *= 1.0>>
+
+  <<case "incline">>
+    <<set _gas_multi     *= 2.0>>
+    <<set _fatigue_multi *= 1.2>>
+    <<set _speed_multi   *= 1.6>>
+
+  <<case "steep incline">>
+    <<set _gas_multi     *= 3.5>>
+    <<set _fatigue_multi *= 1.3>>
+    <<set _speed_multi   *= 2.8>>
+<</switch>>
+
+
+<<switch $player.pace>>
+  <<case "slow">>
+    <<set _speed_multi     *= 1.2>>
+    <<set _gas_multi       *= 0.8>>
+    <<set _fat_multi       *= 0.8>>
+  <<case "steady">>
+    <<set _speed_multi     *= 1.0>>
+    <<set _gas_multi       *= 1.0>>
+    <<set _fat_multi       *= 1.0>>
+  <<case "fast">>
+    <<set _speed_multi     *= 0.75>>
+    <<set _gas_multi       *= 1.6>>
+    <<set _fat_multi       *= 1.4>>
+<</switch>>
+
+/* default pace is 100 kph, so 0.6 min per km*/
+<<set _minBase to ($stage.length * 0.6)>>
+<<set _gasBase to ($stage.length * $consumption.gasPerKm)>>
+
+<<set _min to (_minBase * _speed_multi)>>
+<<set _gas to (_gasBase * _gas_multi)>>
+
+<<set _fatBase to (_min * $consumption.fatiguePerMin)>>
+<<set _fat to (_fatBase * _fatigue_multi)>>
+
+
+/* limit to 2 decimal places */
+<<set _min to Math.round(_min * 100.0) / 100.0>>
+<<set _gas to Math.round(_gas * 100.0) / 100.0>>
+
+/* fatigue can be rounded, that's ok */
+<<set _fat to Math.round(_fat)>>
+
+<<timed 1s t8n>>
+<hr>
+/*
+<div class="debug" style="background:#000033">
+<ul>
+  <li>minBase:       <<= _minBase>></li>
+  <li>gasBase:       <<= _gasBase>></li>
+  <li>fatBase:       <<= _fatBase>></li>
+  <li>gas_multi:     <<= _gas_multi>></li>
+  <li>fatigue_multi: <<= _fatigue_multi>></li>
+  <li>speed_multi:   <<= _speed_multi>></li>
+  <li>min:           <<= _min>></li>
+  <li>gas:           <<= _gas>></li>
+  <li>fat:           <<= _fat>></li>
+</ul>
+</div>
+*/
+The section took <b><<= _min >></b> minutes,<br/>
+<<next>>
+you spent <b><<= _gas>></b> gasoline,<br/>
+<<next>>
+and it caused you <b><<= _fat >></b> additional fatigue.<br/>
+
+<<set $resources.gas  -= _gas>>
+<<set $player.fatigue += _fat>>
+<<set $lastTime to _min>> /* this is expected by StageEnd */
+
+<<set $stats.minutes += _min>>
+<<set $stats.minToGo -= _min>>
+<<set $stats.km += $stage.length>>
+<<set $stats.kmToGo -= $stage.length>>
+
+/* check if anything ran out */
+<<if $resources.gas lte 0>>
+  <<set $resources.gas to 0>>
+<</if>>
+
+
+
+/* incidents */
+<<set _nextPassage to "Progression">>
+
+/* force unicorn on stop 3, if there hadn't been one before */
+<<if $stats.unicornIncidents lt 0 and $stats.stop eq 3>>
+    <<set _nextPassage to "InUnicorn">>
+    <<set $game.incident to "InUnicorn">>
+    <<set $returnPassage to "StageEnd">>
+<</if>>
+
+/* chance for unicorn */
+<<if $stats.unicornIncidents lt $stats.maxUnicornIncidents>>
+  <<if random($stats.stop, 10) gte 9>>
+    <<set _nextPassage to "InUnicorn">>
+    <<set $game.incident to "InUnicorn">>
+    <<set $returnPassage to "StageEnd">>
+  <</if>>
+<</if>>
+
+<<next 500ms>>
+<<if $stats.minToGo lt 0 >>
+  <span style="color:#ff3333;">You ran out of time.</span><br/>
+  <<set _nextPassage to "InOutOfTime">>
+  <<set $game.incident to "InOutOfTime">>
+  <<set $returnPassage to "StageEnd">>
+<</if>>
+
+<<next 500ms>>
+<<if $player.fatigue gte $player.fatigueThreshold >>
+  <span style="color:#ff3333;">You are overly fatigued.</span><br/>
+  <<set _nextPassage to "InFatigued">>
+  <<set $game.incident to "InFatigued">>
+  <<set $returnPassage to "StageEnd">>
+<</if>>
+
+<<next 500ms>>
+<<if $resources.gas lte 0 >>
+  <span style="color:#ff3333;">You ran out of gas along the way.</span><br/>
+  <<set _nextPassage to "InOutOfGas">>
+  <<set $game.incident to "InOutOfGas">>
+  <<set $returnPassage to "StageEnd">>
+<</if>>
+
+<<next>><<button [[Continue|Stage]]>><<goto _nextPassage>>  <</button>>
+<</timed>>
+
+
+:: Victory [nobr] {"position":"1629,54","size":"100,100"}
+You arrive with <<= Math.round($stats.minToGo)>> minutes left at your destination. You have never been here but seen this place so many times before. In your nightmares.<br/>
+<br/>
+A hooded figure emerges from the darkness of the forest and motions you to a slab of granite, half protruding from the ground. It's a crude stairwell, hewn into the ancient stone.<br/>
+<<if $stats.minToGo lt 10>>
+“Hurry,” a hollow voice from under the hood urges you. You were almost running late for your special appointment tonight.</br>
+<</if>>
+<br/>
+As you descend you take a last look at your surroundings. A white unicorn is watching you with shiny eyes. It knows. And so do you.<br/>
+<br/>
+[[Keep descending…|Keep descending]]
+
+
+:: GameOver [nobr] {"position":"1494,50","size":"100,100"}
+<h2>Game Over</h2>
+<div>
+For one reason or another you didn't make it. The calamity engulfs the land and takes it all with nothing to stop it, devouring every living being, and then everything that's dead as well. It reigns supreme in an endless void of cosmic decadence, terror, and indifference.<br/>
+<br/>
+</div>
+
+<div class="hint" style="border: .5pt solid white; padding: 1em;">
+<b>Hint:</b><br/>
+<<hint>>
+<br/>
+</div>
+
+<br/>
+<div>
+<<button [[Statistics|TheEnd]]>><</button>>
+</div>
+
+
+:: InUnicorn [nobr] {"position":"1322,163","size":"100,100"}
+<h2>Oh?</h2>
+<<set $stats.unicornIncidents += 1>>
+<<set $stats.incidents += 1>>
+
+A unicorn appears in your headlights. It comes closer as you halt and roll down the window. The Unicorn kindly ask for a sacrifice.<br/>
+<br/>
+<<if $resources.coffee lte 0>>
+ But you have nothing to give, so it vanishes again.
+ <div>
+   <<timed 2s t8n>>
+     <<button "Sad">><<goto $returnPassage>><</button>>
+   <</timed>>
+ </div>
+
+<<else>>
+
+  How much coffee will you spare? (You have <<=$resources.coffee>>)<br/>
+  <<textbox "_sacrificeCoffee" $resources.coffee >>
+
+  <div id="unicornReply">
+  <<button "Confirm">>
+    <<set _s to _sacrificeCoffee>>
+    <<set _t to "">>
+
+    <<if _s eq 0>>
+      <<set _t to "The unicorn leaves without anything.">>
+    <<elseif _s lt 0>>
+      <<set _t to "“You cheeky bastard,” the unicorn grins and leaves empty-hooved.">>
+    <<elseif /[^0-9]/i.test(_s)>>
+      <<set _t to "The unicorn finds your lack of numerals disturbing and leaves without anything.">>
+    <<else>>
+      /* check if we have that much */
+      <<if _s gte $resources.coffee >>
+        <<set _t to "The unicorn thanks you and leaves with all your coffee.">>
+        <<set $stats.sacrifices to $resources.coffee>>
+        <<set $resources.coffee to 0>>
+      <<else>>
+        <<set $stats.sacrifices += _s>>
+        <<set $resources.coffee -= _s>>
+        <<set _t to "The unicorn nods and leaves. You have $resources.coffee coffee left.">>
+      <</if>>
+    <</if>>
+
+    <<replace "#unicornReply">><<=_t>><</replace>>
+    <<timed 3s t8n>><<goto $returnPassage>><</timed>>
+
+  <</button>>
+  </div>
+<</if>>
+
+
+:: Shop [nobr] {"position":"1191,42","size":"100,100"}
+<h2>"<<= $shop.name>>" Shop</h2>
+There are some goods for sale here.
+
+<<inventory>>
+/* shops have different amounts of goods */
+<table>
+  <tr>
+    <th>Item</th>
+        <th>Stock</th>
+        <th>Price</th>
+        <th></th>
+  </tr>
+
+  <tr>
+    <td>
+      Coffee
+    </td>
+
+    <td  align="right">
+        <<= $shop.coffeeStock>>
+    </td>
+
+    <td align="right">
+      <<= $shop.coffeePrice>> €
+    </td>
+
+    <td>
+      <<if $shop.coffeeStock gt 0 and $resources.money gt $shop.coffeePrice>>
+        <<button [[Buy 1|Shop]]>>
+          <<set $resources.money  -= $shop.coffeePrice>>
+          <<set $resources.coffee += 1>>
+          <<set $shop.coffeeStock -= 1>>
+          <<if $shop.coffeeStock lt 0 >>
+            <<set $shop.coffeeStock to 0>>
+          <</if>>
+        <</button>>
+      <<else>>
+
+      <</if>>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Gasoline
+    </td>
+
+    <td align="right">
+        <<= $shop.gasStock>>
+    </td>
+
+    <td align="right">
+      <<= $shop.gasPrice>> €
+    </td>
+
+    <td>
+      <<if $shop.gasStock gt 0 and $resources.money gt $shop.gasPrice>>
+      <<button [[Buy 1|Shop]]>>
+        <<set $resources.money  -= $shop.gasPrice>>
+        <<set $resources.gas    += 1>>
+        <<set $shop.gasStock    -= 1>>
+        <<if $shop.gasStock lt 0 >>
+          <<set $shop.gasStock to 0>>
+        <</if>>
+      <</button>>
+      <<else>>
+
+      <</if>>
+    </td>
+  </tr>
+</table>
+
+
+
+<<button [[Done|Progression]]>> <</button>>
+
+
+:: StageEnd [nobr] {"position":"889,44","size":"100,100"}
+<h2>Arrival</h2>
+<div>
+You covered <<= $stage.length >> km in <<= Math.round($lastTime)>> minutes.
+
+<<if $stats.kmToGo gt 0>>
+There are still <<= Math.round($stats.kmToGo) >> km ahead of you, and you have <<= Math.round($stats.minToGo) >> minutes left to the calamity.
+<<else>>
+You have arrived at your final destination. You are prepared for what's to come. There are still <<= Math.round($stats.minToGo) >> minutes left to the calamity.
+<</if>>
+<br/>
+</div>
+
+<div>
+  <<inventory>>
+  <<status>>
+</div>
+
+
+<br/><<button [[Continue|Progression]]>><</button>>
+
+
+:: Prepare [nobr] {"position":"474,47","size":"100,100"}
+<h2>Prepare</h2>
+Prepare for the next leg of your journey.
+<<if $player.fatigue gt 0>>
+You might want to have some coffee.
+<</if>>
+
+<<inventory>>
+<<status>>
+<div id="effect"><em><<=$effectText>></em></div>
+<<set $effectText to "">>
+<<set $c to 0>>
+
+/* if you have more than one coffee, you might want to drink it? */
+<<if $resources.coffee gt 0 and $player.fatigue gt 0>>
+   <<button [[Have 1 coffee|Prepare]]>>
+         <<set $resources.coffee -= 1>>
+         <<set $c to random($items.coffeeYieldMin, $items.coffeeYieldMax)>>
+         <<set $player.fatigue -= $c>>
+
+         <<if $player.fatigue lt 0>>
+                <<set $player.fatigue to 0>>
+         <</if>>
+
+         <<set $effectText to "The coffee relieved you of <<print $c>> fatigue.">>
+
+   <</button>>
+<</if>>
+
+<<button [[Continue|Progression]]>> <</button>>
+
+
+:: InOutOfGas [nobr] {"position":"1319,284","size":"100,100"}
+<h2>Out of Gas</h2>
+
+
+You notice that you're out of gas as your car rolls to a stop. Stranded in the middle of the night in an unfamiliar environment, there's not much you can do but wait.<br/>
+<br/>
+As the calamity reaches you, <<= Math.round($stats.minToGo)>> minutes later, you are not surprised.<br/>
+
+<<set $ending to 4>>
+<<set $game.gameover to true>>
+<<button [[Continue|Progression]]>> <</button>>
+
+
+:: InFatigued [nobr] {"position":"1322,402","size":"100,100"}
+<h2>Fatigued</h2>
+
+
+You couldn't keep your eyes open any longer, as the fatigue was too much for you.<br/>
+Your car leaves the road and crashes into one of the many trees along the <<= $stage.condition >> road.
+<br/>
+<br/>
+
+<<if $stats.minToGo gt 0>>
+As the calamity hits <<= Math.round($stats.minToGo)>> minutes later you haven't regained consciousness. A blessing, perhaps.
+<<else>>
+It doesn’t matter anyways, as you had been running late all along and time was not on your side, either.
+<</if>>
+<br/>
+
+<<set $ending to 5>>
+<<set $game.gameover to true>>
+<<button [[Continue|Progression]]>> <</button>>
+
+
+:: MakeShops [nobr widget] {"position":"54,315","size":"100,100"}
+<<widget makeShops>>
+
+  /* Attributes for shops */
+  <<set $shopAttribs to
+    {
+      "name":        ["Clam", "Speedo", "Tank-Stop", "Inn", "Pump & Go", "OMV", "Peter's Pump", "OÖ Gas and Repair", "Hinterland Refuelling", "Blackstone Coop",],
+      "coffeePrice": random(3,8),
+      "coffeeStock": random(2,7),
+      "gasStock":    random(5,20),
+      "gasPrice":    random(80, 280) / 100,
+     }
+  >>
+
+  <<set _count to 30>>
+
+  /* setting the first object in the array manually so JS knows what object type to expect */
+  <<set $gameShops to
+    [
+      {
+      "name":        either($shopAttribs.name),
+      "coffeePrice": random(3,8),
+      "coffeeStock": random(2,7),
+      "gasStock":    random(5,20),
+      "gasPrice":    random(80, 280) / 100,
+      }
+    ]
+   >>
+
+  /* "for i to 1" <-- necessary because we set the first element manually */
+  <<for _i to 1; _i lt _count; _i++ >>
+    <<set _thisElement to
+      {
+      "name":        either($shopAttribs.name),
+      "coffeePrice": random(3,8),
+      "coffeeStock": random(2,7),
+      "gasStock":    random(5,20),
+      "gasPrice":    random(80, 280) / 100,
+      }
+    >>
+
+    /* add to array*/
+    <<set $gameShops.pushUnique(_thisElement)>>
+  <</for>>
+
+<</widget>>
+
+
+:: WidgetHint [widget nobr] {"position":"51,445","size":"100,100"}
+<<widget hint>>
+
+<<set $hint to [
+
+"Keep your fatigue below 100 by drinking coffee. Driving fast, long distances, on bad roads fatigue you faster than going slow on good roads.",
+
+"If you run out of gas, don't go as fast, choose declining roads in good condition.",
+
+"If you are kind to the unicorn, it might help you get a better ending.",
+
+"Choosing shorter roads is better when you're low on gas or high on fatigue.",
+
+"Different shops have different prices. Sometimes it's better to wait out and hope that the next shop makes you a better offer."
+
+]>>
+
+<<= either($hint) >>
+
+<</widget>>
+
+
+:: Look at the person [nobr] {"position":"283,338","size":"100,100"}
+The person pats your shoulder and casts a last mournful smile at you.<br>
+“We count on you, kid. The tank is half full and there are <<= $resources.coffee>> cans of coffee in the glove compartment. It's not much, but… well, good luck."<br/>
+<br/>
+[[“Thank you.”|Intro]]
+
+
+:: Intro [nobr] {"position":"283,487","size":"100,100"}
+You thank them and get into the car. It's dark and cold outside. You switch on the headlights and glance at your watch. You still got <<= $stats.minToGo>> minutes left.<br/>
+<br>
+With a last glance in the rearview mirror you leave the familiarity behind. Now it’s only you and the road. Your goal is <<= $stats.kmToGo>> kilometers north…<br/>
+<br/>
+<<button [[Don’t look back.|Progression]]>><</button>>
+
+
+:: Keep descending [nobr] {"position":"1625,200","size":"100,100"}
+You enter a low chamber, deep underneath the roots and soil of the forest. It is illuminated by torches and four other hooded figures holding them. Their soot blackens the moist ceiling as you are led to a block of solid granite in the middle.<br/>
+<br/>
+You strip bare and lay face up onto the stone. It's terribly cold and wet but you don't care anymore. With a deep breath you close your eyes for a moment, try to calm yourself as you hear the hooded congregation recite verses in an otherworldly tongue.<br/>
+<br/>
+“I'm sorry,” one whispers in your direction.<br>
+“Don’t be,” you whisper back.<br/>
+“Sacrifices must be made,” your voice dry and as cold as the steel of the dagger with the undulating blade that’s being thrust into your chest.<br/>
+<br/>
+[[It hurts.]]
+
+
+:: It hurts. [nobr] {"position":"1625,338","size":"100,100"}
+But not for long. You decide to close your eyes and see the shape of a unicorn dance before them for a moment.<br/><br/>
+
+
+/* sacrifices */
+<<set $ending to 0>>
+<<set _t to "">>
+<<if $stats.sacrifices gte 8>>
+    <<set $ending to 1>>
+        <<set _t to "It looks at you, and after a moment of hesitation it gallops closer. You can feel the creatures of the void tearing at your soul, every fiber, every shred they want to devour, but you have made a powerful friend. With flaming hooves it hovers around you, fends off the tentacles and tendrils of the nameless things, ripping them to shreds one by one until they are no more. The two of you fade into a stellar mist, a shining light of virtue. The world is saved, but it doesn't concern you anymore as you had to leave it behind. After all,  sacrifices must be made.">>
+
+<<elseif $stats.sacrifices lt 8>>
+    <<set $ending to 2>>
+        <<set _t to "It looks at you, a hint of sorrow in its eyes, but it remains rigid and unfazed as your soul gets pulled towards the uncaring emptiness of the demons. You realize that you could have treated it better, but that's just talk of the living. As you feel pain never felt before, you watch it gallop away, never to be seen again.">>
+<<else>
+    <<set $ending to 3>>
+        <<set _t to "It looks at you in contempt, sneers, and as your immortal soul keeps drifting towards the hellish void between the stars, it just watches. The nameless things will keep you for all eternity, tear you in endless agony. While the world is safe from their hellish influence, you will never be.">>
+<</if>>
+
+
+<div style="color:#ababff;">
+<<print _t>><br/>
+</div>
+<br/>
+Then: Darkness. All-engulfing darkness.<br/>
+<br/>
+<<timed 3s t8n>>
+        <<button [[Continue|TheEnd]]>><</button>>
+<</timed>>
+
+
+:: TheEnd [nobr] {"position":"1524,721","size":"100,100"}
+Thank you for playing<br/>
+<h2>THE SACRIFICIAL TRAIL</h2>
+a game by Phil Strahl (a.k.a.) Pixel Prophecy, made for Ludum Dare #43 in some frantic 48 hours in December 2018 and also dedicated to my muse, Conny Strahl.<br/>
+
+<div>
+<br/>
+<<if $stats.km lt $stats.kmToGo>>
+  You managed to cover <<= Math.round($stats.km)>> of <<= Math.round($stats.kmInitial)>> km
+<<else>>
+  You managed to cover the whole trail of <<= Math.round($stats.kmInitial)>> km
+<</if>>
+
+<<if $stats.minutes lt $stats.minToGo>>
+  in <<= Math.round($stats.minutes)>> min with <<= Math.round($stats.minToGo)>> minutes to spare.
+<<else>>
+  but ran out of time.
+<</if>>
+</div>
+<br/>
+You finished the game in <<print turns()>> turns, made <<=$stats.stop>> stops, sacrificed <<=$stats.sacrifices>> items to the unicorn and saw ending #<<= $ending>> of 6. (By the way #1 is the best ending).<br/>
+<br/>
+<<button [[Do Better|TheEnd]]>><<script>>UI.restart();<</script>><</button>>
+
+
+:: InOutOfTime {"position":"1326,535","size":"100,100"}
+<h2>Out of Time</h2>
+
+
+You took too long. Maybe you didn't check your watch often enough, maybe you didn't dare to because you knew that the inevitable would happen anyway. Maybe you never thought it would but once the black calamity rolls over your car and rips it apart like tinfoil, you know.<br/>
+<br/>
+
+<<set $ending to 6>>
+<<set $game.gameover to true>>
+<<button [[Continue|Progression]]>> <</button>>
+
+
+:: Score [nobr] {"position":"1753.5,526.5","size":"100,100"}
+Stops made: <<= $stats.stop>><br/>
+Turns played: <<= turns()>><br/>
+Unicorn encounters: <<= $stats.unicornIncidents >><br/>
+<br/>
+<<timed 1s t8n>>
+<<next>>Minutes remaining: <<= $stats.minToGo>><br/>
+<<next>>Fatigue at arrival: <<= $player.fatigue>><br/>
+<<next>>Gasoline in tank: <<= $resources.gas>><br/>
+<<next>>Remaining coffee: <<= $resources.coffee>><br/>
+<<next>>Sacrifices: <<= $resources.sacrifices>><br/>
+<br>
+<<next 2s>>
+Score: 123
+<br/><br/>
+        <<button [[Do Better|TheEnd]]>><</button>>
+<</timed>>
+<br/>

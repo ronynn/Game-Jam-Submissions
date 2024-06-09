@@ -1,0 +1,384 @@
+::StoryTitle
+GameJam-Tycoon
+
+:: StoryData
+{
+        "ifid": "3614BE5B-4682-43E7-918D-B1EC2793CC59"
+}
+
+::StoryAuthor
+Ryn
+
+ 
+ 
+:: UserStylesheet [stylesheet]
+
+tw-story {
+  Color:gray;
+  Font-size:1.1em;
+  text-align:center;
+  Font-family:Monospace;
+  background-color:white;
+  Line-height: 1.2em;
+}
+tw-link {	
+text-decoration:none;
+  color:gray;
+  Padding:3ex;
+  border-radius:2px;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);	
+}
+tw-link:active {
+  color: gray;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
+
+
+
+
+::Header[header]
+</br>
+</br>
+<h3>Stress Avoidance: $h hairstrands</br>
+Savings: $s dollars </br>
+Reputation: $r followers</br></h3>
+
+
+
+
+::Death
+
+You failed in your mission to continue as a game developer. There were good times and there were bad times.<br/>
+Surely some awesome times too, but mostly deskwork.<br/>
+This is a good time to reflect upon your actions and use the lessons in your new career.<br/>
+Good Luck.
+<br/>
+<br/>
+Dont tell me you want to [[try again?->Start]]
+
+
+::Start
+
+You were a college student living the dream of building playthings on the computer and submitting them to game jams on the internet.<br/>
+
+One day a big gamedev group  hired you to become one of the specialized developers working on mini games for the weekly  jams they participate in. However it's not going to well.
+
+The only discussions on the internet you find are about the possibility of the company closing down. Perhaps hiring you among other developers was just their way to delay the inevitable.
+
+Work on a game every week. Take care of your mental health, savings and reputation.
+
+(set: $h to 1000000)
+(set: $s to 10000)
+(set: $r to 1000)
+
+Your weekly expenses are around seven hundred dollars, but then again it depends.
+Prepare yourself to take on the journey - of hairloss.
+
+(link: "Agree")[\
+	(set: $h to it + 1)\
+  (set: $s to it + 1)\
+  (set: $r to it + 1)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to "420")\
+  (set: $s to "69")\
+  (set: $r to "At a back alley, you find 2")\
+	(goto:(either: "bye"))\
+] <br/>
+
+
+::bye
+
+Thanks for visiting the page. Make sure to check out all the other amazing games in this years Ludum Dare.
+
+[[Go Back->Start]]
+
+
+
+::week2
+(set: $s to it - 700)
+(if: $h <= 0)[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+ 
+A trainee executive who was also hired alongside you has just given an order to your team to use the characters from the best anime of this season. However he doesn't understands copyright laws and trademarks and refuses to license the characters.<br/>
+The guy has too much power over your project right now so it won't be possible to talk to higher ups.<br/>
+Following through the project will lead to some gain in fans but then again if some one points out the license situation, you might actually lose fans. <br/>
+
+
+
+(link: "Agree")[\
+	(set: $h to it - 10000)\
+  (set: $s to it + 1000)\
+  (set: $r to it - 180)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it - 3000)\
+  (set: $s to it + 0)\
+  (set: $r to it + 30)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+
+
+
+
+
+::week3
+(set: $s to it - 700)
+(if: $h <= 0)[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+
+Your girlfriend is asking you to make a game about her. Hearing this, your colleagues decide that it could actually be done this by this weeks theme.<br/>
+You however feel very embarrassed by this ordeal.
+
+
+(link: "Agree")[\
+	(set: $h to it - 3000)\
+  (set: $s to it + 800)\
+  (set: $r to it + 400)\
+ 	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it - 30000)\
+  (set: $s to it + 900)\
+  (set: $r to it + 189)\
+ 	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+
+
+
+
+
+::week4
+(set: $s to it - 700)
+(if: $h <= 0 )[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+A huge company has decided to sponser this weeks game that your team is making. Easy to say, you are seeking huge bonus.<br/>
+However your feed is already totalled by comments saying you will be promoting the tobacco products the company sells.<br/>
+Your team's opinion on this is however divided.<br/>
+You have complete creative control over the game, however the brand's name is going to be below the title.<br/>
+Did I mention the part about huge bonus?
+
+
+(link: "Agree")[\
+	(set: $h to it - 1000)\
+  (set: $s to it + 3000)\
+  (set: $r to it - 89)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it - 200)\
+  (set: $s to it + 0)\
+  (set: $r to it + 110)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+
+
+
+
+
+
+::week5
+(set: $s to it - 1700)
+(if: $h <= 0 )[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+
+Your team was getting bored and thus decided to try out a new game engine. However the last minute bugs you are facing is making the play experience horrible.<br/>
+
+The higher ups have ordered to not skip a jam submission no matter what happens. It will take too much time to port this to unity.<br/>
+
+The UI designer suggested once the game is ported UI bugs seem fixed you will get to promote yourself having engineered a more efficient system. She thus sees no harm is submitting the game.<br/>
+
+Fans might not feel the same way.
+
+
+(link: "Agree")[\
+	(set: $h to it - 30000)\
+  (set: $s to it - 500)\
+  (set: $r to it - 210)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it - 20000)\
+  (set: $s to it + 0)\
+  (set: $r to it + 40)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+
+
+
+
+
+
+::week6
+(set: $s to it - 700)
+(if: $h <= 0 )[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+
+Higher ups suggested you to entirely focus this week on removing mean comments on the company's game submissions. Another systems programmer in your team thinks this is not the linux way of doing things and he would leave if only one sided opinions are projected on the company's pages.<br/>
+
+This is your job though.
+
+
+(link: "Agree")[\
+	(set: $h to it - 200000)\
+  (set: $s to it + 300)\
+  (set: $r to it + 120)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it + 200)\
+  (set: $s to it + 0)\
+  (set: $r to it + 45)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+
+
+
+
+
+
+
+::week7
+(set: $s to it - 700)
+(if: $h <= 0)[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+A popular youtuber found your game taking too much ram and has declared your game as gay. The entirety of your's company's and it's employees' social media pages are covered with his fans comments. <br/>
+Higher ups requested you to put some extra hours studying heterosexual memory management in c++. You will not be paid extra for this.
+
+
+
+
+(link: "Agree")[\
+	(set: $h to it - 150000)\
+  (set: $s to it + 890)\
+  (set: $r to it + 300)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it - 20000)\
+  (set: $s to it + 0)\
+  (set: $r to it - 112)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+
+
+
+
+
+
+::week8
+(set: $s to it - 700)
+(if: $h <= 0 )[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+It's the year 2000. The governor has send a notice to your company to fire you stating that your games did not take into consideration of y2k bugs that that led to a wrong medical report to him stealing all the city hall savings and spending it on his beach trip.<br/>
+The company has however managed to find a legal loophole are are not easily letting go of someone like you.<br/>
+All they are asking you is for you to sign a paper taking responsibility of the governor's actions and pay a $2000 fine.
+
+
+
+(link: "Agree")[\
+	(set: $h to it - 560)\
+  (set: $s to it - 2000)\
+  (set: $r to it - 209)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(goto:(either: "Death"))\
+] <br/>
+
+
+::week9
+(set: $s to it - 900)
+(if: $h <= 0)[(go-to: "Death")]
+(if: $s <= 0)[(go-to: "Death")]
+(if: $r <= 0)[(go-to: "Death")]
+
+You felt very sick and had to take a week off. <br/>
+
+"I know it's your offtime but I need you right now ... for some 3d modelling work." <br/>
+Another 3d modeller from your team has left. You are not very good at it. You have to cover for this week till the next one is hired, if ever.
+
+(link: "Agree")[\
+	(set: $h to it - 80000)\
+  (set: $s to it + 1000)\
+  (set: $r to it + 320)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+(link: "Disagree")[\
+	(set: $h to it -1000)\
+  (set: $s to it + 0)\
+  (set: $r to it + 12)\
+	(goto:(either: "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"))\
+] <br/>
+
+
+
+:: test
+
+just test my code editor to see if it would add osmething I dont want it to
+
+
+just some more tests
+
+
+
+
