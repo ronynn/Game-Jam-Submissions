@@ -15,7 +15,7 @@
     -   An interactive fiction about debating your professor on a cold morning, made for Ifcomp 2023
     -   Comments: [ifdb](https://ifdb.org/viewgame?id=dlm5ruvo06u3kglf)
 
--   Aesthetics Over Plot: <https://ronynn.github.io/Game-Jam-Submissions/Aesthetics>
+-   Aesthetics Over Plot: <https://ronynn.github.io/Game-Jam-Submissions/Aesthetics.html>
 
     -   Get a job trying to impress an omniscient cactus 🌵, a wall, and a really cool donkey, made for Spring Thing 2023.
     -   Comments: [ifdb](https://ifdb.org/viewgame?id=vect2ozjqjgpy1ba)
@@ -47,7 +47,7 @@
     -   A neo-noir comedy that takes place in my old neighbourhood, a parser game blended into a retro GUI using TIC80, made for Ifcomp 2021.
     -   Comments: [ifdb](https://ifdb.org/viewgame?id=qy37x4gjpzarqsil)
 
--   Catch That Kitty: <https://ronynn.github.io/Game-Jam-Submissions/CatchThatKitty.html>
+-   Catch That Kitty: <https://ronynn.github.io/Game-Jam-Submissions/catch.html>
 
     -   Go on a mission to retrieve a stolen kitty, and treasure.
     -   Comments: [ifdb](https://ifdb.org/viewgame?id=allpmsmp8dsj3bh0)
@@ -71,7 +71,7 @@
 - [x] Fix kev css to fit harlowe (chapbook css)
 - [x] Port nimble, inter, dawn and catch to chapbook
 - [ ] Aesthetics use chapbook css (cancelled).
-- [ ] Pebbles beneath, Rent Officers, Meritocracy to sugarcube and use bg art and text box to top left on bigger screens, and chapbook css
-- [ ] Gamejam Tycoon use chapbook css keep harlowe-3, make buttons bigger, put stats to top of screens and make them animated
-- [ ] Potato Peace Bengali translation
+- [ ] Meritocracy: use bg art and text box to top left on bigger screens, and chapbook css
+- [x] Gamejam Tycoon port to sugarcube, put stats to top of screen
+- [ ] Potato Peace Bengali translation (ongoing)
 - [x] Helper of Humanity releases
