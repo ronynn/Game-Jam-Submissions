@@ -36,9 +36,6 @@
     -   Comments: [itch-io](https://itch.io/jam/devtober-2021/rate/1221110),
         [ldjam](https://ldjam.com/events/ludum-dare/49/type-unstable-vampire)
 
--   Rent officers: <https://dobryncat.itch.io/rent-officers>
-
-    -   I'd say the idea was good, perhaps I'll sit with it and improve it as I wanted to.
 
 -   Gamejam Tycoon: <https://dobryncat.itch.io/gamejam-tycoon>
 
@@ -55,9 +52,8 @@
     -   Go on a mission to retrieve a stolen kitty, and treasure.
     -   Comments: [ifdb](https://ifdb.org/viewgame?id=allpmsmp8dsj3bh0)
 
--   Pebbles Beneath: <https://dobryncat.itch.io/pebbles-beneath>
 
--   Intergalactic Chat Simulator: [Play here](https://ronynn.github.io/Game-Jam-Submissions/Intergalactic-Chat-Simulator.html)
+-   Intergalactic Chat Simulator: [Play here](https://ronynn.github.io/Game-Jam-Submissions/igcs.html)
 
     -   A drama about relationships and goals in life.
 
@@ -65,17 +61,17 @@
 
     -   A post-apocalyptic survival demo.
 
--   Nimble Brass: [Play here](https://ronynn.github.io/Game-Jam-Submissions/Nimble-Brass.html)
+-   Nimble Brass: [Play here](https://ronynn.github.io/Game-Jam-Submissions/Nimble.html)
     -   A millionare simulator, but actually my first interactive fiction piece where you play as a character who suddenly turned rich.
 
 <hr>
 
 ## Roadmap
 
--   [ ] Fix kev css to fit harlowe (chapbook css)
--   [ ] Port nimble, inter, dawn and catch to sugarcube, use chapbook css
--   [ ] Aesthetics use chapbook css
--   [ ] Pebbles beneath, Rent Officers, Meritocracy to sugarcube and use bg art and text box to top left on bigger screens, and chapbook css
--   [ ] Gamejam Tycoon use chapbook css keep harlowe-3, make buttons bigger, put stats to top of screens and make them animated
+- [x] Fix kev css to fit harlowe (chapbook css)
+- [x] Port nimble, inter, dawn and catch to chapbook
+- [ ] Aesthetics use chapbook css (cancelled).
+- [ ] Pebbles beneath, Rent Officers, Meritocracy to sugarcube and use bg art and text box to top left on bigger screens, and chapbook css
+- [ ] Gamejam Tycoon use chapbook css keep harlowe-3, make buttons bigger, put stats to top of screens and make them animated
 - [ ] Potato Peace Bengali translation
-- [ ] Helper of Humanity releases
+- [x] Helper of Humanity releases

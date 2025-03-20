@@ -4,28 +4,21 @@ Intergalactic Chat Simulator
 
 :: StoryData
 {
-	"ifid": "97F7797E-510E-4E3E-AC10-AA3EAC7B8DFB",
-	"format": "Harlowe",
-	"format-version": "1.2.4",
-	"start": "Untitled Passage",
-	"zoom": 1
+	"ifid": "97F7797E-510E-4E3E-AC10-AA3EAC7B8DFB"
 }
 
 
-:: Story Stylesheet [stylesheet]
-body, tw-story
-{
-  font-family: ;
-  font-size: 22px;
-  background-color: lightblue;
-  color: black;
-}
 
+:: Start {"position":"42,15","size":"100,100"}
+config.style.page.font: "Roboto 19"
+config.style.page.verticalAlign:'top'
+config.body.transition.name: 'fadeInOut'
+config.page.transition.duration: '500ms'
+--
 
-:: Untitled Passage {"position":"42,15","size":"100,100"}
-INTERGALACTIC CHAT SIMULATOR
+INTERGALACTIC CHAT SIMULATOR  
+
 An interactive text adventure
-By Literate (On Itch Io)
 
 You woke up pretty early today and feel quite fresh.
 You are sitting in an interview.
@@ -33,8 +26,10 @@ You are sitting in an interview.
 
 "Before we start with anything, I need to ask you something, how do you feel today?"
 
-[[1. Been better->1]]
-[[2. Same as everyday->1]]
+[[1. Been better->1]]  
+
+[[2. Same as everyday->1]]  
+
 [[3. Excited->1]]
 
 
@@ -61,8 +56,10 @@ After the hustling of the day you get back to your apartment to relax and decide
 
 As you are about to start it up the phone rings, what do you do?
 
-[[Ignore]]
-[[Pick Up]]
+[[Ignore]]  
+
+[[Pick Up]]  
+
 [[Pick Up and then don't answer]]
 
 
@@ -77,7 +74,8 @@ As you try to find a decent channel to watch, the phone keeps on ringing, feels 
 
 What do you do?
 
-[[Pick Up]]
+[[Pick Up]]  
+
 [[Pick Up and then don't answer]]
 
 
@@ -88,7 +86,8 @@ She doesn't reacts much when you tell her about your new job, instead she asks w
 
 "Call him or go meet him and ask about the money. If he doesn't pays then ask him for 3.4% interest. Why did he needed that money anyway?" your mother asks ...
 
-[[I didn't ask->ask]]
+[[I didn't ask->ask]]  
+
 [[He forgot to mention->ask]]
 
 
@@ -140,8 +139,10 @@ Visibly embarrassed Ciara replies with a smile.
 
 As you two walk outside, what do you say?
 
-[[Absolutely No]]
-[[Where are we going?]]
+[[Absolutely No]]  
+
+[[Where are we going?]]  
+
 [[Act Confused]]
 
 
@@ -168,7 +169,8 @@ Go meet Dan at the [[deli]].
 
 "You know what I'll pay back your money too, just do this one favour, it's not like ask you for anything" begs Dan.
 
-Say "[[Where are we going?]]"
+Say "[[Where are we going?]]"  
+
 [[Kick him]]
 
 
@@ -199,8 +201,10 @@ You decided to kick him on the knees but accidentally you hit the groins. Dan sh
 
 His shrieks could be heard loudly enough. Ciara gets out to find Dan lying on the ground.
 
-[[Kick him again]]
-[[Apologise to Ciara and leave]]
+[[Kick him again]]  
+
+[[Apologise to Ciara and leave]]  
+
 [[Help him out]]
 
 
@@ -227,7 +231,8 @@ Ciara stares at you with angry eyes. It almost looks like she might hit you at a
 The journey now begins, with your hands on the steering wheels and your mind a thousand miles away you wonder why you are here...
 And Ciara's constant stare doesn't helps in any possible away.
 
-[[Ask why she is staring]]
+[[Ask why she is staring]]  
+
 [[Start coughing until she talks first]]
 
 
@@ -238,8 +243,10 @@ You nod, clueless of why she might be asking that.
 
 "Why are you driving then?"
 
-[[I like driving]]
-[[I don't trust AI]]
+[[I like driving]]  
+
+[[I don't trust AI]]  
+
 [[It'd have been awkward to just sit and do nothing]]
 
 
@@ -252,47 +259,55 @@ You start coughing. After a minute or so you realise that this isn't helping. Yo
 :: I like driving {"position":"227,1375","size":"100,100"}
 "Then why did you buy this car" she asks.
 
-[["To save the environment"]]
-[["Mind your own business"]]
+[["To save the environment"]]  
+
+[["Mind your own business"]]  
+
 [["Cant afford gas"->"Mind your own business"]]
 
 
 :: I don't trust AI {"position":"377,1375","size":"100,100"}
 "Then why did you buy this car" she asks.
 
-[["To save the environment"]]
-[["Mind your own business"]]
+[["To save the environment"]]  
+
+[["Mind your own business"]]  
+
 [["Cant afford gas"->"Mind your own business"]]
 
 
 :: It'd have been awkward to just sit and do nothing {"position":"526,1375","size":"100,100"}
 "Why would that be awkward, we could talk" suggests Ciara, "My name is Ciara".
 
-[["We were just introduced"]]
-[[Tell her your name]]
+[["We were just introduced"]]  
+
+[[Tell her your name]]  
+
 [["I don't care"->"Mind your own business"]]
 
 
 :: "We were just introduced" {"position":"518,1527","size":"100,100"}
 "Oh! Sorry I forgot. I don't think I got your name though"
 
-[[Tell her your name]]
+[[Tell her your name]]  
+
 [["Mind your own business"]]
 
 
 :: Tell her your name {"position":"657,1525","size":"100,100"}
-(set: $name to (prompt: "Enter your name."))
 
-"Well it's nice to meet you $name, I'm sure we'll be the best of friends over the journey"
+"Well it's nice to meet you, I'm sure we'll be the best of friends over the journey"
 
-[["You bet"->"Mind your own business"]] 
+[["You bet"->"Mind your own business"]]  
+
 [["I don't care"->"Mind your own business"]]
 
 
 :: "To save the environment" {"position":"306,1527","size":"100,100"}
 "It's a good choice I guess, I don't really care about cars. So ... you got any music?"
 
-[["Might add later"]]
+[["Might add later"]]  
+
 [["No"->"Mind your own business"]]
 
 
@@ -303,21 +318,24 @@ You wished if there was more to talk about but there was nothing really you coul
 
 Lost in your own thoughts, you notice Ciara is stopping the car.
 
-[[Ask her why she is stopping the car->radioshop1]]
+[[Ask her why she is stopping the car->radioshop1]]  
+
 [[Look Away->radioshop1]]
 
 
 :: "Might add later" {"position":"392,1671","size":"100,100"}
 "Why don't we stop by the first store we find?"
 
-[[Sure->"Mind your own business"]] 
+[[Sure->"Mind your own business"]]  
+
 [["I'll just buy it over the internet"->"Mind your own business"]]
 
 
 :: radioshop1 {"position":"137,1683","size":"100,100"}
 "I saw a music store. I'll buy some Rock. You wanna join?"
 
-[[Get out of the car with her]]
+[[Get out of the car with her]]  
+
 [[Say No]]
 
 
@@ -328,16 +346,20 @@ You wait outside to read it as Ciara goes inside the shop.
 
 There is a Christmas Charity Drive going on, a few miles away on your track. Organisers are looking for volunteers. Are you interested?
 
-[[Yes]]
+[[Yes]]  
+
 [[I'll ask Ciara->Yes]] 
+
 [[No]]
 
 
 :: Say No {"position":"278,1823","size":"100,100"}
 You watch outside the window as Ciara enters the shop. As bored as you are right now, you could do anything to get over this driving project.
 
-Why are you here?
-[[I want my money back from Dan->run]]
+Why are you here? 
+
+[[I want my money back from Dan->run]]  
+
 [[Just helping out->run]]
 
 
@@ -346,7 +368,8 @@ You notice Ciara getting out of the store. You realise for a second that if you 
 
 It's not like this is the middle of nowhere. You see a few shops nearby.
 
-[[Start the engine and get moving]]
+[[Start the engine and get moving]]  
+
 [[No, stop thinking stuff->No]]
 
 
@@ -373,14 +396,16 @@ Ciara returns to the car with nothing. She says - "There's nothing I liked, gues
 
 "So what do you do?" she asks you.
 
-[[I build and review video games]]
+[[I build and review video games]]  
+
 [[I work at a company]]
 
 
 :: I build and review video games {"position":"175,2125","size":"100,100"}
 "Tell me a game you made, who knows, I might have played one of them."
 
-[[Don't answer]]
+[[Don't answer]] 
+
 [[Tell her about the game you wrote]]
 
 
@@ -389,7 +414,8 @@ Ciara returns to the car with nothing. She says - "There's nothing I liked, gues
 
 "What's your Company's name?" she asks.
 
-[[Tell her your company's name]]
+[[Tell her your company's name]]  
+
 [[Don't answer]]
 
 
@@ -398,33 +424,35 @@ As the car takes time further, you notice a big crowd on one of the snow covered
 
 "That's the charity function" shouts Ciara and stops the car. "I thought the posters might be a joke, make it final, you in?"
 
-[[I don't like it when you stop the car again and again]]
+[[I don't like it when you stop the car again and again]]  
+
 [[I'm in]]
 
 
 :: Tell her about the game you wrote {"position":"275,2275","size":"100,100"}
-(set: $game to (prompt: "Enter your game's name."))
 
-Looking excited Ciara wonders for a moment and replies "No, I don't think I have played that one, $game does sounds interesting".
+Looking excited Ciara wonders for a moment and replies "No, I don't think I have played that one, does sounds interesting".
 
 As you get along, you find her pleasant to talk to. 
 
 "You don't really talk much, do you?" Ciara asks you. I guess you should ask her something ...
 
-[[What's this science project thing?]]
+[[What's this science project thing?]]  
+
 [[What is the meaning of life?]]
 
 
 :: Tell her your company's name {"position":"400,2275","size":"100,100"}
-(set: $company to (prompt: "Enter your company's name."))
 
-"I don't think I have hear about $company. Must be interesting."
+
+"I don't think I have hear about {cycling link for: '$company', choices: ['Chrome Corps', 'Amayori Labs', 'Manor Inc']}. Must be interesting."
 
 As you get along, you find her pleasant to talk to. 
 
 "You don't really talk much, do you?" Ciara asks you. I guess you should ask her something ...
 
-[[What's this science project thing?]]
+[[What's this science project thing?]]  
+
 [[What is the meaning of life?]]
 
 
@@ -449,7 +477,8 @@ Ciara leaves the car. You realise that this is your second chance, if you were t
 
 It's not like this is the middle of nowhere. You see a few shops nearby.
 
-[[Start the engine and get moving]]
+[[Start the engine and get moving]] 
+
 [[Take a nap and wait for her]]
 
 
@@ -464,14 +493,16 @@ A few hours later Ciara suggests to pack up and leave.
 :: Take a nap and wait for her {"position":"50,2704","size":"100,100"}
 The sun is almost down now, as you sit in the back fiddling with the light in the back-seat, you notice Ciara visibly being worried.
 
-[[Ask her why she looks worried]]
+[[Ask her why she looks worried]] 
+
 [[Wait for her to talk->Ask her why she looks worried]]
 
 
 :: Ask her why she looks worried {"position":"66,2828","size":"100,100"}
 "My laptop isn't working. I knew they would mess it up, shouldn't have let anyone touch it"
 
-[[Perhaps you shouldn't throw it around]]
+[[Perhaps you shouldn't throw it around]]  
+
 [["Have you tried turning it off and on again?"->Perhaps you shouldn't throw it around]]
 
 
@@ -480,7 +511,8 @@ Ciara gives you an annoyed look and gets back to pressing buttons here and there
 
 As the problem continues, your car beeps notifying that you have reached your destination. You take a peek outside to realise that it's the middle of nowhere, an empty patch beside the road.
 
-[[What's the science project?]]
+[[What's the science project?]] 
+
 [[What is this place->What's the science project?]]
 
 
@@ -489,7 +521,8 @@ Ciara gets out of the car, kicks your tyre and starts weeping. You step out and 
 
 "It's a communication thing" with her sobbing she continues "I made a mistake okay ... left home when my grandma died, I wanted to send this picture of us to space and stay ... forever... and now it's broken."
 
-[[I'm annoyed by your idiocy]]
+[[I'm annoyed by your idiocy]]  
+
 [[Sweetly ask her not to cry]]
 
 
@@ -512,7 +545,8 @@ You feel upset for her. But as you walk towards your car to bring her some water
 
 You try to look at what she's doing and find that she has opened up your car's computer and is now disconnecting wires from here and there.
 
-[[Have you gone mad?->I'm annoyed by your idiocy]] 
+[[Have you gone mad?->I'm annoyed by your idiocy]]  
+
 [["We should probably keep the car working"]]
 
 
@@ -523,7 +557,8 @@ As the picture now travels to countless miles in space, Ciara now sits there rel
 
 When she gets down, you notice her to be upset.
 
-[[Ask her why she looks upset]]
+[[Ask her why she looks upset]]  
+
 [[Leave this place]]
 
 
@@ -559,13 +594,15 @@ You put it in your pocket, wondering whether it would even cash out or not.
 
 Turning the car around you can't help but wonder whether you should go meet your parent's for the holidays too. You don't have to start office till next week anyway.
 
-[[Meet parents]]
+[[Meet parents]]  
+
 [[Leave for Apartment->Meet parents]]
 
 
 :: Meet parents {"position":"96,3830","size":"100,100"}
 You reach your destination, with curiosity for the future in your eyes.
----
+
+
 <h4> ENDING 5 </h4>
 GAME OVER
 REAL ENDING

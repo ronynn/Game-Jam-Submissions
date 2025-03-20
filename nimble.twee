@@ -4,22 +4,9 @@ Nimble Brass
 
 :: StoryData
 {
-	"ifid": "FB45A600-38D4-4918-8A1B-91FFCE9A97FA",
-	"format": "Harlowe",
-	"format-version": "1.2.4",
-	"start": "Start",
-	"zoom": 1
+	"ifid": "FB45A600-38D4-4918-8A1B-91FFCE9A97FA"
 }
 
-
-:: Story Stylesheet [stylesheet]
-body, tw-story
-{
-  font-family: Monospace;
-  font-size: 22px;
-  background-color: lightblue;
-  color: black;
-}
 
 
 :: Start {"position":"18,13","size":"100,100"}
@@ -31,7 +18,8 @@ Back in the days when graphics weren't a thing, text used to be quite a gaming t
 
 The internet stopped working. You can choose to sit staring at the computer or go outside
 
-[[stay]]
+[[stay]]  
+
 [[walk outside]]
 
 
@@ -49,43 +37,52 @@ You might be wondering what role does this voice plays here anyway?
 :: walk outside {"position":"18,163","size":"100,100"}
 The world outside is a dream any way, everything is a dream, do you really want to leave the room?
 
-[[no->stay]]
-[[you don't tell me what to do -> Open Door]]
+[[no->stay]]  
+
+[[you don't tell me what to do ->Open Door]]
 
 
-::  Open Door {"position":"110,290","size":"100,100"}
+:: Open Door {"position":"110,290","size":"100,100"}
 The sunlight blinds you for a moment, you realise the sun is hidden too deep in the smog, its the LED you forgot to turn off last night.
 
 The road is moderately empty except for the occassional cars and bikes, and vegetable sellers with their horses.
 
 Your friend Rita is buying vegetables. A tea seller is looking at you for some reason.
 
-[[talk to Rita]]
-[[talk to tea seller]]
+[[talk to Rita]]  
+
+[[talk to tea seller]]  
+
 [[stand still and observe]]
 
 
 :: talk to Rita {"position":"8,410","size":"100,100"}
 //"hey, I really wanted to talk to you wait for a bit"//
 
-[[wait]]
-[[attack Rita]]
+[[wait]]  
+
+[[attack Rita]]  
+
 [[buy some vegetables too]]
 
 
 :: talk to tea seller {"position":"117,405","size":"100,100"}
 //"Would you like to buy some tea?"//
 
-[[can I get one for free]]
-[[yes sure]]
-[[no thanks]]
+[[can I get one for free]]  
+
+[[yes sure]]  
+
+[[no thanks]]  
+
 [[attack]]
 
 
 :: stand still and observe {"position":"233,401","size":"100,100"}
 You watch the tea seller boiling tea. Rita is looking over vegetables and ocassionally asking for prices
 
-[[talk to Rita]] 
+[[talk to Rita]]  
+
 [[talk to tea seller]]
 
 
@@ -96,29 +93,36 @@ The choices you make lead to you to different pathways that ultimately ends the 
 
 There is a back button on the left in case you haven't noticed already. You will not be facing any dead ends in the game but if you click a button you didn't intend to, you can go back.
 
-Now go outside [[ Open Door]]
+Now go outside [[Open Door]]
 
 
 :: can I get one for free {"position":"0,555","size":"100,100"}
 //"Do you find it funny to make fun of poor people"// the guy murmurs. Nevertheless if you were hoping for a sponsored tea shop promotion infront of your house, then its too bad you will have to pay to buy some tea.
 
-[[yes sure]] 
+[[yes sure]]  
+
 [[no thanks]]
 
 
 :: yes sure {"position":"134,537","size":"100,100"}
 It will cost you Rs. 5
 
-[[-Rs. 5 for tea]]
+[[-Rs. 5 for tea]]  
+
 [[no thanks]]
 
 
 :: no thanks {"position":"303,552","size":"100,100"}
-He returns to his work. You stare at his torn undershirt (**do people call it that) and unhygenic workplace.
+He returns to his work. You stare at his torn undershirt (**do people call it that) and unhygenic workplace. 
+
 He looks at you.
-[[smile and say nothing]]
-[[ask 'how you're doing mate']]
-[[talk to Rita]]
+
+[[smile and say nothing]]  
+
+[[ask 'how you're doing mate']]  
+
+[[talk to Rita]]  
+
 [[attack for not saying thanks after you answered his question ->attack]]
 
 
@@ -135,7 +139,8 @@ GAME OVER. Ending 5.
 :: smile and say nothing {"position":"455,690","size":"100,100"}
 He gets back to work
 
-[[talk to Rita]] 
+[[talk to Rita]]  
+
 [[stand still and observe]]
 
 
@@ -150,10 +155,12 @@ Go [[talk to Rita]]
 
 She's staring at you, I guess you should say something
 
-[[no]]
-[[attack Rita]] 
-talk about the [[assignment]]
-[[will you marry me?]]
+[[no]]  
+
+[[attack Rita]]  
+
+talk about the [[assignment]]  
+
 I'd love to know about the [[thing]] you want to ask
 
 
@@ -172,58 +179,68 @@ You go home to bring some money to buy some vegetables too, but the seller is no
 :: -Rs. 5 for tea {"position":"418,347","size":"100,100"}
 You go home to check your wallet. It had Rs. 100 that you had saved from here and there over the last year. Now you have Rs. 95 left
 
-[[stand still and observe]] 
+[[stand still and observe]]  
+
 [[talk to Rita]]
 
 
 :: return home {"position":"0,833","size":"100,100"}
-You get back home. You sit on your table with your feet on the chair, it gives you a good view of the room, you wonder why a study table has to be in a corner of a room.
-The phone rings.
-[[run to get it->phone]]
+You get back home. You sit on your table with your feet on the chair, it gives you a good view of the room, you wonder why a study table has to be in a corner of a room. 
+
+The phone rings. 
+
+[[run to get it->phone]]  
+
 walk slowly towards the [[phone]] 
+
 don't attend it, probably hide in a [[corner]]
 
 
 :: no {"position":"137,811","size":"100,100"}
 //"Well there is this skipping competition for couples, I mean it has to be a Male Female duo I guess coz the posters are all about having a family weekend and stuff.."//
 
-[[I am not a Man]]
-[[Too busy]]
-[[say no ->return home]] 
+[[I am not a Man]]  
+
+[[Too busy]]  
+
+[[say no ->return home]]  
+
 [[Tell me more]]
 
 
 :: assignment {"position":"266,833","size":"100,100"}
 I just don't think my assignment is up to marks with the standards that the teacher board is expecting from us. On one hand we are supposed to show original research on our part without relying on any existing work yet mentioning each and other past and contemporary piece, on the other hand it has to be closer to the word limit.
 
-Now when a question talks about a word limit, it means one must not exceed it, however teachers are always happy about the students blabbering about stuff in their assignments way over the word limit, setting an unfair standard for those who are genuinely working on the project following each and every condition. 
-They don't read it anyway. That just like thick sheets. Probably enjoying the dying forests, also packing up on paper to use as body armour when the zombies strike. They think we will copy paste stuff off the internet beacuse some boomers back in the days did that, and so they justify the writing as if they are influencing us in positive way to study, but how is that any different from some kind of dictatorship.
+Now when a question talks about a word limit, it means one must not exceed it, however teachers are always happy about the students blabbering about stuff in their assignments way over the word limit, setting an unfair standard for those who are genuinely working on the project following each and every condition.   
+
+They don't read it anyway. That just like thick sheets. Probably enjoying the dying forests, also packing up on paper to use as body armour when the zombies strike. They think we will copy paste stuff off the internet beacuse some boomers back in the days did that, and so they justify the writing as if they are influencing us in positive way to study, but how is that any different from some kind of dictatorship.  
+
 Education should be privilege, not punishment
 
 [[wait for her response]]
 
 
-:: will you marry me? {"position":"388,822","size":"100,100"}
-//"Stop Joking around. I have a boyfriend. Let me talk."//
-
-[[no]] 
-[[ say nothing and wait for her to talk ->no]]
 
 
 :: thing {"position":"511,808","size":"100,100"}
 //"Well there is this skipping competition for couples, I mean it has to be a Male Female duo I guess coz the posters are all about having a family weekend and stuff.."//
 
-[[I am not a Man]]
-[[Too busy]]
-[[say no ->return home]] 
+[[I am not a Man]]  
+
+[[Too busy]]  
+
+[[say no ->return home]]  
+
 [[Tell me more]]
 
 
 :: I am not a Man {"position":"0,975","size":"100,100"}
 //"Well if you are interested then I'd go and confirm the rules, see if we can go together..."//
 
-[[Too busy]] 
-[[No->return home]] 
+[[Too busy]]  
+
+[[No->return home]]  
+
 I'd love to [[participate]]
 
 
@@ -236,7 +253,8 @@ I'd love to [[participate]]
 :: Tell me more {"position":"312,967","size":"100,100"}
 //"Well if you are interested then I'd go and confirm the rules. Interested?"//
 
-[[No->return home]] 
+[[No->return home]]  
+
 I'd love to [[participate]]
 
 
@@ -244,9 +262,9 @@ I'd love to [[participate]]
 //"I have been working on that paper for so long you won't believe it, like I couldn't go out with my friends last night, I worry about my boyfriend you know, some other girl might snatch him away.
 BTW, would you write my assignment too"//
 
-[[no]] 
+[[no]]  
+
 [[yes]]
-[[will you marry me?]]
 
 
 :: yes {"position":"433,1081","size":"100,100"}
@@ -256,7 +274,8 @@ BTW, would you write my assignment too"//
 :: participate {"position":"303,1086","size":"100,100"}
 //"Well this would be great trust me, we are going to defeat each and every one of them. I have so much work to do, I'll see you tommorow. I heard you went to the Japan for last year's competition"//
 
-[[yes]] 
+[[yes]]  
+
 [[what?]]
 
 
@@ -269,21 +288,24 @@ BTW, would you write my assignment too"//
 :: phone {"position":"2,1169","size":"100,100"}
 //"Hey it's me Maattheeoo, how you're doing?"// - says your friend Matthew
 
-[[I don't accept story given friends->fine]] 
+[[I don't accept story given friends->fine]]  
+
 [[fine]]
 
 
 :: corner {"position":"126,1168","size":"100,100"}
 You are sitting in a corner of your room. It's dark and warm. You feel really calm here. There's a spider here though, are you ok with that?
 
-get the [[phone]] 
+get the [[phone]]  
+
 put your hands on your ears and go to your [[happy place]]
 
 
 :: fine {"position":"2,1318","size":"100,100"}
 //"What? I can't hear you, get out of that apartment you are going to die in there"//
 
-[[leave me alone ->fine]] 
+[[leave me alone ->fine]]  
+
 [[go outside]]
 
 
@@ -291,17 +313,22 @@ put your hands on your ears and go to your [[happy place]]
 //"Ya so I just had this crazy idea to sell bubblegum flavoured cigarettes made out of carrots. I talked to my friend Bob Macareno, he is getting all that talks ready, we are getting this started in no time. 
 Now I can't trust just about anyone I meet, I need a friend on this with me. You in?"//
 
-[[In]]
-[[I am working on someone's project]]
-[[you are stupid]]
+[[In]]  
+
+[[I am working on someone's project]]  
+
+[[you are stupid]]  
+
 [[what will I do?]]
 
 
 :: In {"position":"14,1584","size":"100,100"}
 //"I am going to need you to give me Rs. 50, I am handling all the expenses for now but I need some kind of committment from you. I return in as soon as we get the investor money. You in?"//
 
-yeah [[give the money (Rs. 50.56)]] inclusive of all taxes
-[[I am working on someone's project]] I'm busy dude
+yeah [[give the money (Rs. 50.56)]] inclusive of all taxes  
+
+[[I am working on someone's project]] I'm busy dude  
+
 [[I can't pay the money]]
 
 
@@ -324,23 +351,28 @@ GAME OVER. Ending 4. Go back and make a different decision. Taking risks is most
 :: you are stupid {"position":"121,1591","size":"100,100"}
 //"Hey dude I know this is crazy but you know for just this Rs. 50 investment you own half my company. I'll return it as soon as the investors give me thiers. I just need you to commit to this."//
 
-I guess it would be nice to have a company [[give the money (Rs. 50.56)]]
-[[I can't pay the money]]
+I guess it would be nice to have a company [[give the money (Rs. 50.56)]]  
+
+[[I can't pay the money]]  
+
 [[I am working on someone's project]] I'm busy dude
 
 
 :: what will I do? {"position":"235,1591","size":"100,100"}
 //"For now, nothing I just need Rs 50 from you as a commitment on this. I will return when the investors get down on it. You will probably handle accounts or marketing or whatever you want dude, you will own like half of it, it's your company."//
 
-[[I can't pay the money]]
-[[give the money (Rs. 50.56)]] 
+[[I can't pay the money]]  
+
+[[give the money (Rs. 50.56)]]  
+
 [[I am working on someone's project]] I'm busy dude
 
 
 :: I can't pay the money {"position":"11,1743","size":"100,100"}
 //"I guess it's alright dude. I just need to know that you are with me on this. Are you with me dude?"//
 
-[[Count me in ->give the money (Rs. 50.56)]]
+[[Count me in ->give the money (Rs. 50.56)]]  
+
 [[I am working on someone's project]] I'm busy dude
 
 
@@ -355,7 +387,8 @@ Your parents are worried about your venture, they suggest you to focus on your s
 :: time passess {"position":"133,1891","size":"100,100"}
 the company is being made fun of online. Matthew is doing a terrible job handling it. He recently fell over a banana peel while running from the reporters. Some recorded and posted that online and now almost everyone in the world has seen that.
 
-Would you [[take over his company]]?
+Would you [[take over his company]]?  
+
 Suggest that you should [[take over his company]] 
 [[Do nothing]]
 
@@ -364,9 +397,12 @@ Suggest that you should [[take over his company]]
 I am slightly worried about you. Its alright if you clicked it as a funny option, but if not then you should talk to someone about it.
 Now for the game - you imagine
 
-[[never ending grasslands ->door opens]]
-[[the desert->door opens]] 
-[[the ocean ->door opens]] 
+[[never ending grasslands ->door opens]]  
+
+[[the desert->door opens]]  
+
+[[the ocean ->door opens]]  
+
 [[this here is fine ->door opens]]
 
 
@@ -379,7 +415,8 @@ You didn't lock the door so it was open, Matthew walks in. You couldn't see him 
 :: take over his company {"position":"133,2041","size":"100,100"}
 You are now the CEO of the company. Would like to change the name of the company?
 
-[[I don't care]]
+[[I don't care]]  
+
 [[Yes change the name]]
 
 
@@ -388,9 +425,12 @@ You choose to do nothing to improve the situation. I guess you find people relia
 The Company doesn't lasts too long, there's a buyout and you are a millionare now.
 How would like to spend that money?
 
-[[Buy Car]]
-[[Buy house]]
-[[Go for a Vacation]]
+[[Buy Car]]  
+
+[[Buy house]]  
+
+[[Go for a Vacation]] 
+
 [[Save Money]]
 
 
@@ -424,17 +464,20 @@ You dream of a future where you utilise that money into projects you enjoy. But 
 Under your leadership, you hire the best of the business degree candidates, one guy however shows up with no degree or experience and claims that he can boost your sales in a week.
 What do you do?
 
-[[give the job]]
-[[reject]]
+[[give the job]]  
+
+[[reject]] 
+
 [[offer a paid internship]]
 
 [[Ask Secretary]]
 
 
 :: Yes change the name {"position":"258,2077","size":"100,100"}
-(set: $name to (prompt: "Enter the name."))
 
-Your board of investors did not like "$name" as the name of the company.
+You change the company name to Brand-Name
+
+Your board of investors did not like Brand-Name as the name of the company.
 
 You can choose between [[Pink Smoke]], or stay with [[Smoked Carrots->I don't care]]
 
@@ -446,15 +489,20 @@ Within a day Bedman brings you a presentation stating how many regions you shoul
 
 However he targets college students as the biggest buyers for your cigarettes. His marketing strategy involves distributing sample cigarettes and advertisements with rich people wearing flashy colourful clothes smoking cigarettes as they spend the day driving expensive cars and hanging out at the swimming pool.
 
-[[Agree with Bedman Strategy]]
-[[Disagree with Bedman]]
+[[Agree with Bedman Strategy]]  
+
+[[Disagree with Bedman]]  
+
 [[Attack Bedman]]
 
 
 :: reject {"position":"388,1858","size":"100,100"}
 You reject the applicant. He sends you an email with curse words. 
-Would you like to reply?
-[[Curse him back]]
+
+Would you like to reply?  
+
+[[Curse him back]]  
+
 [[Move on with the game]]
 
 
@@ -465,8 +513,10 @@ Within a day Bedman brings you a presentation stating how many regions you shoul
 
 However he targets college students as the biggest buyers for your cigarettes. His marketing strategy involves distributing sample cigarettes and advertisements with rich people wearing flashy colourful clothes smoking cigarettes as they spend the day driving expensive cars and hanging out at the swimming pool.
 
-[[Agree with Bedman Strategy]]
-[[Disagree with Bedman]]
+[[Agree with Bedman Strategy]]  
+
+[[Disagree with Bedman]]  
+
 [[Attack Bedman]]
 
 
@@ -478,8 +528,10 @@ There's no point to that now.
 Under your leadership, you hire the best of the business degree candidates, one guy however shows up with no degree or experience and claims that he can boost your sales in a week.
 What do you do?
 
-[[give the job]]
-[[reject]]
+[[give the job]]  
+
+[[reject]]  
+
 [[offer a paid internship]]
 
 [[Ask Secretary]]
@@ -490,8 +542,10 @@ You need a secretary too. But then again, you might think that you can handle th
 
 You kept three resumes in a drawer to select a secretary. Company policy is that you won't be provided with any personal details of the applicant, whom do you choose?
 
-[[Candidate A]], has three years of experience of handling trade in an investment bank. Strong believer in $%#*(censored by HR).
-[[Candidate B]], loves puppies and enjoys volunteering at the soup kitchen. No experience.
+[[Candidate A]], has three years of experience of handling trade in an investment bank. Strong believer in $%#*(censored by HR).  
+
+[[Candidate B]], loves puppies and enjoys volunteering at the soup kitchen. No experience.  
+
 [[Candidate C]], currently owns a hot-dog shop, has worked as an intern in a car dealership before.
 
 
@@ -538,7 +592,8 @@ GAME OVER. Ending 3. You can choose to [[return home]] to play again and choose 
 :: Curse him back {"position":"518,1881","size":"100,100"}
 You gather a a team of employees to write the most insulting mail ever written. However it's so humiliating that you doubt whether you should send it at all.
 
-[[send insulting mail]]
+[[send insulting mail]]  
+
 [[don't send mail]]
 
 
@@ -551,9 +606,12 @@ You agree with Bedman. Within the week sales rise sky-high as you see college st
 
 Few weeks later the ad shows up and your sales increase so fast that your company gets a billion dollar evaluation. 
 
-[[throw a party]]
-[[do some charity]]
+[[throw a party]]  
+
+[[do some charity]]  
+
 [[Attack Bedman]] 
+
 [[Go for a Vacation]]
 
 
@@ -564,10 +622,14 @@ You disagree with Bedman's plan. Your analysts bring you several strategies the 
 :: Attack Bedman {"position":"684,2203","size":"100,100"}
 You attack Bedman with a puch to his throat. He falls. He hasn't hit his head or anything to the floor too hard, be he seems to be having difficulty breathing. Gasping for some air Bedman is pointing a finger at you.
 
-[[Say Sorry]]
-[[Bring him water]]
-[[Make him stand]]
-[[Leave the room]]
+[[Say Sorry]]  
+
+[[Bring him water]]  
+
+[[Make him stand]]  
+
+[[Leave the room]]  
+
 [[Kick him]]
 
 
@@ -586,32 +648,41 @@ Would you like to sell your company to anyone here? or would you like to [[keep 
 :: do some charity {"position":"847,1994","size":"100,100"}
 You meet with several different big investors who offer to buy out your shares of the company
 
-[[180 million and a bunglow worth 50 millions->lavish bunglow]] 
+[[180 million and a bunglow worth 50 millions->lavish bunglow]]   
+
 [[220 million->selling out the company]] 
-[[250 million in TechnocraterShip stocks]]
+
+[[250 million in TechnocraterShip stocks]] 
+
 
 
 :: Say Sorry {"position":"850,2225","size":"100,100"}
 You tell him you are sorry as the gasps for some hair. You feel like he didn't take your apology too well and that annoys you.
 
-[[Kick him]] 
-[[Bring him water]] 
+[[Kick him]]  
+
+[[Bring him water]]  
+
 [[Leave the room]]
 
 
 :: Bring him water {"position":"990,2223","size":"100,100"}
 You bring him some water and order him to drink, but he seems to be refusing your orders.
 
-[[Kick him]] 
+[[Kick him]]  
+
 [[Leave the room]]
 
 
 :: Make him stand {"position":"851,2111","size":"100,100"}
 You grab him and make him stand but he falls down again.
 
-[[Kick him]] 
-[[Bring him water]] 
-[[Say Sorry]] 
+[[Kick him]]  
+
+[[Bring him water]]  
+
+[[Say Sorry]]  
+
 [[Leave the room]]
 
 
@@ -620,10 +691,14 @@ As you leave the room, your secretary shows up and tells you this matter will be
 
 You never heard from Bedman again. You feel too uncomfortable to ask your secretary what happened to him.
 
-How do you feel about this incident?
-[[I feel great]]
-[[Nothing really]]
-[[I feel guilty]]
+How do you feel about this incident? 
+
+[[I feel great]]  
+
+[[Nothing really]]  
+
+[[I feel guilty]]  
+
 
 
 :: Kick him {"position":"989,2344","size":"100,100"}
@@ -669,9 +744,8 @@ You can now only [[sell your shares of the company ->selling out the company]] s
 
 
 :: think your own strategy {"position":"1074,2028","size":"100,100"}
-(set: $strategy to (prompt: "Enter your strategy."))
 
-Your board of directors think that to "$strategy" is a terrible strategy. Some employee of yours has send your suggestion to the company server and now everyone is talking about it. Wile most of them found it ridiculous, some of the employees seem to be agreeing with your strategy but you can't tell if they are joking.
+Your board of directors think that to bloat the prices as a piblicity stunt is a terrible strategy. Some employee of yours has send your suggestion to the company server and now everyone is talking about it. Wile most of them found it ridiculous, some of the employees seem to be agreeing with your strategy but you can't tell if they are joking.
 
 You can be [[selling out the company]], [[sell normal cigarettes]], or [[Market the product to Middle aged men]]
 
@@ -680,7 +754,8 @@ You can be [[selling out the company]], [[sell normal cigarettes]], or [[Market 
 He replies with a smiley face and acknowledges his shortcomings. But he now puts up a detailed hypothesis and humbly begs you to employ him on a contract basis even if for a week and he thinks that his theory will get your company to the big leagues.
 
 
-[[offer a paid internship]] 
+[[offer a paid internship]]  
+
 [[reject]] him anyway
 
 
@@ -689,7 +764,8 @@ You feel better about yourself that you did not send the mail. A few days later 
 
 You offers to help out your company even if on a contract basis saying that he has prepared a hypothesis and if you just let him show up he can prepare a good enough strategy.
 
-[[let him show up ->offer a paid internship]] 
+[[let him show up ->offer a paid internship]]  
+
 [[send insulting mail]]
 
 

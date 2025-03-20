@@ -1,4 +1,4 @@
-<!doctype html><html><head><title>Dawn</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><script type="module" crossorigin>
+<!doctype html><html><head><title>Nimble Brass</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><script type="module" crossorigin>
 var Wn=Object.defineProperty;var Zn=(n,e,t)=>e in n?Wn(n,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[e]=t;var U=(n,e,t)=>(Zn(n,typeof e!="symbol"?e+"":e,t),t),St=(n,e,t)=>{if(!e.has(n))throw TypeError("Cannot "+t)};var pe=(n,e,t)=>(St(n,e,"read from private field"),t?t.call(n):e.get(n)),Et=(n,e,t)=>{if(e.has(n))throw TypeError("Cannot add the same private member more than once");e instanceof WeakSet?e.add(n):e.set(n,t)},_t=(n,e,t,r)=>(St(n,e,"write to private field"),r?r.call(n,t):e.set(n,t),t);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))r(i);new MutationObserver(i=>{for(const s of i)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&r(a)}).observe(document,{childList:!0,subtree:!0});function t(i){const s={};return i.integrity&&(s.integrity=i.integrity),i.referrerPolicy&&(s.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?s.credentials="include":i.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(i){if(i.ep)return;i.ep=!0;const s=t(i);fetch(i.href,s)}})();const Gn={"config.logger.show.parse":!1,"config.logger.show.render":!1,"config.logger.show.sound":!1,"config.logger.show.state":!1,"config.logger.show.story":!1,"config.logger.show.style":!1};function Jt(n){return n+": "}const Me={inserts:!0};function Jn(n){Me[n]=!1}function Xn(n){Me[n]=!0}function Xt(n,e){Me[n]&&(console.log(Jt(n)+e),window.dispatchEvent(new CustomEvent("log-info",{detail:{message:e,source:n}})))}function Qt(n,e){Me[n]&&(console.warn(Jt(n)+e),window.dispatchEvent(new CustomEvent("log-warning",{detail:{message:e,source:n}})))}function F(n){return{log(e){Xt(n,e)},warn(e){Qt(n,e)}}}function Qn(){window.addEventListener("state-change",n=>{const e=/^config\.logger\.show\.(.+)$/.exec(n.detail.name);e&&e[1]&&(n.detail.value?Xn(e[1]):Jn(e[1]))})}var Kn=typeof global=="object"&&global&&global.Object===Object&&global;const Yn=Kn;var er=typeof self=="object"&&self&&self.Object===Object&&self,tr=Yn||er||Function("return this")();const it=tr;var nr=it.Symbol;const le=nr;var Kt=Object.prototype,rr=Kt.hasOwnProperty,ir=Kt.toString,ge=le?le.toStringTag:void 0;function sr(n){var e=rr.call(n,ge),t=n[ge];try{n[ge]=void 0;var r=!0}catch{}var i=ir.call(n);return r&&(e?n[ge]=t:delete n[ge]),i}var or=Object.prototype,ar=or.toString;function lr(n){return ar.call(n)}var cr="[object Null]",ur="[object Undefined]",Tt=le?le.toStringTag:void 0;function Yt(n){return n==null?n===void 0?ur:cr:Tt&&Tt in Object(n)?sr(n):lr(n)}function dr(n){return n!=null&&typeof n=="object"}var fr="[object Symbol]";function st(n){return typeof n=="symbol"||dr(n)&&Yt(n)==fr}function hr(n,e){for(var t=-1,r=n==null?0:n.length,i=Array(r);++t<r;)i[t]=e(n[t],t,n);return i}var pr=Array.isArray;const ot=pr;var gr=1/0,Ct=le?le.prototype:void 0,At=Ct?Ct.toString:void 0;function en(n){if(typeof n=="string")return n;if(ot(n))return hr(n,en)+"";if(st(n))return At?At.call(n):"";var e=n+"";return e=="0"&&1/n==-gr?"-0":e}function Pe(n){var e=typeof n;return n!=null&&(e=="object"||e=="function")}var mr="[object AsyncFunction]",br="[object Function]",yr="[object GeneratorFunction]",wr="[object Proxy]";function kr(n){if(!Pe(n))return!1;var e=Yt(n);return e==br||e==yr||e==mr||e==wr}var xr=it["__core-js_shared__"];const Fe=xr;var Lt=function(){var n=/[^.]+$/.exec(Fe&&Fe.keys&&Fe.keys.IE_PROTO||"");return n?"Symbol(src)_1."+n:""}();function vr(n){return!!Lt&&Lt in n}var $r=Function.prototype,Sr=$r.toString;function Er(n){if(n!=null){try{return Sr.call(n)}catch{}try{return n+""}catch{}}return""}var _r=/[\\^$.*+?()[\]{}|]/g,Tr=/^\[object .+?Constructor\]$/,Cr=Function.prototype,Ar=Object.prototype,Lr=Cr.toString,zr=Ar.hasOwnProperty,Pr=RegExp("^"+Lr.call(zr).replace(_r,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");function Or(n){if(!Pe(n)||vr(n))return!1;var e=kr(n)?Pr:Tr;return e.test(Er(n))}function Ir(n,e){return n==null?void 0:n[e]}function at(n,e){var t=Ir(n,e);return Or(t)?t:void 0}var Nr=function(){try{var n=at(Object,"defineProperty");return n({},"",{}),n}catch{}}();const zt=Nr;var Rr=9007199254740991,Mr=/^(?:0|[1-9]\d*)$/;function Dr(n,e){var t=typeof n;return e=e??Rr,!!e&&(t=="number"||t!="symbol"&&Mr.test(n))&&n>-1&&n%1==0&&n<e}function jr(n,e,t){e=="__proto__"&&zt?zt(n,e,{configurable:!0,enumerable:!0,value:t,writable:!0}):n[e]=t}function tn(n,e){return n===e||n!==n&&e!==e}var qr=Object.prototype,Hr=qr.hasOwnProperty;function Fr(n,e,t){var r=n[e];(!(Hr.call(n,e)&&tn(r,t))||t===void 0&&!(e in n))&&jr(n,e,t)}var Br=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,Ur=/^\w*$/;function Vr(n,e){if(ot(n))return!1;var t=typeof n;return t=="number"||t=="symbol"||t=="boolean"||n==null||st(n)?!0:Ur.test(n)||!Br.test(n)||e!=null&&n in Object(e)}var Wr=at(Object,"create");const we=Wr;function Zr(){this.__data__=we?we(null):{},this.size=0}function Gr(n){var e=this.has(n)&&delete this.__data__[n];return this.size-=e?1:0,e}var Jr="__lodash_hash_undefined__",Xr=Object.prototype,Qr=Xr.hasOwnProperty;function Kr(n){var e=this.__data__;if(we){var t=e[n];return t===Jr?void 0:t}return Qr.call(e,n)?e[n]:void 0}var Yr=Object.prototype,ei=Yr.hasOwnProperty;function ti(n){var e=this.__data__;return we?e[n]!==void 0:ei.call(e,n)}var ni="__lodash_hash_undefined__";function ri(n,e){var t=this.__data__;return this.size+=this.has(n)?0:1,t[n]=we&&e===void 0?ni:e,this}function ee(n){var e=-1,t=n==null?0:n.length;for(this.clear();++e<t;){var r=n[e];this.set(r[0],r[1])}}ee.prototype.clear=Zr;ee.prototype.delete=Gr;ee.prototype.get=Kr;ee.prototype.has=ti;ee.prototype.set=ri;function ii(){this.__data__=[],this.size=0}function De(n,e){for(var t=n.length;t--;)if(tn(n[t][0],e))return t;return-1}var si=Array.prototype,oi=si.splice;function ai(n){var e=this.__data__,t=De(e,n);if(t<0)return!1;var r=e.length-1;return t==r?e.pop():oi.call(e,t,1),--this.size,!0}function li(n){var e=this.__data__,t=De(e,n);return t<0?void 0:e[t][1]}function ci(n){return De(this.__data__,n)>-1}function ui(n,e){var t=this.__data__,r=De(t,n);return r<0?(++this.size,t.push([n,e])):t[r][1]=e,this}function de(n){var e=-1,t=n==null?0:n.length;for(this.clear();++e<t;){var r=n[e];this.set(r[0],r[1])}}de.prototype.clear=ii;de.prototype.delete=ai;de.prototype.get=li;de.prototype.has=ci;de.prototype.set=ui;var di=at(it,"Map");const fi=di;function hi(){this.size=0,this.__data__={hash:new ee,map:new(fi||de),string:new ee}}function pi(n){var e=typeof n;return e=="string"||e=="number"||e=="symbol"||e=="boolean"?n!=="__proto__":n===null}function je(n,e){var t=n.__data__;return pi(e)?t[typeof e=="string"?"string":"hash"]:t.map}function gi(n){var e=je(this,n).delete(n);return this.size-=e?1:0,e}function mi(n){return je(this,n).get(n)}function bi(n){return je(this,n).has(n)}function yi(n,e){var t=je(this,n),r=t.size;return t.set(n,e),this.size+=t.size==r?0:1,this}function re(n){var e=-1,t=n==null?0:n.length;for(this.clear();++e<t;){var r=n[e];this.set(r[0],r[1])}}re.prototype.clear=hi;re.prototype.delete=gi;re.prototype.get=mi;re.prototype.has=bi;re.prototype.set=yi;var wi="Expected a function";function lt(n,e){if(typeof n!="function"||e!=null&&typeof e!="function")throw new TypeError(wi);var t=function(){var r=arguments,i=e?e.apply(this,r):r[0],s=t.cache;if(s.has(i))return s.get(i);var a=n.apply(this,r);return t.cache=s.set(i,a)||s,a};return t.cache=new(lt.Cache||re),t}lt.Cache=re;var ki=500;function xi(n){var e=lt(n,function(r){return t.size===ki&&t.clear(),r}),t=e.cache;return e}var vi=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,$i=/\\(\\)?/g,Si=xi(function(n){var e=[];return n.charCodeAt(0)===46&&e.push(""),n.replace(vi,function(t,r,i,s){e.push(i?s.replace($i,"$1"):r||t)}),e});const Ei=Si;function ct(n){return n==null?"":en(n)}function ut(n,e){return ot(n)?n:Vr(n,e)?[n]:Ei(ct(n))}var _i=1/0;function dt(n){if(typeof n=="string"||st(n))return n;var e=n+"";return e=="0"&&1/n==-_i?"-0":e}function nn(n,e){e=ut(e,n);for(var t=0,r=e.length;n!=null&&t<r;)n=n[dt(e[t++])];return t&&t==r?n:void 0}function Be(n,e,t){var r=n==null?void 0:nn(n,e);return r===void 0?t:r}function Ti(n,e,t){var r=-1,i=n.length;e<0&&(e=-e>i?0:i+e),t=t>i?i:t,t<0&&(t+=i),i=e>t?0:t-e>>>0,e>>>=0;for(var s=Array(i);++r<i;)s[r]=n[r+e];return s}function rn(n){return function(e){return n==null?void 0:n[e]}}function Ci(n){var e=n==null?0:n.length;return e?n[e-1]:void 0}var Ai={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},Li=rn(Ai);const zi=Li;var sn=/[&<>"']/g,Pi=RegExp(sn.source);function H(n){return n=ct(n),n&&Pi.test(n)?n.replace(sn,zi):n}function Oi(n,e){return e.length<2?n:nn(n,Ti(e,0,-1))}function Ii(n,e){return e=ut(e,n),n=Oi(n,e),n==null||delete n[dt(Ci(e))]}function Ni(n,e,t,r){if(!Pe(n))return n;e=ut(e,n);for(var i=-1,s=e.length,a=s-1,l=n;l!=null&&++i<s;){var o=dt(e[i]),u=t;if(o==="__proto__"||o==="constructor"||o==="prototype")return n;if(i!=a){var c=l[o];u=r?r(c,o,l):void 0,u===void 0&&(u=Pe(c)?c:Dr(e[i+1])?[]:{})}Fr(l,o,u),l=l[o]}return n}function ft(n,e,t){return n==null?n:Ni(n,e,t)}var Ri={"&amp;":"&","&lt;":"<","&gt;":">","&quot;":'"',"&#39;":"'"},Mi=rn(Ri);const Di=Mi;var on=/&(?:amp|lt|gt|quot|#39);/g,ji=RegExp(on.source);function qi(n){return n=ct(n),n&&ji.test(n)?n.replace(on,Di):n}function Hi(n,e){return n==null?!0:Ii(n,e)}const an=F("story"),P={customScripts:[],customStyles:[],passages:[]};function ln(n){for(const r of["name","creator","ifid","options"])P[r]=n.getAttribute(r)??void 0;const e=parseInt(n.getAttribute("startnode")??"");isNaN(e)||(P.startNode=e),P.creatorVersion=n.getAttribute("creator-version")??void 0;const t=r=>[...r].map(i=>i.textContent??"");P.customScripts=t(n.querySelectorAll('[type="text/twine-javascript"]')),P.customStyles=t(n.querySelectorAll('[type="text/twine-css"]')),P.passages=[...n.querySelectorAll("tw-passagedata")].map(r=>{const i=parseInt(r.getAttribute("pid")??""),s=r.getAttribute("tags");return{id:isNaN(i)?void 0:i,name:r.getAttribute("name")??void 0,source:r.textContent??"",tags:s?s.split(" "):[]}})}function cn(){const n=pt();if(!n||!n.name)throw new Error("There is no starting passage for this story, or it has no name.");ie({trail:[n.name],"config.testing":typeof P.options=="string"&&P.options.indexOf("debug")!==-1||!1}),P.name&&(document.title=P.name)}function un(){an.log(`Running custom scripts (${P.customScripts.length})`);for(const n of P.customScripts)new Function(n).apply(window)}function dn(){an.log(`Adding custom styles (${P.customStyles.length})`);for(const n of P.customStyles){const e=document.createElement("style");e.innerHTML=n,document.head.appendChild(e)}}function fn(){return P.ifid}function ht(){return P.name}function Fi(){return P.passages}function pt(){return P.passages.find(n=>n.id===P.startNode)}function Se(n){return P.passages.find(e=>e.name===n)}function Bi(n){return P.passages.find(e=>e.id===n)}function hn(n){let e=[],t=!1;return async(...r)=>{t||(t=!0,Promise.resolve().then(()=>{try{n(e),e=[],t=!1}catch(i){window.setTimeout(()=>{throw i})}})),e.push(r)}}function ke(n,e,t=[]){const r=document.createElement(n);if(e)for(const i of Object.keys(e))e[i]!==void 0&&r.setAttribute(i,e[i]);for(const i of t)typeof i=="string"||typeof i=="number"?r.appendChild(document.createTextNode(i.toString())):r.appendChild(i);return r}function R(...n){return ke(...n).outerHTML}function Je(n){return Array.isArray(n)?n.every(Je):n===null?!0:typeof n=="object"?Object.getPrototypeOf(n)!==Object.prototype?!1:Object.values(n).every(Je):typeof n=="number"?isFinite(n)&&!isNaN(n):["boolean","string","undefined"].includes(typeof n)}const{log:Q,warn:Ui}=F("state");let te;const gt={},pn={},ce={};function mt(n,e){if(n[e])return;Object.defineProperty(n,e,{get(){return p(e)},set(r){$(e,r)},configurable:!0});const t=e.split(".");t.length>1&&(t.pop(),mt(n,t.join(".")))}function Vi(n,e){if(n[e])return;const t=e.split("."),r=t[t.length-1];for(let i=0;i<t.length-1;i++)n[t[i]]=n[t[i]]||{},n=n[t[i]];Object.defineProperty(n,r,{get(){return p(e)},set(){throw new Error("Chapbook lookup variables may only be read.")},configurable:!0})}function Wi(n,e){Hi(n,e)}function gn(){const n=fn(),e=ht();if(e===void 0)throw new Error("Cannot set up state: the story has no name");te=`chapbook-${e}-${n}`,qe("config.state.autosave",!0)}function bt(){function n(e,t){Object.keys(e).forEach(r=>{const i=t===""?r:`${t}.${r}`;if(typeof e[r]=="object"&&!Array.isArray(e[r]))n(e[r],i);else{const s=e[r];delete e[r],Wi(window,t),window.dispatchEvent(new CustomEvent("state-change",{detail:{name:i,value:p(i),previous:s}}))}})}n(ce,""),window.dispatchEvent(new CustomEvent("state-reset")),p("config.state.autosave")&&yt()}function $(n,e){const t=p(n);Je(e)||Ui(`Setting ${n} to ${JSON.stringify(e)} can't be saved permanently. This will work in the current session, but will not persist between sessions.`),ft(ce,n,e),mt(window,n),e!==t&&window.dispatchEvent(new CustomEvent("state-change",{detail:{previous:t,name:n,value:e}})),p("config.state.autosave")&&yt()}function qe(n,e){const t=p(n);Q(`Defaulting "${n}" to ${JSON.stringify(e)}`),ft(gt,n,e),mt(window,n),t==null&&window.dispatchEvent(new CustomEvent("state-change",{detail:{previous:t,name:n,value:e}}))}function ie(n){for(const e in n)qe(e,n[e])}function _(n,e){const t=p(n);Q(`Adding lookup variable ${n}`),ft(pn,n,e),Vi(window,n),t==null&&window.dispatchEvent(new CustomEvent("state-change",{detail:{previous:t,name:n,value:p(n)}}))}function p(n){const e=Be(pn,n);if(typeof e=="function")return e(p,$);const t=Be(ce,n),r=Be(gt,n);if(t==null)return r;if(typeof t=="object"&&t!==null&&!Array.isArray(t)&&typeof r=="object"&&r!==null&&!Array.isArray(r)){const i={},s=[...Object.keys(r),...Object.keys(t)];for(const a of s)Object.defineProperty(i,a,{get(){return p(n+"."+a)},set(l){$(n+"."+a,l)},configurable:!0,enumerable:!0});return i}return t}function xe(){return{...ce}}function Ee(n){bt();for(const e in n)$(e,n[e])}function mn(){try{return window.localStorage.setItem("chapbook-test","a"),window.localStorage.removeItem("chapbook-test"),!0}catch{return!1}}function yt(){Q("Saving to local storage: "+JSON.stringify(xe())),window.localStorage.setItem(te,JSON.stringify(xe())),Q("Save complete")}function bn(){return mn()&&window.localStorage.getItem(te)!==null}function yn(){Q("Restoring variables from local storage");const n=window.localStorage.getItem(te);if(!n)throw new Error(`No value is set in local storage at "${te}"`);Ee(JSON.parse(n)),Q("Restore complete")}function wn(n){n||Q("Purging variables from local storage");const e=window.localStorage.getItem(te);if(!e)throw new Error(`No value is set in local storage at "${te}"`);Ee(JSON.parse(e)),n||Q("Purge complete")}function ve(n){function e(t,r,i=[]){return Object.keys(t).reduce((s,a)=>{if(typeof t[a]=="object"&&t[a]&&!Array.isArray(t[a]))e(t[a],r?`${r}.${a}`:a,s);else{const l=r?`${r}.${a}`:a;s.includes(l)||s.push(l)}return s},i)}return n?e(gt,void 0,e(ce)).sort():e(ce).sort()}const Zi=Object.freeze(Object.defineProperty({__proto__:null,canRestoreFromStorage:bn,canSaveToStorage:mn,get:p,initState:gn,purgeFromStorage:wn,reset:bt,restoreFromObject:Ee,restoreFromStorage:yn,saveToObject:xe,saveToStorage:yt,set:$,setDefault:qe,setDefaults:ie,setLookup:_,varNames:ve},Symbol.toStringTag,{value:"Module"})),Gi=Object.freeze(Object.defineProperty({__proto__:null,addCustomStyles:dn,ifid:fn,initStory:cn,loadFromData:ln,name:ht,passageNamed:Se,passageWithId:Bi,passages:Fi,runCustomScripts:un,startPassage:pt},Symbol.toStringTag,{value:"Module"})),{log:kn}=F("actions");function xn(n){kn(`Going to passage "${n}"`);const e=Se(n);if(!e)throw new Error(`There is no passage with the name "${n}"`);document.activeElement instanceof HTMLElement&&document.activeElement.blur();const t=p("trail");if(!Array.isArray(t))throw new Error(`The trail variable has been set to a ${typeof t}, not an array.`);$("trail",[...t,e.name])}function vn(){kn("Restarting"),bt(),window.location.reload()}let X=[],Oe=!0;function Ji(){Oe&&(X=[],window.dispatchEvent(new CustomEvent("backstage-state-recorder-update")))}function Xi({detail:n}){if(!Oe)return;X.length===p("config.backstage.trail.maxLength")&&X.shift();const{name:e,value:t}=n;X.push({change:{name:e,value:t},state:xe()}),window.dispatchEvent(new CustomEvent("backstage-state-recorder-update"))}function Qi(){return[...X]}function Ki(n){if(!X[n])throw new Error(`There is no history at index ${n} to rewind to.`);Oe=!1,Ee(X[n].state),X.length=n+1,Oe=!0,window.dispatchEvent(new CustomEvent("backstage-state-recorder-update"))}function Yi(){qe("config.backstage.trail.maxLength",100),window.addEventListener("state-change",Xi),window.addEventListener("state-reset",Ji)}let V=[];function es(n){V.push({name:n,state:xe()}),$n(),window.dispatchEvent(new CustomEvent("backstage-state-snapshots-update"))}function ts(n){const e=V.find(t=>t.name===n);if(!e)throw new Error(`There is no snapshot named "${n}".`);Ee(e.state)}function ns(n){V=V.filter(({name:e})=>n!==e),$n(),window.dispatchEvent(new CustomEvent("backstage-state-snapshots-update"))}function rs(){try{V=JSON.parse(window.localStorage.getItem(`chapbookbackstage-snapshots-${p("config.state.saveKey")}`)),Array.isArray(V)||(V=[])}catch{V=[]}}function $n(){window.localStorage.setItem(`chapbookbackstage-snapshots-${p("config.state.saveKey")}`,JSON.stringify(V))}function Pt(){return V.map(({name:n})=>n)}function is(){rs()}function wt(n){for(const e in n)window.customElements.get(e)||window.customElements.define(e,n[e])}class z extends HTMLElement{defaultHtml(e){this.innerHTML.trim()===""&&(this.innerHTML=e)}delegate(e,t,r){this.addEventListener(e,i=>{if(!i.target)return;const s=i.target.closest(t);s&&r(i,s)})}query(e){const t=this.querySelector(e);if(!t)throw new Error(`Couldn't find element matching "${e}"`);return t}queryAll(e){return[...this.querySelectorAll(e)]}}class Sn extends z{constructor(){super(),this.addEventListener("click",e=>{e.target.closest("[data-toggle-collapsed]")&&(this.hasAttribute("collapsed")?this.removeAttribute("collapsed"):this.setAttribute("collapsed",""))})}connectedCallback(){this.innerHTML=`
 			<button data-toggle-collapsed></button>
 			<div class="content">
@@ -218,82 +218,445 @@ ${i}`),b(i)}function $e(n,e=!1){return Ko(zo(n),An(),Pn(),e)}class Yo extends fe
 </script><style>
 :root{--font-monospace: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;--font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif}*{box-sizing:border-box}body{margin:0;padding:0}code{font-family:var(--font-monospace)}img{max-width:100%;height:auto}input[type=text],select{padding:.25em}noscript{align-items:center;background:black;color:#fff;display:flex;height:100vh;font-family:var(--font-system);justify-content:center;width:100vw}pre{font-family:var(--font-monospace);white-space:pre-wrap}tw-storydata{display:none}body.backstage-visible #backdrop{max-width:67vw}backstage-sidebar{--backstage-grid: 10px;background:var(--color-gray-2);border-left:1px solid var(--color-gray-3);bottom:0;color:var(--color-gray-5);display:block;font-family:var(--font-system);font-size:13px;position:fixed;top:0;right:0;width:33vw}backstage-sidebar .content{overflow:auto;padding:var(--backstage-grid);height:100%;width:100%}backstage-sidebar[collapsed]{width:0}backstage-sidebar button[data-toggle-collapsed]{background:var(--color-gray-2);border-bottom:1px solid var(--color-gray-3);border-left:1px solid var(--color-gray-3);border-right:none;border-top:1px solid var(--color-gray-3);border-radius:60px 0 0 60px;color:var(--color-gray-5);font-size:20px;height:60px;min-width:30px;padding:0;position:absolute;top:50%;left:-30px;transform:translateY(-50%);width:30px}backstage-sidebar button[data-toggle-collapsed]:hover{background:var(--color-gray-1);cursor:pointer}backstage-sidebar button{background:var(--color-gray-1);border:1px solid var(--color-gray-3);border-radius:var(--backstage-grid);color:var(--color-gray-5);cursor:pointer;font-size:100%;min-width:40px;padding:calc(var(--backstage-grid) / 2)}backstage-sidebar button:disabled{color:var(--color-gray-3);cursor:not-allowed}backstage-sidebar button:not(:disabled):hover{background:white}backstage-sidebar details summary{cursor:pointer;font-size:110%;font-variant:small-caps;padding:calc(var(--backstage-grid) / 2) 0;text-transform:lowercase}backstage-sidebar input,backstage-sidebar textarea{background:var(--color-gray-1);border:1px solid var(--color-gray-3);color:var(--color-gray-5);font:100% var(--font-system);padding:calc(var(--backstage-grid) / 2)}backstage-sidebar table{max-width:100%;width:100%}backstage-history-table button{display:block;width:100%}backstage-history-table table{border-collapse:collapse;margin:var(--backstage-grid) 0;table-layout:fixed}backstage-history-table thead{height:1px;left:-10000px;overflow:hidden;position:absolute;top:auto;width:1px}backstage-history-table tr:not(:last-child){border-bottom:1px solid var(--oc-gray-8)}backstage-history-table td{text-overflow:ellipsis;overflow-wrap:break-word;padding:calc(var(--backstage-grid) / 2);vertical-align:top}backstage-history-table td:first-child{border-right:1px solid var(--oc-gray-8);width:45%}backstage-notes label{display:block;margin-top:var(--backstage-grid)}backstage-notes textarea{height:10em;margin:var(--backstage-grid) 0;width:100%}backstage-notes .actions{display:flex;gap:var(--backstage-grid)}backstage-notes .actions button{flex-grow:1}backstage-state-snapshots button[data-add-snapshot]{width:100%}backstage-state-snapshots .snapshot-button{display:flex;margin-bottom:var(--backstage-grid)}backstage-state-snapshots .snapshot-button [data-restore]{flex-grow:1;border-right-color:var(--oc-gray-4);border-bottom-right-radius:0;border-top-right-radius:0}backstage-state-snapshots .snapshot-button [data-remove]{border-left:none;border-bottom-left-radius:0;border-top-left-radius:0}backstage-state-variables .variables{display:flex;flex-direction:column;gap:calc(var(--backstage-grid) / 2);margin:calc(var(--backstage-grid)) 0}backstage-state-variables .variables label{align-items:center;display:grid;gap:var(--backstage-grid);grid-template-columns:15em 1fr}backstage-style-config textarea{height:10em;margin:var(--backstage-grid) 0;width:100%}backstage-style-group label{display:grid;gap:.25em;margin-bottom:.5em}backstage-style-theme p{margin:0 0 .5em}backstage-tab{border-left:1px solid var(--color-gray-3);cursor:pointer;flex-grow:1;padding:calc(var(--backstage-grid) / 2);text-align:center}backstage-tab:hover{background:white}backstage-tab:first-child{border-left:none;border-bottom-left-radius:var(--backstage-grid);border-top-left-radius:var(--backstage-grid)}backstage-tab:last-child{border-bottom-right-radius:var(--backstage-grid);border-top-right-radius:var(--backstage-grid)}backstage-tab[aria-selected=true]{background-color:#fff;cursor:default;font-weight:700}backstage-tab-panel{display:block;padding:calc(var(--backstage-grid) / 2) 0}backstage-tab-panel[hidden]{display:none}backstage-tabs{background:var(--color-gray-1);border:1px solid var(--color-gray-3);border-radius:var(--backstage-grid);display:flex}backstage-variable-input input{display:inline-block;width:100%}#backdrop{align-items:center;background-color:var(--backdrop-color);display:flex;justify-content:center;min-height:100vh}#page>header,#page>footer{display:flex;justify-content:space-between}#page>header[hidden],#page>footer[hidden]{border:none}#page>header .center,#page>footer .center{text-align:center}#page>header .right,#page>footer .right{text-align:right}#page>footer{background-color:var(--page-footer-background-color);border-top:var(--page-footer-border);color:var(--page-footer-color);font-family:var(--page-footer-font-family);font-size:var(--page-footer-font-size);font-style:var(--page-footer-font-style);font-variant:var(--page-footer-font-variant);font-weight:var(--page-footer-font-weight);text-decoration:var(--page-footer-text-decoration);text-decoration-color:var(--page-footer-text-decoration-color);text-transform:var(--page-footer-text-transform)}#page>footer .link{background-color:var(--page-footer-link-background-color);color:var(--page-footer-link-color);font-family:var(--page-footer-link-font-family);font-size:var(--page-footer-link-font-size);font-style:var(--page-footer-link-font-style);font-variant:var(--page-footer-link-font-variant);font-weight:var(--page-footer-link-font-weight);text-decoration:var(--page-footer-link-text-decoration);text-decoration-color:var(--page-footer-link-text-decoration-color);text-transform:var(--page-footer-link-text-transform)}#page>footer .link:hover{background-color:var(--page-footer-link-active-background-color);color:var(--page-footer-link-active-color);font-family:var(--page-footer-link-active-font-family);font-size:var(--page-footer-link-active-font-size);font-style:var(--page-footer-link-active-font-style);font-variant:var(--page-footer-link-active-font-variant);font-weight:var(--page-footer-link-active-font-weight);text-decoration:var(--page-footer-link-active-text-decoration);text-decoration-color:var( --page-footer-link-active-text-decoration-color );text-transform:var(--page-footer-link-active-text-transform)}#page>header{background-color:var(--page-header-background-color);border-bottom:var(--page-header-border);color:var(--page-header-color);font-family:var(--page-header-font-family);font-size:var(--page-header-font-size);font-style:var(--page-header-font-style);font-variant:var(--page-header-font-variant);font-weight:var(--page-header-font-weight);text-decoration:var(--page-header-text-decoration);text-decoration-color:var(--page-header-text-decoration-color);text-transform:var(--page-header-text-transform)}#page>header .link{background-color:var(--page-header-link-background-color);color:var(--page-header-link-color);font-family:var(--page-header-link-font-family);font-size:var(--page-header-link-font-size);font-style:var(--page-header-link-font-style);font-variant:var(--page-header-link-font-variant);font-weight:var(--page-header-link-font-weight);text-decoration:var(--page-header-link-text-decoration);text-decoration-color:var(--page-header-link-text-decoration-color);text-transform:var(--page-header-link-text-transform)}#page>header .link:hover{background-color:var(--page-header-link-active-background-color);color:var(--page-header-link-active-color);font-family:var(--page-header-link-active-font-family);font-size:var(--page-header-link-active-font-size);font-style:var(--page-header-link-active-font-style);font-variant:var(--page-header-link-active-font-variant);font-weight:var(--page-header-link-active-font-weight);text-decoration:var(--page-header-link-active-text-decoration);text-decoration-color:var( --page-header-link-active-text-decoration-color );text-transform:var(--page-header-link-active-text-transform)}#page{background-color:var(--page-background-color);border:var(--page-border);border-radius:3px;box-shadow:var(--page-box-shadow);color:var(--page-color);display:grid;font-family:var(--page-font-family);font-size:var(--page-font-size);font-style:var(--page-font-style);font-variant:var(--page-font-variant);font-weight:var(--page-font-weight);grid-template-areas:"header" "body" "footer";grid-template-rows:min-content 1fr min-content;line-height:150%;margin:1em;max-width:calc(100vw - 2em);min-height:calc(100vh - 2em);padding:2em 4em;position:relative;text-decoration:var(--page-text-decoration);text-transform:var(--page-text-transform);width:40em}#page hr{border:none}#page hr:after{content:"* \a0* \a0*";display:block;text-align:center}#page page-skip-indicator{position:absolute;bottom:0;right:0}#page .fork p{display:flex;flex-direction:column;width:100%}#page .fork p .link{display:block;flex-grow:1;text-align:center;padding:.5em}#page .fork p .link+.link{border-top:var(--page-fork-divider-size) var(--page-fork-divider-style) var(--page-fork-divider-color)}#page .link{background-color:var(--page-link-background-color);color:var(--page-link-color);cursor:pointer;font-family:var(--page-link-font-family);font-size:var(--page-link-font-size);font-style:var(--page-link-font-style);font-variant:var(--page-link-font-variant);font-weight:var(--page-link-font-weight);text-decoration:var(--page-link-text-decoration);text-decoration-color:var(--page-link-text-decoration-color);text-transform:var(--page-link-text-transform)}#page .link:hover{background-color:var(--page-link-active-background-color);color:var(--page-link-active-color);font-family:var(--page-link-font-family);font-size:var(--page-link-font-size);font-style:var(--page-link-font-style);font-variant:var(--page-link-font-variant);font-weight:var(--page-link-font-weight);text-decoration:var(--page-link-text-decoration);text-decoration-color:var(--page-link-text-decoration-color);text-transform:var(--page-link-text-transform)}#page .small-caps{font-variant:small-caps;text-transform:lowercase}#page>footer{grid-area:footer}#page>header{grid-area:header}#page>article{display:flex;flex-direction:column;flex-grow:1;grid-area:body;justify-content:var(--page-current-passage-justify-content)}#page>error-handler{grid-area:body;position:relative;z-index:2}@media screen and (max-width: 768px){#page{margin:0;width:100vw;max-width:100vw;min-height:100vh;padding:1em}}.fade-in{opacity:0;animation:fade-in 1s ease-out forwards}.fade-out{animation:fade-in 1s ease-out reverse forwards}@keyframes fade-in{0%{opacity:0}to{opacity:1}}error-handler{display:none}error-handler.active{background:var(--color-red-1);color:var(--color-red-5);display:block;font-family:var(--font-system);font-size:max(90%,16px);padding:.5em;border-left:4px solid var(--color-red-2);position:relative;margin:1em 0;overflow:auto}error-handler pre{font-size:90%}error-handler a{color:var(--color-red-4)}error-handler button{appearance:none;background:none;border:none;color:var(--color-red-4);cursor:pointer;padding:0}external-fonts{display:none}page-skip{display:block}page-skip-indicator{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%09%3crect width='38' height='72' x='31' y='14' fill='%23fff' rx='4' /%3e%09%3ccircle cx='50' cy='50' r='28' fill='%23fff' /%3e%09%3crect%09%09width='30'%09%09height='64'%09%09x='35'%09%09y='18'%09%09fill='%23fff'%09%09stroke='%23000'%09%09stroke-width='2'%09%09rx='4'%09/%3e%09%3ccircle%09%09cx='50'%09%09cy='50'%09%09r='20'%09%09fill='%23fff'%09%09stroke='%23000'%09%09stroke-width='2'%09/%3e%09%3cpath%09%09stroke='%23000'%09%09stroke-linecap='round'%09%09stroke-width='2'%09%09d='M50 50V37'%09%3e%09%09%3canimateTransform%09%09%09attributeName='transform'%09%09%09begin='0s'%09%09%09dur='20s'%09%09%09from='0 50 50'%09%09%09repeatCount='indefinite'%09%09%09to='360 50 50'%09%09%09type='rotate'%09%09/%3e%09%3c/path%3e%09%3cpath%09%09stroke='%23000'%09%09stroke-linecap='round'%09%09stroke-width='2'%09%09d='M50 50h-8'%09%3e%09%09%3canimateTransform%09%09%09attributeName='transform'%09%09%09begin='0s'%09%09%09dur='120s'%09%09%09from='0 50 50'%09%09%09repeatCount='indefinite'%09%09%09to='360 50 50'%09%09%09type='rotate'%09%09/%3e%09%3c/path%3e%3c/svg%3e");background-size:contain;display:block;height:50px;opacity:0;pointer-events:none;transition:opacity .3s;width:50px}page-skip-indicator[active]{opacity:1}::view-transition-old(root),::view-transition-new(root){animation-duration:var(--page-transition-duration)}page-transition{display:block}:root{--oc-white: #ffffff;--oc-white-rgb: 255, 255, 255;--oc-black: #000000;--oc-black-rgb: 0, 0, 0;--oc-gray-0: #f8f9fa;--oc-gray-0-rgb: 248, 249, 250;--oc-gray-1: #f1f3f5;--oc-gray-1-rgb: 241, 243, 245;--oc-gray-2: #e9ecef;--oc-gray-2-rgb: 233, 236, 239;--oc-gray-3: #dee2e6;--oc-gray-3-rgb: 222, 226, 230;--oc-gray-4: #ced4da;--oc-gray-4-rgb: 206, 212, 218;--oc-gray-5: #adb5bd;--oc-gray-5-rgb: 173, 181, 189;--oc-gray-6: #868e96;--oc-gray-6-rgb: 134, 142, 150;--oc-gray-7: #495057;--oc-gray-7-rgb: 73, 80, 87;--oc-gray-8: #343a40;--oc-gray-8-rgb: 52, 58, 64;--oc-gray-9: #212529;--oc-gray-9-rgb: 33, 37, 41;--oc-red-0: #fff5f5;--oc-red-0-rgb: 255, 245, 245;--oc-red-1: #ffe3e3;--oc-red-1-rgb: 255, 227, 227;--oc-red-2: #ffc9c9;--oc-red-2-rgb: 255, 201, 201;--oc-red-3: #ffa8a8;--oc-red-3-rgb: 255, 168, 168;--oc-red-4: #ff8787;--oc-red-4-rgb: 255, 135, 135;--oc-red-5: #ff6b6b;--oc-red-5-rgb: 255, 107, 107;--oc-red-6: #fa5252;--oc-red-6-rgb: 250, 82, 82;--oc-red-7: #f03e3e;--oc-red-7-rgb: 240, 62, 62;--oc-red-8: #e03131;--oc-red-8-rgb: 224, 49, 49;--oc-red-9: #c92a2a;--oc-red-9-rgb: 201, 42, 42;--oc-pink-0: #fff0f6;--oc-pink-0-rgb: 255, 240, 246;--oc-pink-1: #ffdeeb;--oc-pink-1-rgb: 255, 222, 235;--oc-pink-2: #fcc2d7;--oc-pink-2-rgb: 252, 194, 215;--oc-pink-3: #faa2c1;--oc-pink-3-rgb: 250, 162, 193;--oc-pink-4: #f783ac;--oc-pink-4-rgb: 247, 131, 172;--oc-pink-5: #f06595;--oc-pink-5-rgb: 240, 101, 149;--oc-pink-6: #e64980;--oc-pink-6-rgb: 230, 73, 128;--oc-pink-7: #d6336c;--oc-pink-7-rgb: 214, 51, 108;--oc-pink-8: #c2255c;--oc-pink-8-rgb: 194, 37, 92;--oc-pink-9: #a61e4d;--oc-pink-9-rgb: 166, 30, 77;--oc-grape-0: #f8f0fc;--oc-grape-0-rgb: 248, 240, 252;--oc-grape-1: #f3d9fa;--oc-grape-1-rgb: 243, 217, 250;--oc-grape-2: #eebefa;--oc-grape-2-rgb: 238, 190, 250;--oc-grape-3: #e599f7;--oc-grape-3-rgb: 229, 153, 247;--oc-grape-4: #da77f2;--oc-grape-4-rgb: 218, 119, 242;--oc-grape-5: #cc5de8;--oc-grape-5-rgb: 204, 93, 232;--oc-grape-6: #be4bdb;--oc-grape-6-rgb: 190, 75, 219;--oc-grape-7: #ae3ec9;--oc-grape-7-rgb: 174, 62, 201;--oc-grape-8: #9c36b5;--oc-grape-8-rgb: 156, 54, 181;--oc-grape-9: #862e9c;--oc-grape-9-rgb: 134, 46, 156;--oc-violet-0: #f3f0ff;--oc-violet-0-rgb: 243, 240, 255;--oc-violet-1: #e5dbff;--oc-violet-1-rgb: 229, 219, 255;--oc-violet-2: #d0bfff;--oc-violet-2-rgb: 208, 191, 255;--oc-violet-3: #b197fc;--oc-violet-3-rgb: 177, 151, 252;--oc-violet-4: #9775fa;--oc-violet-4-rgb: 151, 117, 250;--oc-violet-5: #845ef7;--oc-violet-5-rgb: 132, 94, 247;--oc-violet-6: #7950f2;--oc-violet-6-rgb: 121, 80, 242;--oc-violet-7: #7048e8;--oc-violet-7-rgb: 112, 72, 232;--oc-violet-8: #6741d9;--oc-violet-8-rgb: 103, 65, 217;--oc-violet-9: #5f3dc4;--oc-violet-9-rgb: 95, 61, 196;--oc-indigo-0: #edf2ff;--oc-indigo-0-rgb: 237, 242, 255;--oc-indigo-1: #dbe4ff;--oc-indigo-1-rgb: 219, 228, 255;--oc-indigo-2: #bac8ff;--oc-indigo-2-rgb: 186, 200, 255;--oc-indigo-3: #91a7ff;--oc-indigo-3-rgb: 145, 167, 255;--oc-indigo-4: #748ffc;--oc-indigo-4-rgb: 116, 143, 252;--oc-indigo-5: #5c7cfa;--oc-indigo-5-rgb: 92, 124, 250;--oc-indigo-6: #4c6ef5;--oc-indigo-6-rgb: 76, 110, 245;--oc-indigo-7: #4263eb;--oc-indigo-7-rgb: 66, 99, 235;--oc-indigo-8: #3b5bdb;--oc-indigo-8-rgb: 59, 91, 219;--oc-indigo-9: #364fc7;--oc-indigo-9-rgb: 54, 79, 199;--oc-blue-0: #e7f5ff;--oc-blue-0-rgb: 231, 245, 255;--oc-blue-1: #d0ebff;--oc-blue-1-rgb: 208, 235, 255;--oc-blue-2: #a5d8ff;--oc-blue-2-rgb: 165, 216, 255;--oc-blue-3: #74c0fc;--oc-blue-3-rgb: 116, 192, 252;--oc-blue-4: #4dabf7;--oc-blue-4-rgb: 77, 171, 247;--oc-blue-5: #339af0;--oc-blue-5-rgb: 51, 154, 240;--oc-blue-6: #228be6;--oc-blue-6-rgb: 34, 139, 230;--oc-blue-7: #1c7ed6;--oc-blue-7-rgb: 28, 126, 214;--oc-blue-8: #1971c2;--oc-blue-8-rgb: 25, 113, 194;--oc-blue-9: #1864ab;--oc-blue-9-rgb: 24, 100, 171;--oc-cyan-0: #e3fafc;--oc-cyan-0-rgb: 227, 250, 252;--oc-cyan-1: #c5f6fa;--oc-cyan-1-rgb: 197, 246, 250;--oc-cyan-2: #99e9f2;--oc-cyan-2-rgb: 153, 233, 242;--oc-cyan-3: #66d9e8;--oc-cyan-3-rgb: 102, 217, 232;--oc-cyan-4: #3bc9db;--oc-cyan-4-rgb: 59, 201, 219;--oc-cyan-5: #22b8cf;--oc-cyan-5-rgb: 34, 184, 207;--oc-cyan-6: #15aabf;--oc-cyan-6-rgb: 21, 170, 191;--oc-cyan-7: #1098ad;--oc-cyan-7-rgb: 16, 152, 173;--oc-cyan-8: #0c8599;--oc-cyan-8-rgb: 12, 133, 153;--oc-cyan-9: #0b7285;--oc-cyan-9-rgb: 11, 114, 133;--oc-teal-0: #e6fcf5;--oc-teal-0-rgb: 230, 252, 245;--oc-teal-1: #c3fae8;--oc-teal-1-rgb: 195, 250, 232;--oc-teal-2: #96f2d7;--oc-teal-2-rgb: 150, 242, 215;--oc-teal-3: #63e6be;--oc-teal-3-rgb: 99, 230, 190;--oc-teal-4: #38d9a9;--oc-teal-4-rgb: 56, 217, 169;--oc-teal-5: #20c997;--oc-teal-5-rgb: 32, 201, 151;--oc-teal-6: #12b886;--oc-teal-6-rgb: 18, 184, 134;--oc-teal-7: #0ca678;--oc-teal-7-rgb: 12, 166, 120;--oc-teal-8: #099268;--oc-teal-8-rgb: 9, 146, 104;--oc-teal-9: #087f5b;--oc-teal-9-rgb: 8, 127, 91;--oc-green-0: #ebfbee;--oc-green-0-rgb: 235, 251, 238;--oc-green-1: #d3f9d8;--oc-green-1-rgb: 211, 249, 216;--oc-green-2: #b2f2bb;--oc-green-2-rgb: 178, 242, 187;--oc-green-3: #8ce99a;--oc-green-3-rgb: 140, 233, 154;--oc-green-4: #69db7c;--oc-green-4-rgb: 105, 219, 124;--oc-green-5: #51cf66;--oc-green-5-rgb: 81, 207, 102;--oc-green-6: #40c057;--oc-green-6-rgb: 64, 192, 87;--oc-green-7: #37b24d;--oc-green-7-rgb: 55, 178, 77;--oc-green-8: #2f9e44;--oc-green-8-rgb: 47, 158, 68;--oc-green-9: #2b8a3e;--oc-green-9-rgb: 43, 138, 62;--oc-lime-0: #f4fce3;--oc-lime-0-rgb: 244, 252, 227;--oc-lime-1: #e9fac8;--oc-lime-1-rgb: 233, 250, 200;--oc-lime-2: #d8f5a2;--oc-lime-2-rgb: 216, 245, 162;--oc-lime-3: #c0eb75;--oc-lime-3-rgb: 192, 235, 117;--oc-lime-4: #a9e34b;--oc-lime-4-rgb: 169, 227, 75;--oc-lime-5: #94d82d;--oc-lime-5-rgb: 148, 216, 45;--oc-lime-6: #82c91e;--oc-lime-6-rgb: 130, 201, 30;--oc-lime-7: #74b816;--oc-lime-7-rgb: 116, 184, 22;--oc-lime-8: #66a80f;--oc-lime-8-rgb: 102, 168, 15;--oc-lime-9: #5c940d;--oc-lime-9-rgb: 92, 148, 13;--oc-yellow-0: #fff9db;--oc-yellow-0-rgb: 255, 249, 219;--oc-yellow-1: #fff3bf;--oc-yellow-1-rgb: 255, 243, 191;--oc-yellow-2: #ffec99;--oc-yellow-2-rgb: 255, 236, 153;--oc-yellow-3: #ffe066;--oc-yellow-3-rgb: 255, 224, 102;--oc-yellow-4: #ffd43b;--oc-yellow-4-rgb: 255, 212, 59;--oc-yellow-5: #fcc419;--oc-yellow-5-rgb: 252, 196, 25;--oc-yellow-6: #fab005;--oc-yellow-6-rgb: 250, 176, 5;--oc-yellow-7: #f59f00;--oc-yellow-7-rgb: 245, 159, 0;--oc-yellow-8: #f08c00;--oc-yellow-8-rgb: 240, 140, 0;--oc-yellow-9: #e67700;--oc-yellow-9-rgb: 230, 119, 0;--oc-orange-0: #fff4e6;--oc-orange-0-rgb: 255, 244, 230;--oc-orange-1: #ffe8cc;--oc-orange-1-rgb: 255, 232, 204;--oc-orange-2: #ffd8a8;--oc-orange-2-rgb: 255, 216, 168;--oc-orange-3: #ffc078;--oc-orange-3-rgb: 255, 192, 120;--oc-orange-4: #ffa94d;--oc-orange-4-rgb: 255, 169, 77;--oc-orange-5: #ff922b;--oc-orange-5-rgb: 255, 146, 43;--oc-orange-6: #fd7e14;--oc-orange-6-rgb: 253, 126, 20;--oc-orange-7: #f76707;--oc-orange-7-rgb: 247, 103, 7;--oc-orange-8: #e8590c;--oc-orange-8-rgb: 232, 89, 12;--oc-orange-9: #d9480f;--oc-orange-9-rgb: 217, 72, 15}/*! reasonable colors v0.4.0 | MIT License | https://github.com/matthewhowell/reasonable-colors */:root{--color-gray-1: #f6f6f6;--color-gray-2: #e2e2e2;--color-gray-3: #8b8b8b;--color-gray-4: #6f6f6f;--color-gray-5: #3e3e3e;--color-gray-6: #222222;--color-rose-1: #fff7f9;--color-rose-2: #ffdce5;--color-rose-3: #ff3b8d;--color-rose-4: #db0072;--color-rose-5: #800040;--color-rose-6: #4c0023;--color-raspberry-1: #fff8f8;--color-raspberry-2: #ffdddf;--color-raspberry-3: #ff426c;--color-raspberry-4: #de0051;--color-raspberry-5: #82002c;--color-raspberry-6: #510018;--color-red-1: #fff8f6;--color-red-2: #ffddd8;--color-red-3: #ff4647;--color-red-4: #e0002b;--color-red-5: #830014;--color-red-6: #530003;--color-orange-1: #fff8f5;--color-orange-2: #ffded1;--color-orange-3: #fd4d00;--color-orange-4: #cd3c00;--color-orange-5: #752100;--color-orange-6: #401600;--color-cinnamon-1: #fff8f3;--color-cinnamon-2: #ffdfc6;--color-cinnamon-3: #d57300;--color-cinnamon-4: #ac5c00;--color-cinnamon-5: #633300;--color-cinnamon-6: #371d00;--color-amber-1: #fff8ef;--color-amber-2: #ffe0b2;--color-amber-3: #b98300;--color-amber-4: #926700;--color-amber-5: #523800;--color-amber-6: #302100;--color-yellow-1: #fff9e5;--color-yellow-2: #ffe53e;--color-yellow-3: #9c8b00;--color-yellow-4: #7d6f00;--color-yellow-5: #463d00;--color-yellow-6: #292300;--color-lime-1: #f7ffac;--color-lime-2: #d5f200;--color-lime-3: #819300;--color-lime-4: #677600;--color-lime-5: #394100;--color-lime-6: #222600;--color-chartreuse-1: #e5ffc3;--color-chartreuse-2: #98fb00;--color-chartreuse-3: #5c9b00;--color-chartreuse-4: #497c00;--color-chartreuse-5: #264500;--color-chartreuse-6: #182600;--color-green-1: #e0ffd9;--color-green-2: #72ff6c;--color-green-3: #00a21f;--color-green-4: #008217;--color-green-5: #004908;--color-green-6: #062800;--color-emerald-1: #dcffe6;--color-emerald-2: #5dffa2;--color-emerald-3: #00a05a;--color-emerald-4: #008147;--color-emerald-5: #004825;--color-emerald-6: #002812;--color-aquamarine-1: #daffef;--color-aquamarine-2: #42ffc6;--color-aquamarine-3: #009f78;--color-aquamarine-4: #007f5f;--color-aquamarine-5: #004734;--color-aquamarine-6: #00281b;--color-teal-1: #d7fff7;--color-teal-2: #00ffe4;--color-teal-3: #009e8c;--color-teal-4: #007c6e;--color-teal-5: #00443c;--color-teal-6: #002722;--color-cyan-1: #c4fffe;--color-cyan-2: #00fafb;--color-cyan-3: #00999a;--color-cyan-4: #007a7b;--color-cyan-5: #004344;--color-cyan-6: #002525;--color-powder-1: #dafaff;--color-powder-2: #8df0ff;--color-powder-3: #0098a9;--color-powder-4: #007987;--color-powder-5: #004048;--color-powder-6: #002227;--color-sky-1: #e3f7ff;--color-sky-2: #aee9ff;--color-sky-3: #0094b4;--color-sky-4: #007590;--color-sky-5: #00404f;--color-sky-6: #001f28;--color-cerulean-1: #e8f6ff;--color-cerulean-2: #b9e3ff;--color-cerulean-3: #0092c5;--color-cerulean-4: #00749d;--color-cerulean-5: #003c54;--color-cerulean-6: #001d2a;--color-azure-1: #e8f2ff;--color-azure-2: #c6e0ff;--color-azure-3: #008fdb;--color-azure-4: #0071af;--color-azure-5: #003b5e;--color-azure-6: #001c30;--color-blue-1: #f0f4ff;--color-blue-2: #d4e0ff;--color-blue-3: #0089fc;--color-blue-4: #006dca;--color-blue-5: #00386d;--color-blue-6: #001a39;--color-indigo-1: #f3f3ff;--color-indigo-2: #deddff;--color-indigo-3: #657eff;--color-indigo-4: #0061fc;--color-indigo-5: #00328a;--color-indigo-6: #001649;--color-violet-1: #f7f1ff;--color-violet-2: #e8daff;--color-violet-3: #9b70ff;--color-violet-4: #794aff;--color-violet-5: #2d0fbf;--color-violet-6: #0b0074;--color-purple-1: #fdf4ff;--color-purple-2: #f7d9ff;--color-purple-3: #d150ff;--color-purple-4: #b01fe3;--color-purple-5: #660087;--color-purple-6: #3a004f;--color-magenta-1: #fff3fc;--color-magenta-2: #ffd7f6;--color-magenta-3: #f911e0;--color-magenta-4: #ca00b6;--color-magenta-5: #740068;--color-magenta-6: #44003c;--color-pink-1: #fff7fb;--color-pink-2: #ffdcec;--color-pink-3: #ff2fb2;--color-pink-4: #d2008f;--color-pink-5: #790051;--color-pink-6: #4b0030}warning-list{background:var(--color-yellow-1);border-left:4px solid var(--color-yellow-2);color:var(--color-yellow-4);display:block;font-family:var(--font-system);padding:.5em}warning-list[hidden]{display:none}warning-list ul{list-style-type:none;margin:0;padding-left:0}inline-button{cursor:pointer}
 
-</style></head><body><state-css-variables><state-dark-theme-css-overrides><div id="backdrop"><page-skip><page-transition><div id="page" aria-live="polite"><header hidden></header><article></article><warning-list></warning-list><footer hidden></footer><error-handler></error-handler><page-skip-indicator></page-skip-indicator></div></page-transition></page-skip></div></state-dark-theme-css-overrides></state-css-variables><external-fonts></external-fonts><noscript>This requires JavaScript.</noscript></body><!-- UUID://E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F// --><tw-storydata name="Dawn" startnode="1" creator="Tweego" creator-version="2.1.1" ifid="E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F" zoom="1" format="Chapbook" format-version="2.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="100,100" size="100,100">config.style.page.font: &quot;Roboto 19&quot;
-config.style.page.verticalAlign:&#39;top&#39;
-config.body.transition.name: &#39;fadeInOut&#39;
-config.page.transition.duration: &#39;500ms&#39;
---
+</style></head><body><state-css-variables><state-dark-theme-css-overrides><div id="backdrop"><page-skip><page-transition><div id="page" aria-live="polite"><header hidden></header><article></article><warning-list></warning-list><footer hidden></footer><error-handler></error-handler><page-skip-indicator></page-skip-indicator></div></page-transition></page-skip></div></state-dark-theme-css-overrides></state-css-variables><external-fonts></external-fonts><noscript>This requires JavaScript.</noscript></body><!-- UUID://FB45A600-38D4-4918-8A1B-91FFCE9A97FA// --><tw-storydata name="Nimble Brass" startnode="1" creator="Tweego" creator-version="2.1.1" ifid="FB45A600-38D4-4918-8A1B-91FFCE9A97FA" zoom="1" format="Chapbook" format-version="2.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">a {
+  font-size:1.5em;
 
-A sweet smell surrounds you as you step in to spend your night shift in this trailer. Lilies were always your favourite. Too bad you don&#39;t often see a lot of them around here anymore.
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="18,13" size="100,100">You are supposed to be preparing an assignment for school, but you are playing games on the computer.
 
-You are on duty. You have been sent to inspect this abandoned trailer park and the tech lying here. Your orders are to connect your detection kit to all the abandoned hardware one at a time, any information lying around will be automatically uploaded to the server for inspection by analysts.
+You realise that our universe might just be a simulation of an even higher reality that will forever be unknown to us.
 
-While the data is transferring, you are free to hang around. There are several computer [[gadgets]] here. A [[flower pot]] adores the wall on your left.</tw-passagedata><tw-passagedata pid="2" name="gadgets" tags="" position="225,100" size="100,100">You take a gander at the gadgets. As happy as some of your colleagues might have been to be here, you don&#39;t understand much of the stuff lying around here. 
+Back in the days when graphics weren&#39;t a thing, text used to be quite a gaming thing on it&#39;s own. A whole reality powered by your imagination, only to be broken by the deception of ...
 
-Your train of thoughts take you to the time when you were deciding a career. Why did you choose the role of a technician?
+The internet stopped working. You can choose to sit staring at the computer or go outside
 
-[[Your district was to be subsumed by another one, you needed a job]]  
+[[stay]]  
 
-[[You have always been fascinated by gadgets]]</tw-passagedata><tw-passagedata pid="3" name="flower pot" tags="" position="583,397" size="100,100">You bring the flower pot closer to smell the lillies. The pot feels heavier than it should. 
+[[walk outside]]</tw-passagedata><tw-passagedata pid="2" name="stay" tags="" position="143,72" size="100,100">You decided to stay for a bit. You realise that waiting for the internet to return might be the best thing to do now.
 
-You look in to find a few more hard disks. You chuckle at their level of sneakiness.
+In the meantime you realise that you should get the homework done. The internet returns but you complete your assignment.
 
-You should probably take a look at the [[gadgets]]</tw-passagedata><tw-passagedata pid="4" name="outside" tags="" position="733,397" size="100,100">Bright lights surround the trailer with a rough and unclear voice shouting something on the loudspeakers, the continous roar forces you to walk out and ask what the matter is.
+You might be wondering why I didn&#39;t end the game here saying something like - &quot;YOU STAY SEATEN FOR ETERNITY&quot;. I just hate it when that happens.
+You might be wondering what role does this voice plays here anyway?
 
-You see the federal tactical team at the doorsteps asking you for your [[name]].</tw-passagedata><tw-passagedata pid="5" name="Your district was to be subsumed by another one, you needed a job" tags="" position="358,547" size="100,100">You remember watching on TV when you were in your classroom, the Andromeda federation decided to eradicate several districts in your area and place tourist space ports instead. It did not bother you much but you were sympathetic towards the emotional response of your loved ones.
+[[who are you?]]</tw-passagedata><tw-passagedata pid="3" name="walk outside" tags="" position="18,163" size="100,100">The world outside is a dream any way, everything is a dream, do you really want to leave the room?
 
-With the adjointment of districts, resource sharing was definitely going to be a problem and getting a job looked impossible for someone like you, atleast that&#39;s what you thought. Why?
+[[no-&gt;stay]]  
 
-[[I was of the Orion class, the most persecuted]]  
+[[you don&#39;t tell me what to do -&gt;Open Door]]</tw-passagedata><tw-passagedata pid="4" name="Open Door" tags="" position="110,290" size="100,100">The sunlight blinds you for a moment, you realise the sun is hidden too deep in the smog, its the LED you forgot to turn off last night.
 
-[[I did not have good grades-&gt;I was of the Orion class, the most persecuted]]  
+The road is moderately empty except for the occassional cars and bikes, and vegetable sellers with their horses.
 
-[[Good grades don&#39;t guarantee jobs-&gt;I was of the Orion class, the most persecuted]]</tw-passagedata><tw-passagedata pid="6" name="You have always been fascinated by gadgets" tags="" position="508,547" size="100,100">Even though you were fascinated by this line of work, you knew that chances of gaining a position were narrowing down. The unstable political situations made it necessary for you to hurry up and acquire the job. But why were you so concerned about it?
+Your friend Rita is buying vegetables. A tea seller is looking at you for some reason.
+
+[[talk to Rita]]  
+
+[[talk to tea seller]]  
+
+[[stand still and observe]]</tw-passagedata><tw-passagedata pid="5" name="talk to Rita" tags="" position="8,410" size="100,100">//&quot;hey, I really wanted to talk to you wait for a bit&quot;//
+
+[[wait]]  
+
+[[attack Rita]]  
+
+[[buy some vegetables too]]</tw-passagedata><tw-passagedata pid="6" name="talk to tea seller" tags="" position="117,405" size="100,100">//&quot;Would you like to buy some tea?&quot;//
+
+[[can I get one for free]]  
+
+[[yes sure]]  
+
+[[no thanks]]  
+
+[[attack]]</tw-passagedata><tw-passagedata pid="7" name="stand still and observe" tags="" position="233,401" size="100,100">You watch the tea seller boiling tea. Rita is looking over vegetables and ocassionally asking for prices
+
+[[talk to Rita]]  
+
+[[talk to tea seller]]</tw-passagedata><tw-passagedata pid="8" name="who are you?" tags="" position="143,180" size="100,100">The narrator, I exist within the limitations of this html file. I compile the reality for you. But you decide your own destiny.
+
+The choices you make lead to you to different pathways that ultimately ends the game at some conclusion to this particular journey. The only constraints are technical - either in the device you are using or your head.
+
+There is a back button on the left in case you haven&#39;t noticed already. You will not be facing any dead ends in the game but if you click a button you didn&#39;t intend to, you can go back.
+
+Now go outside [[Open Door]]</tw-passagedata><tw-passagedata pid="9" name="can I get one for free" tags="" position="0,555" size="100,100">//&quot;Do you find it funny to make fun of poor people&quot;// the guy murmurs. Nevertheless if you were hoping for a sponsored tea shop promotion infront of your house, then its too bad you will have to pay to buy some tea.
+
+[[yes sure]]  
+
+[[no thanks]]</tw-passagedata><tw-passagedata pid="10" name="yes sure" tags="" position="134,537" size="100,100">It will cost you Rs. 5
+
+[[-Rs. 5 for tea]]  
+
+[[no thanks]]</tw-passagedata><tw-passagedata pid="11" name="no thanks" tags="" position="303,552" size="100,100">He returns to his work. You stare at his torn undershirt (**do people call it that) and unhygenic workplace. 
+
+He looks at you.
+
+[[smile and say nothing]]  
+
+[[ask &#39;how you&#39;re doing mate&#39;]]  
+
+[[talk to Rita]]  
+
+[[attack for not saying thanks after you answered his question -&gt;attack]]</tw-passagedata><tw-passagedata pid="12" name="attack" tags="" position="424,482" size="100,100">You hit the tea seller for no apparent reason, in a fit of rage he throws the kettle of boiling hot tea on you. You run back to your house.
+Rita sees the whole incident, she tells everyone in the neighbourhood about it, a few days later when you recover from the burns, you are sent to a mental institution.
+
+Go back, there is more to the story.
+
+---
+GAME OVER. Ending 5.</tw-passagedata><tw-passagedata pid="13" name="smile and say nothing" tags="" position="455,690" size="100,100">He gets back to work
+
+[[talk to Rita]]  
+
+[[stand still and observe]]</tw-passagedata><tw-passagedata pid="14" name="ask &#39;how you&#39;re doing mate&#39;" tags="" position="338,684" size="100,100">He looks at with a look of irritation and then looks away. He wonder whether it is a nice thing to or not.
+
+Go [[talk to Rita]]</tw-passagedata><tw-passagedata pid="15" name="wait" tags="" position="104,680" size="100,100">//&quot;Did you finish that assignment, oh nevermind, I wanted to ask you about a thing, its more like a request .. I mean I heard you like sports so..&quot;//
+
+She&#39;s staring at you, I guess you should say something
+
+[[no]]  
+
+[[attack Rita]]  
+
+talk about the [[assignment]]  
+
+I&#39;d love to know about the [[thing]] you want to ask</tw-passagedata><tw-passagedata pid="16" name="attack Rita" tags="" position="0,688" size="100,100">You forget about the fact that she is a state champion wrestler. Annoyed by your stupid attempt she grabs you by the collar and throws you in the gutter. You never get to learn what she wanted to talk to you about.
+
+[[return home]]</tw-passagedata><tw-passagedata pid="17" name="buy some vegetables too" tags="" position="223,669" size="100,100">You go home to bring some money to buy some vegetables too, but the seller is now gone.
+
+[[Move towards Rita-&gt;wait]]</tw-passagedata><tw-passagedata pid="18" name="-Rs. 5 for tea" tags="" position="418,347" size="100,100">You go home to check your wallet. It had Rs. 100 that you had saved from here and there over the last year. Now you have Rs. 95 left
+
+[[stand still and observe]]  
+
+[[talk to Rita]]</tw-passagedata><tw-passagedata pid="19" name="return home" tags="" position="0,833" size="100,100">You get back home. You sit on your table with your feet on the chair, it gives you a good view of the room, you wonder why a study table has to be in a corner of a room. 
+
+The phone rings. 
+
+[[run to get it-&gt;phone]]  
+
+walk slowly towards the [[phone]] 
+
+don&#39;t attend it, probably hide in a [[corner]]</tw-passagedata><tw-passagedata pid="20" name="no" tags="" position="137,811" size="100,100">//&quot;Well there is this skipping competition for couples, I mean it has to be a Male Female duo I guess coz the posters are all about having a family weekend and stuff..&quot;//
+
+[[I am not a Man]]  
+
+[[Too busy]]  
+
+[[say no -&gt;return home]]  
+
+[[Tell me more]]</tw-passagedata><tw-passagedata pid="21" name="assignment" tags="" position="266,833" size="100,100">I just don&#39;t think my assignment is up to marks with the standards that the teacher board is expecting from us. On one hand we are supposed to show original research on our part without relying on any existing work yet mentioning each and other past and contemporary piece, on the other hand it has to be closer to the word limit.
+
+Now when a question talks about a word limit, it means one must not exceed it, however teachers are always happy about the students blabbering about stuff in their assignments way over the word limit, setting an unfair standard for those who are genuinely working on the project following each and every condition.   
+
+They don&#39;t read it anyway. That just like thick sheets. Probably enjoying the dying forests, also packing up on paper to use as body armour when the zombies strike. They think we will copy paste stuff off the internet beacuse some boomers back in the days did that, and so they justify the writing as if they are influencing us in positive way to study, but how is that any different from some kind of dictatorship.  
+
+Education should be privilege, not punishment
+
+[[wait for her response]]</tw-passagedata><tw-passagedata pid="22" name="thing" tags="" position="511,808" size="100,100">//&quot;Well there is this skipping competition for couples, I mean it has to be a Male Female duo I guess coz the posters are all about having a family weekend and stuff..&quot;//
+
+[[I am not a Man]]  
+
+[[Too busy]]  
+
+[[say no -&gt;return home]]  
+
+[[Tell me more]]</tw-passagedata><tw-passagedata pid="23" name="I am not a Man" tags="" position="0,975" size="100,100">//&quot;Well if you are interested then I&#39;d go and confirm the rules, see if we can go together...&quot;//
+
+[[Too busy]]  
+
+[[No-&gt;return home]]  
+
+I&#39;d love to [[participate]]</tw-passagedata><tw-passagedata pid="24" name="Too busy" tags="" position="130,975" size="100,100">//&quot;Well then thanks for your time Mr. Busy guy !&quot;// She leaves.
+
+[[return home]]</tw-passagedata><tw-passagedata pid="25" name="Tell me more" tags="" position="312,967" size="100,100">//&quot;Well if you are interested then I&#39;d go and confirm the rules. Interested?&quot;//
+
+[[No-&gt;return home]]  
+
+I&#39;d love to [[participate]]</tw-passagedata><tw-passagedata pid="26" name="wait for her response" tags="" position="443,966" size="100,100">//&quot;I have been working on that paper for so long you won&#39;t believe it, like I couldn&#39;t go out with my friends last night, I worry about my boyfriend you know, some other girl might snatch him away.
+BTW, would you write my assignment too&quot;//
+
+[[no]]  
+
+[[yes]]</tw-passagedata><tw-passagedata pid="27" name="yes" tags="" position="433,1081" size="100,100">//&quot;Alright I&#39;ll see you tommorow.&quot;// She leaves. You [[return home]]</tw-passagedata><tw-passagedata pid="28" name="participate" tags="" position="303,1086" size="100,100">//&quot;Well this would be great trust me, we are going to defeat each and every one of them. I have so much work to do, I&#39;ll see you tommorow. I heard you went to the Japan for last year&#39;s competition&quot;//
+
+[[yes]]  
+
+[[what?]]</tw-passagedata><tw-passagedata pid="29" name="what?" tags="" position="309,1212" size="100,100">//&quot;Didn&#39;t you participate in that skipping competition. I don&#39;t have time for this just work on it a bit, if we go for it we will have to work out a lot.&quot;// She leaves.
+
+[[return home]]</tw-passagedata><tw-passagedata pid="30" name="phone" tags="" position="2,1169" size="100,100">//&quot;Hey it&#39;s me Maattheeoo, how you&#39;re doing?&quot;// - says your friend Matthew
+
+[[I don&#39;t accept story given friends-&gt;fine]]  
+
+[[fine]]</tw-passagedata><tw-passagedata pid="31" name="corner" tags="" position="126,1168" size="100,100">You are sitting in a corner of your room. It&#39;s dark and warm. You feel really calm here. There&#39;s a spider here though, are you ok with that?
+
+get the [[phone]]  
+
+put your hands on your ears and go to your [[happy place]]</tw-passagedata><tw-passagedata pid="32" name="fine" tags="" position="2,1318" size="100,100">//&quot;What? I can&#39;t hear you, get out of that apartment you are going to die in there&quot;//
+
+[[leave me alone -&gt;fine]]  
+
+[[go outside]]</tw-passagedata><tw-passagedata pid="33" name="go outside" tags="" position="10,1442" size="100,100">//&quot;Ya so I just had this crazy idea to sell bubblegum flavoured cigarettes made out of carrots. I talked to my friend Bob Macareno, he is getting all that talks ready, we are getting this started in no time. 
+Now I can&#39;t trust just about anyone I meet, I need a friend on this with me. You in?&quot;//
+
+[[In]]  
+
+[[I am working on someone&#39;s project]]  
+
+[[you are stupid]]  
+
+[[what will I do?]]</tw-passagedata><tw-passagedata pid="34" name="In" tags="" position="14,1584" size="100,100">//&quot;I am going to need you to give me Rs. 50, I am handling all the expenses for now but I need some kind of committment from you. I return in as soon as we get the investor money. You in?&quot;//
+
+yeah [[give the money (Rs. 50.56)]] inclusive of all taxes  
+
+[[I am working on someone&#39;s project]] I&#39;m busy dude  
+
+[[I can&#39;t pay the money]]</tw-passagedata><tw-passagedata pid="35" name="I am working on someone&#39;s project" tags="" position="359,1592" size="100,100">//&quot;Go to hell then I wasted my calling money on your stupid voice you filthy moron, you are never going to get rich. You will just look upto me when I get rich and then complain to the government about your waterlogged drain.&quot;//
+
+You get a little upset on this turn on his tone. You get inside your house and sit on your chair upset about his remarks, wondering about your future.
+
+He calls you the very next day just to say it on your face that he got the investment he was talking about.
+A few weeks later you read an article on the newspaper about a ridiculous new bubblegum cigarette that everyone is making memes about but no one is buying.
+There&#39;s also a viral video of Matthew slipping on a banana peel while running from 2 reporters. The other big name investors have threatened to sue to news channels if further reports are made on the company.
+
+You wonder if this is what they call scheudenfraude in German.
+
+---
+
+GAME OVER. Ending 4. Go back and make a different decision. Taking risks is mostly beneficial in video games specially when you can go back.</tw-passagedata><tw-passagedata pid="36" name="you are stupid" tags="" position="121,1591" size="100,100">//&quot;Hey dude I know this is crazy but you know for just this Rs. 50 investment you own half my company. I&#39;ll return it as soon as the investors give me thiers. I just need you to commit to this.&quot;//
+
+I guess it would be nice to have a company [[give the money (Rs. 50.56)]]  
+
+[[I can&#39;t pay the money]]  
+
+[[I am working on someone&#39;s project]] I&#39;m busy dude</tw-passagedata><tw-passagedata pid="37" name="what will I do?" tags="" position="235,1591" size="100,100">//&quot;For now, nothing I just need Rs 50 from you as a commitment on this. I will return when the investors get down on it. You will probably handle accounts or marketing or whatever you want dude, you will own like half of it, it&#39;s your company.&quot;//
+
+[[I can&#39;t pay the money]]  
+
+[[give the money (Rs. 50.56)]]  
+
+[[I am working on someone&#39;s project]] I&#39;m busy dude</tw-passagedata><tw-passagedata pid="38" name="I can&#39;t pay the money" tags="" position="11,1743" size="100,100">//&quot;I guess it&#39;s alright dude. I just need to know that you are with me on this. Are you with me dude?&quot;//
+
+[[Count me in -&gt;give the money (Rs. 50.56)]]  
+
+[[I am working on someone&#39;s project]] I&#39;m busy dude</tw-passagedata><tw-passagedata pid="39" name="give the money (Rs. 50.56)" tags="" position="133,1741" size="100,100">The very next day Matthew returns the money and tells you about the two big investors who are investing on this.
+You now own 6.6% of the company, named Smoked Carrots. Matthew introduces you to the investors as the Marketing manager, later he drags you to a corner and whispers that he is handling everything himself, you don&#39;t have to talk about anything, just chill here.
+Your parents are worried about your venture, they suggest you to focus on your studies
+
+[[time passess]]</tw-passagedata><tw-passagedata pid="40" name="time passess" tags="" position="133,1891" size="100,100">the company is being made fun of online. Matthew is doing a terrible job handling it. He recently fell over a banana peel while running from the reporters. Some recorded and posted that online and now almost everyone in the world has seen that.
+
+Would you [[take over his company]]?  
+
+Suggest that you should [[take over his company]] 
+[[Do nothing]]</tw-passagedata><tw-passagedata pid="41" name="happy place" tags="" position="133,1304" size="100,100">I am slightly worried about you. Its alright if you clicked it as a funny option, but if not then you should talk to someone about it.
+Now for the game - you imagine
+
+[[never ending grasslands -&gt;door opens]]  
+
+[[the desert-&gt;door opens]]  
+
+[[the ocean -&gt;door opens]]  
+
+[[this here is fine -&gt;door opens]]</tw-passagedata><tw-passagedata pid="42" name="door opens" tags="" position="204,1432" size="100,100">You didn&#39;t lock the door so it was open, Matthew walks in. You couldn&#39;t see him instantly coz the room is not that bright, but the person walking in looked familiar enough so you had a rough guess who it could be.
+
+[[..-&gt;go outside]]</tw-passagedata><tw-passagedata pid="43" name="take over his company" tags="" position="133,2041" size="100,100">You are now the CEO of the company. Would like to change the name of the company?
+
+[[I don&#39;t care]]  
+
+[[Yes change the name]]</tw-passagedata><tw-passagedata pid="44" name="Do nothing" tags="" position="23,2041" size="100,100">You choose to do nothing to improve the situation. I guess you find people reliable very easily.
+The Company doesn&#39;t lasts too long, there&#39;s a buyout and you are a millionare now.
+How would like to spend that money?
+
+[[Buy Car]]  
+
+[[Buy house]]  
+
+[[Go for a Vacation]] 
+
+[[Save Money]]</tw-passagedata><tw-passagedata pid="45" name="Buy Car" tags="" position="0,2191" size="100,100">You spend a fortune on an expensive car. Not only is it the most beautiful car ever made (you think), but also it&#39;s the fastest running vehicle on land. However there are no local racetracks, and everytime you take the car out, you get stopped for &quot;routine checks&quot; and suggested to get a &quot;normal car&quot;.
+
+A few local newspapers run an article on your spendings and soon the tax department shows up. You don&#39;t get in any trouble, but the whole set of events make you a laughing stock in town.</tw-passagedata><tw-passagedata pid="46" name="Buy house" tags="" position="25,2311" size="100,100">You can choose to buy a [[lavish bunglow]], or invest wisely and buy several [[real estate]], which you can then rent if you wish to. That way you might be in for a whole new world of adventure, or you might just wish to lead a simple life and spend just on your own villa.</tw-passagedata><tw-passagedata pid="47" name="Go for a Vacation" tags="" position="130,2191" size="100,100">You go for a vacation and have the time of your life. You get to taste 70 different icecreams, 14 different types ofchesse, that was a bit too much for you so you didn&#39;t eat too much after that. You spend a considerable sum on subsequent vacations. The money eventually runs out but you learn a lot about people and the world in your journeys. 
+
+You live a happy live ever after.</tw-passagedata><tw-passagedata pid="48" name="Save Money" tags="" position="248,2191" size="100,100">You save the money for times when you might need it. Every once in a while you spend some money when you need something. It greatly benefits your education. But future seems dim
+
+GAME OVER. Ending 6.
+
+You dream of a future where you utilise that money into projects you enjoy. But not in this reality. ...</tw-passagedata><tw-passagedata pid="49" name="I don&#39;t care" tags="" position="257,1957" size="100,100">//&quot;The name change wouldn&#39;t have made a big difference anyway&quot;//, you say to yourself. An employee noticed you while doing that.
+
+Under your leadership, you hire the best of the business degree candidates, one guy however shows up with no degree or experience and claims that he can boost your sales in a week.
+What do you do?
+
+[[give the job]]  
+
+[[reject]] 
+
+[[offer a paid internship]]
+
+[[Ask Secretary]]</tw-passagedata><tw-passagedata pid="50" name="Yes change the name" tags="" position="258,2077" size="100,100">You change the company name to Brand-Name
+
+Your board of investors did not like Brand-Name as the name of the company.
+
+You can choose between [[Pink Smoke]], or stay with [[Smoked Carrots-&gt;I don&#39;t care]]</tw-passagedata><tw-passagedata pid="51" name="give the job" tags="" position="388,1975" size="100,100">&quot;They call me Bedman, I was a mattress salesman before.&quot;
+
+Within a day Bedman brings you a presentation stating how many regions you should cover and the changes you should make in the marketing strategy.
+
+However he targets college students as the biggest buyers for your cigarettes. His marketing strategy involves distributing sample cigarettes and advertisements with rich people wearing flashy colourful clothes smoking cigarettes as they spend the day driving expensive cars and hanging out at the swimming pool.
+
+[[Agree with Bedman Strategy]]  
+
+[[Disagree with Bedman]]  
+
+[[Attack Bedman]]</tw-passagedata><tw-passagedata pid="52" name="reject" tags="" position="388,1858" size="100,100">You reject the applicant. He sends you an email with curse words. 
+
+Would you like to reply?  
+
+[[Curse him back]]  
+
+[[Move on with the game]]</tw-passagedata><tw-passagedata pid="53" name="offer a paid internship" tags="" position="390,2094" size="100,100">&quot;They call me Bedman, I was a mattress salesman before.&quot;
+
+Within a day Bedman brings you a presentation stating how many regions you should cover and the changes you should make in the marketing strategy.
+
+However he targets college students as the biggest buyers for your cigarettes. His marketing strategy involves distributing sample cigarettes and advertisements with rich people wearing flashy colourful clothes smoking cigarettes as they spend the day driving expensive cars and hanging out at the swimming pool.
+
+[[Agree with Bedman Strategy]]  
+
+[[Disagree with Bedman]]  
+
+[[Attack Bedman]]</tw-passagedata><tw-passagedata pid="54" name="Pink Smoke" tags="" position="260,2321" size="100,100">An online poll you conducted suggests that people think $name would be pretty hip. 
+
+There&#39;s no point to that now.
+
+Under your leadership, you hire the best of the business degree candidates, one guy however shows up with no degree or experience and claims that he can boost your sales in a week.
+What do you do?
+
+[[give the job]]  
+
+[[reject]]  
+
+[[offer a paid internship]]
+
+[[Ask Secretary]]</tw-passagedata><tw-passagedata pid="55" name="Ask Secretary" tags="" position="389,2214" size="100,100">You need a secretary too. But then again, you might think that you can handle the company on your own, any insiders only pose a security threat.
+
+You kept three resumes in a drawer to select a secretary. Company policy is that you won&#39;t be provided with any personal details of the applicant, whom do you choose?
+
+[[Candidate A]], has three years of experience of handling trade in an investment bank. Strong believer in $%#*(censored by HR).  
+
+[[Candidate B]], loves puppies and enjoys volunteering at the soup kitchen. No experience.  
+
+[[Candidate C]], currently owns a hot-dog shop, has worked as an intern in a car dealership before.</tw-passagedata><tw-passagedata pid="56" name="Candidate A" tags="" position="535,2225" size="100,100">It&#39;s an old man. Seems he probably has years of experience but only mentioned that of the last few years. He resembles an old wise sage to you. You start feeling as if anything this man says is good for your company.
+
+Candidate A suggests that you [[give the job]] to the applicant.
+
+You can however choose to [[reject]] the applicant or [[offer a paid internship]].</tw-passagedata><tw-passagedata pid="57" name="Candidate B" tags="" position="399,2359" size="100,100">Her name is Lisa. She didn&#39;t go to business school, and feels quite anxious when you ask her to get corporate clothes. 
+
+She tells you that she has no idea whether you should [[give the job]] or [[reject]] the candidate. She starts telling you a story about a time when she got fired from an ice-cream parlour when they found dog-hairs in a bucket.
+
+She goes out the door saying something like &quot;they make the best icecreams ever, let me bring you one right now.&quot;
+
+You can also choose to [[offer a paid internship]] to the candidate.</tw-passagedata><tw-passagedata pid="58" name="Candidate C" tags="" position="539,2364" size="100,100">He is Bob. He didn&#39;t mention his full name and you found it too awkward to ask now that he has started talking.
+
+Candidate C suggests you [[offer a paid internship]] . He explains that such a move would be beneficial considering that the candidate might actually be promising, while also that way we don&#39;t really have much to lose since a set of employees have been hired already, they know what they are doing in the traditional sense, but some intern investvent might be useful at the moment.
+
+You can however choose to [[give the job]] or [[reject]] the applicant.</tw-passagedata><tw-passagedata pid="59" name="lavish bunglow" tags="" position="25,2461" size="100,100">You get a riverside bunglow with a mountain-view balcony, which the guy told you is a real thing. However the place is quite empty and quiet. No one really lives here. 
 
 
-[[I was of the Orion class, the most persecuted]]  
+GAME OVER. Ending 2. You can choose to [[return home]] to play again and choose different pathways.</tw-passagedata><tw-passagedata pid="60" name="real estate" tags="" position="184,2457" size="100,100">You land into this great line of business. On your first day, someone mails you a legal letter. You sell all your assets in the least possible amount of time.
 
-[[I did not have good grades-&gt;I was of the Orion class, the most persecuted]]  
 
-[[Good grades don&#39;t guarantee jobs-&gt;I was of the Orion class, the most persecuted]]</tw-passagedata><tw-passagedata pid="7" name="I was of the Orion class, the most persecuted" tags="" position="208,697" size="100,100">The safeguard that your district had provided was now on its verge of extinction and your achievements or lack therof were of no significance. 
-The inevitable crisis was spine chilling enough for your family to look for far away places to stay. But you wanted to stay close to town. Why?
+GAME OVER. Ending 3. You can choose to [[return home]] to play again and choose different pathways.</tw-passagedata><tw-passagedata pid="61" name="Curse him back" tags="" position="518,1881" size="100,100">You gather a a team of employees to write the most insulting mail ever written. However it&#39;s so humiliating that you doubt whether you should send it at all.
 
-[[I have always lived here]]  
+[[send insulting mail]]  
 
-[[I was in love]]</tw-passagedata><tw-passagedata pid="8" name="Epilogue" tags="" position="1100,743" size="100,100">You sit calmly as you wait for the authorities to learn of your actions. 
+[[don&#39;t send mail]]</tw-passagedata><tw-passagedata pid="62" name="Move on with the game" tags="" position="518,2008" size="100,100">Your analysts bring you several strategies the next week. While most of them are the same as what Bedman offered last week, other strategies include [[selling out the company]], [[sell normal cigarettes]], [[Market the product to Middle aged men]], or you can choose to [[think your own strategy]].</tw-passagedata><tw-passagedata pid="63" name="Agree with Bedman Strategy" tags="" position="679,1944" size="100,100">You agree with Bedman. Within the week sales rise sky-high as you see college students smoking your brand everywhere. It&#39;s so famous now that everywhere you go you can smell the bubblegum.
 
-Thanks for playing the game. End of prologue. //made for the jam//</tw-passagedata><tw-passagedata pid="9" name="I have always lived here" tags="" position="133,847" size="100,100">You can&#39;t imagine a life away from here. The federation couldn&#39;t successfully evacuate the town and it was now filled with rebel activity who are planting trees on government property to make it illegal to build on it, a problem that the state couldn&#39;t eradicate that easily.
+Few weeks later the ad shows up and your sales increase so fast that your company gets a billion dollar evaluation. 
 
-With its effectual tactical team and patented technolgy, federation is finally succeeding and is now sending troops and technicians to clear up the places before they are demolished.
+[[throw a party]]  
 
-How do you feel about the work?
+[[do some charity]]  
 
-[[It&#39;s work]]  
+[[Attack Bedman]] 
 
-[[I try not to feel just about anything-&gt;It&#39;s work]]</tw-passagedata><tw-passagedata pid="10" name="I was in love" tags="" position="283,847" size="100,100">What was the name of your love interest?
+[[Go for a Vacation]]</tw-passagedata><tw-passagedata pid="64" name="Disagree with Bedman" tags="" position="687,2077" size="100,100">You disagree with Bedman&#39;s plan. Your analysts bring you several strategies the next week. While most of them are the same as what Bedman offered last week, other strategies include [[selling out the company]], [[sell normal cigarettes]], [[Market the product to Middle aged men]], or you can choose to [[think your own strategy]].</tw-passagedata><tw-passagedata pid="65" name="Attack Bedman" tags="" position="684,2203" size="100,100">You attack Bedman with a puch to his throat. He falls. He hasn&#39;t hit his head or anything to the floor too hard, be he seems to be having difficulty breathing. Gasping for some air Bedman is pointing a finger at you.
 
-# {cycling link for: &#39;$love&#39;, choices: [&#39;Brenda&#39;, &#39;Alex&#39;, &#39;Brian&#39;]}
+[[Say Sorry]]  
 
-[[Continue-&gt;her]]</tw-passagedata><tw-passagedata pid="11" name="It&#39;s work" tags="" position="58,997" size="100,100">Ah well it&#39;s not like you have total control over your life anyway, do you?
+[[Bring him water]]  
 
-You stand up for a second, curiously looking outside the window to see how the area looks like. 
+[[Make him stand]]  
 
-There&#39;s a bathroom in this trailer if you want to [[freshen up-&gt;outside]]. You can however go and take a look [[outside]] .</tw-passagedata><tw-passagedata pid="12" name="her" tags="" position="338,997" size="100,100">Your relationship with {$love} was complicated, but you weren&#39;t looking for some social significance, rather you were living in the moment. But times weren&#39;t so great for the two of you.
+[[Leave the room]]  
 
-What happened ? How did you feel about it?
+[[Kick him]]</tw-passagedata><tw-passagedata pid="66" name="throw a party" tags="" position="840,1876" size="100,100">You throw a mind blowing awesome party. Almost all the big names in the city show up. You don&#39;t even know who invited them.
 
-[[Don&#39;t want to talk about it -&gt;It&#39;s work]]  
+You meet with several different big investors who offer to buy out your shares of the company
 
-[[I try not to feel just about anything -&gt;It&#39;s work]]  
+Mr. House Builder offers you [[180 million and a bunglow worth 50 millions-&gt;lavish bunglow]] for your shares in the company.
+Mr. Smokey Potter offers you [[220 million-&gt;selling out the company]] for selling out your shares and combining the production of his cigarette company with yours.
+Mr. Noob offers you [[250 million in TechnocraterShip stocks]], a company he acquired a few years back and has reached quite a high place for itself in no time.
 
-[[I never figured it out -&gt;It&#39;s work]]</tw-passagedata><tw-passagedata pid="13" name="name" tags="" position="733,547" size="100,100">Your accurate response should have solved the situation, but it didn&#39;t. They kept on shouting in gibberish often in sync. 
+Would you like to sell your company to anyone here? or would you like to [[keep building on]] what you have created?</tw-passagedata><tw-passagedata pid="67" name="do some charity" tags="" position="847,1994" size="100,100">You meet with several different big investors who offer to buy out your shares of the company
 
-To clarify things you show them your ID to which they calm down, but then suddently you hear something  //wheez// right past your left ear. 
+[[180 million and a bunglow worth 50 millions-&gt;lavish bunglow]]   
 
-You realize that one of them just shot a gamma ray to scare you. Keeping your shaking fists under control you look at them to see that they are laughing at you.
+[[220 million-&gt;selling out the company]] 
 
-You get back inside the [[trailer]].</tw-passagedata><tw-passagedata pid="14" name="trailer" tags="" position="734,697" size="100,100">As you calm your nerves down you notice that the word &quot;Project $love&quot; is written on one of the screens. 
+[[250 million in TechnocraterShip stocks]]</tw-passagedata><tw-passagedata pid="68" name="Say Sorry" tags="" position="850,2225" size="100,100">You tell him you are sorry as the gasps for some hair. You feel like he didn&#39;t take your apology too well and that annoys you.
 
-Digging down a bit you realise that it&#39;s a computer virus that is going to infect the federation servers through your kit and globaly reveal a forest burning plan that the federation is  promoting as a patented rebel remover.
+[[Kick him]]  
 
-You can choose to [[stop it right now-&gt;Epilogue]] or [[let the disks do its thing-&gt;Epilogue]] until the sun rises and hopefully prevent the genocide. You will however be executed for betraying the state and thus will be sacrificing your life for the people if you choose the latter.</tw-passagedata></tw-storydata></html>
+[[Bring him water]]  
+
+[[Leave the room]]</tw-passagedata><tw-passagedata pid="69" name="Bring him water" tags="" position="990,2223" size="100,100">You bring him some water and order him to drink, but he seems to be refusing your orders.
+
+[[Kick him]]  
+
+[[Leave the room]]</tw-passagedata><tw-passagedata pid="70" name="Make him stand" tags="" position="851,2111" size="100,100">You grab him and make him stand but he falls down again.
+
+[[Kick him]]  
+
+[[Bring him water]]  
+
+[[Say Sorry]]  
+
+[[Leave the room]]</tw-passagedata><tw-passagedata pid="71" name="Leave the room" tags="" position="848,2343" size="100,100">As you leave the room, your secretary shows up and tells you this matter will be taken care of, you don&#39;t have to worry.
+
+You never heard from Bedman again. You feel too uncomfortable to ask your secretary what happened to him.
+
+How do you feel about this incident? 
+
+[[I feel great]]  
+
+[[Nothing really]]  
+
+[[I feel guilty]]</tw-passagedata><tw-passagedata pid="72" name="Kick him" tags="" position="989,2344" size="100,100">You kick him hard. He groans in pain.
+
+[[Leave the room]]</tw-passagedata><tw-passagedata pid="73" name="I feel great" tags="" position="699,2493" size="100,100">Within the reality of this game, it probably doesn&#39;t really matters, but in the real world what you just did was terribly evil, and such actions have bad consequences even for a rich person like you.
+
+You try to remember what you were doing before. You were deciding whether to [[throw a party]] or [[do some charity]] to celebrate your massive success.</tw-passagedata><tw-passagedata pid="74" name="Nothing really" tags="" position="849,2493" size="100,100">You try to remember what you were doing before. You were deciding whether to [[throw a party]] or [[do some charity]] to celebrate your massive success.</tw-passagedata><tw-passagedata pid="75" name="I feel guilty" tags="" position="999,2493" size="100,100">It is appropriate to feel that way considering what you have done. Fights even when just part of a joke can go wrong. 
+
+You try to remember what you were doing before. You were deciding whether to [[throw a party]] or [[do some charity]] to celebrate your massive success.</tw-passagedata><tw-passagedata pid="76" name="selling out the company" tags="" position="1070,1680" size="100,100">You sell your company shares. You are now a free man. Your board of directors did not appreciate your decision. They are not friends with you anymore. You have started to think they were never really your friends.
+
+---
+GAME OVER. Ending 7. You can choose to [[return home]] to play again and choose different pathways.</tw-passagedata><tw-passagedata pid="77" name="sell normal cigarettes" tags="" position="1066,1793" size="100,100">Your company starts selling normal cigarettes. Soon some health department inspection bans your company countrywide. 
+
+You can now only [[sell your shares of the company -&gt;selling out the company]] since the board members are no longer willing to keep you.</tw-passagedata><tw-passagedata pid="78" name="Market the product to Middle aged men" tags="" position="1073,1912" size="100,100">Your marketing strategy does not works out. Everyone blames you for the company&#39;s failure. 
+
+
+You can now only [[sell your shares of the company -&gt;selling out the company]] since the board members are no longer willing to keep you.</tw-passagedata><tw-passagedata pid="79" name="think your own strategy" tags="" position="1074,2028" size="100,100">Your board of directors think that to bloat the prices as a piblicity stunt is a terrible strategy. Some employee of yours has send your suggestion to the company server and now everyone is talking about it. Wile most of them found it ridiculous, some of the employees seem to be agreeing with your strategy but you can&#39;t tell if they are joking.
+
+You can be [[selling out the company]], [[sell normal cigarettes]], or [[Market the product to Middle aged men]]</tw-passagedata><tw-passagedata pid="80" name="send insulting mail" tags="" position="519,1710" size="100,100">He replies with a smiley face and acknowledges his shortcomings. But he now puts up a detailed hypothesis and humbly begs you to employ him on a contract basis even if for a week and he thinks that his theory will get your company to the big leagues.
+
+
+[[offer a paid internship]]  
+
+[[reject]] him anyway</tw-passagedata><tw-passagedata pid="81" name="don&#39;t send mail" tags="" position="630,1800" size="100,100">You feel better about yourself that you did not send the mail. A few days later he sends you another mail to apologise for the vulgur email he had sent.
+
+You offers to help out your company even if on a contract basis saying that he has prepared a hypothesis and if you just let him show up he can prepare a good enough strategy.
+
+[[let him show up -&gt;offer a paid internship]]  
+
+[[send insulting mail]]</tw-passagedata><tw-passagedata pid="82" name="250 million in TechnocraterShip stocks" tags="" position="937,1657" size="100,100">You decide to visit their office the very next day. You bring your secretary with you. You find the company next to an alleyway with only 6 employees. You feel a bit uncomfortable with this arrangement.
+
+You ask them what they are are working on but none of them make sense to you. The leader guy talks of something confidently while moving his hands all around, although distracting you are somewhat assured that they know what they are doing.
+
+What will you do? Will you [[return home]] and go through all the other choices you had? or will you keep the stocks and build the best [[tech company-&gt;real estate]] the world has ever seen?</tw-passagedata><tw-passagedata pid="83" name="keep building on" tags="" position="1114,2158" size="100,100">You decided to stay at your position as the leader of you company. Under your leadership the company survives through years of financial fluctuations and achieves success seen never before. 
+
+As part of your life time achievement award, they name you &quot;Smoker of the century&quot;. You live a successful life.
+
+GAME OVER. Ending 1. Proper ending.</tw-passagedata></tw-storydata></html>

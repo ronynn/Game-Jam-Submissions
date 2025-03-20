@@ -13,12 +13,9 @@ The Sacrificial Trail
 
 
 :: Story Stylesheet [stylesheet]
-#story {
-  max-width: 60ch;
-  min-width: 32ch;
-
-  font-family: "Georgia", serif;
-  font-size: 120%;
+body {
+  font-family: Roboto;
+  font-size: 1.2em;
 }
 
 .passage button {
@@ -104,7 +101,7 @@ stats
 :: Title {"position":"282,39","size":"100,100"}
 <<script>>UIBar.stow();<</script>>\
 <<masteraudio stop>>\
-[img[http://pixelprophecy.com/games/sacrificial-trail/images/title.png]]
+
 !The Sacrificial Trail
 Version 1.02 • a game by Pixel Prophecy • © 2018
 [[► Begin ◄|Start]]

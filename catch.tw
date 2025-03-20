@@ -5,154 +5,161 @@ Catch that Kitty
 :: StoryData
 {
 	"ifid": "F9AC1150-C163-4612-9999-00B98C2C7C4B",
-	"format": "Harlowe",
-	"format-version": "1.2.4",
-	"start": "bus",
-	"zoom": 1
+	"start": "bus"
 }
-
-
-:: Story Stylesheet [stylesheet]
-body, tw-story
-{
-  
-  font-size: 
-}
-tw-link
-{
-  color: #cc0c0c;
-}
-tw-link:hover
-{
-  color: #ff6383
-}
-tw-hook[style*="color:"] tw-link, tw-hook[style*="color:"] .enchantment-link {
-	color: inherit;
-}
-
 
 :: bus {"position":"293.5,1.5","size":"100,100"}
-##Catch that Kitty 
-#####A mission in doubt
+config.style.page.font: "Roboto 19"
+config.style.page.verticalAlign:'top'
+config.body.transition.name: 'fadeInOut'
+config.page.transition.duration: '500ms'
+$knocked:0
+$hurry:0
+$shy:0
+$hipposad:0
+$injured:0
+$badcarl:0
+$hipoor:0
+--
+
+## Catch that Kitty 
+*A mission in doubt*
 
 You are sitting on the edge of the seat on the bus. Your stop is nearby, but the driver doesn't seems to be interested in stopping the bus. You quickly glance around, no one seems to be eager to set foot on land. You might be the only one going for Carl's restaurant, quite a place he found in the middle of nowhere. 
 
-[[Ask the driver to stop the bus when it reaches the stop]]
+[[Ask the driver to stop the bus when it reaches the stop]]  
+
 [[Wait for the driver to remind you when it reaches the stop]]
 
 
-:: Ask the driver to stop the bus when it reaches the stop {"position":"413.5,168.5","size":"100,100"}
+:: Ask the driver to stop the bus when it reaches the stop
 The driver looks at you with a cigar in his mouth and then continues driving.
 You wonder whether it's legal to smoke cigar's in a place like here.
 
-[[Wait for the driver to remind you when it reaches the stop]] 
+[[Wait for the driver to remind you when it reaches the stop]]  
+
 [[Tell him not to smoke cigar on the bus]]
 
 
-:: Wait for the driver to remind you when it reaches the stop {"position":"190.5,157.5","size":"100,100"}
+:: Wait for the driver to remind you when it reaches the stop
 You get your mind away from it. You already have a lot to think about and you know that Boss won't show any kindness to a mission like this. You chuckle to yourself how this would have sounded under different circumstances but while you were busy with your thoughts, the driver drove past your stop and now you will have to walk a few yards for no reason.
 
-[[Ask the driver to stop the bus]]
+[[Ask the driver to stop the bus]]  
+
 [[Jump out of the bus]]
 
 
-:: Tell him not to smoke cigar on the bus {"position":"495.5,291.5","size":"100,100"}
+:: Tell him not to smoke cigar on the bus
 The driver ignores your attention to detail. This makes you upset. What do you do?
 
-[[Ask the driver to stop the bus]]
-[[Jump out of the bus]]
+[[Ask the driver to stop the bus]]  
+
+[[Jump out of the bus]]  
+
 [[fight the driver]]
 
 
-:: Ask the driver to stop the bus {"position":"115.5,307.5","size":"100,100"}
+:: Ask the driver to stop the bus
 The driver looks at you with an angry expression and says "no one lives here, you probably want to go in the city, thats next stop, that's where I'm stopping"
 
 You calculated in your head that it wouldn't be too much to walk from the next stop, so you can decide to [[wait for the driver to stop the bus->carl]] 
-Or you can [[fight the driver]], that should do the trick.
+Or you can [[fight the driver]], that should do the trick.  
+
 You can ofcourse [[Jump out of the bus]] if that's your thing.
 
 
-:: Jump out of the bus {"position":"265.5,307.5","size":"100,100"}
-(set:$injured to 1)
+:: Jump out of the bus
+$injured:1
+--
 
 Why did you jump out of the bus, you could have talked with the driver.
 
-[[Didn't want to bother]]
+[[Didn't want to bother]]  
+
 [[Didn't want to waste time]]
 
 
-:: Didn't want to bother {"position":"190.5,457.5","size":"100,100"}
-(set:$shy to 1)
+:: Didn't want to bother
+$shy:1
+--
 
 You are a shy one aren't you. It was a pretty ridiculous thing to do still.
 
 But it's important right now, you have no time to waste. How are you going to find Carl's restaurant.
 
-[[I know where it is ->carl]]
+[[I know where it is ->carl]]  
+
 [[I'll figure it out on the way ->carl]]
 
 
-:: Didn't want to waste time {"position":"340.5,457.5","size":"100,100"}
-(set:$hurry to 1)
+:: Didn't want to waste time
+$hurry:1
+--
 
 Too much hurry can be dangerous sometimes. But it's important right now, you have no time to waste. How are you going to find Carl's restaurant.
 
-[[I know where it is ->carl]]
+[[I know where it is ->carl]]  
+
 [[I'll figure it out on the way ->carl]]
 
 
-:: carl {"position":"340.5,607.5","size":"100,100"}
+:: carl
 Before you could choose which path to take you see a Black SUV stopping past you. As the car door opens you see a man who slightly resembles Carl as you saw in his picture. He looks at you removes his glassess and says 'Wan't a lollipop ?"
-What do you say?
-[[Mom said not to talk to strangers]]
+What do you say?  
+
+[[Mom said not to talk to strangers]]  
+
 [[Carl?]]
 
 
-:: Mom said not to talk to strangers {"position":"265.5,757.5","size":"100,100"}
+:: Mom said not to talk to strangers
 Hey you are Hippos girl right? Let me make it clear, I am Carl, I own the restaurant here, I mean Hippo still owns the whole place but if you talk about papers, We can't discuss stuff here [[hop in]] my car.
 
 You could say [["I'm a guy"]] or just [[ask him what's the talk->Just tell me what you have]]
 
 
-:: Carl? {"position":"415.5,757.5","size":"100,100"}
+:: Carl?
 That's what my friend call me, I own the restaurant here, I mean Hippo still owns the whole place but if you talk about papers, you Hippo's guy right? 
 
-[["Girl"]]
+[["Girl"]]  
+
 [[Just tell me what you have]]
 
 
-:: "Girl" {"position":"340.5,907.5","size":"100,100"}
+:: "Girl"
 Carl looks visibly confused and asks you " I thought he ain't got no girlfriend, I thought ... "
 
 You can try to [[clarify that you are just one old henchman]], or say"[[Just tell me what you have]]"
 
 
-:: Just tell me what you have {"position":"490.5,907.5","size":"100,100"}
+:: Just tell me what you have
 Carl avoids eye contact for a brief moment and then with his back towards you appears to be pulling something out of his jacket.
 
 It could be a gun, but you have a boomerang. [[throw your boomerang at him]]. You could just warn him that you [[have a boomerang]]. You can however just [[wait]].
 
 
-:: clarify that you are just one old henchman {"position":"334.5,1057.5","size":"100,100"}
+:: clarify that you are just one old henchman
 Carl starts laughing like a maniac while slamming his hand on his head multiple times. As you wait for his laughter to stop he points to his car and gets back in. You can choose [[hop in]] or leave because [[Mom also said not to get on stranger's cars->Mom said not to talk to strangers]]
 
 
-:: hop in {"position":"340.5,1207.5","size":"100,100"}
+:: hop in
 You decided to sit at the back seat to keep an eye on Carl, you have never walked out for a job without knowing where you are going, but finding this cat has been a hassle if anything so far.
 
 Carl tries to fill the silence saying " you know .. icecream parlour .. they are building one here ... I'll be rich ... how much Hippo got?"
 
-Answer - [[He's going low at the moment still millions I guess]]
+Answer - [[He's going low at the moment still millions I guess]]  
+
 or you can say - [[Who's asking?]]
 
 
-:: "I'm a guy" {"position":"230.5,907.5","size":"100,100"}
+:: "I'm a guy"
 Carl stares at you and stops moving. You could [[hop in]] his car or say [[Just tell me what you have]] .
 
 
-:: throw your boomerang at him {"position":"470.5,1057.5","size":"100,100"}
-(set:$badcarl to 1)
-(set:$knocked to 0)
+:: throw your boomerang at him
+$badcarl:1
+$knocked:1
+--
 
 You pull out your boomerang and throw at him, it hits him in the face. Carl looks at you with a suprised and angry stare, then hurries to get something out of his pocket which turns out to be a newspaper clip.
 
@@ -163,12 +170,13 @@ You should now [[hop in]] his car.
 You can leave all this mess and [[go home]]. Hippo will be looking everywhere for you so finding a way out would be tough but its an easy way out.
 
 
-:: have a boomerang {"position":"600.5,1057.5","size":"100,100"}
+:: have a boomerang
 "Now what is that supposed to mean, I forgot what i was going to show you, c'mon [[hop in]] my car."
 
 
-:: wait {"position":"724.5,1043.5","size":"100,100"}
-(set:$knocked to 1)
+:: wait
+$knocked:1
+--
 
 He pulls out a big rotten fish and throws at you, it hits at at the head and knocks you unconcious.
 
@@ -177,41 +185,64 @@ You wake up.
 You are under an unfamiliar roof, you know something is going wrong. Getting knocked out by a fish was never part of any plan. 
 You can hear a few people talking in the next room. You still have the boomerang in your pocket.
 
-[[Throw the boomerang in a way that it hits everyone in the other room and travels back to you->Fight]] 
-[[Take a nap]]
+[[Throw the boomerang in a way that it hits everyone in the other room and travels back to you->Fight]]  
+
+[[Take a nap]]  
+
 [[Walk through the door]]
 
 
-:: Take a nap {"position":"724.5,1193.5","size":"100,100"}
+:: Take a nap
 You decided to take a nap, all you were supposed to do was to get to the restaurant and wait for further instructions, you are probably at the spot, there's really not much left for you to do.
 
 About half an hour passess when someone wakes you up, you find it to be Carl. He lifts you up calmly with a smile, and shows you a door.
 
 You walk through the door and enter a room full of smoke and smell of alchohol. Your heart rate aces as the atmosphere brings memories that you have taken years to forget.
 
-Carl point towards a guy wearing a red suit and asks you to talk to him. (if:$knocked is 1)[He then touches his ears as if to apologise and says "you know the roughhousing part, forget about it, you was not going and wasting time I dint know what to do, don't tell Hippo you ain't hurt right?']
+Carl point towards a guy wearing a red suit and asks you to talk to him.
 
-You start walking towards the guy in the red preparing how to start talking. (if:$shy is 1)[Your shy-ness keeps you from talking to people in a confident manner, but when its the job you don't really get other options]
+[if $knocked === 1]
+He then touches his ears as if to apologise and says "you know the roughhousing part, forget about it, you was not going and wasting time I dint know what to do, don't tell Hippo you ain't hurt right?'
+[cont]
 
-[["I presume you are redman"->redman]]
-[["Carl send me to talk to you"->redman]]
+You start walking towards the guy in the red preparing how to start talking.
+
+[if $shy === 1]
+Your shy-ness keeps you from talking to people in a confident manner, but when its the job you don't really get other options
+[cont]
+
+[["I presume you are redman"->redman]]  
+
+[["Carl send me to talk to you"->redman]]  
+
 [[Sweat profusely then shout your name]]
 
 
-:: Walk through the door {"position":"874.5,1193.5","size":"100,100"}
+:: Walk through the door
 You walk through the door and enter a room full of smoke and smell of alchohol. Your heart rate aces as the atmosphere brings memories that you have taken years to forget.
 
-Carl point towards a guy wearing a red suit and asks you to talk to him. (if:$knocked is 1)[He then touches his ears as if to apologise and says "you know the roughhousing part, forget about it, you was not going and wasting time I dint know what to do, don't tell Hippo you ain't hurt right?']
+Carl point towards a guy wearing a red suit and asks you to talk to him. 
 
-You start walking towards the guy in the red preparing how to start talking. (if:$shy is 1)[Your shy-ness keeps you from talking to people in a confident manner, but when its the job you don't really get other options]
-
-[["I presume you are redman"->redman]]
-[["Carl send me to talk to you"->redman]]
-[[Sweat profusely then shout your name]]
+[if $knocked === 1]
+He then touches his ears as if to apologise and says "you know the roughhousing part, forget about it, you was not going and wasting time I dint know what to do, don't tell Hippo you ain't hurt right?'
+[cont]
 
 
-:: He's going low at the moment still millions I guess {"position":"265.5,1357.5","size":"100,100"}
-(set:$Hipoor to 1)
+You start walking towards the guy in the red preparing how to start talking.
+[if $shy === 1]
+Your shy-ness keeps you from talking to people in a confident manner, but when its the job you don't really get other options
+[cont]
+
+[["I presume you are redman"->redman]]  
+
+[["Carl send me to talk to you"->redman]]  
+
+[[Sweat profusely then shout your name]]  
+
+
+:: He's going low at the moment still millions I guess
+$Hipoor:1
+--
 
 "is he?" Carl acts surprised and doesn't puts too much effort into it. He fiddles with his phone for a bit. It worries you but then you realise that its an empty town chances of facing an accident are low, but you still feel nervous about his bad practices while driving. 
 
@@ -220,13 +251,18 @@ You stare out the window trying to keep track of the road, in case return route 
 In a few minutes you reach Carl's restaurant. As you get out the car Carl points out to go inside. And then takes his car towards the back road. 
 You know it never worked for the best for someone to be in a hurry in this business.
 
-(if:$hurry is 1)[You on the other hand live for it dont you?] What do you do?
+[if $hurry ===1]
+You on the other hand live for it dont you?] 
+[cont]
 
-[[Walk through the door]] 
+What do you do?
+
+[[Walk through the door]]  
+
 [[Wait for Carl->Walk through the door]]
 
 
-:: Who's asking? {"position":"415.5,1357.5","size":"100,100"}
+:: Who's asking?
 "Just making chat dog, why you so serious, you don't like ice cream?"
 
 You stare out the window trying to keep track of the road, in case return route has to be taken on your own.
@@ -234,53 +270,84 @@ You stare out the window trying to keep track of the road, in case return route 
 In a few minutes you reach Carl's restaurant. As you get out the car Carl points out to go inside. And then takes his car towards the back road. 
 You know it never worked for the best for someone to be in a hurry in this business.
 
-(if:$hurry is 1)[You on the other hand live for it dont you?] What do you do?
+[if $hurry === 1]
+You on the other hand live for it dont you?
+[cont]
 
-[[Walk through the door]] 
+What do you do?
+
+[[Walk through the door]]   
+
 [[Wait for Carl->Walk through the door]]
 
 
-:: redman {"position":"799.5,1342.5","size":"100,100"}
-"Yes indeed, the name's Man, Red Man. You see Carl and I have been talking about Hippo and I have reason to believe that Hippo isn't doing so well at the business side of things. (if:$Hipoor is 1)[You confirmed my assumption so thanks for that]."
+:: redman
+"Yes indeed, the name's Man, Red Man. You see Carl and I have been talking about Hippo and I have reason to believe that Hippo isn't doing so well at the business side of things. 
 
-"Now I don't like chatting around bushes, because ... you  know ... people would think I am crazy, so I like to keep a journal, keep a note of my thoughts along with my finances, now I know Carl here is supposed to be your informant but all he really knows about the deal is that I can get you what you want." Looking for Carl and with him nowhere in sight Red man whispers to you - "What I want is simple, I want this guy's restaurant, and the whole area too, but I don't hurry around for stuff, (if:$hurry is 1)[unlike you]. I want Hippo to not be involved in this matter at all, my men have kept the place surrounded and all I really need you to do is not say anything, not do anything, and handle Hippo when you bring his jewellery back to him. Isn't that what he send you here for, those coins with kitten designs on 'em"?"
+[if $Hipoor === 1]
+You confirmed my assumption so thanks for that."
 
-What do you do?
-[[Let them take the restaurant]]
-[[Fight them to save the restaurant->Let them take the restaurant]] (if:$knocked is 1)[remember that he knocked you unconscious, and blamed the spur of the moment and a dead fish]
+"Now I don't like chatting around bushes, because ... you  know ... people would think I am crazy, so I like to keep a journal, keep a note of my thoughts along with my finances, now I know Carl here is supposed to be your informant but all he really knows about the deal is that I can get you what you want." Looking for Carl and with him nowhere in sight Red man whispers to you - "What I want is simple, I want this guy's restaurant, and the whole area too, but I don't hurry around for stuff. I want Hippo to not be involved in this matter at all, my men have kept the place surrounded and all I really need you to do is not say anything, not do anything, and handle Hippo when you bring his jewellery back to him. Isn't that what he send you here for, those coins with kitten designs on 'em"?"
+
+What do you do?  
+
+[[Let them take the restaurant]]  
+
+[[Fight them to save the restaurant->Let them take the restaurant]]
+
+[if $knocked === 1]
+remember that he knocked you unconscious, and blamed the spur of the moment and a dead fish.
 
 
-:: Sweat profusely then shout your name {"position":"949.5,1343.5","size":"100,100"}
+:: Sweat profusely then shout your name
 Carl looks at you with a shocked gaze. The man in the red suit squinted his eyes for a brief moment and then asks you - " nervous hey, we are all friends here".
 
-He then offers you a glass of water which you decline and then he starts speaking - "You see Carl and I have been talking about Hippo and I have reason to believe that Hippo isn't doing so well at the business side of things. (if:$Hipoor is 1)[You confirmed my assumption so thanks for that]."
+He then offers you a glass of water which you decline and then he starts speaking - "You see Carl and I have been talking about Hippo and I have reason to believe that Hippo isn't doing so well at the business side of things."
 
-"Now I don't like chatting around bushes, because ... you  know ... people would think I am crazy, so I like to keep a journal, keep a note of my thoughts along with my finances, now I know Carl here is supposed to be your informant but all he really knows about the deal is that I can get you what you want." Looking for Carl and with him nowhere in sight Red man whispers to you - "What i want is simple, I want this guy's restaurant, and the whole area too, but I don't hurry around for stuff, (if:$hurry is 1)[unlike you]. I want Hippo to not be involved in this matter at all, my men have kept the place surrounded and all I really need you to do is not say anything, not do anything, and handle Hippo when you bring his jewellery back to him. Isn't that what he send you here for, those coins with kitten designs on 'em"?"
+"Now I don't like chatting around bushes, because ... you  know ... people would think I am crazy, so I like to keep a journal, keep a note of my thoughts along with my finances, now I know Carl here is supposed to be your informant but all he really knows about the deal is that I can get you what you want." Looking for Carl and with him nowhere in sight Red man whispers to you - "What i want is simple, I want this guy's restaurant, and the whole area too, but I don't hurry around for stuff, 
 
-What do you do?
-[[Let them take the restaurant]]
-[[Fight them to save the restaurant->Let them take the restaurant]] (if:$knocked is 1)[remember that he knocked you unconscious, and blamed the spur of the moment and a dead fish]
+[if $hurry === 1]
+unlike you
+[cont]
+. I want Hippo to not be involved in this matter at all, my men have kept the place surrounded and all I really need you to do is not say anything, not do anything, and handle Hippo when you bring his jewellery back to him. Isn't that what he send you here for, those coins with kitten designs on 'em"?"
+
+What do you do?  
+
+[[Let them take the restaurant]]  
+
+[[Fight them to save the restaurant->Let them take the restaurant]]
+
+[if $knocked === 1]
+Remember that he knocked you unconscious, and blamed the spur of the moment and a dead fish.
 
 
-:: Let them take the restaurant {"position":"724.5,1493.5","size":"100,100"}
+:: Let them take the restaurant
+
 There's no hurry, we were waiting for Hippo's call and now its here. Talk to him, tell him whats on offer and remember, you have nothing to lose here no pressure.
 
 You hold the telephone near your ears to hear Hippo's voice - "look its a nice deal, I'll act angry to get some more money out of these people, you act like you are trying to make me agree OK?"
 
 You stand there holding the phone with no expression on your face. You hear Hippo's voice which sounds a bit faded now.
 
-"(if:$injured is 1)[Carl says you look injured, what's wrong you go for a fight on the way with someone?"]
-(if:$hipposad is 1)[and what do I hear about this, you started walking away when Carl asked you to sit in his car. What? you got hit in the head or something?"]
+[if $injured === 1]
+Carl says you look injured, what's wrong you go for a fight on the way with someone?"
+
+
+[if $hipposad === 1]
+and what do I hear about this, you started walking away when Carl asked you to sit in his car. What? you got hit in the head or something?"
+
+[cont]
 
 You can choose to fight for saving Carl's restaurant or agree with everyone to let the restaurant captured by Redman and his men. What do you do?
 
-[[Agree]]
+[[Agree]]  
 
 [[Fight]]
 
 
-:: go home {"position":"992.5,918.5","size":"100,100"}
-(set:$hipposad to 1)
+:: go home
+$hipposad:1
+--
 
 You decided to leave this whole shenanigan and start walking towards the bus stop. You feel Carl staring at you but decided not to look back. You wait for an hour for a bus and leave for your house to pack your bags and leave town. Hippo won't be happy.
 
@@ -289,10 +356,10 @@ You can just go back and [[hop in]] his car but he might tell others about your 
 You can start from when you were on the [[bus]] 
 
 
-###ending 3 (story incomplete)
+### ending 3 (story incomplete)
 
 
-:: Agree {"position":"649.5,1643.5","size":"100,100"}
+:: Agree
 You decided to agree with them and stood in a corner as two musclemen entered the room from the kitchen and grabbed Carl.
 
 "Hey what is going on now I don't see why you guys are going about grabbing me all of a sudden."
@@ -313,23 +380,26 @@ You have only two options now [[attack Carl]] and bring him back in hopes to get
 You can sit back relax and wait for [[what happens]]
 
 
-:: Fight {"position":"799.5,1643.5","size":"100,100"}
+:: Fight
+
+
 You decided to fight against a room full of gangsters for reasons known only to yourself.
 
 Before you even finished looking around one of the guys tries to hit you on the face which you somehow blocked, but then you could not block the next one from another guy and he hits you hard on your shoulder.
 
-But as you notice 3 musclemen entering from the kitchen someone grabs your arm and drags you towards the main door. You see it's Carl, he says - " I don't know what's the deal with you and why you started fighting,(if:$badcarl is 1)[and I don't like you,] but here take my car, drive fast" and gives you his car keys and starts running towards the field, you hurry up towards the back of the restaurant (if:$knocked is 0)[where you saw the parking lot]. 
+But as you notice 3 musclemen entering from the kitchen someone grabs your arm and drags you towards the main door. You see it's Carl, he says - " I don't know what's the deal with you and why you started fighting, but here take my car, drive fast" and gives you his car keys and starts running towards the field, you hurry up towards the back of the restaurant where you saw the parking lot. 
 
 On your way towards back to the city as you reach enough distance from the restaurant to calm your nerves, you hear some noise at the back of the car. You decide to look into it, and find a little kitten meowing.
 
 Holding the kitten in your hands you wonder what mission were you sent for in the first place. You put the kitten back in its box and decide to start driving. Hippo's place might not be the best place to go now, and your work is now uncertain.
 
-###end of episode 1 
-##good ending
+# end of episode 1 
+# good ending
 
 
-:: fight the driver {"position":"542.5,472.5","size":"100,100"}
-(set:$injured to 1)
+:: fight the driver
+$injured:1
+--
 
 You punch the driver on his face which successfully gets the bus stopped, but as you try to get off it you feel your collar being nabbed and a slow motion punch that feels like .. nothing. 
 
@@ -340,16 +410,17 @@ As you try to get his hands off your collar, the man kicks you out of his bus an
 You should go [[find the restaurant->carl]] now, you can however choose to [[GO HOME]] and leave this mess altogether. You probably never even wanted to be in the business at all.
 
 
-:: GO HOME {"position":"914.5,457.5","size":"100,100"}
+:: GO HOME
+  
 You decided to leave this whole shenanigan and start walking towards the bus stop.
 
 You can start from when you were on the [[bus]] 
 
 
-###ending 3 (story incomplete)
+# ending 3 (story incomplete)
 
 
-:: attack Carl {"position":"574.5,1793.5","size":"100,100"}
+:: attack Carl
 You attack Carl successfully and get the car stopped. You tie him up and put him on the back seat.
 
 When you return Red man seems pleased, he says "you seem useful, I wish any of my men were as good as you, wait here, I'll bring you the coins", and as you wait by the car, the two musclemen jump on you from behind and put a mask on your face making you incapable of seeing anything. 
@@ -358,17 +429,29 @@ You hear Redman's voice "you are too good to be kept with Hippo", I have to fix 
 
 Your future is unknown.
 
-###Game Over
-########Go back probably this is not one of the three endings.
+# Game Over
+## Go back probably this is not one of the three endings.
 
 
-:: what happens {"position":"724.5,1793.5","size":"100,100"}
-You decided to wait and see whatever happens, you chose to live in the moment. (if:$hurry is 1)[not in a hurry like when you started the game]
-(if:$injured is 1)[your injuries don't hurt that much at this moment, you are glad you didn't break anything]
-(if:$badcarl is 1)[Carl might be upset that you attacked him with a boomerang so probably watch your back]
-(if:$knocked is 1)[Carl did knock you out so watch your back]
+:: what happens
 
-####end of episode 1
-##Ambigous Ending
+You decided to wait and see whatever happens, you chose to live in the moment.
+
+[if $hurry === 1]
+Not in a hurry like when you started the game  
+
+[if $injured === 1]
+Your injuries don't hurt that much at this moment, you are glad you didn't break anything  
+
+[if $badcarl === 1]
+Carl might be upset that you attacked him with a boomerang so probably watch your back.  
+
+[if $knocked === 1]
+Carl did knock you out so watch your back for that too.
+
+[cont]
+
+# End of episode 1
+## Ambigous Ending
 
 

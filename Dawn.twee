@@ -4,25 +4,19 @@ Dawn
 
 :: StoryData
 {
-	"ifid": "E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F",
-	"format": "Harlowe",
-	"format-version": "1.2.4",
-	"start": "Untitled Passage",
-	"zoom": 1
+	"ifid": "E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F"
 }
 
 
-:: Story Stylesheet [stylesheet]
-body, tw-story
-{
-  font-family: Monospace;
-  font-size: 22px;
-  background-color: maroon;
-  color: white;
-}
 
 
-:: Untitled Passage {"position":"582,235","size":"100,100"}
+:: Start
+config.style.page.font: "Roboto 19"
+config.style.page.verticalAlign:'top'
+config.body.transition.name: 'fadeInOut'
+config.page.transition.duration: '500ms'
+--
+
 A sweet smell surrounds you as you step in to spend your night shift in this trailer. Lilies were always your favourite. Too bad you don't often see a lot of them around here anymore.
 
 You are on duty. You have been sent to inspect this abandoned trailer park and the tech lying here. Your orders are to connect your detection kit to all the abandoned hardware one at a time, any information lying around will be automatically uploaded to the server for inspection by analysts.
@@ -30,12 +24,13 @@ You are on duty. You have been sent to inspect this abandoned trailer park and t
 While the data is transferring, you are free to hang around. There are several computer [[gadgets]] here. A [[flower pot]] adores the wall on your left.
 
 
-:: gadgets {"position":"433,397","size":"100,100"}
+:: gadgets
 You take a gander at the gadgets. As happy as some of your colleagues might have been to be here, you don't understand much of the stuff lying around here. 
 
 Your train of thoughts take you to the time when you were deciding a career. Why did you choose the role of a technician?
 
-[[Your district was to be subsumed by another one, you needed a job]]
+[[Your district was to be subsumed by another one, you needed a job]]  
+
 [[You have always been fascinated by gadgets]]
 
 
@@ -58,8 +53,10 @@ You remember watching on TV when you were in your classroom, the Andromeda feder
 
 With the adjointment of districts, resource sharing was definitely going to be a problem and getting a job looked impossible for someone like you, atleast that's what you thought. Why?
 
-[[I was of the Orion class, the most persecuted]]
-[[I did not have good grades->I was of the Orion class, the most persecuted]] 
+[[I was of the Orion class, the most persecuted]]  
+
+[[I did not have good grades->I was of the Orion class, the most persecuted]]  
+
 [[Good grades don't guarantee jobs->I was of the Orion class, the most persecuted]]
 
 
@@ -67,8 +64,10 @@ With the adjointment of districts, resource sharing was definitely going to be a
 Even though you were fascinated by this line of work, you knew that chances of gaining a position were narrowing down. The unstable political situations made it necessary for you to hurry up and acquire the job. But why were you so concerned about it?
 
 
-[[I was of the Orion class, the most persecuted]]
-[[I did not have good grades->I was of the Orion class, the most persecuted]] 
+[[I was of the Orion class, the most persecuted]]  
+
+[[I did not have good grades->I was of the Orion class, the most persecuted]]  
+
 [[Good grades don't guarantee jobs->I was of the Orion class, the most persecuted]]
 
 
@@ -76,7 +75,8 @@ Even though you were fascinated by this line of work, you knew that chances of g
 The safeguard that your district had provided was now on its verge of extinction and your achievements or lack therof were of no significance. 
 The inevitable crisis was spine chilling enough for your family to look for far away places to stay. But you wanted to stay close to town. Why?
 
-[[I have always lived here]]
+[[I have always lived here]]  
+
 [[I was in love]]
 
 
@@ -93,15 +93,17 @@ With its effectual tactical team and patented technolgy, federation is finally s
 
 How do you feel about the work?
 
-[[It's work]]
+[[It's work]]  
+
 [[I try not to feel just about anything->It's work]]
 
 
 :: I was in love {"position":"283,847","size":"100,100"}
 What was the name of your love interest?
-[[Her name was ... ->her]]
-[[His name was ...->her]]
-[[I am talking about ...->her]]
+
+# {cycling link for: '$love', choices: ['Brenda', 'Alex', 'Brian']}
+
+[[Continue->her]]
 
 
 :: It's work {"position":"58,997","size":"100,100"}
@@ -113,19 +115,19 @@ There's a bathroom in this trailer if you want to [[freshen up->outside]]. You c
 
 
 :: her {"position":"338,997","size":"100,100"}
-(set: $love to (prompt: "Enter the name."))
 
-Your relationship with $love was complicated, but you weren't looking for some social significance, rather you were living in the moment. But times weren't so great for the two of you.
+Your relationship with {$love} was complicated, but you weren't looking for some social significance, rather you were living in the moment. But times weren't so great for the two of you.
 
 What happened ? How did you feel about it?
 
-[[Don't want to talk about it ->It's work]] 
-[[I try not to feel just about anything ->It's work]] 
+[[Don't want to talk about it ->It's work]]  
+
+[[I try not to feel just about anything ->It's work]]  
+
 [[I never figured it out ->It's work]]
 
 
 :: name {"position":"733,547","size":"100,100"}
-(set: $name to (prompt: "Enter your name."))
 Your accurate response should have solved the situation, but it didn't. They kept on shouting in gibberish often in sync. 
 
 To clarify things you show them your ID to which they calm down, but then suddently you hear something  //wheez// right past your left ear. 

@@ -1,4 +1,4 @@
-<!doctype html><html><head><title>Dawn</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><script type="module" crossorigin>
+<!doctype html><html><head><title>Intergalactic Chat Simulator</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><script type="module" crossorigin>
 var Wn=Object.defineProperty;var Zn=(n,e,t)=>e in n?Wn(n,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[e]=t;var U=(n,e,t)=>(Zn(n,typeof e!="symbol"?e+"":e,t),t),St=(n,e,t)=>{if(!e.has(n))throw TypeError("Cannot "+t)};var pe=(n,e,t)=>(St(n,e,"read from private field"),t?t.call(n):e.get(n)),Et=(n,e,t)=>{if(e.has(n))throw TypeError("Cannot add the same private member more than once");e instanceof WeakSet?e.add(n):e.set(n,t)},_t=(n,e,t,r)=>(St(n,e,"write to private field"),r?r.call(n,t):e.set(n,t),t);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))r(i);new MutationObserver(i=>{for(const s of i)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&r(a)}).observe(document,{childList:!0,subtree:!0});function t(i){const s={};return i.integrity&&(s.integrity=i.integrity),i.referrerPolicy&&(s.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?s.credentials="include":i.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(i){if(i.ep)return;i.ep=!0;const s=t(i);fetch(i.href,s)}})();const Gn={"config.logger.show.parse":!1,"config.logger.show.render":!1,"config.logger.show.sound":!1,"config.logger.show.state":!1,"config.logger.show.story":!1,"config.logger.show.style":!1};function Jt(n){return n+": "}const Me={inserts:!0};function Jn(n){Me[n]=!1}function Xn(n){Me[n]=!0}function Xt(n,e){Me[n]&&(console.log(Jt(n)+e),window.dispatchEvent(new CustomEvent("log-info",{detail:{message:e,source:n}})))}function Qt(n,e){Me[n]&&(console.warn(Jt(n)+e),window.dispatchEvent(new CustomEvent("log-warning",{detail:{message:e,source:n}})))}function F(n){return{log(e){Xt(n,e)},warn(e){Qt(n,e)}}}function Qn(){window.addEventListener("state-change",n=>{const e=/^config\.logger\.show\.(.+)$/.exec(n.detail.name);e&&e[1]&&(n.detail.value?Xn(e[1]):Jn(e[1]))})}var Kn=typeof global=="object"&&global&&global.Object===Object&&global;const Yn=Kn;var er=typeof self=="object"&&self&&self.Object===Object&&self,tr=Yn||er||Function("return this")();const it=tr;var nr=it.Symbol;const le=nr;var Kt=Object.prototype,rr=Kt.hasOwnProperty,ir=Kt.toString,ge=le?le.toStringTag:void 0;function sr(n){var e=rr.call(n,ge),t=n[ge];try{n[ge]=void 0;var r=!0}catch{}var i=ir.call(n);return r&&(e?n[ge]=t:delete n[ge]),i}var or=Object.prototype,ar=or.toString;function lr(n){return ar.call(n)}var cr="[object Null]",ur="[object Undefined]",Tt=le?le.toStringTag:void 0;function Yt(n){return n==null?n===void 0?ur:cr:Tt&&Tt in Object(n)?sr(n):lr(n)}function dr(n){return n!=null&&typeof n=="object"}var fr="[object Symbol]";function st(n){return typeof n=="symbol"||dr(n)&&Yt(n)==fr}function hr(n,e){for(var t=-1,r=n==null?0:n.length,i=Array(r);++t<r;)i[t]=e(n[t],t,n);return i}var pr=Array.isArray;const ot=pr;var gr=1/0,Ct=le?le.prototype:void 0,At=Ct?Ct.toString:void 0;function en(n){if(typeof n=="string")return n;if(ot(n))return hr(n,en)+"";if(st(n))return At?At.call(n):"";var e=n+"";return e=="0"&&1/n==-gr?"-0":e}function Pe(n){var e=typeof n;return n!=null&&(e=="object"||e=="function")}var mr="[object AsyncFunction]",br="[object Function]",yr="[object GeneratorFunction]",wr="[object Proxy]";function kr(n){if(!Pe(n))return!1;var e=Yt(n);return e==br||e==yr||e==mr||e==wr}var xr=it["__core-js_shared__"];const Fe=xr;var Lt=function(){var n=/[^.]+$/.exec(Fe&&Fe.keys&&Fe.keys.IE_PROTO||"");return n?"Symbol(src)_1."+n:""}();function vr(n){return!!Lt&&Lt in n}var $r=Function.prototype,Sr=$r.toString;function Er(n){if(n!=null){try{return Sr.call(n)}catch{}try{return n+""}catch{}}return""}var _r=/[\\^$.*+?()[\]{}|]/g,Tr=/^\[object .+?Constructor\]$/,Cr=Function.prototype,Ar=Object.prototype,Lr=Cr.toString,zr=Ar.hasOwnProperty,Pr=RegExp("^"+Lr.call(zr).replace(_r,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");function Or(n){if(!Pe(n)||vr(n))return!1;var e=kr(n)?Pr:Tr;return e.test(Er(n))}function Ir(n,e){return n==null?void 0:n[e]}function at(n,e){var t=Ir(n,e);return Or(t)?t:void 0}var Nr=function(){try{var n=at(Object,"defineProperty");return n({},"",{}),n}catch{}}();const zt=Nr;var Rr=9007199254740991,Mr=/^(?:0|[1-9]\d*)$/;function Dr(n,e){var t=typeof n;return e=e??Rr,!!e&&(t=="number"||t!="symbol"&&Mr.test(n))&&n>-1&&n%1==0&&n<e}function jr(n,e,t){e=="__proto__"&&zt?zt(n,e,{configurable:!0,enumerable:!0,value:t,writable:!0}):n[e]=t}function tn(n,e){return n===e||n!==n&&e!==e}var qr=Object.prototype,Hr=qr.hasOwnProperty;function Fr(n,e,t){var r=n[e];(!(Hr.call(n,e)&&tn(r,t))||t===void 0&&!(e in n))&&jr(n,e,t)}var Br=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,Ur=/^\w*$/;function Vr(n,e){if(ot(n))return!1;var t=typeof n;return t=="number"||t=="symbol"||t=="boolean"||n==null||st(n)?!0:Ur.test(n)||!Br.test(n)||e!=null&&n in Object(e)}var Wr=at(Object,"create");const we=Wr;function Zr(){this.__data__=we?we(null):{},this.size=0}function Gr(n){var e=this.has(n)&&delete this.__data__[n];return this.size-=e?1:0,e}var Jr="__lodash_hash_undefined__",Xr=Object.prototype,Qr=Xr.hasOwnProperty;function Kr(n){var e=this.__data__;if(we){var t=e[n];return t===Jr?void 0:t}return Qr.call(e,n)?e[n]:void 0}var Yr=Object.prototype,ei=Yr.hasOwnProperty;function ti(n){var e=this.__data__;return we?e[n]!==void 0:ei.call(e,n)}var ni="__lodash_hash_undefined__";function ri(n,e){var t=this.__data__;return this.size+=this.has(n)?0:1,t[n]=we&&e===void 0?ni:e,this}function ee(n){var e=-1,t=n==null?0:n.length;for(this.clear();++e<t;){var r=n[e];this.set(r[0],r[1])}}ee.prototype.clear=Zr;ee.prototype.delete=Gr;ee.prototype.get=Kr;ee.prototype.has=ti;ee.prototype.set=ri;function ii(){this.__data__=[],this.size=0}function De(n,e){for(var t=n.length;t--;)if(tn(n[t][0],e))return t;return-1}var si=Array.prototype,oi=si.splice;function ai(n){var e=this.__data__,t=De(e,n);if(t<0)return!1;var r=e.length-1;return t==r?e.pop():oi.call(e,t,1),--this.size,!0}function li(n){var e=this.__data__,t=De(e,n);return t<0?void 0:e[t][1]}function ci(n){return De(this.__data__,n)>-1}function ui(n,e){var t=this.__data__,r=De(t,n);return r<0?(++this.size,t.push([n,e])):t[r][1]=e,this}function de(n){var e=-1,t=n==null?0:n.length;for(this.clear();++e<t;){var r=n[e];this.set(r[0],r[1])}}de.prototype.clear=ii;de.prototype.delete=ai;de.prototype.get=li;de.prototype.has=ci;de.prototype.set=ui;var di=at(it,"Map");const fi=di;function hi(){this.size=0,this.__data__={hash:new ee,map:new(fi||de),string:new ee}}function pi(n){var e=typeof n;return e=="string"||e=="number"||e=="symbol"||e=="boolean"?n!=="__proto__":n===null}function je(n,e){var t=n.__data__;return pi(e)?t[typeof e=="string"?"string":"hash"]:t.map}function gi(n){var e=je(this,n).delete(n);return this.size-=e?1:0,e}function mi(n){return je(this,n).get(n)}function bi(n){return je(this,n).has(n)}function yi(n,e){var t=je(this,n),r=t.size;return t.set(n,e),this.size+=t.size==r?0:1,this}function re(n){var e=-1,t=n==null?0:n.length;for(this.clear();++e<t;){var r=n[e];this.set(r[0],r[1])}}re.prototype.clear=hi;re.prototype.delete=gi;re.prototype.get=mi;re.prototype.has=bi;re.prototype.set=yi;var wi="Expected a function";function lt(n,e){if(typeof n!="function"||e!=null&&typeof e!="function")throw new TypeError(wi);var t=function(){var r=arguments,i=e?e.apply(this,r):r[0],s=t.cache;if(s.has(i))return s.get(i);var a=n.apply(this,r);return t.cache=s.set(i,a)||s,a};return t.cache=new(lt.Cache||re),t}lt.Cache=re;var ki=500;function xi(n){var e=lt(n,function(r){return t.size===ki&&t.clear(),r}),t=e.cache;return e}var vi=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,$i=/\\(\\)?/g,Si=xi(function(n){var e=[];return n.charCodeAt(0)===46&&e.push(""),n.replace(vi,function(t,r,i,s){e.push(i?s.replace($i,"$1"):r||t)}),e});const Ei=Si;function ct(n){return n==null?"":en(n)}function ut(n,e){return ot(n)?n:Vr(n,e)?[n]:Ei(ct(n))}var _i=1/0;function dt(n){if(typeof n=="string"||st(n))return n;var e=n+"";return e=="0"&&1/n==-_i?"-0":e}function nn(n,e){e=ut(e,n);for(var t=0,r=e.length;n!=null&&t<r;)n=n[dt(e[t++])];return t&&t==r?n:void 0}function Be(n,e,t){var r=n==null?void 0:nn(n,e);return r===void 0?t:r}function Ti(n,e,t){var r=-1,i=n.length;e<0&&(e=-e>i?0:i+e),t=t>i?i:t,t<0&&(t+=i),i=e>t?0:t-e>>>0,e>>>=0;for(var s=Array(i);++r<i;)s[r]=n[r+e];return s}function rn(n){return function(e){return n==null?void 0:n[e]}}function Ci(n){var e=n==null?0:n.length;return e?n[e-1]:void 0}var Ai={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},Li=rn(Ai);const zi=Li;var sn=/[&<>"']/g,Pi=RegExp(sn.source);function H(n){return n=ct(n),n&&Pi.test(n)?n.replace(sn,zi):n}function Oi(n,e){return e.length<2?n:nn(n,Ti(e,0,-1))}function Ii(n,e){return e=ut(e,n),n=Oi(n,e),n==null||delete n[dt(Ci(e))]}function Ni(n,e,t,r){if(!Pe(n))return n;e=ut(e,n);for(var i=-1,s=e.length,a=s-1,l=n;l!=null&&++i<s;){var o=dt(e[i]),u=t;if(o==="__proto__"||o==="constructor"||o==="prototype")return n;if(i!=a){var c=l[o];u=r?r(c,o,l):void 0,u===void 0&&(u=Pe(c)?c:Dr(e[i+1])?[]:{})}Fr(l,o,u),l=l[o]}return n}function ft(n,e,t){return n==null?n:Ni(n,e,t)}var Ri={"&amp;":"&","&lt;":"<","&gt;":">","&quot;":'"',"&#39;":"'"},Mi=rn(Ri);const Di=Mi;var on=/&(?:amp|lt|gt|quot|#39);/g,ji=RegExp(on.source);function qi(n){return n=ct(n),n&&ji.test(n)?n.replace(on,Di):n}function Hi(n,e){return n==null?!0:Ii(n,e)}const an=F("story"),P={customScripts:[],customStyles:[],passages:[]};function ln(n){for(const r of["name","creator","ifid","options"])P[r]=n.getAttribute(r)??void 0;const e=parseInt(n.getAttribute("startnode")??"");isNaN(e)||(P.startNode=e),P.creatorVersion=n.getAttribute("creator-version")??void 0;const t=r=>[...r].map(i=>i.textContent??"");P.customScripts=t(n.querySelectorAll('[type="text/twine-javascript"]')),P.customStyles=t(n.querySelectorAll('[type="text/twine-css"]')),P.passages=[...n.querySelectorAll("tw-passagedata")].map(r=>{const i=parseInt(r.getAttribute("pid")??""),s=r.getAttribute("tags");return{id:isNaN(i)?void 0:i,name:r.getAttribute("name")??void 0,source:r.textContent??"",tags:s?s.split(" "):[]}})}function cn(){const n=pt();if(!n||!n.name)throw new Error("There is no starting passage for this story, or it has no name.");ie({trail:[n.name],"config.testing":typeof P.options=="string"&&P.options.indexOf("debug")!==-1||!1}),P.name&&(document.title=P.name)}function un(){an.log(`Running custom scripts (${P.customScripts.length})`);for(const n of P.customScripts)new Function(n).apply(window)}function dn(){an.log(`Adding custom styles (${P.customStyles.length})`);for(const n of P.customStyles){const e=document.createElement("style");e.innerHTML=n,document.head.appendChild(e)}}function fn(){return P.ifid}function ht(){return P.name}function Fi(){return P.passages}function pt(){return P.passages.find(n=>n.id===P.startNode)}function Se(n){return P.passages.find(e=>e.name===n)}function Bi(n){return P.passages.find(e=>e.id===n)}function hn(n){let e=[],t=!1;return async(...r)=>{t||(t=!0,Promise.resolve().then(()=>{try{n(e),e=[],t=!1}catch(i){window.setTimeout(()=>{throw i})}})),e.push(r)}}function ke(n,e,t=[]){const r=document.createElement(n);if(e)for(const i of Object.keys(e))e[i]!==void 0&&r.setAttribute(i,e[i]);for(const i of t)typeof i=="string"||typeof i=="number"?r.appendChild(document.createTextNode(i.toString())):r.appendChild(i);return r}function R(...n){return ke(...n).outerHTML}function Je(n){return Array.isArray(n)?n.every(Je):n===null?!0:typeof n=="object"?Object.getPrototypeOf(n)!==Object.prototype?!1:Object.values(n).every(Je):typeof n=="number"?isFinite(n)&&!isNaN(n):["boolean","string","undefined"].includes(typeof n)}const{log:Q,warn:Ui}=F("state");let te;const gt={},pn={},ce={};function mt(n,e){if(n[e])return;Object.defineProperty(n,e,{get(){return p(e)},set(r){$(e,r)},configurable:!0});const t=e.split(".");t.length>1&&(t.pop(),mt(n,t.join(".")))}function Vi(n,e){if(n[e])return;const t=e.split("."),r=t[t.length-1];for(let i=0;i<t.length-1;i++)n[t[i]]=n[t[i]]||{},n=n[t[i]];Object.defineProperty(n,r,{get(){return p(e)},set(){throw new Error("Chapbook lookup variables may only be read.")},configurable:!0})}function Wi(n,e){Hi(n,e)}function gn(){const n=fn(),e=ht();if(e===void 0)throw new Error("Cannot set up state: the story has no name");te=`chapbook-${e}-${n}`,qe("config.state.autosave",!0)}function bt(){function n(e,t){Object.keys(e).forEach(r=>{const i=t===""?r:`${t}.${r}`;if(typeof e[r]=="object"&&!Array.isArray(e[r]))n(e[r],i);else{const s=e[r];delete e[r],Wi(window,t),window.dispatchEvent(new CustomEvent("state-change",{detail:{name:i,value:p(i),previous:s}}))}})}n(ce,""),window.dispatchEvent(new CustomEvent("state-reset")),p("config.state.autosave")&&yt()}function $(n,e){const t=p(n);Je(e)||Ui(`Setting ${n} to ${JSON.stringify(e)} can't be saved permanently. This will work in the current session, but will not persist between sessions.`),ft(ce,n,e),mt(window,n),e!==t&&window.dispatchEvent(new CustomEvent("state-change",{detail:{previous:t,name:n,value:e}})),p("config.state.autosave")&&yt()}function qe(n,e){const t=p(n);Q(`Defaulting "${n}" to ${JSON.stringify(e)}`),ft(gt,n,e),mt(window,n),t==null&&window.dispatchEvent(new CustomEvent("state-change",{detail:{previous:t,name:n,value:e}}))}function ie(n){for(const e in n)qe(e,n[e])}function _(n,e){const t=p(n);Q(`Adding lookup variable ${n}`),ft(pn,n,e),Vi(window,n),t==null&&window.dispatchEvent(new CustomEvent("state-change",{detail:{previous:t,name:n,value:p(n)}}))}function p(n){const e=Be(pn,n);if(typeof e=="function")return e(p,$);const t=Be(ce,n),r=Be(gt,n);if(t==null)return r;if(typeof t=="object"&&t!==null&&!Array.isArray(t)&&typeof r=="object"&&r!==null&&!Array.isArray(r)){const i={},s=[...Object.keys(r),...Object.keys(t)];for(const a of s)Object.defineProperty(i,a,{get(){return p(n+"."+a)},set(l){$(n+"."+a,l)},configurable:!0,enumerable:!0});return i}return t}function xe(){return{...ce}}function Ee(n){bt();for(const e in n)$(e,n[e])}function mn(){try{return window.localStorage.setItem("chapbook-test","a"),window.localStorage.removeItem("chapbook-test"),!0}catch{return!1}}function yt(){Q("Saving to local storage: "+JSON.stringify(xe())),window.localStorage.setItem(te,JSON.stringify(xe())),Q("Save complete")}function bn(){return mn()&&window.localStorage.getItem(te)!==null}function yn(){Q("Restoring variables from local storage");const n=window.localStorage.getItem(te);if(!n)throw new Error(`No value is set in local storage at "${te}"`);Ee(JSON.parse(n)),Q("Restore complete")}function wn(n){n||Q("Purging variables from local storage");const e=window.localStorage.getItem(te);if(!e)throw new Error(`No value is set in local storage at "${te}"`);Ee(JSON.parse(e)),n||Q("Purge complete")}function ve(n){function e(t,r,i=[]){return Object.keys(t).reduce((s,a)=>{if(typeof t[a]=="object"&&t[a]&&!Array.isArray(t[a]))e(t[a],r?`${r}.${a}`:a,s);else{const l=r?`${r}.${a}`:a;s.includes(l)||s.push(l)}return s},i)}return n?e(gt,void 0,e(ce)).sort():e(ce).sort()}const Zi=Object.freeze(Object.defineProperty({__proto__:null,canRestoreFromStorage:bn,canSaveToStorage:mn,get:p,initState:gn,purgeFromStorage:wn,reset:bt,restoreFromObject:Ee,restoreFromStorage:yn,saveToObject:xe,saveToStorage:yt,set:$,setDefault:qe,setDefaults:ie,setLookup:_,varNames:ve},Symbol.toStringTag,{value:"Module"})),Gi=Object.freeze(Object.defineProperty({__proto__:null,addCustomStyles:dn,ifid:fn,initStory:cn,loadFromData:ln,name:ht,passageNamed:Se,passageWithId:Bi,passages:Fi,runCustomScripts:un,startPassage:pt},Symbol.toStringTag,{value:"Module"})),{log:kn}=F("actions");function xn(n){kn(`Going to passage "${n}"`);const e=Se(n);if(!e)throw new Error(`There is no passage with the name "${n}"`);document.activeElement instanceof HTMLElement&&document.activeElement.blur();const t=p("trail");if(!Array.isArray(t))throw new Error(`The trail variable has been set to a ${typeof t}, not an array.`);$("trail",[...t,e.name])}function vn(){kn("Restarting"),bt(),window.location.reload()}let X=[],Oe=!0;function Ji(){Oe&&(X=[],window.dispatchEvent(new CustomEvent("backstage-state-recorder-update")))}function Xi({detail:n}){if(!Oe)return;X.length===p("config.backstage.trail.maxLength")&&X.shift();const{name:e,value:t}=n;X.push({change:{name:e,value:t},state:xe()}),window.dispatchEvent(new CustomEvent("backstage-state-recorder-update"))}function Qi(){return[...X]}function Ki(n){if(!X[n])throw new Error(`There is no history at index ${n} to rewind to.`);Oe=!1,Ee(X[n].state),X.length=n+1,Oe=!0,window.dispatchEvent(new CustomEvent("backstage-state-recorder-update"))}function Yi(){qe("config.backstage.trail.maxLength",100),window.addEventListener("state-change",Xi),window.addEventListener("state-reset",Ji)}let V=[];function es(n){V.push({name:n,state:xe()}),$n(),window.dispatchEvent(new CustomEvent("backstage-state-snapshots-update"))}function ts(n){const e=V.find(t=>t.name===n);if(!e)throw new Error(`There is no snapshot named "${n}".`);Ee(e.state)}function ns(n){V=V.filter(({name:e})=>n!==e),$n(),window.dispatchEvent(new CustomEvent("backstage-state-snapshots-update"))}function rs(){try{V=JSON.parse(window.localStorage.getItem(`chapbookbackstage-snapshots-${p("config.state.saveKey")}`)),Array.isArray(V)||(V=[])}catch{V=[]}}function $n(){window.localStorage.setItem(`chapbookbackstage-snapshots-${p("config.state.saveKey")}`,JSON.stringify(V))}function Pt(){return V.map(({name:n})=>n)}function is(){rs()}function wt(n){for(const e in n)window.customElements.get(e)||window.customElements.define(e,n[e])}class z extends HTMLElement{defaultHtml(e){this.innerHTML.trim()===""&&(this.innerHTML=e)}delegate(e,t,r){this.addEventListener(e,i=>{if(!i.target)return;const s=i.target.closest(t);s&&r(i,s)})}query(e){const t=this.querySelector(e);if(!t)throw new Error(`Couldn't find element matching "${e}"`);return t}queryAll(e){return[...this.querySelectorAll(e)]}}class Sn extends z{constructor(){super(),this.addEventListener("click",e=>{e.target.closest("[data-toggle-collapsed]")&&(this.hasAttribute("collapsed")?this.removeAttribute("collapsed"):this.setAttribute("collapsed",""))})}connectedCallback(){this.innerHTML=`
 			<button data-toggle-collapsed></button>
 			<div class="content">
@@ -218,82 +218,359 @@ ${i}`),b(i)}function $e(n,e=!1){return Ko(zo(n),An(),Pn(),e)}class Yo extends fe
 </script><style>
 :root{--font-monospace: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;--font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif}*{box-sizing:border-box}body{margin:0;padding:0}code{font-family:var(--font-monospace)}img{max-width:100%;height:auto}input[type=text],select{padding:.25em}noscript{align-items:center;background:black;color:#fff;display:flex;height:100vh;font-family:var(--font-system);justify-content:center;width:100vw}pre{font-family:var(--font-monospace);white-space:pre-wrap}tw-storydata{display:none}body.backstage-visible #backdrop{max-width:67vw}backstage-sidebar{--backstage-grid: 10px;background:var(--color-gray-2);border-left:1px solid var(--color-gray-3);bottom:0;color:var(--color-gray-5);display:block;font-family:var(--font-system);font-size:13px;position:fixed;top:0;right:0;width:33vw}backstage-sidebar .content{overflow:auto;padding:var(--backstage-grid);height:100%;width:100%}backstage-sidebar[collapsed]{width:0}backstage-sidebar button[data-toggle-collapsed]{background:var(--color-gray-2);border-bottom:1px solid var(--color-gray-3);border-left:1px solid var(--color-gray-3);border-right:none;border-top:1px solid var(--color-gray-3);border-radius:60px 0 0 60px;color:var(--color-gray-5);font-size:20px;height:60px;min-width:30px;padding:0;position:absolute;top:50%;left:-30px;transform:translateY(-50%);width:30px}backstage-sidebar button[data-toggle-collapsed]:hover{background:var(--color-gray-1);cursor:pointer}backstage-sidebar button{background:var(--color-gray-1);border:1px solid var(--color-gray-3);border-radius:var(--backstage-grid);color:var(--color-gray-5);cursor:pointer;font-size:100%;min-width:40px;padding:calc(var(--backstage-grid) / 2)}backstage-sidebar button:disabled{color:var(--color-gray-3);cursor:not-allowed}backstage-sidebar button:not(:disabled):hover{background:white}backstage-sidebar details summary{cursor:pointer;font-size:110%;font-variant:small-caps;padding:calc(var(--backstage-grid) / 2) 0;text-transform:lowercase}backstage-sidebar input,backstage-sidebar textarea{background:var(--color-gray-1);border:1px solid var(--color-gray-3);color:var(--color-gray-5);font:100% var(--font-system);padding:calc(var(--backstage-grid) / 2)}backstage-sidebar table{max-width:100%;width:100%}backstage-history-table button{display:block;width:100%}backstage-history-table table{border-collapse:collapse;margin:var(--backstage-grid) 0;table-layout:fixed}backstage-history-table thead{height:1px;left:-10000px;overflow:hidden;position:absolute;top:auto;width:1px}backstage-history-table tr:not(:last-child){border-bottom:1px solid var(--oc-gray-8)}backstage-history-table td{text-overflow:ellipsis;overflow-wrap:break-word;padding:calc(var(--backstage-grid) / 2);vertical-align:top}backstage-history-table td:first-child{border-right:1px solid var(--oc-gray-8);width:45%}backstage-notes label{display:block;margin-top:var(--backstage-grid)}backstage-notes textarea{height:10em;margin:var(--backstage-grid) 0;width:100%}backstage-notes .actions{display:flex;gap:var(--backstage-grid)}backstage-notes .actions button{flex-grow:1}backstage-state-snapshots button[data-add-snapshot]{width:100%}backstage-state-snapshots .snapshot-button{display:flex;margin-bottom:var(--backstage-grid)}backstage-state-snapshots .snapshot-button [data-restore]{flex-grow:1;border-right-color:var(--oc-gray-4);border-bottom-right-radius:0;border-top-right-radius:0}backstage-state-snapshots .snapshot-button [data-remove]{border-left:none;border-bottom-left-radius:0;border-top-left-radius:0}backstage-state-variables .variables{display:flex;flex-direction:column;gap:calc(var(--backstage-grid) / 2);margin:calc(var(--backstage-grid)) 0}backstage-state-variables .variables label{align-items:center;display:grid;gap:var(--backstage-grid);grid-template-columns:15em 1fr}backstage-style-config textarea{height:10em;margin:var(--backstage-grid) 0;width:100%}backstage-style-group label{display:grid;gap:.25em;margin-bottom:.5em}backstage-style-theme p{margin:0 0 .5em}backstage-tab{border-left:1px solid var(--color-gray-3);cursor:pointer;flex-grow:1;padding:calc(var(--backstage-grid) / 2);text-align:center}backstage-tab:hover{background:white}backstage-tab:first-child{border-left:none;border-bottom-left-radius:var(--backstage-grid);border-top-left-radius:var(--backstage-grid)}backstage-tab:last-child{border-bottom-right-radius:var(--backstage-grid);border-top-right-radius:var(--backstage-grid)}backstage-tab[aria-selected=true]{background-color:#fff;cursor:default;font-weight:700}backstage-tab-panel{display:block;padding:calc(var(--backstage-grid) / 2) 0}backstage-tab-panel[hidden]{display:none}backstage-tabs{background:var(--color-gray-1);border:1px solid var(--color-gray-3);border-radius:var(--backstage-grid);display:flex}backstage-variable-input input{display:inline-block;width:100%}#backdrop{align-items:center;background-color:var(--backdrop-color);display:flex;justify-content:center;min-height:100vh}#page>header,#page>footer{display:flex;justify-content:space-between}#page>header[hidden],#page>footer[hidden]{border:none}#page>header .center,#page>footer .center{text-align:center}#page>header .right,#page>footer .right{text-align:right}#page>footer{background-color:var(--page-footer-background-color);border-top:var(--page-footer-border);color:var(--page-footer-color);font-family:var(--page-footer-font-family);font-size:var(--page-footer-font-size);font-style:var(--page-footer-font-style);font-variant:var(--page-footer-font-variant);font-weight:var(--page-footer-font-weight);text-decoration:var(--page-footer-text-decoration);text-decoration-color:var(--page-footer-text-decoration-color);text-transform:var(--page-footer-text-transform)}#page>footer .link{background-color:var(--page-footer-link-background-color);color:var(--page-footer-link-color);font-family:var(--page-footer-link-font-family);font-size:var(--page-footer-link-font-size);font-style:var(--page-footer-link-font-style);font-variant:var(--page-footer-link-font-variant);font-weight:var(--page-footer-link-font-weight);text-decoration:var(--page-footer-link-text-decoration);text-decoration-color:var(--page-footer-link-text-decoration-color);text-transform:var(--page-footer-link-text-transform)}#page>footer .link:hover{background-color:var(--page-footer-link-active-background-color);color:var(--page-footer-link-active-color);font-family:var(--page-footer-link-active-font-family);font-size:var(--page-footer-link-active-font-size);font-style:var(--page-footer-link-active-font-style);font-variant:var(--page-footer-link-active-font-variant);font-weight:var(--page-footer-link-active-font-weight);text-decoration:var(--page-footer-link-active-text-decoration);text-decoration-color:var( --page-footer-link-active-text-decoration-color );text-transform:var(--page-footer-link-active-text-transform)}#page>header{background-color:var(--page-header-background-color);border-bottom:var(--page-header-border);color:var(--page-header-color);font-family:var(--page-header-font-family);font-size:var(--page-header-font-size);font-style:var(--page-header-font-style);font-variant:var(--page-header-font-variant);font-weight:var(--page-header-font-weight);text-decoration:var(--page-header-text-decoration);text-decoration-color:var(--page-header-text-decoration-color);text-transform:var(--page-header-text-transform)}#page>header .link{background-color:var(--page-header-link-background-color);color:var(--page-header-link-color);font-family:var(--page-header-link-font-family);font-size:var(--page-header-link-font-size);font-style:var(--page-header-link-font-style);font-variant:var(--page-header-link-font-variant);font-weight:var(--page-header-link-font-weight);text-decoration:var(--page-header-link-text-decoration);text-decoration-color:var(--page-header-link-text-decoration-color);text-transform:var(--page-header-link-text-transform)}#page>header .link:hover{background-color:var(--page-header-link-active-background-color);color:var(--page-header-link-active-color);font-family:var(--page-header-link-active-font-family);font-size:var(--page-header-link-active-font-size);font-style:var(--page-header-link-active-font-style);font-variant:var(--page-header-link-active-font-variant);font-weight:var(--page-header-link-active-font-weight);text-decoration:var(--page-header-link-active-text-decoration);text-decoration-color:var( --page-header-link-active-text-decoration-color );text-transform:var(--page-header-link-active-text-transform)}#page{background-color:var(--page-background-color);border:var(--page-border);border-radius:3px;box-shadow:var(--page-box-shadow);color:var(--page-color);display:grid;font-family:var(--page-font-family);font-size:var(--page-font-size);font-style:var(--page-font-style);font-variant:var(--page-font-variant);font-weight:var(--page-font-weight);grid-template-areas:"header" "body" "footer";grid-template-rows:min-content 1fr min-content;line-height:150%;margin:1em;max-width:calc(100vw - 2em);min-height:calc(100vh - 2em);padding:2em 4em;position:relative;text-decoration:var(--page-text-decoration);text-transform:var(--page-text-transform);width:40em}#page hr{border:none}#page hr:after{content:"* \a0* \a0*";display:block;text-align:center}#page page-skip-indicator{position:absolute;bottom:0;right:0}#page .fork p{display:flex;flex-direction:column;width:100%}#page .fork p .link{display:block;flex-grow:1;text-align:center;padding:.5em}#page .fork p .link+.link{border-top:var(--page-fork-divider-size) var(--page-fork-divider-style) var(--page-fork-divider-color)}#page .link{background-color:var(--page-link-background-color);color:var(--page-link-color);cursor:pointer;font-family:var(--page-link-font-family);font-size:var(--page-link-font-size);font-style:var(--page-link-font-style);font-variant:var(--page-link-font-variant);font-weight:var(--page-link-font-weight);text-decoration:var(--page-link-text-decoration);text-decoration-color:var(--page-link-text-decoration-color);text-transform:var(--page-link-text-transform)}#page .link:hover{background-color:var(--page-link-active-background-color);color:var(--page-link-active-color);font-family:var(--page-link-font-family);font-size:var(--page-link-font-size);font-style:var(--page-link-font-style);font-variant:var(--page-link-font-variant);font-weight:var(--page-link-font-weight);text-decoration:var(--page-link-text-decoration);text-decoration-color:var(--page-link-text-decoration-color);text-transform:var(--page-link-text-transform)}#page .small-caps{font-variant:small-caps;text-transform:lowercase}#page>footer{grid-area:footer}#page>header{grid-area:header}#page>article{display:flex;flex-direction:column;flex-grow:1;grid-area:body;justify-content:var(--page-current-passage-justify-content)}#page>error-handler{grid-area:body;position:relative;z-index:2}@media screen and (max-width: 768px){#page{margin:0;width:100vw;max-width:100vw;min-height:100vh;padding:1em}}.fade-in{opacity:0;animation:fade-in 1s ease-out forwards}.fade-out{animation:fade-in 1s ease-out reverse forwards}@keyframes fade-in{0%{opacity:0}to{opacity:1}}error-handler{display:none}error-handler.active{background:var(--color-red-1);color:var(--color-red-5);display:block;font-family:var(--font-system);font-size:max(90%,16px);padding:.5em;border-left:4px solid var(--color-red-2);position:relative;margin:1em 0;overflow:auto}error-handler pre{font-size:90%}error-handler a{color:var(--color-red-4)}error-handler button{appearance:none;background:none;border:none;color:var(--color-red-4);cursor:pointer;padding:0}external-fonts{display:none}page-skip{display:block}page-skip-indicator{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%09%3crect width='38' height='72' x='31' y='14' fill='%23fff' rx='4' /%3e%09%3ccircle cx='50' cy='50' r='28' fill='%23fff' /%3e%09%3crect%09%09width='30'%09%09height='64'%09%09x='35'%09%09y='18'%09%09fill='%23fff'%09%09stroke='%23000'%09%09stroke-width='2'%09%09rx='4'%09/%3e%09%3ccircle%09%09cx='50'%09%09cy='50'%09%09r='20'%09%09fill='%23fff'%09%09stroke='%23000'%09%09stroke-width='2'%09/%3e%09%3cpath%09%09stroke='%23000'%09%09stroke-linecap='round'%09%09stroke-width='2'%09%09d='M50 50V37'%09%3e%09%09%3canimateTransform%09%09%09attributeName='transform'%09%09%09begin='0s'%09%09%09dur='20s'%09%09%09from='0 50 50'%09%09%09repeatCount='indefinite'%09%09%09to='360 50 50'%09%09%09type='rotate'%09%09/%3e%09%3c/path%3e%09%3cpath%09%09stroke='%23000'%09%09stroke-linecap='round'%09%09stroke-width='2'%09%09d='M50 50h-8'%09%3e%09%09%3canimateTransform%09%09%09attributeName='transform'%09%09%09begin='0s'%09%09%09dur='120s'%09%09%09from='0 50 50'%09%09%09repeatCount='indefinite'%09%09%09to='360 50 50'%09%09%09type='rotate'%09%09/%3e%09%3c/path%3e%3c/svg%3e");background-size:contain;display:block;height:50px;opacity:0;pointer-events:none;transition:opacity .3s;width:50px}page-skip-indicator[active]{opacity:1}::view-transition-old(root),::view-transition-new(root){animation-duration:var(--page-transition-duration)}page-transition{display:block}:root{--oc-white: #ffffff;--oc-white-rgb: 255, 255, 255;--oc-black: #000000;--oc-black-rgb: 0, 0, 0;--oc-gray-0: #f8f9fa;--oc-gray-0-rgb: 248, 249, 250;--oc-gray-1: #f1f3f5;--oc-gray-1-rgb: 241, 243, 245;--oc-gray-2: #e9ecef;--oc-gray-2-rgb: 233, 236, 239;--oc-gray-3: #dee2e6;--oc-gray-3-rgb: 222, 226, 230;--oc-gray-4: #ced4da;--oc-gray-4-rgb: 206, 212, 218;--oc-gray-5: #adb5bd;--oc-gray-5-rgb: 173, 181, 189;--oc-gray-6: #868e96;--oc-gray-6-rgb: 134, 142, 150;--oc-gray-7: #495057;--oc-gray-7-rgb: 73, 80, 87;--oc-gray-8: #343a40;--oc-gray-8-rgb: 52, 58, 64;--oc-gray-9: #212529;--oc-gray-9-rgb: 33, 37, 41;--oc-red-0: #fff5f5;--oc-red-0-rgb: 255, 245, 245;--oc-red-1: #ffe3e3;--oc-red-1-rgb: 255, 227, 227;--oc-red-2: #ffc9c9;--oc-red-2-rgb: 255, 201, 201;--oc-red-3: #ffa8a8;--oc-red-3-rgb: 255, 168, 168;--oc-red-4: #ff8787;--oc-red-4-rgb: 255, 135, 135;--oc-red-5: #ff6b6b;--oc-red-5-rgb: 255, 107, 107;--oc-red-6: #fa5252;--oc-red-6-rgb: 250, 82, 82;--oc-red-7: #f03e3e;--oc-red-7-rgb: 240, 62, 62;--oc-red-8: #e03131;--oc-red-8-rgb: 224, 49, 49;--oc-red-9: #c92a2a;--oc-red-9-rgb: 201, 42, 42;--oc-pink-0: #fff0f6;--oc-pink-0-rgb: 255, 240, 246;--oc-pink-1: #ffdeeb;--oc-pink-1-rgb: 255, 222, 235;--oc-pink-2: #fcc2d7;--oc-pink-2-rgb: 252, 194, 215;--oc-pink-3: #faa2c1;--oc-pink-3-rgb: 250, 162, 193;--oc-pink-4: #f783ac;--oc-pink-4-rgb: 247, 131, 172;--oc-pink-5: #f06595;--oc-pink-5-rgb: 240, 101, 149;--oc-pink-6: #e64980;--oc-pink-6-rgb: 230, 73, 128;--oc-pink-7: #d6336c;--oc-pink-7-rgb: 214, 51, 108;--oc-pink-8: #c2255c;--oc-pink-8-rgb: 194, 37, 92;--oc-pink-9: #a61e4d;--oc-pink-9-rgb: 166, 30, 77;--oc-grape-0: #f8f0fc;--oc-grape-0-rgb: 248, 240, 252;--oc-grape-1: #f3d9fa;--oc-grape-1-rgb: 243, 217, 250;--oc-grape-2: #eebefa;--oc-grape-2-rgb: 238, 190, 250;--oc-grape-3: #e599f7;--oc-grape-3-rgb: 229, 153, 247;--oc-grape-4: #da77f2;--oc-grape-4-rgb: 218, 119, 242;--oc-grape-5: #cc5de8;--oc-grape-5-rgb: 204, 93, 232;--oc-grape-6: #be4bdb;--oc-grape-6-rgb: 190, 75, 219;--oc-grape-7: #ae3ec9;--oc-grape-7-rgb: 174, 62, 201;--oc-grape-8: #9c36b5;--oc-grape-8-rgb: 156, 54, 181;--oc-grape-9: #862e9c;--oc-grape-9-rgb: 134, 46, 156;--oc-violet-0: #f3f0ff;--oc-violet-0-rgb: 243, 240, 255;--oc-violet-1: #e5dbff;--oc-violet-1-rgb: 229, 219, 255;--oc-violet-2: #d0bfff;--oc-violet-2-rgb: 208, 191, 255;--oc-violet-3: #b197fc;--oc-violet-3-rgb: 177, 151, 252;--oc-violet-4: #9775fa;--oc-violet-4-rgb: 151, 117, 250;--oc-violet-5: #845ef7;--oc-violet-5-rgb: 132, 94, 247;--oc-violet-6: #7950f2;--oc-violet-6-rgb: 121, 80, 242;--oc-violet-7: #7048e8;--oc-violet-7-rgb: 112, 72, 232;--oc-violet-8: #6741d9;--oc-violet-8-rgb: 103, 65, 217;--oc-violet-9: #5f3dc4;--oc-violet-9-rgb: 95, 61, 196;--oc-indigo-0: #edf2ff;--oc-indigo-0-rgb: 237, 242, 255;--oc-indigo-1: #dbe4ff;--oc-indigo-1-rgb: 219, 228, 255;--oc-indigo-2: #bac8ff;--oc-indigo-2-rgb: 186, 200, 255;--oc-indigo-3: #91a7ff;--oc-indigo-3-rgb: 145, 167, 255;--oc-indigo-4: #748ffc;--oc-indigo-4-rgb: 116, 143, 252;--oc-indigo-5: #5c7cfa;--oc-indigo-5-rgb: 92, 124, 250;--oc-indigo-6: #4c6ef5;--oc-indigo-6-rgb: 76, 110, 245;--oc-indigo-7: #4263eb;--oc-indigo-7-rgb: 66, 99, 235;--oc-indigo-8: #3b5bdb;--oc-indigo-8-rgb: 59, 91, 219;--oc-indigo-9: #364fc7;--oc-indigo-9-rgb: 54, 79, 199;--oc-blue-0: #e7f5ff;--oc-blue-0-rgb: 231, 245, 255;--oc-blue-1: #d0ebff;--oc-blue-1-rgb: 208, 235, 255;--oc-blue-2: #a5d8ff;--oc-blue-2-rgb: 165, 216, 255;--oc-blue-3: #74c0fc;--oc-blue-3-rgb: 116, 192, 252;--oc-blue-4: #4dabf7;--oc-blue-4-rgb: 77, 171, 247;--oc-blue-5: #339af0;--oc-blue-5-rgb: 51, 154, 240;--oc-blue-6: #228be6;--oc-blue-6-rgb: 34, 139, 230;--oc-blue-7: #1c7ed6;--oc-blue-7-rgb: 28, 126, 214;--oc-blue-8: #1971c2;--oc-blue-8-rgb: 25, 113, 194;--oc-blue-9: #1864ab;--oc-blue-9-rgb: 24, 100, 171;--oc-cyan-0: #e3fafc;--oc-cyan-0-rgb: 227, 250, 252;--oc-cyan-1: #c5f6fa;--oc-cyan-1-rgb: 197, 246, 250;--oc-cyan-2: #99e9f2;--oc-cyan-2-rgb: 153, 233, 242;--oc-cyan-3: #66d9e8;--oc-cyan-3-rgb: 102, 217, 232;--oc-cyan-4: #3bc9db;--oc-cyan-4-rgb: 59, 201, 219;--oc-cyan-5: #22b8cf;--oc-cyan-5-rgb: 34, 184, 207;--oc-cyan-6: #15aabf;--oc-cyan-6-rgb: 21, 170, 191;--oc-cyan-7: #1098ad;--oc-cyan-7-rgb: 16, 152, 173;--oc-cyan-8: #0c8599;--oc-cyan-8-rgb: 12, 133, 153;--oc-cyan-9: #0b7285;--oc-cyan-9-rgb: 11, 114, 133;--oc-teal-0: #e6fcf5;--oc-teal-0-rgb: 230, 252, 245;--oc-teal-1: #c3fae8;--oc-teal-1-rgb: 195, 250, 232;--oc-teal-2: #96f2d7;--oc-teal-2-rgb: 150, 242, 215;--oc-teal-3: #63e6be;--oc-teal-3-rgb: 99, 230, 190;--oc-teal-4: #38d9a9;--oc-teal-4-rgb: 56, 217, 169;--oc-teal-5: #20c997;--oc-teal-5-rgb: 32, 201, 151;--oc-teal-6: #12b886;--oc-teal-6-rgb: 18, 184, 134;--oc-teal-7: #0ca678;--oc-teal-7-rgb: 12, 166, 120;--oc-teal-8: #099268;--oc-teal-8-rgb: 9, 146, 104;--oc-teal-9: #087f5b;--oc-teal-9-rgb: 8, 127, 91;--oc-green-0: #ebfbee;--oc-green-0-rgb: 235, 251, 238;--oc-green-1: #d3f9d8;--oc-green-1-rgb: 211, 249, 216;--oc-green-2: #b2f2bb;--oc-green-2-rgb: 178, 242, 187;--oc-green-3: #8ce99a;--oc-green-3-rgb: 140, 233, 154;--oc-green-4: #69db7c;--oc-green-4-rgb: 105, 219, 124;--oc-green-5: #51cf66;--oc-green-5-rgb: 81, 207, 102;--oc-green-6: #40c057;--oc-green-6-rgb: 64, 192, 87;--oc-green-7: #37b24d;--oc-green-7-rgb: 55, 178, 77;--oc-green-8: #2f9e44;--oc-green-8-rgb: 47, 158, 68;--oc-green-9: #2b8a3e;--oc-green-9-rgb: 43, 138, 62;--oc-lime-0: #f4fce3;--oc-lime-0-rgb: 244, 252, 227;--oc-lime-1: #e9fac8;--oc-lime-1-rgb: 233, 250, 200;--oc-lime-2: #d8f5a2;--oc-lime-2-rgb: 216, 245, 162;--oc-lime-3: #c0eb75;--oc-lime-3-rgb: 192, 235, 117;--oc-lime-4: #a9e34b;--oc-lime-4-rgb: 169, 227, 75;--oc-lime-5: #94d82d;--oc-lime-5-rgb: 148, 216, 45;--oc-lime-6: #82c91e;--oc-lime-6-rgb: 130, 201, 30;--oc-lime-7: #74b816;--oc-lime-7-rgb: 116, 184, 22;--oc-lime-8: #66a80f;--oc-lime-8-rgb: 102, 168, 15;--oc-lime-9: #5c940d;--oc-lime-9-rgb: 92, 148, 13;--oc-yellow-0: #fff9db;--oc-yellow-0-rgb: 255, 249, 219;--oc-yellow-1: #fff3bf;--oc-yellow-1-rgb: 255, 243, 191;--oc-yellow-2: #ffec99;--oc-yellow-2-rgb: 255, 236, 153;--oc-yellow-3: #ffe066;--oc-yellow-3-rgb: 255, 224, 102;--oc-yellow-4: #ffd43b;--oc-yellow-4-rgb: 255, 212, 59;--oc-yellow-5: #fcc419;--oc-yellow-5-rgb: 252, 196, 25;--oc-yellow-6: #fab005;--oc-yellow-6-rgb: 250, 176, 5;--oc-yellow-7: #f59f00;--oc-yellow-7-rgb: 245, 159, 0;--oc-yellow-8: #f08c00;--oc-yellow-8-rgb: 240, 140, 0;--oc-yellow-9: #e67700;--oc-yellow-9-rgb: 230, 119, 0;--oc-orange-0: #fff4e6;--oc-orange-0-rgb: 255, 244, 230;--oc-orange-1: #ffe8cc;--oc-orange-1-rgb: 255, 232, 204;--oc-orange-2: #ffd8a8;--oc-orange-2-rgb: 255, 216, 168;--oc-orange-3: #ffc078;--oc-orange-3-rgb: 255, 192, 120;--oc-orange-4: #ffa94d;--oc-orange-4-rgb: 255, 169, 77;--oc-orange-5: #ff922b;--oc-orange-5-rgb: 255, 146, 43;--oc-orange-6: #fd7e14;--oc-orange-6-rgb: 253, 126, 20;--oc-orange-7: #f76707;--oc-orange-7-rgb: 247, 103, 7;--oc-orange-8: #e8590c;--oc-orange-8-rgb: 232, 89, 12;--oc-orange-9: #d9480f;--oc-orange-9-rgb: 217, 72, 15}/*! reasonable colors v0.4.0 | MIT License | https://github.com/matthewhowell/reasonable-colors */:root{--color-gray-1: #f6f6f6;--color-gray-2: #e2e2e2;--color-gray-3: #8b8b8b;--color-gray-4: #6f6f6f;--color-gray-5: #3e3e3e;--color-gray-6: #222222;--color-rose-1: #fff7f9;--color-rose-2: #ffdce5;--color-rose-3: #ff3b8d;--color-rose-4: #db0072;--color-rose-5: #800040;--color-rose-6: #4c0023;--color-raspberry-1: #fff8f8;--color-raspberry-2: #ffdddf;--color-raspberry-3: #ff426c;--color-raspberry-4: #de0051;--color-raspberry-5: #82002c;--color-raspberry-6: #510018;--color-red-1: #fff8f6;--color-red-2: #ffddd8;--color-red-3: #ff4647;--color-red-4: #e0002b;--color-red-5: #830014;--color-red-6: #530003;--color-orange-1: #fff8f5;--color-orange-2: #ffded1;--color-orange-3: #fd4d00;--color-orange-4: #cd3c00;--color-orange-5: #752100;--color-orange-6: #401600;--color-cinnamon-1: #fff8f3;--color-cinnamon-2: #ffdfc6;--color-cinnamon-3: #d57300;--color-cinnamon-4: #ac5c00;--color-cinnamon-5: #633300;--color-cinnamon-6: #371d00;--color-amber-1: #fff8ef;--color-amber-2: #ffe0b2;--color-amber-3: #b98300;--color-amber-4: #926700;--color-amber-5: #523800;--color-amber-6: #302100;--color-yellow-1: #fff9e5;--color-yellow-2: #ffe53e;--color-yellow-3: #9c8b00;--color-yellow-4: #7d6f00;--color-yellow-5: #463d00;--color-yellow-6: #292300;--color-lime-1: #f7ffac;--color-lime-2: #d5f200;--color-lime-3: #819300;--color-lime-4: #677600;--color-lime-5: #394100;--color-lime-6: #222600;--color-chartreuse-1: #e5ffc3;--color-chartreuse-2: #98fb00;--color-chartreuse-3: #5c9b00;--color-chartreuse-4: #497c00;--color-chartreuse-5: #264500;--color-chartreuse-6: #182600;--color-green-1: #e0ffd9;--color-green-2: #72ff6c;--color-green-3: #00a21f;--color-green-4: #008217;--color-green-5: #004908;--color-green-6: #062800;--color-emerald-1: #dcffe6;--color-emerald-2: #5dffa2;--color-emerald-3: #00a05a;--color-emerald-4: #008147;--color-emerald-5: #004825;--color-emerald-6: #002812;--color-aquamarine-1: #daffef;--color-aquamarine-2: #42ffc6;--color-aquamarine-3: #009f78;--color-aquamarine-4: #007f5f;--color-aquamarine-5: #004734;--color-aquamarine-6: #00281b;--color-teal-1: #d7fff7;--color-teal-2: #00ffe4;--color-teal-3: #009e8c;--color-teal-4: #007c6e;--color-teal-5: #00443c;--color-teal-6: #002722;--color-cyan-1: #c4fffe;--color-cyan-2: #00fafb;--color-cyan-3: #00999a;--color-cyan-4: #007a7b;--color-cyan-5: #004344;--color-cyan-6: #002525;--color-powder-1: #dafaff;--color-powder-2: #8df0ff;--color-powder-3: #0098a9;--color-powder-4: #007987;--color-powder-5: #004048;--color-powder-6: #002227;--color-sky-1: #e3f7ff;--color-sky-2: #aee9ff;--color-sky-3: #0094b4;--color-sky-4: #007590;--color-sky-5: #00404f;--color-sky-6: #001f28;--color-cerulean-1: #e8f6ff;--color-cerulean-2: #b9e3ff;--color-cerulean-3: #0092c5;--color-cerulean-4: #00749d;--color-cerulean-5: #003c54;--color-cerulean-6: #001d2a;--color-azure-1: #e8f2ff;--color-azure-2: #c6e0ff;--color-azure-3: #008fdb;--color-azure-4: #0071af;--color-azure-5: #003b5e;--color-azure-6: #001c30;--color-blue-1: #f0f4ff;--color-blue-2: #d4e0ff;--color-blue-3: #0089fc;--color-blue-4: #006dca;--color-blue-5: #00386d;--color-blue-6: #001a39;--color-indigo-1: #f3f3ff;--color-indigo-2: #deddff;--color-indigo-3: #657eff;--color-indigo-4: #0061fc;--color-indigo-5: #00328a;--color-indigo-6: #001649;--color-violet-1: #f7f1ff;--color-violet-2: #e8daff;--color-violet-3: #9b70ff;--color-violet-4: #794aff;--color-violet-5: #2d0fbf;--color-violet-6: #0b0074;--color-purple-1: #fdf4ff;--color-purple-2: #f7d9ff;--color-purple-3: #d150ff;--color-purple-4: #b01fe3;--color-purple-5: #660087;--color-purple-6: #3a004f;--color-magenta-1: #fff3fc;--color-magenta-2: #ffd7f6;--color-magenta-3: #f911e0;--color-magenta-4: #ca00b6;--color-magenta-5: #740068;--color-magenta-6: #44003c;--color-pink-1: #fff7fb;--color-pink-2: #ffdcec;--color-pink-3: #ff2fb2;--color-pink-4: #d2008f;--color-pink-5: #790051;--color-pink-6: #4b0030}warning-list{background:var(--color-yellow-1);border-left:4px solid var(--color-yellow-2);color:var(--color-yellow-4);display:block;font-family:var(--font-system);padding:.5em}warning-list[hidden]{display:none}warning-list ul{list-style-type:none;margin:0;padding-left:0}inline-button{cursor:pointer}
 
-</style></head><body><state-css-variables><state-dark-theme-css-overrides><div id="backdrop"><page-skip><page-transition><div id="page" aria-live="polite"><header hidden></header><article></article><warning-list></warning-list><footer hidden></footer><error-handler></error-handler><page-skip-indicator></page-skip-indicator></div></page-transition></page-skip></div></state-dark-theme-css-overrides></state-css-variables><external-fonts></external-fonts><noscript>This requires JavaScript.</noscript></body><!-- UUID://E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F// --><tw-storydata name="Dawn" startnode="1" creator="Tweego" creator-version="2.1.1" ifid="E6CCBDAA-F2A5-4972-9E6B-381C9A71A37F" zoom="1" format="Chapbook" format-version="2.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="100,100" size="100,100">config.style.page.font: &quot;Roboto 19&quot;
+</style></head><body><state-css-variables><state-dark-theme-css-overrides><div id="backdrop"><page-skip><page-transition><div id="page" aria-live="polite"><header hidden></header><article></article><warning-list></warning-list><footer hidden></footer><error-handler></error-handler><page-skip-indicator></page-skip-indicator></div></page-transition></page-skip></div></state-dark-theme-css-overrides></state-css-variables><external-fonts></external-fonts><noscript>This requires JavaScript.</noscript></body><!-- UUID://97F7797E-510E-4E3E-AC10-AA3EAC7B8DFB// --><tw-storydata name="Intergalactic Chat Simulator" startnode="1" creator="Tweego" creator-version="2.1.1" ifid="97F7797E-510E-4E3E-AC10-AA3EAC7B8DFB" zoom="1" format="Chapbook" format-version="2.3.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="42,15" size="100,100">config.style.page.font: &quot;Roboto 19&quot;
 config.style.page.verticalAlign:&#39;top&#39;
 config.body.transition.name: &#39;fadeInOut&#39;
 config.page.transition.duration: &#39;500ms&#39;
 --
 
-A sweet smell surrounds you as you step in to spend your night shift in this trailer. Lilies were always your favourite. Too bad you don&#39;t often see a lot of them around here anymore.
+INTERGALACTIC CHAT SIMULATOR  
 
-You are on duty. You have been sent to inspect this abandoned trailer park and the tech lying here. Your orders are to connect your detection kit to all the abandoned hardware one at a time, any information lying around will be automatically uploaded to the server for inspection by analysts.
+An interactive text adventure
 
-While the data is transferring, you are free to hang around. There are several computer [[gadgets]] here. A [[flower pot]] adores the wall on your left.</tw-passagedata><tw-passagedata pid="2" name="gadgets" tags="" position="225,100" size="100,100">You take a gander at the gadgets. As happy as some of your colleagues might have been to be here, you don&#39;t understand much of the stuff lying around here. 
-
-Your train of thoughts take you to the time when you were deciding a career. Why did you choose the role of a technician?
-
-[[Your district was to be subsumed by another one, you needed a job]]  
-
-[[You have always been fascinated by gadgets]]</tw-passagedata><tw-passagedata pid="3" name="flower pot" tags="" position="583,397" size="100,100">You bring the flower pot closer to smell the lillies. The pot feels heavier than it should. 
-
-You look in to find a few more hard disks. You chuckle at their level of sneakiness.
-
-You should probably take a look at the [[gadgets]]</tw-passagedata><tw-passagedata pid="4" name="outside" tags="" position="733,397" size="100,100">Bright lights surround the trailer with a rough and unclear voice shouting something on the loudspeakers, the continous roar forces you to walk out and ask what the matter is.
-
-You see the federal tactical team at the doorsteps asking you for your [[name]].</tw-passagedata><tw-passagedata pid="5" name="Your district was to be subsumed by another one, you needed a job" tags="" position="358,547" size="100,100">You remember watching on TV when you were in your classroom, the Andromeda federation decided to eradicate several districts in your area and place tourist space ports instead. It did not bother you much but you were sympathetic towards the emotional response of your loved ones.
-
-With the adjointment of districts, resource sharing was definitely going to be a problem and getting a job looked impossible for someone like you, atleast that&#39;s what you thought. Why?
-
-[[I was of the Orion class, the most persecuted]]  
-
-[[I did not have good grades-&gt;I was of the Orion class, the most persecuted]]  
-
-[[Good grades don&#39;t guarantee jobs-&gt;I was of the Orion class, the most persecuted]]</tw-passagedata><tw-passagedata pid="6" name="You have always been fascinated by gadgets" tags="" position="508,547" size="100,100">Even though you were fascinated by this line of work, you knew that chances of gaining a position were narrowing down. The unstable political situations made it necessary for you to hurry up and acquire the job. But why were you so concerned about it?
+You woke up pretty early today and feel quite fresh.
+You are sitting in an interview.
 
 
-[[I was of the Orion class, the most persecuted]]  
+&quot;Before we start with anything, I need to ask you something, how do you feel today?&quot;
 
-[[I did not have good grades-&gt;I was of the Orion class, the most persecuted]]  
+[[1. Been better-&gt;1]]  
 
-[[Good grades don&#39;t guarantee jobs-&gt;I was of the Orion class, the most persecuted]]</tw-passagedata><tw-passagedata pid="7" name="I was of the Orion class, the most persecuted" tags="" position="208,697" size="100,100">The safeguard that your district had provided was now on its verge of extinction and your achievements or lack therof were of no significance. 
-The inevitable crisis was spine chilling enough for your family to look for far away places to stay. But you wanted to stay close to town. Why?
+[[2. Same as everyday-&gt;1]]  
 
-[[I have always lived here]]  
+[[3. Excited-&gt;1]]</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="197,22" size="100,100">&quot;Well you know it&#39;s more of a formality than anything. It&#39;s not like it matters to us anyway how you feel. Now answer the following question carefully - do you or do you not like the beverages we make with ...&quot;
 
-[[I was in love]]</tw-passagedata><tw-passagedata pid="8" name="Epilogue" tags="" position="1100,743" size="100,100">You sit calmly as you wait for the authorities to learn of your actions. 
+You feel annoyed by the endless stream of questions. But you passed and got the job anyway.
 
-Thanks for playing the game. End of prologue. //made for the jam//</tw-passagedata><tw-passagedata pid="9" name="I have always lived here" tags="" position="133,847" size="100,100">You can&#39;t imagine a life away from here. The federation couldn&#39;t successfully evacuate the town and it was now filled with rebel activity who are planting trees on government property to make it illegal to build on it, a problem that the state couldn&#39;t eradicate that easily.
+&quot;But you can&#39;t join us from today, or this week for that matter, company policy is that ...&quot;
 
-With its effectual tactical team and patented technolgy, federation is finally succeeding and is now sending troops and technicians to clear up the places before they are demolished.
+[[You leave the building]]</tw-passagedata><tw-passagedata pid="3" name="You leave the building" tags="" position="343,24" size="100,100">You are now on the streets outside the building, littered with Christmas posters everywhere.
 
-How do you feel about the work?
+You can now choose to go back to your [[apartment]] or [[call your friend Dan]] and tell him about getting the job. However the thing with Dan is that he hasn&#39;t yet paid back the 100 dollars he borrowed from you so telling him about the job might invite for more loans.
 
-[[It&#39;s work]]  
+But honestly, you can do whatever you want, you might as well go run [[naked on the streets]].</tw-passagedata><tw-passagedata pid="4" name="apartment" tags="" position="268,174" size="100,100">After the hustling of the day you get back to your apartment to relax and decided to watch some TV.
 
-[[I try not to feel just about anything-&gt;It&#39;s work]]</tw-passagedata><tw-passagedata pid="10" name="I was in love" tags="" position="283,847" size="100,100">What was the name of your love interest?
+As you are about to start it up the phone rings, what do you do?
 
-# {cycling link for: &#39;$love&#39;, choices: [&#39;Brenda&#39;, &#39;Alex&#39;, &#39;Brian&#39;]}
+[[Ignore]]  
 
-[[Continue-&gt;her]]</tw-passagedata><tw-passagedata pid="11" name="It&#39;s work" tags="" position="58,997" size="100,100">Ah well it&#39;s not like you have total control over your life anyway, do you?
+[[Pick Up]]  
 
-You stand up for a second, curiously looking outside the window to see how the area looks like. 
+[[Pick Up and then don&#39;t answer]]</tw-passagedata><tw-passagedata pid="5" name="call your friend Dan" tags="" position="418,174" size="100,100">&quot;Cool dude. I know these interviews are no big deal for a nerd like you. Listen I&#39;m meeting these guys from across the town, they challenged for a Foosball game. You in? Sure you are ... I&#39;ll call you with details&quot;
 
-There&#39;s a bathroom in this trailer if you want to [[freshen up-&gt;outside]]. You can however go and take a look [[outside]] .</tw-passagedata><tw-passagedata pid="12" name="her" tags="" position="338,997" size="100,100">Your relationship with {$love} was complicated, but you weren&#39;t looking for some social significance, rather you were living in the moment. But times weren&#39;t so great for the two of you.
+Feeling tired there&#39;s not much you feel like doing than getting back to your [[apartment]].</tw-passagedata><tw-passagedata pid="6" name="Ignore" tags="" position="118,324" size="100,100">As you try to find a decent channel to watch, the phone keeps on ringing, feels more than usual number of rings. The phone rings again after sometime, seems like the caller isn&#39;t going to stop anytime soon.
 
-What happened ? How did you feel about it?
+What do you do?
 
-[[Don&#39;t want to talk about it -&gt;It&#39;s work]]  
+[[Pick Up]]  
 
-[[I try not to feel just about anything -&gt;It&#39;s work]]  
+[[Pick Up and then don&#39;t answer]]</tw-passagedata><tw-passagedata pid="7" name="Pick Up" tags="" position="268,324" size="100,100">&quot;Can you hear me?&quot; the familiar voice of your mother greets you.
 
-[[I never figured it out -&gt;It&#39;s work]]</tw-passagedata><tw-passagedata pid="13" name="name" tags="" position="733,547" size="100,100">Your accurate response should have solved the situation, but it didn&#39;t. They kept on shouting in gibberish often in sync. 
+She doesn&#39;t reacts much when you tell her about your new job, instead she asks whether you got the 100 dollars back that you loaned to Dan.
 
-To clarify things you show them your ID to which they calm down, but then suddently you hear something  //wheez// right past your left ear. 
+&quot;Call him or go meet him and ask about the money. If he doesn&#39;t pays then ask him for 3.4% interest. Why did he needed that money anyway?&quot; your mother asks ...
 
-You realize that one of them just shot a gamma ray to scare you. Keeping your shaking fists under control you look at them to see that they are laughing at you.
+[[I didn&#39;t ask-&gt;ask]]  
 
-You get back inside the [[trailer]].</tw-passagedata><tw-passagedata pid="14" name="trailer" tags="" position="734,697" size="100,100">As you calm your nerves down you notice that the word &quot;Project $love&quot; is written on one of the screens. 
+[[He forgot to mention-&gt;ask]]</tw-passagedata><tw-passagedata pid="8" name="Pick Up and then don&#39;t answer" tags="" position="418,324" size="100,100">You never know how many times the phone is going to ring, the best way you decide is to pick it up and then keep it down. 
 
-Digging down a bit you realise that it&#39;s a computer virus that is going to infect the federation servers through your kit and globaly reveal a forest burning plan that the federation is  promoting as a patented rebel remover.
+But the ringing doesn&#39;t stops, you decided to pick it up and not talk hoping for the caller to get annoyed and leave it at that. But you hear loud shouting on the other side.
 
-You can choose to [[stop it right now-&gt;Epilogue]] or [[let the disks do its thing-&gt;Epilogue]] until the sun rises and hopefully prevent the genocide. You will however be executed for betraying the state and thus will be sacrificing your life for the people if you choose the latter.</tw-passagedata></tw-storydata></html>
+[[Pick Up]]</tw-passagedata><tw-passagedata pid="9" name="ask" tags="" position="268,474" size="100,100">&quot;What kind of a response is that? It&#39;s your job to atleast ask someone why they are asking for money from you before just giving it away.&quot; shouts your mother on the phone.
+
+After a bit more exchange of pleasantries she suggests you to either [[Call Dan]] or go and show up at [[his house]].</tw-passagedata><tw-passagedata pid="10" name="naked on the streets" tags="" position="518,38" size="100,100">Have you gone insane? No you don&#39;t do that. 
+
+You either leave for your [[apartment]] or [[call your friend Dan]].</tw-passagedata><tw-passagedata pid="11" name="Call Dan" tags="" position="193,624" size="100,100">&quot;Nice timing dude, you meet me at the deli, bring your car&quot; Dan hangs up before you can say anything.
+
+Go meet him at the [[deli]]</tw-passagedata><tw-passagedata pid="12" name="his house" tags="" position="343,624" size="100,100">You show up at his house to find it locked. Before even thinking about calling him, Dan calls you and says &quot;you meet me at the deli, bring your car&quot; Dan hangs up before you can say anything.
+
+
+Go meet him at the [[deli]]. You can however look inside his [[window]].</tw-passagedata><tw-passagedata pid="13" name="deli" tags="" position="193,774" size="100,100">After searching around on your phone for the place that Dan didn&#39;t even tell you the name of, you finally arrive at the place 3.4 miles away from your place.
+
+You didn&#39;t expect the place to be so colourful, you find Dan sitting at a table near the door with a girl working on a laptop and a satellite-dish-looking thing on the floor.
+
+Dan smiles at you and introduces you to Ciara. &quot;Tell her what you do&quot; insists Dan. Before you could say something Ciara answers &quot;I&#39;m a blogger&quot;.
+
+You sit down beside Dan as he speaks up &quot;That is exactly why I like you so much. I am not going to talk in circles, I like you and I am taking you out on dinner when you return&quot;.
+
+Visibly embarrassed Ciara replies with a smile.
+
+&quot;I&#39;ll pack the dish into the car, you take your time, we&#39;ll be outside&quot; Dan tells Ciara as he gets up grabbing your hand.
+
+As you two walk outside, what do you say?
+
+[[Absolutely No]]  
+
+[[Where are we going?]]  
+
+[[Act Confused]]</tw-passagedata><tw-passagedata pid="14" name="window" tags="" position="343,774" size="100,100">You decide to peer through the window. The glass is a bit too unclear so you try and clean it up with your fingers but the whole glass piece falls on the other side and the shattering noise was loud enough. 
+
+You see an old lady in a distance, looking at you from her balcony. It almost looks like she is calling someone right now.
+
+Probably better if you leave now and go meet Dan at the [[deli]]. You can however go talk to the [[old lady]] and &#39;suggest&#39; her not to tell anyone about anything she saw.</tw-passagedata><tw-passagedata pid="15" name="old lady" tags="" position="484,772" size="100,100">You get closer to see that there are no old ladies around here, just clothes hanging on ropes to dry up.
+
+What were you going to tell her anyway?
+
+Go meet Dan at the [[deli]].</tw-passagedata><tw-passagedata pid="16" name="Absolutely No" tags="" position="43,924" size="100,100">&quot;Dude please help me out on this. Didn&#39;t you see how cool I looked over there, she had no chance to say no. Please dude&quot; whispers Dan.
+
+&quot;There&#39;s no way I am driving anywhere&quot; you reply.
+
+&quot;You know what I&#39;ll pay back your money too, just do this one favour, it&#39;s not like ask you for anything&quot; begs Dan.
+
+Say &quot;[[Where are we going?]]&quot;  
+
+[[Kick him]]</tw-passagedata><tw-passagedata pid="17" name="Where are we going?" tags="" position="193,924" size="100,100">&quot;WE are not going anywhere&quot; answers Dan. &quot;You are taking Ciara to this coordinate place she was talking about for some science project thing, I&#39;m telling you dude help me out on this, and you get your money back that I owe you, now go sit inside and let me worry about the packing&quot; Dan says.
+
+He somehow ties up the satellite dish on your car making you wonder whether it could be any more uglier.
+
+Dan hands you an envelope and asks you to give it to Ciara after your return. &quot;Don&#39;t look inside&quot; he warned, with a smile, it&#39;s supposed to be a gift&quot;.
+
+Ciara gets out of the deli, murmurs something to Dan, throws her laptop on the back-seat, and sits down beside you. 
+
+As you start driving she brings her phone out and shows you the location on the map, following which you keep [[driving]].</tw-passagedata><tw-passagedata pid="18" name="Act Confused" tags="" position="343,924" size="100,100">As the two of you get out of the place, Dan doesn&#39;t bothers explaining anything to you and points you to go sit on the driver&#39;s seat. He somehow ties up the satellite dish on your car making you wonder whether it could be any more uglier.
+
+Dan hands you an envelope and asks you to give it to Ciara after your return. &quot;Don&#39;t look inside&quot; he warned, with a smile, &quot;it&#39;s supposed to be a gift&quot;.
+
+Ciara gets out of the deli, murmurs something to Dan, throws her laptop on the back-seat, and sits down beside you. 
+
+As you start driving she brings her phone out and shows you the location on the map, following which you keep [[driving]].</tw-passagedata><tw-passagedata pid="19" name="Kick him" tags="" position="43,1074" size="100,100">You decided to kick him on the knees but accidentally you hit the groins. Dan shouts and whimpers to the ground seemingly unconscious.
+
+His shrieks could be heard loudly enough. Ciara gets out to find Dan lying on the ground.
+
+[[Kick him again]]  
+
+[[Apologise to Ciara and leave]]  
+
+[[Help him out]]</tw-passagedata><tw-passagedata pid="20" name="Kick him again" tags="" position="12,1221" size="100,100">You kick him again, Dan groans in pain. Ciara pushes you so hard that you fall on the mud.
+
+As Ciara tries to help him get up you can [[Apologise to Ciara and leave]] or [[Help him out]].</tw-passagedata><tw-passagedata pid="21" name="Apologise to Ciara and leave" tags="" position="131,1211" size="100,100">You apologise to Ciara as she looks at you in surprise and disbelief. Your car engine takes a moment to start after which you leave to get back to your apartment.
+
+---------
+&lt;H4&gt;ENDING 1&lt;/H4&gt; You can go back to the [[deli]].</tw-passagedata><tw-passagedata pid="22" name="Help him out" tags="" position="260,1197" size="100,100">You help him out to get up. You bring a water-bottle from your car and sprinkle some on his fact. You try to get him to sit up as he groans in pain, you feel somewhat relieved.
+
+Ciara stares at you with angry eyes. It almost looks like she might hit you at any moment. The best thing for to do right now is probably to [[Apologise to Ciara and leave]].</tw-passagedata><tw-passagedata pid="23" name="driving" tags="" position="343,1074" size="100,100">The journey now begins, with your hands on the steering wheels and your mind a thousand miles away you wonder why you are here...
+And Ciara&#39;s constant stare doesn&#39;t helps in any possible away.
+
+[[Ask why she is staring]]  
+
+[[Start coughing until she talks first]]</tw-passagedata><tw-passagedata pid="24" name="Ask why she is staring" tags="" position="376,1225" size="100,100">&quot;Isn&#39;t this one of those driverless cars&quot; Ciara asks you.
+
+You nod, clueless of why she might be asking that.
+
+&quot;Why are you driving then?&quot;
+
+[[I like driving]]  
+
+[[I don&#39;t trust AI]]  
+
+[[It&#39;d have been awkward to just sit and do nothing]]</tw-passagedata><tw-passagedata pid="25" name="Start coughing until she talks first" tags="" position="490,1154" size="100,100">You start coughing. After a minute or so you realise that this isn&#39;t helping. Your throat hurts now.
+
+[[Ask why she is staring]]</tw-passagedata><tw-passagedata pid="26" name="I like driving" tags="" position="227,1375" size="100,100">&quot;Then why did you buy this car&quot; she asks.
+
+[[&quot;To save the environment&quot;]]  
+
+[[&quot;Mind your own business&quot;]]  
+
+[[&quot;Cant afford gas&quot;-&gt;&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="27" name="I don&#39;t trust AI" tags="" position="377,1375" size="100,100">&quot;Then why did you buy this car&quot; she asks.
+
+[[&quot;To save the environment&quot;]]  
+
+[[&quot;Mind your own business&quot;]]  
+
+[[&quot;Cant afford gas&quot;-&gt;&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="28" name="It&#39;d have been awkward to just sit and do nothing" tags="" position="526,1375" size="100,100">&quot;Why would that be awkward, we could talk&quot; suggests Ciara, &quot;My name is Ciara&quot;.
+
+[[&quot;We were just introduced&quot;]]  
+
+[[Tell her your name]]  
+
+[[&quot;I don&#39;t care&quot;-&gt;&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="29" name="&quot;We were just introduced&quot;" tags="" position="518,1527" size="100,100">&quot;Oh! Sorry I forgot. I don&#39;t think I got your name though&quot;
+
+[[Tell her your name]]  
+
+[[&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="30" name="Tell her your name" tags="" position="657,1525" size="100,100">&quot;Well it&#39;s nice to meet you, I&#39;m sure we&#39;ll be the best of friends over the journey&quot;
+
+[[&quot;You bet&quot;-&gt;&quot;Mind your own business&quot;]]  
+
+[[&quot;I don&#39;t care&quot;-&gt;&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="31" name="&quot;To save the environment&quot;" tags="" position="306,1527" size="100,100">&quot;It&#39;s a good choice I guess, I don&#39;t really care about cars. So ... you got any music?&quot;
+
+[[&quot;Might add later&quot;]]  
+
+[[&quot;No&quot;-&gt;&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="32" name="&quot;Mind your own business&quot;" tags="" position="133,1531" size="100,100">Hours past as your car drove all by itself on this never ending empty road.
+
+You wished if there was more to talk about but there was nothing really you could think of saying. You think that for a certain extent you probably didn&#39;t wanted to talk either.
+
+Lost in your own thoughts, you notice Ciara is stopping the car.
+
+[[Ask her why she is stopping the car-&gt;radioshop1]]  
+
+[[Look Away-&gt;radioshop1]]</tw-passagedata><tw-passagedata pid="33" name="&quot;Might add later&quot;" tags="" position="392,1671" size="100,100">&quot;Why don&#39;t we stop by the first store we find?&quot;
+
+[[Sure-&gt;&quot;Mind your own business&quot;]]  
+
+[[&quot;I&#39;ll just buy it over the internet&quot;-&gt;&quot;Mind your own business&quot;]]</tw-passagedata><tw-passagedata pid="34" name="radioshop1" tags="" position="137,1683" size="100,100">&quot;I saw a music store. I&#39;ll buy some Rock. You wanna join?&quot;
+
+[[Get out of the car with her]]  
+
+[[Say No]]</tw-passagedata><tw-passagedata pid="35" name="Get out of the car with her" tags="" position="140,1826" size="100,100">As you two get near the shop, a poster catches your attention. You remember having seen it outside your new office building too.
+
+You wait outside to read it as Ciara goes inside the shop.
+
+There is a Christmas Charity Drive going on, a few miles away on your track. Organisers are looking for volunteers. Are you interested?
+
+[[Yes]]  
+
+[[I&#39;ll ask Ciara-&gt;Yes]] 
+
+[[No]]</tw-passagedata><tw-passagedata pid="36" name="Say No" tags="" position="278,1823" size="100,100">You watch outside the window as Ciara enters the shop. As bored as you are right now, you could do anything to get over this driving project.
+
+Why are you here? 
+
+[[I want my money back from Dan-&gt;run]]  
+
+[[Just helping out-&gt;run]]</tw-passagedata><tw-passagedata pid="37" name="run" tags="" position="409,1926" size="100,100">You notice Ciara getting out of the store. You realise for a second that if you were to drive off now, no one would know of anything. You can tell Dan that you left her wherever she was going and get your money back.
+
+It&#39;s not like this is the middle of nowhere. You see a few shops nearby.
+
+[[Start the engine and get moving]]  
+
+[[No, stop thinking stuff-&gt;No]]</tw-passagedata><tw-passagedata pid="38" name="Start the engine and get moving" tags="" position="413,2072" size="100,100">I guess this is what freedom smells like. You wonder why you don&#39;t get more good ideas like this one.
+
+You return and ask for Dan but everyone tells you that he has left town. 
+
+You never met Ciara again.
+
+----
+&lt;h4&gt; Ending 2 &lt;/h4&gt;. GAME OVER.</tw-passagedata><tw-passagedata pid="39" name="Yes" tags="" position="30,1975" size="100,100">You mention this to Ciara to which she looks quite excited. 
+You return to your car waiting for Ciara to finish her shopping.
+
+[[Return to Car-&gt;No]]</tw-passagedata><tw-passagedata pid="40" name="No" tags="" position="276,1969" size="100,100">Ciara returns to the car with nothing. She says - &quot;There&#39;s nothing I liked, guess we will just have to pass the time talking.&quot;
+
+&quot;So what do you do?&quot; she asks you.
+
+[[I build and review video games]]  
+
+[[I work at a company]]</tw-passagedata><tw-passagedata pid="41" name="I build and review video games" tags="" position="175,2125" size="100,100">&quot;Tell me a game you made, who knows, I might have played one of them.&quot;
+
+[[Don&#39;t answer]] 
+
+[[Tell her about the game you wrote]]</tw-passagedata><tw-passagedata pid="42" name="I work at a company" tags="" position="303,2119" size="100,100">&quot;Oh I could never work at a company&quot; Ciara announces to your annoyance, &quot;I just don&#39;t like that kind of work&quot;.
+
+&quot;What&#39;s your Company&#39;s name?&quot; she asks.
+
+[[Tell her your company&#39;s name]]  
+
+[[Don&#39;t answer]]</tw-passagedata><tw-passagedata pid="43" name="Don&#39;t answer" tags="" position="126,2269" size="100,100">As the car takes time further, you notice a big crowd on one of the snow covered fields.
+
+&quot;That&#39;s the charity function&quot; shouts Ciara and stops the car. &quot;I thought the posters might be a joke, make it final, you in?&quot;
+
+[[I don&#39;t like it when you stop the car again and again]]  
+
+[[I&#39;m in]]</tw-passagedata><tw-passagedata pid="44" name="Tell her about the game you wrote" tags="" position="275,2275" size="100,100">Looking excited Ciara wonders for a moment and replies &quot;No, I don&#39;t think I have played that one, does sounds interesting&quot;.
+
+As you get along, you find her pleasant to talk to. 
+
+&quot;You don&#39;t really talk much, do you?&quot; Ciara asks you. I guess you should ask her something ...
+
+[[What&#39;s this science project thing?]]  
+
+[[What is the meaning of life?]]</tw-passagedata><tw-passagedata pid="45" name="Tell her your company&#39;s name" tags="" position="400,2275" size="100,100">&quot;I don&#39;t think I have hear about {cycling link for: &#39;$company&#39;, choices: [&#39;Chrome Corps&#39;, &#39;Amayori Labs&#39;, &#39;Manor Inc&#39;]}. Must be interesting.&quot;
+
+As you get along, you find her pleasant to talk to. 
+
+&quot;You don&#39;t really talk much, do you?&quot; Ciara asks you. I guess you should ask her something ...
+
+[[What&#39;s this science project thing?]]  
+
+[[What is the meaning of life?]]</tw-passagedata><tw-passagedata pid="46" name="What&#39;s this science project thing?" tags="" position="200,2425" size="100,100">&quot;Well you won&#39;t understand, it&#39;s a bit complicated&quot;
+
+&quot;Then explain to me&quot;
+
+&quot;I&#39;d rather discuss something else&quot;
+
+[[Continue-&gt;Don&#39;t answer]]</tw-passagedata><tw-passagedata pid="47" name="What is the meaning of life?" tags="" position="350,2425" size="100,100">&quot;I don&#39;t think I can answer that&quot; answers Ciara, &quot;I guess doing good for others and spending time with your family .. &quot; Ciara stops to murmur something to herself and doesn&#39;t talks anymore, you notice her teary eyes.
+
+[[Continue-&gt;Don&#39;t answer]]</tw-passagedata><tw-passagedata pid="48" name="I don&#39;t like it when you stop the car again and again" tags="" position="50,2554" size="100,100">Ciara leaves the car. You realise that this is your second chance, if you were to drive off now, no one would know of anything. You can tell Dan that you left her wherever she was going and get your money back.
+
+It&#39;s not like this is the middle of nowhere. You see a few shops nearby.
+
+[[Start the engine and get moving]] 
+
+[[Take a nap and wait for her]]</tw-passagedata><tw-passagedata pid="49" name="I&#39;m in" tags="" position="166,2575" size="100,100">The two of you spend the rest of the day involved in charity activity, it mostly involved drawing posters on the wall, and distributing clothing to the needy.
+
+A few hours later Ciara suggests to pack up and leave.
+
+[[Continue-&gt;Take a nap and wait for her]]</tw-passagedata><tw-passagedata pid="50" name="Take a nap and wait for her" tags="" position="50,2704" size="100,100">The sun is almost down now, as you sit in the back fiddling with the light in the back-seat, you notice Ciara visibly being worried.
+
+[[Ask her why she looks worried]] 
+
+[[Wait for her to talk-&gt;Ask her why she looks worried]]</tw-passagedata><tw-passagedata pid="51" name="Ask her why she looks worried" tags="" position="66,2828" size="100,100">&quot;My laptop isn&#39;t working. I knew they would mess it up, shouldn&#39;t have let anyone touch it&quot;
+
+[[Perhaps you shouldn&#39;t throw it around]]  
+
+[[&quot;Have you tried turning it off and on again?&quot;-&gt;Perhaps you shouldn&#39;t throw it around]]</tw-passagedata><tw-passagedata pid="52" name="Perhaps you shouldn&#39;t throw it around" tags="" position="72,2963" size="100,100">Ciara gives you an annoyed look and gets back to pressing buttons here and there.
+
+As the problem continues, your car beeps notifying that you have reached your destination. You take a peek outside to realise that it&#39;s the middle of nowhere, an empty patch beside the road.
+
+[[What&#39;s the science project?]] 
+
+[[What is this place-&gt;What&#39;s the science project?]]</tw-passagedata><tw-passagedata pid="53" name="What&#39;s the science project?" tags="" position="72,3113" size="100,100">Ciara gets out of the car, kicks your tyre and starts weeping. You step out and insist on her telling you what&#39;s going on.
+
+&quot;It&#39;s a communication thing&quot; with her sobbing she continues &quot;I made a mistake okay ... left home when my grandma died, I wanted to send this picture of us to space and stay ... forever... and now it&#39;s broken.&quot;
+
+[[I&#39;m annoyed by your idiocy]]  
+
+[[Sweetly ask her not to cry]]</tw-passagedata><tw-passagedata pid="54" name="I&#39;m annoyed by your idiocy" tags="" position="47,3261" size="100,100">Ciara throws her laptop at you, it hits your shoulder that now hurts immensely.
+
+She gets back into the car, fiddles with the system and drives away as you try to get back up on your feet.
+
+You are now stranded in the middle of nowhere.
+
+---
+&lt;h4&gt; Ending 3&lt;/h4&gt; GAMEOVER
+Strand Ending</tw-passagedata><tw-passagedata pid="55" name="Sweetly ask her not to cry" tags="" position="171,3229" size="100,100">Your voice calms her down, she sits down over a rock staring at her laptop.
+
+You feel upset for her. But as you walk towards your car to bring her some water, she shouts something and jumps back into the car. 
+
+You try to look at what she&#39;s doing and find that she has opened up your car&#39;s computer and is now disconnecting wires from here and there.
+
+[[Have you gone mad?-&gt;I&#39;m annoyed by your idiocy]]  
+
+[[&quot;We should probably keep the car working&quot;]]</tw-passagedata><tw-passagedata pid="56" name="&quot;We should probably keep the car working&quot;" tags="" position="171,3379" size="100,100">&quot;I&#39;ve done it now, I can connect your car to the dish and send the picture from it&quot; she jumps on the roof and asks you to take the dish out.
+
+As the picture now travels to countless miles in space, Ciara now sits there relaxed.
+
+When she gets down, you notice her to be upset.
+
+[[Ask her why she looks upset]]  
+
+[[Leave this place]]</tw-passagedata><tw-passagedata pid="57" name="Ask her why she looks upset" tags="" position="96,3529" size="100,100">&quot;I don&#39;t know what else to do now. I kept myself busy with the project, what do I do now?&quot; laments Ciara staring down.
+
+With nothing to say you get back in the car, starting up the system now you notice that poster for the charity. You can now suggest her to [[get back to her family]] but that might make Dan upset as he won&#39;t get to take her out on dinner, or you can [[say nothing-&gt;Leave this place]]</tw-passagedata><tw-passagedata pid="58" name="Leave this place" tags="" position="246,3529" size="100,100">The car takes you back to your town. On your way back Ciara doesn&#39;t talks much.
+
+When you are dropping her off, you hand her over the envelope that Dan asked you to give her. She opens it up looks at it and asks you what it is. You take it back to realise that it&#39;s a cheque that Dan wrote to you paying you back the 100 dollars he borrowed.
+
+You put it in your pocket, wondering whether it would even cash out or not. 
+
+As the car takes you back to your apartment, you wonder whether you could make different choices.
+---
+&lt;h4&gt; ENDING 4 &lt;/h4&gt;
+GAME OVER</tw-passagedata><tw-passagedata pid="59" name="get back to her family" tags="" position="96,3680" size="100,100">You realise that making such a suggestion might not be the best option considering you don&#39;t know each other that close yet.
+
+You make it very slight by asking her questions about where she lives.
+
+Sitting over the car and enjoying the sunset, she finally decides to meet her parents back home.
+
+Few hours later, you leave her to her door at her parents house. But then you suddenly remember to give her the envelope. You hand her over the envelope that Dan asked you to give her. She opens it up looks at it and asks you what it is. You take it back to realise that it&#39;s a cheque that Dan wrote to you paying you back the 100 dollars he borrowed.
+
+You put it in your pocket, wondering whether it would even cash out or not. 
+
+Turning the car around you can&#39;t help but wonder whether you should go meet your parent&#39;s for the holidays too. You don&#39;t have to start office till next week anyway.
+
+[[Meet parents]]  
+
+[[Leave for Apartment-&gt;Meet parents]]</tw-passagedata><tw-passagedata pid="60" name="Meet parents" tags="" position="96,3830" size="100,100">You reach your destination, with curiosity for the future in your eyes.
+
+
+&lt;h4&gt; ENDING 5 &lt;/h4&gt;
+GAME OVER
+REAL ENDING</tw-passagedata></tw-storydata></html>

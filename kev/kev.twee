@@ -1,51 +1,30 @@
 :: StoryTitle
-zxNoRegretzzXz
+No Regrets, A CallMeKevin Fan Game
 
 
 :: StoryData
 {
-	"ifid": "473797DF-9774-47D6-96A8-C54CE99F877D",
-	"format": "Harlowe",
-	"start": "start",
-	"zoom": 0.5
+	"ifid": "473797DF-9774-47D6-96A8-C54CE99F877D"
 }
 
 
-:: Story Stylesheet [stylesheet]
-tw-story {
-  background: #F1F0EE;
-  color: #17191B;
-  font-family: ;
-  font-size: 1.2em;
-}
-tw-link {
-  color: #33A5FF;
-}
-tw-link:hover {
-  color: #28237B;
-}
-tw-link.visited {
-  color: #2F7E83;
-}
-tw-passage {
-  max-width: 120%;
-}
 
+:: Start
+config.style.page.font: "Roboto 19"
+config.style.page.verticalAlign:'top'
+config.body.transition.name: 'fadeInOut'
+config.page.transition.duration: '500ms'
+--
 
-:: start {"position":"7,0","size":"100,100"}
-<center>
-#zxNoRegretzzXz
+# zxNoRegretzzXz
 
 <img src="poster_dobrynCat.png" width=100%>
 
-[[Play]] 
-[[Controls]]
+[[Play]]
 [[Credits]]
 
-</center>
 
-
-:: I just made it up {"position":"243,68","size":"100,100"}
+:: I just made it up
 In a world far away in the future, the norms of society has changed, the season of autumn takes you far from home, you must join an organisation, that rules the world as we know it.
 
 <img src="gates.png" width="100%">
@@ -55,7 +34,7 @@ You dont know what your role in the organisation would be, you get three scenari
 You must choose your paths, as the world around you shall provide you none, you shall build upon the path as you choose, [[and you shall...]]
 
 
-:: and you shall... {"position":"394,58","size":"100,100"}
+:: and you shall...
 <img src="laugh.png" width="100%">
 
 This is an enquiry - is the player falling asleep?
@@ -64,77 +43,59 @@ This is an enquiry - is the player falling asleep?
 [[No]]
 
 
-:: Yes {"position":"574,53","size":"100,100"}
+:: Yes
 Its very important to get proper sleep, you can play some other time, bookmark it.
+{back link}
 
-[[you can go back->and you shall...]]
 
-
-:: No {"position":"778,64","size":"100,100"}
+:: No
 <img src="lieutenant.png" width="100%">
 Hmm so you are the new recruit - and what might your name be?
 
-[[zxNoRegretzzXz]]
-[[Potato Man]]
-[[Turg]]
-[[Jim Pickens]]
-[[Someone]]
-~~Bore Ragnarok~~
+You decide on which name to use.
+
+{cycling link for: '$name', choices: ['zxNoRegretzzXz', 'Potato Man', 'Turg', 'Jim Pickens', 'Bore Ragnarok']}
+[[Continue->welcome aboard]]
+
+I am [[Someone]].
+
+I am [[Jim Pickens->you have been arrested]].
+
 [[Enter Your Name]]
 
-
-:: zxNoRegretzzXz {"position":"69,218","size":"100,100"}
-(set: $name to "zxNoRegretzzXz")
-
-Well, nice to meet you $name, [[welcome aboard]].
-
-
-:: Potato Man {"position":"252,248","size":"100,100"}
-(set: $name to "Potato Man")
-
-Well, nice to meet you $name, [[welcome aboard]].
-
-
-:: Turg {"position":"402,252","size":"100,100"}
-(set: $name to "Turg")
-
-Well, nice to meet you $name, [[welcome aboard]].
-It kinda smells in here doesn't it.
-
-
-:: Jim Pickens {"position":"922,226","size":"100,100"}
-Are you really though?, he isnt allowed here 
-
-<img src="jimpickens.png" width="100%">
-
-[[Yes-> you have been arrested]]
-[[No]]
-
-
-:: Someone {"position":"547,252","size":"100,100"}
-(set: $name to "Someone")
+:: Someone
+$name:"Someone"
+--
 
 Never thought I'll find Someone like you, get it?
-Well, nice to meet you $name, [[welcome aboard]].
+Well, nice to meet you {$name}, [[welcome aboard]].
 
 
-:: Enter Your Name {"position":"705,252","size":"100,100"}
-(set: $name to (prompt: "Your name:", ""))
+:: Enter Your Name
 
-Well, nice to meet you $name, [[welcome aboard]].
+{text input for: '$name'}
+
+Well, nice to meet you {$name}, [[welcome aboard]].
 
 
-::  you have been arrested {"position":"1045,96","size":"100,100"}
-You have been arrested and sent to the cell.
+
+
+
+
+
+
+
+::  you have been arrested
+You have been arrested and sent to the cell because your name was Jim Pickens.
 
 <img src="jimpickens.png" width="100%">
 
 You never learnt what Jim Pickens might have done to deserve this treatment.
 
-####Game Over
+# Game Over
 
 
-:: welcome aboard {"position":"69,369","size":"100,100"}
+:: welcome aboard
 <img src="general3.png" width="100%">
 Hi, I'm the General, so you are the new guy, who trained you?
 
@@ -142,17 +103,27 @@ Hi, I'm the General, so you are the new guy, who trained you?
 [[I trained myself]]
 
 
-:: I was not trained {"position":"425,391","size":"100,100"}
-(set:$trained to 0)
+:: I was not trained
+$trained: 0
+--
+
 <img src="general3.png" width="100%">
-Well I have a training mision for you, someone here is hiding stale memes, (if: $name is "Someone")[it isnt you by any chance is it?,] it isnt allowed here, find the culprit
+Well I have a training mision for you, someone here is hiding stale memes, 
+
+[if $name === "Someone"]
+it isnt you by any chance is it?, 
+[cont]
+
+it isnt allowed here, find the culprit
 
 [[whats my job here by the way?]]
 [[How am I supposed to find him?]]
 
 
-:: I trained myself {"position":"257,508","size":"100,100"}
-(set: $trained to 1)
+:: I trained myself
+$trained:1
+--
+
 <img src="general2.png" width="100%">
 "I trained myself, I am quite experienced I'd say." - you answer.
 
@@ -162,20 +133,20 @@ Well I have a training mision for you, someone here is hiding stale memes, (if: 
 [[No->helino]]
 
 
-:: heliyes {"position":"182,658","size":"100,100"}
-(set: $heli to 1)
+:: heliyes
+$heli:1
+--
+
 <img src="general1.png" width="100%">
 
 "Well alright now do you know how to start this helicopter ?" - asks the General.
-
-<img src
 
 
 [[Humans aren't meant to fly]]
 [[Only god can test me->Humans aren't meant to fly]]
 
 
-:: helino {"position":"332,658","size":"100,100"}
+:: helino
 just press the key and plane goes brrr..
 <img src="general4.png" width="100%">
 
@@ -186,10 +157,10 @@ He then flies away while shouting "I'M OUTIE".
 
 You don't understand what's going on.
 
-##Game Over
+## Game Over
 
 
-:: Humans aren't meant to fly {"position":"107,808","size":"100,100"}
+:: Humans aren't meant to fly
 You sit down on the helicopter.
 <img src="heliground.png" width="100%">
 
@@ -200,21 +171,28 @@ You sit down on the helicopter.
 [[I'll teach you - you say.]]
 
 
-:: whats my job here by the way? {"position":"456,534","size":"100,100"}
+
+
+
+
+
+
+
+:: whats my job here by the way?
 <img src="general1.png" width="100%">
 finding stale memes, dont ask too many questions
 
 [[Walk Around]]
 
 
-:: How am I supposed to find him? {"position":"604,533","size":"100,100"}
+:: How am I supposed to find him?
 <img src="general2.png" width="100%">
 You can't just  assume their gender, they might not like 'him',get out of here, figure things out.
 
 [[Walk Around]]
 
 
-:: I'll teach you - you say. {"position":"107,958","size":"100,100"}
+:: I'll teach you - you say.
 The helicopter seems to be crashing down.
 <img src="heli2.png" width="100%">
 
@@ -225,7 +203,7 @@ The general asks you - you do know how to fly this right?
 [[Confess love]]
 
 
-:: No Fly {"position":"32,1108","size":"100,100"}
+:: No Fly
 The general ignores your comment and takes control of the heli.
 <img src="helisky.png" width="100%">
 
@@ -235,8 +213,9 @@ The general ignores your comment and takes control of the heli.
 [[Pretend to be distracted]]
 
 
-:: Confess love {"position":"182,1108","size":"100,100"}
-(set: $love to 1)
+:: Confess love
+$love:1
+--
 
 The general ignores your comment and takes control of the heli.
 <img src="helisky.png" width="100%">
@@ -247,7 +226,7 @@ The general ignores your comment and takes control of the heli.
 [[Pretend to be distracted]]
 
 
-:: Say sorry {"position":"64,1267","size":"100,100"}
+:: Say sorry
 You got some dirt on your mouth and it sounded like " I'm wowwy "
 <img src="heli2.png" width="100%">
 
@@ -264,15 +243,24 @@ The general looks furious.
 "No we are not" - sighs the general.
 
 
-You know what its my fault, (if: $trained is 1)[I shouldn't have trusted you saying you are trained, go do your intro mission - someone here is hiding stale memes, (if: $name is "Someone")[it isnt you by any chance is it?,] it isnt allowed here, find the culprit
+You know what its my fault.
+
+[if $trained ===1]
+I shouldn't have trusted you saying you are trained, go do your intro mission - someone here is hiding stale memes,
+[if $name === "Someone"]
+it isnt you by any chance is it?,
+[cont]
+
+it isnt allowed here, find the culprit
 
 [[whats my job here by the way?]]
 [[How am I supposed to find him?]] ]
 
-(else-if: $trained is 0)[[[go meet the lieutenant->Meeting the lieutenant]] ]
+[if $trained === 0]
+[[go meet the lieutenant->Meeting the lieutenant]]
 
 
-:: Pretend to be distracted {"position":"218,1263","size":"100,100"}
+:: Pretend to be distracted
 <img src="heli2.png" width="100%">
 
 
@@ -289,15 +277,23 @@ The general looks furious.
 "No we are not" - sighs the general.
 
 
-You know what its my fault, (if: $trained is 1)[I shouldn't have trusted you saying you are trained, go do your intro mission - someone here is hiding stale memes, (if: $name is "Someone")[it isnt you by any chance is it?,] it isnt allowed here, find the culprit
+You know what its my fault.  
+
+[if $trained === 1]
+I shouldn't have trusted you saying you are trained, go do your intro mission - someone here is hiding stale memes.
+
+[if $name === "Someone"]
+it isnt you by any chance is it?,] it isnt allowed here, find the culprit.
+[cont]
 
 [[whats my job here by the way?]]
 [[How am I supposed to find him?]] ]
 
-(if: $trained is 0)[ [[go meet the lieutenant->Meeting the lieutenant]] ]
+[if $trained === 0]
+[[go meet the lieutenant->Meeting the lieutenant]]
 
 
-:: Walk Around {"position":"660,694","size":"100,100"}
+:: Walk Around
 You walk around the ground for a bit. You find a heavily bearded man. 
 
 <img src="laugh.png" width="100%">
@@ -309,11 +305,15 @@ What do you ask?
 [[I think I like you]]
 
 
-:: do you keep stale memes {"position":"585,844","size":"100,100"}
+:: do you keep stale memes
 <img src="laugh.png" width="100%">
-What is memes? Guy 1 asks. (if:$name is "Turg")[He proceeds to hide is face with an handkerchief, "it stinks in here doesn't it?".]
+What is memes? Guy 1 asks.
 
-You realise Guy 1 can't be the one with the stale memes, unless he lied to you, but he couldn't have because someone as skilled as $name would have detected it in a second.
+[if $name === "Turg"]
+He proceeds to hide is face with an handkerchief, "it stinks in here doesn't it?".
+[cont]
+
+You realise Guy 1 can't be the one with the stale memes, unless he lied to you, but he couldn't have because someone as skilled as {$name} would have detected it in a second.
 
 You find Guy 2. 
 
@@ -321,18 +321,22 @@ You find Guy 2.
 [[Arrest Guy1]]
 
 
-:: I think I like you {"position":"735,844","size":"100,100"}
+:: I think I like you
 <img src="laugh.png" width="100%">
-I don't understand English. (if:$name is "Turg")[He proceeds to hide is face with an handkerchief, "it stinks in here doesn't it?".]
+I don't understand English.
 
-Talking a bit more with him, you realise Guy 1 can't be the one with the stale memes, unless he lied to you, but he couldn't have because someone as skilled as $name would have detected it in a second.
+[if $name === "Turg"]
+He proceeds to hide is face with an handkerchief, "it stinks in here doesn't it?".
+[cont]
+
+Talking a bit more with him, you realise Guy 1 can't be the one with the stale memes, unless he lied to you, but he couldn't have because someone as skilled as {$name} would have detected it in a second.
 
 You find Guy 2. 
 
 [[Ask if he keeps stale memes]]
 
 
-:: Ask if he keeps stale memes {"position":"585,994","size":"100,100"}
+:: Ask if he keeps stale memes
 <img src="guy2u.png" width="100%">
 
 No way , they are and always have been quite dank - no check it for yourself -
@@ -345,85 +349,135 @@ What do you do?
 [[Walk Away]]
 
 
-:: Arrest {"position":"635,1138","size":"100,100"}
+:: Arrest
+$guy2 :1
+$arrested:1
+--
 "You have been arrested for keeping stale memes" - you say to Guy 2.
 <img src="guy2cell.png" width="100%">
 
-(set: $guy2 to 1)
-(set: $arrested to 1)
 
-(if: $trained is 0)[You can go do the [[helicopter mission->heliyes]] ]
+[if $trained === 0]
+You can go do the [[helicopter mission->heliyes]] 
 
-(if: $trained is 1)[ [[Meeting the lieutenant]] ]
+[if $trained===1]
+[[Meeting the lieutenant]]
 
 
-:: Walk Away {"position":"771,1047","size":"100,100"}
+:: Walk Away
+$fail:1
+--
 You failed to catch the dangerous criminal.
 
 <img src="cell.png" width="100%">
 
-(set: $fail to 1)
+[if $trained === 0]
+You can go do the [[helicopter mission->heliyes]]
 
-(if: $trained is 0)[You can go do the [[helicopter mission->heliyes]] ]
+[if $trained === 1]
+[[Meeting the lieutenant]]
 
-(if: $trained is 1)[ [[Meeting the lieutenant]] ]
 
-
-:: Arrest Guy1 {"position":"427,999","size":"100,100"}
-(set: $guy1 to 1)
-(set: $arrested to 1)
+:: Arrest Guy1
+$guy1:1
+$arrested:1
+--
 You have send Guy1 to the cell.
 
 <img src="guy2cell.png" width="100%">
 
-(if: $trained is 0)[You can go do the [[helicopter mission->heliyes]] ]
+[if $trained === 0]
+You can go do the [[helicopter mission->heliyes]]
 
-(if: $trained is 1)[ [[Meeting the lieutenant]] ]
+[if $trained === 1]
+[[Meeting the lieutenant]]
 
 
-:: I am thinking about it {"position":"358,1264","size":"100,100"}
+
+
+:: I am thinking about it
 I specifically asked you not to think about it, I'm calling all security, 
 
-Guards, detain $name .
+Guards, detain {$name} .
 
-(if: $name is "Someone")[Who are we supposed to arrest? - asks the guard. "SOMEONE" shouts the lieutenant, standing right in front of you.
+[if $name === "Someone"]
+Who are we supposed to arrest? - asks the guard. "SOMEONE" shouts the lieutenant, standing right in front of you.
 
-The guards arrest the lieutenant instead of you.]
+The guards arrest the lieutenant instead of you.
+[cont]
 
-##The End
+## The End
 
 
-:: Hi lieutenant {"position":"493,1350","size":"100,100"}
+:: Hi lieutenant
 I prefer aye aye captain.
 
 <img src="lieutenant.png" width="100%">
 
-Look I am here to talk to you about your behaviour today,(if:$heli is 1)[ not about the helicopter incident,] it's about how you handled the meme situation.
+Look I am here to talk to you about your behaviour today.
 
-(if: $arrested is 1)[[[those memes werent stale]]]
+[if $heli === 1)
+Not about the helicopter incident.
+[cont]
 
-(if: $fail is 1)[[[I am sorry I failed to catch the menace]]]
+It's about how you handled the meme situation.
 
-
-:: Hi lieutenent {"position":"623,1314","size":"100,100"}
-You cant just call me by my name, be more respectful.
-<img src="lieutenant.png" width="100%">
-
-Look I am here to talk to you about your behaviour today,(if:$heli is 1)[ not about the helicopter incident,] it's about how you handled the meme situation.
-
-(if: $arrested is 1)[[[those memes werent stale]]]
-
-(if: $fail is 1)[[[I am sorry I failed to catch the menace]]]
-
-
-:: those memes werent stale {"position":"493,1500","size":"100,100"}
-It is not for you to decided that, or I guess it is, but I am dissapointed. (if: $guy1 is 1)[Guy1 didn't even know what memes are all about.] (if: $guy2 is 1)[I really liked all the memes Guy2 ever showed me.] I am terribly disappointed at you.
+[if $arrested === 1]
+It is not for you to decided that, or I guess it is, but I am dissapointed.
 
 Take the day off.
 [[Go to the Canteen]]
 
 
-:: Go to the Canteen {"position":"493,1650","size":"100,100"}
+[if $fail === 1]
+I am sorry I failed to catch the menace
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: Hi lieutenent
+You cant just call me by my name, be more respectful.
+<img src="lieutenant.png" width="100%">
+
+Look I am here to talk to you about your behaviour today.
+[if $heli === 1]
+not about the helicopter incident, 
+[cont]
+
+it's about how you handled the meme situation.
+
+[if $arrested === 1]
+It is not for you to decided that, or I guess it is, but I am dissapointed. 
+
+[if $guy1 ===1]
+Guy1 didn't even know what memes are all about.
+
+[if $guy2 === 1]
+I really liked all the memes Guy2 ever showed me.] I am terribly disappointed at you.
+[cont]
+
+Take the day off.
+[[Go to the Canteen]]
+
+[if $fail ===1]
+I am sorry I failed to catch the menace.
+
+Take the day off.
+[[Go to the Canteen]]
+
+
+
+:: Go to the Canteen
+
 The eating area is pretty empty, the few people lingering here a minute ago have all left.
 
 <img src="canteen.png" width="100%">
@@ -436,14 +490,14 @@ The janitor is here too, you can call him for a chat.
 [[Call the Janitor]]
 
 
-:: Eat the raw potatoes {"position":"418,1800","size":"100,100"}
+:: Eat the raw potatoes
 They taste delicious.
 
 [[Eat more raw potatoes]]
 [[Call the Janitor]]
 
 
-:: Call the Janitor {"position":"568,1800","size":"100,100"}
+:: Call the Janitor
 The janitor stand infront of you with a smile. His hair looks a bit funny.
 <img src="canteenhappy.png" width="100%">
 
@@ -451,26 +505,29 @@ The janitor stand infront of you with a smile. His hair looks a bit funny.
 [[make fun of hair]]
 
 
-:: Eat more raw potatoes {"position":"335,1945","size":"100,100"}
+:: Eat more raw potatoes
 You eat more raw potatoes, you don't feel that hungry anymore.
 
 [[continue eating raw potatoes]]
 [[Call the Janitor]]
 
 
-:: continue eating raw potatoes {"position":"270,2080","size":"100,100"}
+:: continue eating raw potatoes
 You feel a little sick.
 
 [[Eat potatoes you must]]
 [[Call the Janitor]]
 
 
-:: Eat potatoes you must {"position":"270,2230","size":"100,100"}
-(if:$name is "Potato Man")[If you weren't $name, you couldn't have eaten this much potatoes.[[Call the Janitor]] ]
-(else:)[You fall unconscious.**The End**]
+:: Eat potatoes you must
+[if $name === "Potato Man"]
+If you weren't {$name}, you couldn't have eaten this much potatoes.[[Call the Janitor]] ]
+
+[else]
+You fall unconscious.**The End**
 
 
-:: ask about the place {"position":"493,1950","size":"100,100"}
+:: ask about the place
 "The place is a bit bit mess you know, it's like no one knows how to laugh at a simple joke anymore, it's all about written words about pictures am I right?" - says the janitor.
 
 The loudspeakers at the canteen rings, "$name where are you?, meet me at my office." It's the voice of the lieutenant.
@@ -479,22 +536,27 @@ The loudspeakers at the canteen rings, "$name where are you?, meet me at my offi
 [[Continue chatting]]
 
 
-:: make fun of hair {"position":"643,1950","size":"100,100"}
+:: make fun of hair
+
 (set: $hair to 1)
 
-The janitor looks at you angrily and mumbles something angrily.(if: $name is "Turg")["Guess what, you also smell like turg"]
+The janitor looks at you angrily and mumbles something angrily.
+
+[if $name === "Turg"]
+"Guess what, you also smell like turg"
+[cont]
 
 <img src="canteensad.png" width="100%">
 
 "The place is a bit bit mess you know, it's like no one knows how to laugh at a simple joke anymore, it's all about written words about pictures am I right?" - says the janitor.
 
-The loudspeakers at the canteen rings, "$name where are you?, meet me at my office." It's the voice of the lieutenant.
+The loudspeakers at the canteen rings, "{$name} where are you?, meet me at my office." It's the voice of the lieutenant.
 
 [[Meet the lieutenant]]
 [[Continue chatting]]
 
 
-:: Meet the lieutenant {"position":"493,2100","size":"100,100"}
+:: Meet the lieutenant
 I have reason to believe that it's the General who is the one with the stale memes. You should go and put him in the cell.
 
 <img src="lieutenant.png" width="100%">
@@ -503,7 +565,7 @@ I have reason to believe that it's the General who is the one with the stale mem
 [[Arrest the General]]
 
 
-:: No the janitor is the one with the stale memes {"position":"493,2250","size":"100,100"}
+:: No the janitor is the one with the stale memes
 "Are you certain? He seems like a nice old gentleman, he can't possibly be evil, do you have proof?"
 
 <img src="lieutenant.png" width="100%">
@@ -512,69 +574,91 @@ I have reason to believe that it's the General who is the one with the stale mem
 [[He doesn't likes words with pictures]]
 
 
-:: Continue chatting {"position":"708,2144","size":"100,100"}
-The Janitor says - "It's probably about the stale memes. If you say my name, you will regret it, $name . How do I know your name you might be thinking, well I have my sources. Now go talk to the lieutenant but don't say a word. Note down the time, (current-time:) would be the deciding moment for you"
+:: Continue chatting
+$chat:1
+--
+The Janitor says - "It's probably about the stale memes. If you say my name, you will regret it, {$name} . How do I know your name you might be thinking, well I have my sources. Now go talk to the lieutenant but don't say a word. Note down the time, (current-time:) would be the deciding moment for you"
 
 <img src="canteenneutral.png" width="100%">
-
-(set: $chat to 1)
 
 [[Meet the lieutenant]]
 
 
-:: Arrest the General {"position":"678,2315","size":"100,100"}
-"You are approaching me"- says the general. (if: $love is 1)["I thought you loved me".]
+:: Arrest the General
+
+"You are approaching me"- says the general.
+
+[if $love === 1)
+"I thought you loved me".
+[cont]
 
 You put the general in the cell.
 <img src="guy2cell.png" width="100%">
 
-##The End
+## The End
 
 Sad Ending, what have you done?
 
 
-:: He said it to me {"position":"418,2400","size":"100,100"}
-(if: $chat is 1)["Well well, what did I say about keeping your mouth shut?" - the Janitor starts speaking."
+:: He said it to me
+[if $chat === 1]
+"Well well, what did I say about keeping your mouth shut?" - the Janitor starts speaking."
 "What are you saying? that is unpossible" - says the lieutenant - "I mean impossible, you can't possibly be evil!"
 "I have to now take over this institution right now, as I have no time, and the reign of Jim Pickens is now here."
+
 [["Jim Pickens?" you shout.]]
-]
-
-(else: )["You Sir are lying, we never had this conversation" - the Janitor starts speaking."The lieutenant says to you "$name, I can't trust you blindly, I will have to trust our dear janitor and fire you" ##Game Over]
 
 
-:: He doesn't likes words with pictures {"position":"568,2400","size":"100,100"}
+[else]
+"You Sir are lying, we never had this conversation" - the Janitor starts speaking."The lieutenant says to you {$name}, I can't trust you blindly, I will have to trust our dear janitor and fire you" 
+
+## Game Over
+
+
+:: He doesn't likes words with pictures
 "That is no excuse to to just shove a man as the culprit for keeping stale memes, you are now fired!"
 
-##Game Over
+## Game Over
 
 
-:: "Jim Pickens?" you shout. {"position":"418,2550","size":"100,100"}
+:: "Jim Pickens?" you shout.
 <img src="jimpickens.png" width="100%">
 
-"Yes child, I am the one true Jim Pickens, and all i ever wanted was for me to own an institution where I could train individuals just like you to help spread my word, would you join me on this mission $name ?"
+"Yes child, I am the one true Jim Pickens, and all i ever wanted was for me to own an institution where I could train individuals just like you to help spread my word, would you join me on this mission {$name} ?"
 
 [[Yes Dear Leader]]
+
 [[I don't understand]]
 
 
-:: Yes Dear Leader {"position":"343,2700","size":"100,100"}
+:: Yes Dear Leader
 You help Jim Pickens reign over the world forever.
-(if:$hair is 1)[But you made fun of his hair, which made him quite upset, so he transfers you to the barber department with no future promotions. You do learn it well and live your live happily ever after. Didn't end up so well for the rest of the world though.]
+
+[if $hair === 1]
+But you made fun of his hair, which made him quite upset, so he transfers you to the barber department with no future promotions. You do learn it well and live your live happily ever after. Didn't end up so well for the rest of the world though.
+[cont]
 
 
 <img src="jimpickens.png" width="100%">
 
-##The End
+## The End
+
 Jim Pickens Ending
 
 
-:: I don't understand {"position":"493,2700","size":"100,100"}
+:: I don't understand
+
 "You question the leader's authority? we shall now fight."
 
 Jim Picken attacks you with a broomstick.
 
-You are a trained gamer, and you use your skills to dodge his attack , he falls down, (if:$name is "Turg")[and gets unconcious from your bad smell,] the lieutenant thanks you.
+You are a trained gamer, and you use your skills to dodge his attack , he falls down.
+
+[if $name === "Turg"]
+and gets unconcious from your bad smell.
+[cont]
+
+The lieutenant thanks you.
 
 <img src="lieutenant.png" width="100%">
 
@@ -585,25 +669,28 @@ You are a trained gamer, and you use your skills to dodge his attack , he falls 
 "We roleplay as military officers to pass the time"
 
 ##The End
-True Ending, (if: $name is "zxNoRegretzzXz")[Yes player,] (else:)[and no matter what you might think you are,] you are the true zxNoRegretzzXz.
+True Ending, you are the true zxNoRegretzzXz.
 
 
-:: Meeting the lieutenant {"position":"980,1178","size":"100,100"}
-##Meeting the lieutinent
+:: Meeting the lieutenant
+## Meeting the lieutinent
 
 <img src="lieutenant.png" width="100%">
-(if:$name is "Turg")["Oh, what's that smell."]
-(if:$name is "zxNoRegretzzXz")["Cool Gamer Name you got there"]
-(if: $name is "Potato Man")["You really do look like a Potato"]
+[if $name === "Turg"]
+"Oh, what's that smell."
+[if $name  ==="zxNoRegretzzXz"]
+"Cool Gamer Name you got there"
+[if $name === "Potato Man"]
+"You really do look like a Potato"
+[cont]
 
 "Hi I'm lieutenant lieutenent, when I was born my parents wanted me to be a lieutenant but they couldnt spell it right, I just wanted to make this clear before you had time to think about it." 
 
 [[I am thinking about it]]
 [[Hi lieutenant]]
-[[Hi lieutenent]]
 
 
-:: \[I am sorry I failed to catch the menace {"position":"273,1500","size":"100,100"}
+:: I am sorry I failed to catch the menace 
 <img src="lieutenant.png" width="100%">
 Those bad memes are out there terrorizing innocent civilians. This can't be allowed, leave my office immediately.
 
@@ -611,24 +698,22 @@ Those bad memes are out there terrorizing innocent civilians. This can't be allo
 [[Go to the Canteen]]
 
 
-:: \[those memes werent stale {"position":"383,1500","size":"100,100"}
-Double-click this passage to edit it.
+:: those memes werent stale
+Cry about it. 
+
+{back link}
 
 
-:: Play {"position":"125,66","size":"100,100"}
-##There was once a prophecy that a gamer would play a game, and a game shall then be played.
-- Noble Prize Winning Writer
+:: Play
+There was once a prophecy that a gamer would play a game, and a game shall then be played.
+> Noble Prize Winning Writer
 
 [[I just made it up]]
 
 
-:: Credits {"position":"190,0","size":"100,100"}
+:: Credits
 Just me. dobrynCat. I'm on twitter and youtube too.
 
 
-:: Controls {"position":"17,107","size":"100,100"}
-Progress through the story by clicking the choices in blue colors.
-
-Undo a choice by clicking the curved arrow button on the top left.
-
+{back link}
 

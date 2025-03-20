@@ -15,32 +15,54 @@ Meritocracy
 #notify{position:fixed;display:block;width:16em;right:-20em;top:2em;padding:.5em;background-color:#fff;color:#000;-webkit-transition:right .3s;-moz-transition:right .3s;-o-transition:right .3s;transition:right .3s}#notify.open{right:0}
 /* end notify.min.css */
 
-/* CSS code for gradient background, Verdana */
-body {
-font-size: 1.2em;
-font-family: Monospace;
-animation: fadeIn ease 1s;
-/*background-image: linear-gradient(to bottom right, #a01818, #592020);*/
-}
 
+body, .passage {
+	color:black;
+	Font-family: serif;
+	Font-size: 13pt;
+  Margin: 1ex auto;
+  Line-height: 1.2em;   
+  Background-color:lightgray;
+  animation: fadeIn ease 1s;
+}	
 @keyframes fadeIn {
-0% { opacity: 0; }
-100% { opacity: 1; }
-}
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+} 
 
 
-h1, h2, h3 {
-}
+a:visited { Color: purple; }
+
+PassageFooter, #status, footer {
+         Border-top: 2px solid saddlebrown;
+         Font-variant: small-caps;
+         Text-align: right;
+         Padding: 1ex 0;
+      }
 
 a {
-font-size: 1.5em;
-font-weight:bold
-transition: all 0.5s;
-Font-variant: small-caps;
-}
+      color: saddlebrown;
+      font-weight:bold;
+      transition: all 0.5s;
+      cursor: pointer;
+      }
+     
+#title, #menu, #ui-bar-tray {
+	display:none;
+} 
+
+
+
+
+
+
+
 
 
 :: UserScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove()
+
 // notify.min.js, for SugarCube 2, by Chapel
 // v1.1.1, 2022-07-21, 3bdbdfbe5ae47a46e4f4e52766d78701939ae9a6
 ;!function(){var s=/\d+m?s$/;function e(s,e,t){"string"==typeof s&&("number"!=typeof e&&(e=!1),$(document).trigger({type:":notify",message:s,delay:e,class:t||""}))}$(document.body).append("<div id='notify'></div>"),$(document).on(":notify",(function(s){s.message&&"string"==typeof s.message&&(s.message.trim(),s.class?"string"==typeof s.class?s.class="open macro-notify "+s.class:Array.isArray(s.class)?s.class="open macro-notify "+s.class.join(" "):s.class="open macro-notify":s.class="open macro-notify",s.delay?("number"!=typeof s.delay&&(s.delay=Number(s.delay)),Number.isNaN(s.delay)&&(s.delay=2e3)):s.delay=2e3,$("#notify").empty().wiki(s.message).addClass(s.class),setTimeout((function(){$("#notify").removeClass()}),s.delay))})),Macro.add("notify",{tags:null,handler:function(){var t=this.payload[0].contents,a=!1,n=!1;if(this.args.length>0){var i=s.test(this.args[0]);"number"==typeof this.args[0]||i?(a=i?Util.fromCssTime(this.args[0]):this.args[0],n=this.args.length>1&&this.args.slice(1).flatten()):n=this.args.flatten().join(" ")}e(t,a,n)}}),setup.notify=e}();
@@ -48,28 +70,27 @@ Font-variant: small-caps;
 
 
 
+
+
+
+
+
+
+
 ::StoryCaption
 
 A discussion oriented interactive fiction by <a href="https://ronynn.github.io">Ronynn</a>.
-
-<img src="meritocracy-poster.jpg">
 
 ::Start
 
 <center><h1> Meritocracy </h1> </center>
 
-Meritocracy is primarily a choice based interactive fiction game where you select one among the given choices to put forward your arguement.
-
-You can enter the interactive fiction right away.
-[[Enter]]
-Or perhaps learn more about the ideas behind making the game in the [[About]] section.
+Meritocracy is a choice based interactive fiction game where you select one among the given choices to put forward your arguement. 
 
 Be sure to check out the feelies, the game is conversational and often there are no right answers, but game progress shouldn't behindered by that until you reach near the end. You can always go back to previous passages using the back button on the right.
 
-<<preload "debate.jpg">>
-<<preload "halls.jpg">>
-<<preload "reflection.jpg">>
-<<preload "sleep.jpg">>
+# <h2>[[Enter]]</h2>  
+# <h2>[[About]]</h2>
 
 
 
@@ -304,27 +325,27 @@ Professor walked over to the bench his colleague had sat on and started reenacti
 
 ::play
 
-> Professor: So, you are saying that the death penalty is justified and that it is an effective deterrent for crime?
+Professor: So, you are saying that the death penalty is justified and that it is an effective deterrent for crime?
 
-> Colleague: Yes, that’s exactly what I’m saying. The death penalty is a fair and humane way of punishing the worst criminals and preventing them from harming others. I have done extensive research on the topic and I have found convincing evidence that the death penalty reduces crime rates and saves lives.
+Colleague: Yes, that’s exactly what I’m saying. The death penalty is a fair and humane way of punishing the worst criminals and preventing them from harming others. I have done extensive research on the topic and I have found convincing evidence that the death penalty reduces crime rates and saves lives.
 
-> Professor: Well, I’m interested to hear about your research. How does it account for the conflicting studies that show no correlation or even a negative correlation between the death penalty and crime rates, such as the ones by Donohue and Wolfers or Radelet and Lacock?
+Professor: Well, I’m interested to hear about your research. How does it account for the conflicting studies that show no correlation or even a negative correlation between the death penalty and crime rates, such as the ones by Donohue and Wolfers or Radelet and Lacock?
 
-> Colleague: Those studies are all flawed and biased. They were conducted by anti-death penalty activists who manipulated the data and ignored the confounding factors. My personal research is more rigorous and comprehensive than theirs. It covers a longer period of time and a larger sample of countries and states. It controls for various variables such as income, education, culture, and law enforcement.
+Colleague: Those studies are all flawed and biased. They were conducted by anti-death penalty activists who manipulated the data and ignored the confounding factors. My personal research is more rigorous and comprehensive than theirs. It covers a longer period of time and a larger sample of countries and states. It controls for various variables such as income, education, culture, and law enforcement.
 
-> Professor: I see. And have you published your research in any peer-reviewed journals? Have you submitted it to any conferences or workshops? Have you received any feedback from other experts in the field?
+Professor: I see. And have you published your research in any peer-reviewed journals? Have you submitted it to any conferences or workshops? Have you received any feedback from other experts in the field?
 
-> Colleague: No, I haven’t. And I don’t need to. I know my research is correct and I don’t care what others think. They are all influenced by the liberal media and the political correctness. They would never accept my findings because they go against their ideology. You are one of them, aren’t you? You are just afraid of the truth and you want to silence me.
+Colleague: No, I haven’t. And I don’t need to. I know my research is correct and I don’t care what others think. They are all influenced by the liberal media and the political correctness. They would never accept my findings because they go against their ideology. You are one of them, aren’t you? You are just afraid of the truth and you want to silence me.
 
-> Professor: No, I’m not afraid of the truth. I’m just trying to understand your methodology and your sources. Science is not about personal opinions or emotions. It’s about objective facts and logical arguments. If you have a valid research, you should be able to present it clearly and convincingly to others, and to respond to their criticisms and questions.
+Professor: No, I’m not afraid of the truth. I’m just trying to understand your methodology and your sources. Science is not about personal opinions or emotions. It’s about objective facts and logical arguments. If you have a valid research, you should be able to present it clearly and convincingly to others, and to respond to their criticisms and questions.
 
-> Colleague: You don’t understand anything. You are just a naive idealist who can’t see the reality of the world. You are wrong and I am right. End of story.
+Colleague: You don’t understand anything. You are just a naive idealist who can’t see the reality of the world. You are wrong and I am right. End of story.
 
 The professor now looking back at you asks you a question, "What do you think went wrong in this discussion?"
 
-[[The colleague was too emotional and defensive, and he refused to provide any support for his own claims.|colemo]]
-[[The professor was too passive and polite, and he failed to challenge the colleague’s assumptions or to expose his fallacies.|profpassive]]
-[[The professor acted too confrontationally.|profconfront]]
+The colleague was too emotional and defensive, and he refused to provide any support for his own claims. [[Pick->colemo]]
+The professor was too passive and polite, and he failed to challenge the colleague’s assumptions or to expose his fallacies. [[Pick->profpassive]]
+The professor acted too confrontationally. [[Pick->profconfront]]
 
 
 
@@ -404,8 +425,10 @@ He writes a few more [[historical examples of the ad hominem fallacy|hominem3]] 
 
 He writes on the board " The French Revolution in 1789-1799", you consider writing it in your notebook then decide on listening to what he says first, he excitedly continues, "One of the most famous victims of the guillotine was Marie Antoinette, the queen of France. She was accused of being extravagant, wasteful, and indifferent to the suffering of the people. She was also blamed for saying “Let them eat cake” when she heard that the peasants had no bread to eat. However, these accusations were mostly based on rumors, propaganda, and personal hatred. They did not address her actual role or influence in the political situation. They were ad hominem attacks that aimed to justify her execution by portraying her as a wicked and heartless person."
 
-He then looks at you asks "can you suggest a more modern example of this fallacy?"
-[[Abraham Lincoln]]
+He then looks at you asks "can you suggest a more modern example of this fallacy?"  
+
+[[Abraham Lincoln]]  
+
 [[Brexit]]
 
 
@@ -415,9 +438,9 @@ You conjure up the courage to answer his question,"Some supporters of leaving th
 
 Professors once again started looking outside the window and murmured, "is that a correct example? it sounds like one but then again", he looks at you and asks, "why do you think it is a good example?"
 
-[[The attempt here is to discredit their opinions or values, without engaging with their evidence or logic.|brexit2]]
+The attempt here is to discredit their opinions or values, without engaging with their evidence or logic. [[Pick|brexit2]]
 
-[[These are fallacious ways of arguing because they do not address the issue at hand, but rather try to divert attention from it by appealing to emotions, prejudices, or biases.|brexit2]]
+These are fallacious ways of arguing because they do not address the issue at hand, but rather try to divert attention from it by appealing to emotions, prejudices, or biases. [[Pick|brexit2]]
 
 
 ::brexit2
@@ -835,3 +858,7 @@ Should I try the other choices?
 Thank You for playing the game, feel free to reach out with your opinions or any bugs you caught on the github issues of the game or at the intfiction forum.
 
 I look forward to reading your reviews.
+
+<<button "restart">>
+    <<run UI.restart()>>
+<</button>>

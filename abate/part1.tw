@@ -12,7 +12,7 @@ Rohan
 ::UserStylesheet [stylesheet]
 
 body, .passage {
-	color:black;
+	color:gray;
 	Font-family: serif;
 	Font-size: 13pt;
     Margin: 1ex auto;
