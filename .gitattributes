@@ -1,6 +1,7 @@
 
-code/lib/** linguist-vendored
-*/lib/** linguist-vendored
+storyformats/** linguist-vendored
 
-# Lol, makes HTML appear as AssemblyScript on GitHub
-*.html linguist-language=AssemblyScript
+# Lol, makes HTML appear as CoffeeScript on GitHub
+*.html linguist-language=CoffeeScript
+*.tw linguist-language=Rust
+*.twee linguist-language=Rust
