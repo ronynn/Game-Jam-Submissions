@@ -1,0 +1,6 @@
+
+code/lib/** linguist-vendored
+*/lib/** linguist-vendored
+
+# Lol, makes HTML appear as AssemblyScript on GitHub
+*.html linguist-language=AssemblyScript
